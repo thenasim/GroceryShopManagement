@@ -11,6 +11,8 @@
         public float Price { get; set; }
         public float PurchasePrice { get; set; }
         public float Quantity { get; set; }
+        public int UserId { get; set; }
+        public int CategoryId { get; set; }
 
     }
 }
