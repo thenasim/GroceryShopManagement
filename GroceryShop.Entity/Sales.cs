@@ -10,6 +10,7 @@
         public string Report { get; set; }
         public float TotalPrice { get; set; }
         public float Quantity { get; set; }
+        public int ProductId { get; set; }
 
 
 
