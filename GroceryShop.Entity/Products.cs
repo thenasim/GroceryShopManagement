@@ -1,0 +1,16 @@
+﻿namespace GroceryShop.Entity
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    class Products
+    {
+        public string AppId { get; set; }
+        public string Title { get; set; }
+        public float Price { get; set; }
+        public float PurchasePrice { get; set; }
+        public float Quantity { get; set; }
+
+    }
+}
