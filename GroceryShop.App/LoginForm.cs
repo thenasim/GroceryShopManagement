@@ -15,6 +15,7 @@ namespace GroceryShop.App
         public LoginForm()
         {
             InitializeComponent();
+            MessageBox.Show(GetConfig.ConnectionStr("GroceryDB"));
         }
     }
 }
