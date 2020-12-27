@@ -17,5 +17,86 @@ namespace GroceryShop.App
             InitializeComponent();
             MessageBox.Show(GetConfig.ConnectionStr("GroceryDB"));
         }
+
+        //To close log in form
+        private void btnCloseLogIn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizeLogIn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        //Hover color when mouse enters for login button
+        private void btnLogIn_MouseEnter(object sender, EventArgs e)
+        {
+            btnLogIn.ForeColor = Color.LightBlue;
+        }
+
+        //Hover color when mouse leaves for login button
+        private void btnLogIn_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogIn.ForeColor = Color.White;
+        }
+
+        //Hover color when mouse neters for login form close button
+        private void btnCloseLogIn_MouseEnter(object sender, EventArgs e)
+        {
+            btnCloseLogIn.ForeColor = Color.Red;
+        }
+        //Hover color when mouse leaves for login form close button
+        private void btnCloseLogIn_MouseLeave(object sender, EventArgs e)
+        {
+            btnCloseLogIn.ForeColor = Color.White;
+        }
+        //LogIn button 
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // enters username textbox
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if(txtUsername.Text=="Username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.White;
+            }
+        }
+
+        //leave username textbox
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username";
+                txtUsername.ForeColor = Color.Gray;
+            }
+        }
+
+        //leave password textbox
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Password";
+                txtPassword.ForeColor = Color.Gray;
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        //Enter password textbox
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Password")
+            {
+                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.White;
+            }
+        }
     }
 }
