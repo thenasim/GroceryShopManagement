@@ -11,6 +11,9 @@
         public string Email { get; set; }
         public int RoleId { get; set; }
         public int EmployeeId { get; set; }
-
+        public string UpdatedAt(string datetime = "GETDATE()")
+        {
+            return datetime;
+        } 
     }
 }

@@ -11,9 +11,9 @@
         public float TotalPrice { get; set; }
         public float Quantity { get; set; }
         public int ProductId { get; set; }
-
-
-
-
+        public string UpdatedAt(string datetime = "GETDATE()")
+        {
+            return datetime;
+        } 
     }
 }
