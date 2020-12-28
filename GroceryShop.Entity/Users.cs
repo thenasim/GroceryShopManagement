@@ -2,7 +2,9 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
+    using System.Threading.Tasks;
 
     class Users
     {
@@ -14,6 +16,6 @@
         public string UpdatedAt(string datetime = "GETDATE()")
         {
             return datetime;
-        } 
+        }
     }
 }
