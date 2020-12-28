@@ -29,8 +29,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventory));
             this.pnlProductlist = new System.Windows.Forms.Panel();
+            this.cboCategory = new System.Windows.Forms.ComboBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblPurchasePrice = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.txtPurchasePrice = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.lblProductTitle = new System.Windows.Forms.Label();
+            this.txtProductTitle = new System.Windows.Forms.TextBox();
+            this.btnADD = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.pnlGridview = new System.Windows.Forms.Panel();
             this.dgvProductdetails = new System.Windows.Forms.DataGridView();
             this.btnShowdetails = new System.Windows.Forms.Button();
@@ -41,18 +55,6 @@
             this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlForSearchbar = new System.Windows.Forms.Panel();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnADD = new System.Windows.Forms.Button();
-            this.txtProductTitle = new System.Windows.Forms.TextBox();
-            this.lblProductTitle = new System.Windows.Forms.Label();
-            this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtPurchasePrice = new System.Windows.Forms.TextBox();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.lblPurchasePrice = new System.Windows.Forms.Label();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.cboCategory = new System.Windows.Forms.ComboBox();
             this.pnlProductlist.SuspendLayout();
             this.pnlGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).BeginInit();
@@ -80,6 +82,133 @@
             this.pnlProductlist.Size = new System.Drawing.Size(329, 600);
             this.pnlProductlist.TabIndex = 4;
             // 
+            // cboCategory
+            // 
+            this.cboCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategory.FormattingEnabled = true;
+            this.cboCategory.Location = new System.Drawing.Point(20, 301);
+            this.cboCategory.Name = "cboCategory";
+            this.cboCategory.Size = new System.Drawing.Size(292, 29);
+            this.cboCategory.TabIndex = 20;
+            // 
+            // lblQuantity
+            // 
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.White;
+            this.lblQuantity.Location = new System.Drawing.Point(23, 371);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(70, 21);
+            this.lblQuantity.TabIndex = 19;
+            this.lblQuantity.Text = "Quantity";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategory.ForeColor = System.Drawing.Color.White;
+            this.lblCategory.Location = new System.Drawing.Point(23, 276);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(73, 21);
+            this.lblCategory.TabIndex = 18;
+            this.lblCategory.Text = "Category";
+            // 
+            // lblPurchasePrice
+            // 
+            this.lblPurchasePrice.AutoSize = true;
+            this.lblPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPurchasePrice.ForeColor = System.Drawing.Color.White;
+            this.lblPurchasePrice.Location = new System.Drawing.Point(23, 194);
+            this.lblPurchasePrice.Name = "lblPurchasePrice";
+            this.lblPurchasePrice.Size = new System.Drawing.Size(111, 21);
+            this.lblPurchasePrice.TabIndex = 17;
+            this.lblPurchasePrice.Text = "Purchase Price";
+            // 
+            // lblPrice
+            // 
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.White;
+            this.lblPrice.Location = new System.Drawing.Point(23, 114);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(44, 21);
+            this.lblPrice.TabIndex = 16;
+            this.lblPrice.Text = "Price";
+            // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantity.Location = new System.Drawing.Point(20, 395);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(295, 29);
+            this.txtQuantity.TabIndex = 14;
+            // 
+            // txtPurchasePrice
+            // 
+            this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPurchasePrice.Location = new System.Drawing.Point(20, 218);
+            this.txtPurchasePrice.Name = "txtPurchasePrice";
+            this.txtPurchasePrice.Size = new System.Drawing.Size(295, 29);
+            this.txtPurchasePrice.TabIndex = 13;
+            // 
+            // txtPrice
+            // 
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Location = new System.Drawing.Point(20, 138);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(295, 29);
+            this.txtPrice.TabIndex = 12;
+            // 
+            // lblProductTitle
+            // 
+            this.lblProductTitle.AutoSize = true;
+            this.lblProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductTitle.ForeColor = System.Drawing.Color.White;
+            this.lblProductTitle.Location = new System.Drawing.Point(23, 33);
+            this.lblProductTitle.Name = "lblProductTitle";
+            this.lblProductTitle.Size = new System.Drawing.Size(97, 21);
+            this.lblProductTitle.TabIndex = 11;
+            this.lblProductTitle.Text = "Product TItle";
+            // 
+            // txtProductTitle
+            // 
+            this.txtProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductTitle.Location = new System.Drawing.Point(20, 64);
+            this.txtProductTitle.Name = "txtProductTitle";
+            this.txtProductTitle.Size = new System.Drawing.Size(295, 29);
+            this.txtProductTitle.TabIndex = 10;
+            // 
+            // btnADD
+            // 
+            this.btnADD.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADD.ForeColor = System.Drawing.Color.White;
+            this.btnADD.Location = new System.Drawing.Point(50, 516);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(86, 42);
+            this.btnADD.TabIndex = 9;
+            this.btnADD.Text = "ADD";
+            this.btnADD.UseVisualStyleBackColor = true;
+            this.btnADD.MouseEnter += new System.EventHandler(this.btnADD_MouseEnter);
+            this.btnADD.MouseLeave += new System.EventHandler(this.btnADD_MouseLeave);
+            // 
+            // btnClear
+            // 
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(200, 516);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(86, 42);
+            this.btnClear.TabIndex = 8;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
+            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
+            // 
             // pnlGridview
             // 
             this.pnlGridview.Controls.Add(this.dgvProductdetails);
@@ -92,12 +221,22 @@
             // 
             // dgvProductdetails
             // 
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductdetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductdetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
             this.dgvProductdetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductdetails.Location = new System.Drawing.Point(3, 3);
+            this.dgvProductdetails.GridColor = System.Drawing.Color.Black;
+            this.dgvProductdetails.Location = new System.Drawing.Point(0, 3);
             this.dgvProductdetails.Name = "dgvProductdetails";
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SkyBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductdetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductdetails.RowHeadersWidth = 51;
-            this.dgvProductdetails.Size = new System.Drawing.Size(825, 497);
+            this.dgvProductdetails.Size = new System.Drawing.Size(828, 497);
             this.dgvProductdetails.TabIndex = 7;
             // 
             // btnShowdetails
@@ -216,133 +355,6 @@
             this.pnlForSearchbar.Name = "pnlForSearchbar";
             this.pnlForSearchbar.Size = new System.Drawing.Size(1164, 41);
             this.pnlForSearchbar.TabIndex = 3;
-            // 
-            // btnClear
-            // 
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(200, 516);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(86, 42);
-            this.btnClear.TabIndex = 8;
-            this.btnClear.Text = "CLEAR";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
-            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
-            // 
-            // btnADD
-            // 
-            this.btnADD.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.ForeColor = System.Drawing.Color.White;
-            this.btnADD.Location = new System.Drawing.Point(50, 516);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(86, 42);
-            this.btnADD.TabIndex = 9;
-            this.btnADD.Text = "ADD";
-            this.btnADD.UseVisualStyleBackColor = true;
-            this.btnADD.MouseEnter += new System.EventHandler(this.btnADD_MouseEnter);
-            this.btnADD.MouseLeave += new System.EventHandler(this.btnADD_MouseLeave);
-            // 
-            // txtProductTitle
-            // 
-            this.txtProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductTitle.Location = new System.Drawing.Point(20, 64);
-            this.txtProductTitle.Name = "txtProductTitle";
-            this.txtProductTitle.Size = new System.Drawing.Size(295, 29);
-            this.txtProductTitle.TabIndex = 10;
-            // 
-            // lblProductTitle
-            // 
-            this.lblProductTitle.AutoSize = true;
-            this.lblProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductTitle.ForeColor = System.Drawing.Color.White;
-            this.lblProductTitle.Location = new System.Drawing.Point(23, 33);
-            this.lblProductTitle.Name = "lblProductTitle";
-            this.lblProductTitle.Size = new System.Drawing.Size(97, 21);
-            this.lblProductTitle.TabIndex = 11;
-            this.lblProductTitle.Text = "Product TItle";
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(20, 138);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(295, 29);
-            this.txtPrice.TabIndex = 12;
-            // 
-            // txtPurchasePrice
-            // 
-            this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(20, 218);
-            this.txtPurchasePrice.Name = "txtPurchasePrice";
-            this.txtPurchasePrice.Size = new System.Drawing.Size(295, 29);
-            this.txtPurchasePrice.TabIndex = 13;
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(20, 395);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(295, 29);
-            this.txtQuantity.TabIndex = 14;
-            // 
-            // lblPrice
-            // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(23, 114);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 21);
-            this.lblPrice.TabIndex = 16;
-            this.lblPrice.Text = "Price";
-            // 
-            // lblPurchasePrice
-            // 
-            this.lblPurchasePrice.AutoSize = true;
-            this.lblPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPurchasePrice.ForeColor = System.Drawing.Color.White;
-            this.lblPurchasePrice.Location = new System.Drawing.Point(23, 194);
-            this.lblPurchasePrice.Name = "lblPurchasePrice";
-            this.lblPurchasePrice.Size = new System.Drawing.Size(111, 21);
-            this.lblPurchasePrice.TabIndex = 17;
-            this.lblPurchasePrice.Text = "Purchase Price";
-            // 
-            // lblCategory
-            // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(23, 276);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(73, 21);
-            this.lblCategory.TabIndex = 18;
-            this.lblCategory.Text = "Category";
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(23, 371);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(70, 21);
-            this.lblQuantity.TabIndex = 19;
-            this.lblQuantity.Text = "Quantity";
-            // 
-            // cboCategory
-            // 
-            this.cboCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(20, 301);
-            this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(292, 29);
-            this.cboCategory.TabIndex = 20;
             // 
             // Inventory
             // 
