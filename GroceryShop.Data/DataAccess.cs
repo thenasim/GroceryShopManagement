@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using GroceryShop.Config;
 
 namespace GroceryShop.Data
 {
@@ -17,7 +18,7 @@ namespace GroceryShop.Data
             get
             {
                 if (sqlCon == null)
-                    sqlCon = new SqlConnection(@"");
+                    sqlCon = new SqlConnection(GetConfig.ConnectionStr("GroceryDB"));
                 else if (sqlCon.State != ConnectionState.Open)
                     sqlCon.Open();
                 return sqlCon;
