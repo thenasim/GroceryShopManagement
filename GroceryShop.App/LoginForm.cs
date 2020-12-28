@@ -32,13 +32,15 @@ namespace GroceryShop.App
         //Hover color when mouse enters for login button
         private void btnLogIn_MouseEnter(object sender, EventArgs e)
         {
-            btnLogIn.ForeColor = Color.LightBlue;
+            btnLogIn.ForeColor = Color.DeepSkyBlue;
+            btnLogIn.FlatAppearance.BorderColor = Color.DeepSkyBlue;
         }
 
         //Hover color when mouse leaves for login button
         private void btnLogIn_MouseLeave(object sender, EventArgs e)
         {
             btnLogIn.ForeColor = Color.White;
+            btnLogIn.FlatAppearance.BorderColor = Color.White;
         }
 
         //Hover color when mouse neters for login form close button

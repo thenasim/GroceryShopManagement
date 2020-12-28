@@ -112,13 +112,13 @@ namespace GroceryShop.App
             // 
             // btnLogIn
             // 
-            this.btnLogIn.FlatAppearance.BorderSize = 0;
+            this.btnLogIn.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnLogIn.Location = new System.Drawing.Point(146, 424);
+            this.btnLogIn.Location = new System.Drawing.Point(146, 422);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(132, 46);
+            this.btnLogIn.Size = new System.Drawing.Size(132, 49);
             this.btnLogIn.TabIndex = 5;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
@@ -152,6 +152,8 @@ namespace GroceryShop.App
             // pnlForPasswordUnderline
             // 
             this.pnlForPasswordUnderline.BackColor = System.Drawing.Color.White;
+            this.pnlForPasswordUnderline.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlForPasswordUnderline.ForeColor = System.Drawing.Color.White;
             this.pnlForPasswordUnderline.Location = new System.Drawing.Point(118, 359);
             this.pnlForPasswordUnderline.Name = "pnlForPasswordUnderline";
             this.pnlForPasswordUnderline.Size = new System.Drawing.Size(197, 3);
