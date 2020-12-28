@@ -55,7 +55,7 @@
         //search bar watermark
         private void txtSearchbar_Enter(object sender, EventArgs e)
         {
-            if (txtSearchbar.Text == "Search here") ;
+            if (txtSearchbar.Text == "Search here") 
             {
                 txtSearchbar.Text = "";
                 txtSearchbar.ForeColor = Color.White;
@@ -65,7 +65,7 @@
         //Serach bar watermark
         private void txtSearchbar_Leave(object sender, EventArgs e)
         {
-            if (txtSearchbar.Text == "") ;
+            if (txtSearchbar.Text == "") 
             {
                 txtSearchbar.Text = "Search here";
                 txtSearchbar.ForeColor = Color.Gray;
@@ -83,7 +83,7 @@
             btnShowdetails.ForeColor = Color.White;
             btnShowdetails.FlatAppearance.BorderColor = Color.White;
         }
-
+        //Show details button click 
         private void btnShowdetails_Click(object sender, EventArgs e)
         {
 
