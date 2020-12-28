@@ -1,6 +1,5 @@
 ﻿namespace GroceryShop.App
 {
-    using GroceryShop.Data;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -10,12 +9,17 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using GroceryShop.Entity;
+    using GroceryShop.Repository;
 
     public partial class Inventory : Form
     {
+        private Products Product { get; set; }
+        private InventoryRepo INRepo { get; set; }
         public Inventory()
         {
             InitializeComponent();
+            this.INRepo = new InventoryRepo();
         }
         //Inventory form close
         private void btnCloseInventory_Click(object sender, EventArgs e)
@@ -87,29 +91,24 @@
         //Show details button click 
         private void btnShowdetails_Click(object sender, EventArgs e)
         {
-            this.PopulateGridView();
+            var dt = this.INRepo.ShowAll();
+            this.PopulateGridView(dt);
         }
 
         private void Inventory_Load(object sender, EventArgs e)
         {
-            this.PopulateGridView();
+            this.dgvProductdetails.ClearSelection();
+            this.dgvProductdetails.Refresh();
         }
 
         /*
          * Backend Code
         */
-        private void PopulateGridView(string sql = "SELECT * FROM products")
+        private void PopulateGridView(DataTable dt)
         {
-            try
-            {
-                var ds = DataAccess.GetDataSet(sql);
+            this.dgvProductdetails.AutoGenerateColumns = false;
+            this.dgvProductdetails.DataSource = dt;
 
-                this.dgvProductdetails.DataSource = ds.Tables[0];
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show("Error loading inventory \n" + err.Message);
-            }
         }
         
         //Add button mouse hover
@@ -143,6 +142,26 @@
         {
             btnClear.ForeColor = Color.White;
             btnClear.FlatAppearance.BorderColor = Color.White;
+        }
+
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+            this.FillEntity();
+            InventoryRepo.Save(Product);
+        }
+
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            var dt = this.INRepo.SearchInventory(this.txtSearchbar.Text);
+            this.PopulateGridView(dt);
+        }
+        private void FillEntity()
+        {
+            this.Product = new Products();
+            this.Product.Title = this.txtProductTitle.Text;
+            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
+            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
+            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
         }
     }
     
