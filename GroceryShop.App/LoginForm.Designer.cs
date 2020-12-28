@@ -47,6 +47,7 @@ namespace GroceryShop.App
             // btnCloseLogIn
             // 
             this.btnCloseLogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnCloseLogIn.FlatAppearance.BorderSize = 0;
             this.btnCloseLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseLogIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseLogIn.ForeColor = System.Drawing.Color.White;
@@ -63,6 +64,7 @@ namespace GroceryShop.App
             // btnMinimizeLogIn
             // 
             this.btnMinimizeLogIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.btnMinimizeLogIn.FlatAppearance.BorderSize = 0;
             this.btnMinimizeLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeLogIn.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeLogIn.ForeColor = System.Drawing.Color.White;
