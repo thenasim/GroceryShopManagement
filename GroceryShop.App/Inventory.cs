@@ -111,6 +111,39 @@
                 MessageBox.Show("Error loading inventory \n" + err.Message);
             }
         }
+        
+        //Add button mouse hover
+        private void btnADD_MouseEnter(object sender, EventArgs e)
+        {
+            btnADD.ForeColor = Color.DeepSkyBlue;
+            btnADD.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+        }
+
+        //Add button mouse hover
+        private void btnADD_MouseLeave(object sender, EventArgs e)
+        {
+            btnADD.ForeColor = Color.White;
+            btnADD.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Clear button
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Clear button Hover
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.Red;
+            btnClear.FlatAppearance.BorderColor = Color.Red;
+        }
+        //clear button hover
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.White;
+            btnClear.FlatAppearance.BorderColor = Color.White;
+        }
     }
     
 }
