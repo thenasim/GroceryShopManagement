@@ -1,5 +1,6 @@
 ﻿namespace GroceryShop.App
 {
+    using GroceryShop.Data;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -86,7 +87,29 @@
         //Show details button click 
         private void btnShowdetails_Click(object sender, EventArgs e)
         {
+            this.PopulateGridView();
+        }
 
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            this.PopulateGridView();
+        }
+
+        /*
+         * Backend Code
+        */
+        private void PopulateGridView(string sql = "SELECT * FROM products")
+        {
+            try
+            {
+                var ds = DataAccess.GetDataSet(sql);
+
+                this.dgvProductdetails.DataSource = ds.Tables[0];
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Error loading inventory \n" + err.Message);
+            }
         }
     }
     

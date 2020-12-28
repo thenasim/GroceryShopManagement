@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 
-namespace GroceryShop.App
+namespace GroceryShop.Config
 {
-
-    public static class GetConfig
+    public class GetConfig
     {
         public static string ConnectionStr(string name)
         {

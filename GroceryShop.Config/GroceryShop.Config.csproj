@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C5B2F60-DC18-426A-A22E-DADAD2B9ECB3}</ProjectGuid>
+    <ProjectGuid>{30EDEEDC-B8F6-4B7E-8F95-B5B8A6DE2B43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GroceryShop.Data</RootNamespace>
-    <AssemblyName>GroceryShop.Data</AssemblyName>
+    <RootNamespace>GroceryShop.Config</RootNamespace>
+    <AssemblyName>GroceryShop.Config</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,14 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
+    <Compile Include="GetConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\GroceryShop.Config\GroceryShop.Config.csproj">
-      <Project>{30edeedc-b8f6-4b7e-8f95-b5b8a6de2b43}</Project>
-      <Name>GroceryShop.Config</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
