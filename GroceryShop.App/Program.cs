@@ -19,6 +19,7 @@ namespace GroceryShop.App
             //Application.Run(new LoginForm());
             Application.Run(new Inventory());
             //Application.Run(new Userdetails());
+            //Application.Run(new AdminForm());
         }
     }
 }

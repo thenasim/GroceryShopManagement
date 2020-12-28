@@ -13,6 +13,9 @@
 
     public partial class Inventory : Form
     {
+        private byte move;
+        private int moveX;
+        private int moveY;
         public Inventory()
         {
             InitializeComponent();
@@ -143,6 +146,29 @@
         {
             btnClear.ForeColor = Color.White;
             btnClear.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseDown(object sender, MouseEventArgs e)
+        {
+            move = 1;
+            moveX = e.X;
+            moveY = e.Y;
+        }
+
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseUp(object sender, MouseEventArgs e)
+        {
+            move = 0;
+        }
+
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(move==1)
+            {
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
+            }
         }
     }
     
