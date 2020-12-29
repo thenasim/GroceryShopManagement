@@ -17,9 +17,9 @@ namespace GroceryShop.App
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new LoginForm());
-            Application.Run(new Inventory());
+            //Application.Run(new Inventory());
             //Application.Run(new Userdetails());
-            //Application.Run(new AdminForm());
+            Application.Run(new AdminForm());
         }
     }
 }

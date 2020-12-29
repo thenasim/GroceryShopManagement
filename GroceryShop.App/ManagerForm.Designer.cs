@@ -90,9 +90,9 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(64)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.btnLogout);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(910, 41);
+            this.panel2.Location = new System.Drawing.Point(950, 41);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(240, 609);
+            this.panel2.Size = new System.Drawing.Size(200, 609);
             this.panel2.TabIndex = 1;
             // 
             // btnLogout
@@ -101,9 +101,9 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(50, 518);
+            this.btnLogout.Location = new System.Drawing.Point(30, 527);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(145, 42);
+            this.btnLogout.Size = new System.Drawing.Size(145, 40);
             this.btnLogout.TabIndex = 11;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
