@@ -14,6 +14,8 @@
 
     public partial class Inventory : Form
     {
+        private Products Product { get; set; }
+        private InventoryRepo INRepo { get; set; }
         private byte move;
         private int moveX;
         private int moveY;
@@ -33,7 +35,7 @@
         {
             btnCloseInventory.ForeColor = Color.Red;
         }
-        
+
         //Hover when mouse leaves on close butto
         private void btnCloseInventory_MouseLeave(object sender, EventArgs e)
         {
@@ -61,7 +63,7 @@
         //search bar watermark
         private void txtSearchbar_Enter(object sender, EventArgs e)
         {
-            if (txtSearchbar.Text == "Search here") 
+            if (txtSearchbar.Text == "Search here")
             {
                 txtSearchbar.Text = "";
                 txtSearchbar.ForeColor = Color.White;
@@ -71,7 +73,7 @@
         //Serach bar watermark
         private void txtSearchbar_Leave(object sender, EventArgs e)
         {
-            if (txtSearchbar.Text == "") 
+            if (txtSearchbar.Text == "")
             {
                 txtSearchbar.Text = "Search here";
                 txtSearchbar.ForeColor = Color.Gray;
@@ -81,7 +83,7 @@
         private void btnShowdetails_MouseEnter(object sender, EventArgs e)
         {
             btnShowdetails.ForeColor = Color.DeepSkyBlue;
-            btnShowdetails.FlatAppearance.BorderColor= Color.DeepSkyBlue;
+            btnShowdetails.FlatAppearance.BorderColor = Color.DeepSkyBlue;
         }
         //show deatils hover
         private void btnShowdetails_MouseLeave(object sender, EventArgs e)
@@ -89,29 +91,7 @@
             btnShowdetails.ForeColor = Color.White;
             btnShowdetails.FlatAppearance.BorderColor = Color.White;
         }
-        //Show details button click 
-        private void btnShowdetails_Click(object sender, EventArgs e)
-        {
-            var dt = this.INRepo.ShowAll();
-            this.PopulateGridView(dt);
-        }
 
-        private void Inventory_Load(object sender, EventArgs e)
-        {
-            this.dgvProductdetails.ClearSelection();
-            this.dgvProductdetails.Refresh();
-        }
-
-        /*
-         * Backend Code
-        */
-        private void PopulateGridView(DataTable dt)
-        {
-            this.dgvProductdetails.AutoGenerateColumns = false;
-            this.dgvProductdetails.DataSource = dt;
-
-        }
-        
         //Add button mouse hover
         private void btnADD_MouseEnter(object sender, EventArgs e)
         {
@@ -162,11 +142,52 @@
         //To move the form around the screen
         private void pnlForSearchbar_MouseMove(object sender, MouseEventArgs e)
         {
-            if(move==1)
+            if (move == 1)
             {
                 this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
             }
         }
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+            this.FillEntity();
+            InventoryRepo.Save(Product);
+        }
+
+        //Show details button click 
+        private void btnShowdetails_Click(object sender, EventArgs e)
+        {
+            var dt = this.INRepo.ShowAll();
+            this.PopulateGridView(dt);
+        }
+
+        private void Inventory_Load(object sender, EventArgs e)
+        {
+            this.dgvProductdetails.ClearSelection();
+            this.dgvProductdetails.Refresh();
+        }
+
+        /*
+         * Backend Code
+        */
+        private void PopulateGridView(DataTable dt)
+        {
+            this.dgvProductdetails.AutoGenerateColumns = false;
+            this.dgvProductdetails.DataSource = dt;
+
+        }
+
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            var dt = this.INRepo.SearchInventory(this.txtSearchbar.Text);
+            this.PopulateGridView(dt);
+        }
+        private void FillEntity()
+        {
+            this.Product = new Products();
+            this.Product.Title = this.txtProductTitle.Text;
+            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
+            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
+            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
+        }
     }
-    
 }
