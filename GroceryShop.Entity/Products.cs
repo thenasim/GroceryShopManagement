@@ -13,11 +13,8 @@
         public double Price { get; set; }
         public double PurchasePrice { get; set; }
         public double Quantity { get; set; }
-        public int UserId { get; set; }
-        public int CategoryId { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string UserId { get; set; }
+        public string CategoryId { get; set; }
+        public string UpdatedAt = "GETDATE()";
     }
 }

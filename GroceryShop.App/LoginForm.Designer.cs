@@ -40,8 +40,10 @@ namespace GroceryShop.App
             this.pnlForUsernameUnderline = new System.Windows.Forms.Panel();
             this.pnlForPasswordUnderline = new System.Windows.Forms.Panel();
             this.iconPictureBoxPassword = new FontAwesome.Sharp.IconPictureBox();
+            this.pnlToMoveTheForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxPassword)).BeginInit();
+            this.pnlToMoveTheForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCloseLogIn
@@ -51,7 +53,7 @@ namespace GroceryShop.App
             this.btnCloseLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseLogIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCloseLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnCloseLogIn.Location = new System.Drawing.Point(361, 11);
+            this.btnCloseLogIn.Location = new System.Drawing.Point(363, 3);
             this.btnCloseLogIn.Name = "btnCloseLogIn";
             this.btnCloseLogIn.Size = new System.Drawing.Size(34, 33);
             this.btnCloseLogIn.TabIndex = 0;
@@ -68,7 +70,7 @@ namespace GroceryShop.App
             this.btnMinimizeLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeLogIn.Font = new System.Drawing.Font("Showcard Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizeLogIn.Location = new System.Drawing.Point(314, 10);
+            this.btnMinimizeLogIn.Location = new System.Drawing.Point(316, 2);
             this.btnMinimizeLogIn.Name = "btnMinimizeLogIn";
             this.btnMinimizeLogIn.Size = new System.Drawing.Size(36, 33);
             this.btnMinimizeLogIn.TabIndex = 1;
@@ -174,12 +176,26 @@ namespace GroceryShop.App
             this.iconPictureBoxPassword.TabIndex = 9;
             this.iconPictureBoxPassword.TabStop = false;
             // 
+            // pnlToMoveTheForm
+            // 
+            this.pnlToMoveTheForm.Controls.Add(this.btnCloseLogIn);
+            this.pnlToMoveTheForm.Controls.Add(this.btnMinimizeLogIn);
+            this.pnlToMoveTheForm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlToMoveTheForm.Location = new System.Drawing.Point(0, 0);
+            this.pnlToMoveTheForm.Name = "pnlToMoveTheForm";
+            this.pnlToMoveTheForm.Size = new System.Drawing.Size(400, 35);
+            this.pnlToMoveTheForm.TabIndex = 10;
+            this.pnlToMoveTheForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveTheForm_MouseDown);
+            this.pnlToMoveTheForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveTheForm_MouseMove);
+            this.pnlToMoveTheForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveTheForm_MouseUp);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(400, 600);
+            this.Controls.Add(this.pnlToMoveTheForm);
             this.Controls.Add(this.iconPictureBoxPassword);
             this.Controls.Add(this.pnlForPasswordUnderline);
             this.Controls.Add(this.pnlForUsernameUnderline);
@@ -188,8 +204,6 @@ namespace GroceryShop.App
             this.Controls.Add(this.pnlLoginLogo);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnMinimizeLogIn);
-            this.Controls.Add(this.btnCloseLogIn);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -197,6 +211,7 @@ namespace GroceryShop.App
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxPassword)).EndInit();
+            this.pnlToMoveTheForm.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +229,7 @@ namespace GroceryShop.App
         private System.Windows.Forms.Panel pnlForUsernameUnderline;
         private System.Windows.Forms.Panel pnlForPasswordUnderline;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxPassword;
+        private System.Windows.Forms.Panel pnlToMoveTheForm;
     }
 }
 

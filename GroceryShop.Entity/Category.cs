@@ -12,9 +12,6 @@ namespace GroceryShop.Entity
         public string Name { get; set; }
         public double Discount { get; set; }
         public string Description { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string UpdatedAt = "GETDATE()";
     }
 }
