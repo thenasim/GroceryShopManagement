@@ -190,7 +190,7 @@
                 MessageBox.Show($"Error fetching category\n{error.Message}");
             }
         }
-
+       
         /*
          * Backend Code
         */
@@ -240,5 +240,7 @@
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
             this.Product.CategoryId = this.GetCategoryId();
         }
+
+       
     }
 }
