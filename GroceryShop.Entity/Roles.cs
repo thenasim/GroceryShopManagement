@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Roles
+    public class Roles
     {
         public string AppId { get; set; }
         public string Name { get; set; }

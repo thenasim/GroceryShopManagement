@@ -6,13 +6,13 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Products
+    public class Products
     {
         public string AppId { get; set; }
         public string Title { get; set; }
-        public float Price { get; set; }
-        public float PurchasePrice { get; set; }
-        public float Quantity { get; set; }
+        public double Price { get; set; }
+        public double PurchasePrice { get; set; }
+        public double Quantity { get; set; }
         public int UserId { get; set; }
         public int CategoryId { get; set; }
         public string UpdatedAt(string datetime = "GETDATE()")

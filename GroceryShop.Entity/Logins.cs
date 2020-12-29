@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Logins
+    public class Logins
     {
         public string AppId { get; set; }
         public string Password { get; set; }

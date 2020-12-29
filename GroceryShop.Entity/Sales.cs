@@ -6,12 +6,12 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Sales
+    public class Sales
     {
         public string AppId { get; set; }
         public string Report { get; set; }
-        public float TotalPrice { get; set; }
-        public float Quantity { get; set; }
+        public double TotalPrice { get; set; }
+        public double Quantity { get; set; }
         public int ProductId { get; set; }
         public string UpdatedAt(string datetime = "GETDATE()")
         {

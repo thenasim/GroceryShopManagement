@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class Users
+    public class Users
     {
         public string AppId { get; set; }
         public string FullName { get; set; }
