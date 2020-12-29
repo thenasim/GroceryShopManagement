@@ -16,6 +16,8 @@
     {
         private Products Product { get; set; }
         private InventoryRepo INRepo { get; set; }
+        private CategoryRepo CatRepo { get; set; }
+        private DataTable CatDt { get; set; }
         private byte move;
         private int moveX;
         private int moveY;
@@ -23,6 +25,7 @@
         {
             InitializeComponent();
             this.INRepo = new InventoryRepo();
+            this.CatRepo = new CategoryRepo();
         }
         //Inventory form close
         private void btnCloseInventory_Click(object sender, EventArgs e)
@@ -109,7 +112,7 @@
         //Clear button
         private void btnClear_Click(object sender, EventArgs e)
         {
-
+            this.ClearInputs();
         }
 
         //Clear button Hover
@@ -150,7 +153,16 @@
         private void btnADD_Click(object sender, EventArgs e)
         {
             this.FillEntity();
-            InventoryRepo.Save(Product);
+            if (InventoryRepo.Save(Product))
+            {
+                MessageBox.Show("Product added successfully");
+                this.PopulateGridView(this.INRepo.ShowAll());
+                this.ClearInputs();
+            }
+            else
+            {
+                MessageBox.Show("Product couldn't be added");
+            }
         }
 
         //Show details button click 
@@ -164,6 +176,19 @@
         {
             this.dgvProductdetails.ClearSelection();
             this.dgvProductdetails.Refresh();
+
+            try
+            {
+                this.CatDt = this.CatRepo.ShowAll();
+                foreach (DataRow row in this.CatDt.Rows)
+                {
+                    this.cboCategory.Items.Add(row.Field<string>(2)); // row.Field(2) here 2 is column of category table
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show($"Error fetching category\n{error.Message}");
+            }
         }
 
         /*
@@ -181,13 +206,39 @@
             var dt = this.INRepo.SearchInventory(this.txtSearchbar.Text);
             this.PopulateGridView(dt);
         }
+        private string GetCategoryId()
+        {
+            if (this.cboCategory.Text == "") return "";
+
+            string appId = "";
+            foreach (DataRow row in this.CatDt.Rows)
+            {
+                if (row.Field<string>(2) == this.cboCategory.Text)
+                    appId = row.Field<string>(1);
+            }
+
+            if (appId == "")
+                appId = this.CatRepo.SaveWithName(this.cboCategory.Text);
+
+            return appId;
+        }
+        private void ClearInputs()
+        {
+            this.txtProductTitle.Text = "";
+            this.txtPrice.Text = "";
+            this.txtPurchasePrice.Text = "";
+            this.txtQuantity.Text = "";
+            this.cboCategory.Text = "";
+        }
         private void FillEntity()
         {
             this.Product = new Products();
+            this.Product.AppId = this.INRepo.GetAppId();
             this.Product.Title = this.txtProductTitle.Text;
             this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
+            this.Product.CategoryId = this.GetCategoryId();
         }
     }
 }
