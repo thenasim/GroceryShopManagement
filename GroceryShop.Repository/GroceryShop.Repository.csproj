@@ -49,6 +49,10 @@
       <Project>{7c5b2f60-dc18-426a-a22e-dadad2b9ecb3}</Project>
       <Name>GroceryShop.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GroceryShop.Entity\GroceryShop.Entity.csproj">
+      <Project>{157c729c-8bd7-4415-b10a-a50dcbc5ef91}</Project>
+      <Name>GroceryShop.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
