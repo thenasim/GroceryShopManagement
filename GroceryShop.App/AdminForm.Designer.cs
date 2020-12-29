@@ -45,9 +45,16 @@
             this.btnManageUers = new System.Windows.Forms.Button();
             this.iconPictureBoxManageUsers = new FontAwesome.Sharp.IconPictureBox();
             this.pnlManageUsers = new System.Windows.Forms.Panel();
-            this.btnShowUsers = new System.Windows.Forms.Button();
             this.pnlGridviewAllusers = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnShowUsers = new System.Windows.Forms.Button();
             this.pnlAdduser = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Email = new System.Windows.Forms.Label();
+            this.lblPassword = new System.Windows.Forms.Label();
             this.btnClearUser = new System.Windows.Forms.Button();
             this.btnUserAdd = new System.Windows.Forms.Button();
             this.lblAppId = new System.Windows.Forms.Label();
@@ -60,13 +67,6 @@
             this.pnlSalesReport = new System.Windows.Forms.Panel();
             this.lblSalesReport = new System.Windows.Forms.Label();
             this.iconPictureBoxSale = new FontAwesome.Sharp.IconPictureBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlToMoveForm.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFeaturesButtons.SuspendLayout();
@@ -76,13 +76,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageUsers)).BeginInit();
             this.pnlManageUsers.SuspendLayout();
             this.pnlGridviewAllusers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnlAdduser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxUserManagement)).BeginInit();
             this.pnlManageCarts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxCart)).BeginInit();
             this.pnlSalesReport.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlToMoveForm
@@ -169,9 +169,9 @@
             this.pnlFeaturesButtons.Controls.Add(this.pnlManageUsers);
             this.pnlFeaturesButtons.Controls.Add(this.pnlManageCarts);
             this.pnlFeaturesButtons.Controls.Add(this.pnlSalesReport);
-            this.pnlFeaturesButtons.Location = new System.Drawing.Point(0, 47);
+            this.pnlFeaturesButtons.Location = new System.Drawing.Point(0, 41);
             this.pnlFeaturesButtons.Name = "pnlFeaturesButtons";
-            this.pnlFeaturesButtons.Size = new System.Drawing.Size(944, 603);
+            this.pnlFeaturesButtons.Size = new System.Drawing.Size(953, 609);
             this.pnlFeaturesButtons.TabIndex = 12;
             this.pnlFeaturesButtons.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlFeaturesButtons_Paint);
             // 
@@ -304,23 +304,8 @@
             this.pnlManageUsers.Controls.Add(this.iconPictureBoxUserManagement);
             this.pnlManageUsers.Location = new System.Drawing.Point(208, 12);
             this.pnlManageUsers.Name = "pnlManageUsers";
-            this.pnlManageUsers.Size = new System.Drawing.Size(722, 566);
+            this.pnlManageUsers.Size = new System.Drawing.Size(722, 585);
             this.pnlManageUsers.TabIndex = 4;
-            // 
-            // btnShowUsers
-            // 
-            this.btnShowUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnShowUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowUsers.ForeColor = System.Drawing.Color.White;
-            this.btnShowUsers.Location = new System.Drawing.Point(587, 217);
-            this.btnShowUsers.Name = "btnShowUsers";
-            this.btnShowUsers.Size = new System.Drawing.Size(102, 33);
-            this.btnShowUsers.TabIndex = 11;
-            this.btnShowUsers.Text = "Show Users";
-            this.btnShowUsers.UseVisualStyleBackColor = true;
-            this.btnShowUsers.MouseEnter += new System.EventHandler(this.btnShowUsers_MouseEnter);
-            this.btnShowUsers.MouseLeave += new System.EventHandler(this.btnShowUsers_MouseLeave);
             // 
             // pnlGridviewAllusers
             // 
@@ -330,8 +315,31 @@
             this.pnlGridviewAllusers.Controls.Add(this.btnShowUsers);
             this.pnlGridviewAllusers.Location = new System.Drawing.Point(10, 289);
             this.pnlGridviewAllusers.Name = "pnlGridviewAllusers";
-            this.pnlGridviewAllusers.Size = new System.Drawing.Size(697, 259);
+            this.pnlGridviewAllusers.Size = new System.Drawing.Size(697, 276);
             this.pnlGridviewAllusers.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(682, 229);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // btnShowUsers
+            // 
+            this.btnShowUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnShowUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowUsers.ForeColor = System.Drawing.Color.White;
+            this.btnShowUsers.Location = new System.Drawing.Point(588, 238);
+            this.btnShowUsers.Name = "btnShowUsers";
+            this.btnShowUsers.Size = new System.Drawing.Size(102, 33);
+            this.btnShowUsers.TabIndex = 11;
+            this.btnShowUsers.Text = "Show Users";
+            this.btnShowUsers.UseVisualStyleBackColor = true;
+            this.btnShowUsers.MouseEnter += new System.EventHandler(this.btnShowUsers_MouseEnter);
+            this.btnShowUsers.MouseLeave += new System.EventHandler(this.btnShowUsers_MouseLeave);
             // 
             // pnlAdduser
             // 
@@ -351,6 +359,68 @@
             this.pnlAdduser.Name = "pnlAdduser";
             this.pnlAdduser.Size = new System.Drawing.Size(697, 227);
             this.pnlAdduser.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Manager",
+            "Employee"});
+            this.comboBox1.Location = new System.Drawing.Point(163, 177);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(313, 21);
+            this.comboBox1.TabIndex = 21;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(163, 130);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(313, 22);
+            this.textBox2.TabIndex = 20;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(163, 77);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(313, 22);
+            this.textBox1.TabIndex = 19;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(37, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 21);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "User Type";
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.ForeColor = System.Drawing.Color.White;
+            this.Email.Location = new System.Drawing.Point(37, 131);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(53, 21);
+            this.Email.TabIndex = 17;
+            this.Email.Text = "Email";
+            // 
+            // lblPassword
+            // 
+            this.lblPassword.AutoSize = true;
+            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.ForeColor = System.Drawing.Color.White;
+            this.lblPassword.Location = new System.Drawing.Point(37, 78);
+            this.lblPassword.Name = "lblPassword";
+            this.lblPassword.Size = new System.Drawing.Size(82, 21);
+            this.lblPassword.TabIndex = 16;
+            this.lblPassword.Text = "Password";
             // 
             // btnClearUser
             // 
@@ -495,76 +565,6 @@
             this.iconPictureBoxSale.TabIndex = 2;
             this.iconPictureBoxSale.TabStop = false;
             // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(37, 78);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(82, 21);
-            this.lblPassword.TabIndex = 16;
-            this.lblPassword.Text = "Password";
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.ForeColor = System.Drawing.Color.White;
-            this.Email.Location = new System.Drawing.Point(37, 131);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(53, 21);
-            this.Email.TabIndex = 17;
-            this.Email.Text = "Email";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(37, 177);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 21);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "User Type";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 77);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 22);
-            this.textBox1.TabIndex = 19;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(163, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(313, 22);
-            this.textBox2.TabIndex = 20;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Admin",
-            "Manager",
-            "Employee"});
-            this.comboBox1.Location = new System.Drawing.Point(163, 177);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(313, 21);
-            this.comboBox1.TabIndex = 21;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(682, 208);
-            this.dataGridView1.TabIndex = 12;
-            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,6 +589,7 @@
             this.pnlManageUsers.ResumeLayout(false);
             this.pnlManageUsers.PerformLayout();
             this.pnlGridviewAllusers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnlAdduser.ResumeLayout(false);
             this.pnlAdduser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxUserManagement)).EndInit();
@@ -598,7 +599,6 @@
             this.pnlSalesReport.ResumeLayout(false);
             this.pnlSalesReport.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

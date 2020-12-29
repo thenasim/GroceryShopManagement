@@ -64,10 +64,12 @@
             this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlForSearchbar = new System.Windows.Forms.Panel();
+            this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
             this.pnlProductlist.SuspendLayout();
             this.pnlGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).BeginInit();
             this.pnlForSearchbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProductlist
@@ -399,7 +401,7 @@
             this.lblInventoryname.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblInventoryname.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventoryname.ForeColor = System.Drawing.Color.White;
-            this.lblInventoryname.Location = new System.Drawing.Point(14, 4);
+            this.lblInventoryname.Location = new System.Drawing.Point(46, 3);
             this.lblInventoryname.Name = "lblInventoryname";
             this.lblInventoryname.Size = new System.Drawing.Size(129, 32);
             this.lblInventoryname.TabIndex = 3;
@@ -450,6 +452,7 @@
             // pnlForSearchbar
             // 
             this.pnlForSearchbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.pnlForSearchbar.Controls.Add(this.iconPictureBoxInventory);
             this.pnlForSearchbar.Controls.Add(this.panel3);
             this.pnlForSearchbar.Controls.Add(this.btnSearchInventory);
             this.pnlForSearchbar.Controls.Add(this.txtSearchbar);
@@ -465,6 +468,20 @@
             this.pnlForSearchbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseDown);
             this.pnlForSearchbar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseMove);
             this.pnlForSearchbar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseUp);
+            // 
+            // iconPictureBoxInventory
+            // 
+            this.iconPictureBoxInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.iconPictureBoxInventory.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
+            this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxInventory.IconSize = 37;
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(8, 4);
+            this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
+            this.iconPictureBoxInventory.Size = new System.Drawing.Size(39, 37);
+            this.iconPictureBoxInventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBoxInventory.TabIndex = 7;
+            this.iconPictureBoxInventory.TabStop = false;
             // 
             // Inventory
             // 
@@ -487,6 +504,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).EndInit();
             this.pnlForSearchbar.ResumeLayout(false);
             this.pnlForSearchbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +542,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
     }
 }
