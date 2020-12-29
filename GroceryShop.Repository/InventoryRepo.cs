@@ -41,7 +41,7 @@ namespace GroceryShop.Repository
         }
         public static bool Save(Products p)
         {
-            var sql = $"INSERT INTO products VALUES('{p.AppId}', '{p.Title}', {p.Price}, {p.PurchasePrice}, {p.Quantity}, GETDATE(), null, '{p.CategoryId}')";
+            var sql = $"INSERT INTO products VALUES('{p.AppId}', '{p.Title}', {p.Price}, {p.PurchasePrice}, {p.Quantity}, {p.UpdatedAt}, null, '{p.CategoryId}')";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

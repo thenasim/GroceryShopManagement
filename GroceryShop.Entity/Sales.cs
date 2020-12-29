@@ -12,10 +12,7 @@
         public string Report { get; set; }
         public double TotalPrice { get; set; }
         public double Quantity { get; set; }
-        public int ProductId { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string ProductId { get; set; }
+        public string UpdatedAt = "GETDATE()";
     }
 }

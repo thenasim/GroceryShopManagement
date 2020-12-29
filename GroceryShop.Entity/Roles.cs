@@ -15,9 +15,6 @@
         public bool UserAccess { get; set; }
         public bool ReportAccess { get; set; }
         public bool RoleAccess { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string UpdatedAt = "GETDATE()";
     }
 }

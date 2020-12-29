@@ -15,9 +15,6 @@
         public double Quantity { get; set; }
         public string UserId { get; set; }
         public string CategoryId { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string UpdatedAt = "GETDATE()";
     }
 }

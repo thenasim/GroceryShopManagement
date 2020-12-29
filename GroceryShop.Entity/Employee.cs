@@ -15,9 +15,6 @@
         public string PhoneNumber { get; set; }
         public DateTime JoinDate { get; set; }
         public double Salary { get; set; }
-        public string UpdatedAt(string datetime = "GETDATE()")
-        {
-            return datetime;
-        }
+        public string UpdatedAt = "GETDATE()";
     }
 }

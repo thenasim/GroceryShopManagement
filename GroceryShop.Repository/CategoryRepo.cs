@@ -40,7 +40,7 @@
         }
         public bool Save(Category p)
         {
-            var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.Discount}, '', GETDATE())";
+            var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.Discount}, '', {p.UpdatedAt})";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
