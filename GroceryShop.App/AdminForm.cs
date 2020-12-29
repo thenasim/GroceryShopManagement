@@ -80,5 +80,144 @@
         {
             move = 0;
         }
+
+        //Hover color of manage users button
+        private void btnManageUers_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageUers.ForeColor = Color.DeepSkyBlue;
+            btnManageUers.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxManageUsers.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color of manage users button
+        private void btnManageUers_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageUers.ForeColor = Color.White;
+            btnManageUers.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxManageUsers.ForeColor = Color.White;
+        }
+
+        //Hover color of sales report button
+        private void btnSaleReport_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaleReport.ForeColor = Color.DeepSkyBlue;
+            btnSaleReport.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxSalesReport.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color of sales report button
+        private void btnSaleReport_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaleReport.ForeColor = Color.White;
+            btnSaleReport.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxSalesReport.ForeColor = Color.White;
+        }
+
+        //Hover color of manage carts button
+        private void btnMangeCarts_MouseEnter(object sender, EventArgs e)
+        {
+            btnMangeCarts.ForeColor = Color.DeepSkyBlue;
+            btnMangeCarts.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxManageCart.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color of manage carts button
+        private void btnMangeCarts_MouseLeave(object sender, EventArgs e)
+        {
+            btnMangeCarts.ForeColor = Color.White;
+            btnMangeCarts.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxManageCart.ForeColor = Color.White;
+        }
+
+        //Hover color of manage inventory button
+        private void btnManageInventory_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageInventory.ForeColor = Color.DeepSkyBlue;
+            btnManageInventory.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxInventory.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color of manage inventory button
+        private void btnManageInventory_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageInventory.ForeColor = Color.White;
+            btnManageInventory.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxInventory.ForeColor = Color.White;
+        }
+
+        //Manage User click event
+        private void btnManageUers_Click(object sender, EventArgs e)
+        {
+            pnlManageUsers.Visible = true;
+            pnlSalesReport.Visible = false;
+            pnlManageCarts.Visible = false;
+        }
+
+        //Sales reports button click
+        private void btnSaleReport_Click(object sender, EventArgs e)
+        {
+            pnlSalesReport.Visible = true;
+            pnlManageUsers.Visible = false;
+            pnlManageCarts.Visible = false;
+        }
+
+        //Manage cart button click
+        private void btnMangeCarts_Click(object sender, EventArgs e)
+        {
+            pnlManageUsers.Visible = false;
+            pnlSalesReport.Visible = false;
+            pnlManageCarts.Visible = true;
+        }
+
+        //To hide all panel at starting
+        private void pnlFeaturesButtons_Paint(object sender, PaintEventArgs e)
+        {
+            pnlManageUsers.Visible = false;
+            pnlSalesReport.Visible = false;
+            pnlManageCarts.Visible = false;
+
+        }
+
+        //Hover color for user management add button
+        private void btnUserAdd_MouseEnter(object sender, EventArgs e)
+        {
+            btnUserAdd.ForeColor = Color.LightGreen;
+            btnUserAdd.FlatAppearance.BorderColor = Color.LightGreen;
+        }
+
+        //Hover color for user management add button
+        private void btnUserAdd_MouseLeave(object sender, EventArgs e)
+        {
+            btnUserAdd.ForeColor = Color.White;
+            btnUserAdd.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Hover color for user management clear button
+        private void btnClearUser_MouseEnter(object sender, EventArgs e)
+        {
+            btnClearUser.ForeColor = Color.IndianRed;
+            btnClearUser.FlatAppearance.BorderColor = Color.IndianRed;
+        }
+
+        //Hover color for user management clear button
+        private void btnClearUser_MouseLeave(object sender, EventArgs e)
+        {
+            btnClearUser.ForeColor = Color.White;
+            btnClearUser.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Hover color for show users
+        private void btnShowUsers_MouseEnter(object sender, EventArgs e)
+        {
+            btnShowUsers.ForeColor = Color.LightBlue;
+            btnShowUsers.FlatAppearance.BorderColor = Color.LightBlue;
+        }
+
+        //Hover color for show users
+        private void btnShowUsers_MouseLeave(object sender, EventArgs e)
+        {
+            btnShowUsers.ForeColor = Color.White;
+            btnShowUsers.FlatAppearance.BorderColor = Color.White;
+        }
     }
 }
