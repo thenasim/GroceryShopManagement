@@ -178,6 +178,46 @@
 
         }
 
-       
+        //Hover color for user management add button
+        private void btnUserAdd_MouseEnter(object sender, EventArgs e)
+        {
+            btnUserAdd.ForeColor = Color.LightGreen;
+            btnUserAdd.FlatAppearance.BorderColor = Color.LightGreen;
+        }
+
+        //Hover color for user management add button
+        private void btnUserAdd_MouseLeave(object sender, EventArgs e)
+        {
+            btnUserAdd.ForeColor = Color.White;
+            btnUserAdd.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Hover color for user management clear button
+        private void btnClearUser_MouseEnter(object sender, EventArgs e)
+        {
+            btnClearUser.ForeColor = Color.IndianRed;
+            btnClearUser.FlatAppearance.BorderColor = Color.IndianRed;
+        }
+
+        //Hover color for user management clear button
+        private void btnClearUser_MouseLeave(object sender, EventArgs e)
+        {
+            btnClearUser.ForeColor = Color.White;
+            btnClearUser.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Hover color for show users
+        private void btnShowUsers_MouseEnter(object sender, EventArgs e)
+        {
+            btnShowUsers.ForeColor = Color.LightBlue;
+            btnShowUsers.FlatAppearance.BorderColor = Color.LightBlue;
+        }
+
+        //Hover color for show users
+        private void btnShowUsers_MouseLeave(object sender, EventArgs e)
+        {
+            btnShowUsers.ForeColor = Color.White;
+            btnShowUsers.FlatAppearance.BorderColor = Color.White;
+        }
     }
 }
