@@ -10,8 +10,13 @@ using System.Windows.Forms;
 
 namespace GroceryShop.App
 {
+    
     public partial class LoginForm : Form
     {
+        private byte move;
+        private int moveX;
+        private int moveY;
+
         public LoginForm()
         {
             InitializeComponent();
@@ -98,6 +103,29 @@ namespace GroceryShop.App
                 txtPassword.Text = "";
                 txtPassword.ForeColor = Color.White;
             }
+        }
+
+        //To move the form all over the screen
+        private void pnlToMoveTheForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(move==1)
+            {
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y- moveY);
+            }
+        }
+
+        //To move the form all over the screen
+        private void pnlToMoveTheForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            move = 0;
+        }
+
+        //To move the form all over the screen
+        private void pnlToMoveTheForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            move = 1;
+            moveX = e.X;
+            moveY = e.Y;
         }
     }
 }

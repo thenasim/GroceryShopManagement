@@ -403,6 +403,9 @@
             this.pnlForSearchbar.Name = "pnlForSearchbar";
             this.pnlForSearchbar.Size = new System.Drawing.Size(1552, 50);
             this.pnlForSearchbar.TabIndex = 3;
+            this.pnlForSearchbar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseDown);
+            this.pnlForSearchbar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseMove);
+            this.pnlForSearchbar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlForSearchbar_MouseUp);
             // 
             // id
             // 

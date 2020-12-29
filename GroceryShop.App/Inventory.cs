@@ -14,8 +14,9 @@
 
     public partial class Inventory : Form
     {
-        private Products Product { get; set; }
-        private InventoryRepo INRepo { get; set; }
+        private byte move;
+        private int moveX;
+        private int moveY;
         public Inventory()
         {
             InitializeComponent();
@@ -144,24 +145,27 @@
             btnClear.FlatAppearance.BorderColor = Color.White;
         }
 
-        private void btnADD_Click(object sender, EventArgs e)
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseDown(object sender, MouseEventArgs e)
         {
-            this.FillEntity();
-            InventoryRepo.Save(Product);
+            move = 1;
+            moveX = e.X;
+            moveY = e.Y;
         }
 
-        private void btnSearchInventory_Click(object sender, EventArgs e)
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseUp(object sender, MouseEventArgs e)
         {
-            var dt = this.INRepo.SearchInventory(this.txtSearchbar.Text);
-            this.PopulateGridView(dt);
+            move = 0;
         }
-        private void FillEntity()
+
+        //To move the form around the screen
+        private void pnlForSearchbar_MouseMove(object sender, MouseEventArgs e)
         {
-            this.Product = new Products();
-            this.Product.Title = this.txtProductTitle.Text;
-            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
-            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
-            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
+            if(move==1)
+            {
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
+            }
         }
     }
     
