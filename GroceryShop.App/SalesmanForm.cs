@@ -83,42 +83,11 @@
             }
         }
 
-        //Hover color for manage carts button
-        private void btnMangeCarts_MouseEnter(object sender, EventArgs e)
-        {
-            btnMangeCarts.ForeColor = Color.DeepSkyBlue;
-            btnMangeCarts.FlatAppearance.BorderColor = Color.DeepSkyBlue;
-            iconPictureBoxManageCart.ForeColor = Color.DeepSkyBlue;
-        }
-
-        //Hover color for manage carts button
-        private void btnMangeCarts_MouseLeave(object sender, EventArgs e)
-        {
-            btnMangeCarts.ForeColor = Color.White;
-            btnMangeCarts.FlatAppearance.BorderColor = Color.White;
-            iconPictureBoxManageCart.ForeColor = Color.White;
-        }
-
-        //Hover color for sales report button
-        private void btnSaleReport_MouseEnter(object sender, EventArgs e)
-        {
-            btnSaleReport.ForeColor = Color.DeepSkyBlue;
-            btnSaleReport.FlatAppearance.BorderColor = Color.DeepSkyBlue;
-            iconPictureBoxSalesReport.ForeColor = Color.DeepSkyBlue;
-        }
-
-        //Hover color for sales report button
-        private void btnSaleReport_MouseLeave(object sender, EventArgs e)
-        {
-            btnSaleReport.ForeColor = Color.White;
-            btnSaleReport.FlatAppearance.BorderColor = Color.White;
-            iconPictureBoxSalesReport.ForeColor = Color.White;
-        }
 
         //To hide all visibility of all features panels at starting
         private void pnlEmployeeform_Paint(object sender, PaintEventArgs e)
         {
-            pnlManageCarts.Visible = false;
+            pnlManageCarts.Visible = true;
         }
 
         //Manage cart button
