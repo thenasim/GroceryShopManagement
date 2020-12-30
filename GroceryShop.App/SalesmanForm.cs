@@ -10,12 +10,12 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
 
-    public partial class EmployeeForm : Form
+    public partial class SalesmanForm : Form
     {
         private byte move;
         private int moveX;
         private int moveY;
-        public EmployeeForm()
+        public SalesmanForm()
         {
             InitializeComponent();
         }
