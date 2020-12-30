@@ -70,6 +70,7 @@
             this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
             this.pnlToMoveForm.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlFeaturesButtons.SuspendLayout();
@@ -351,6 +352,7 @@
             this.dgvUsersGrid.Name = "dgvUsersGrid";
             this.dgvUsersGrid.ReadOnly = true;
             this.dgvUsersGrid.RowHeadersWidth = 51;
+            this.dgvUsersGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsersGrid.Size = new System.Drawing.Size(909, 282);
             this.dgvUsersGrid.TabIndex = 12;
             // 
@@ -375,6 +377,7 @@
             // 
             this.pnlAdduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
             this.pnlAdduser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdduser.Controls.Add(this.btnDeleteUser);
             this.pnlAdduser.Controls.Add(this.cboUserType);
             this.pnlAdduser.Controls.Add(this.txtUserName);
             this.pnlAdduser.Controls.Add(this.txtPassword);
@@ -465,7 +468,7 @@
             this.btnClearUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearUser.ForeColor = System.Drawing.Color.White;
-            this.btnClearUser.Location = new System.Drawing.Point(705, 160);
+            this.btnClearUser.Location = new System.Drawing.Point(705, 126);
             this.btnClearUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearUser.Name = "btnClearUser";
             this.btnClearUser.Size = new System.Drawing.Size(193, 49);
@@ -482,7 +485,7 @@
             this.btnUserAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAdd.ForeColor = System.Drawing.Color.White;
-            this.btnUserAdd.Location = new System.Drawing.Point(705, 73);
+            this.btnUserAdd.Location = new System.Drawing.Point(705, 39);
             this.btnUserAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUserAdd.Name = "btnUserAdd";
             this.btnUserAdd.Size = new System.Drawing.Size(193, 49);
@@ -644,6 +647,20 @@
             this.user_type.Name = "user_type";
             this.user_type.ReadOnly = true;
             // 
+            // btnDeleteUser
+            // 
+            this.btnDeleteUser.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteUser.Location = new System.Drawing.Point(705, 205);
+            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(193, 49);
+            this.btnDeleteUser.TabIndex = 22;
+            this.btnDeleteUser.Text = "DELETE";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -725,5 +742,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn appid;
         private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_type;
+        private System.Windows.Forms.Button btnDeleteUser;
     }
 }
