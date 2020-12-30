@@ -89,7 +89,7 @@
         }
         public static bool Update(Users p)
         {
-            var sql = $"update users set full_name = '{p.FullName}', user_type = {p.UserType} where appid = '{p.AppId}';";
+            var sql = $"update users set full_name = '{p.FullName}', user_type = '{p.UserType}' where appid = '{p.AppId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
