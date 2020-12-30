@@ -19,7 +19,7 @@
         private byte move;
         private int moveX;
         private int moveY;
-        private string currentAppId { get; set; }
+        private string CurrentAppId { get; set; }
         public Inventory()
         {
             InitializeComponent();
@@ -152,11 +152,11 @@
         }
         private void btnADD_Click(object sender, EventArgs e)
         {
-            var idExists = InventoryRepo.SearchAppId(this.currentAppId);
+            var idExists = InventoryRepo.SearchAppId(this.CurrentAppId);
             if (idExists)
             {
                 this.UpdateFillEntity();
-                if (InventoryRepo.Update(Product))
+                if (InventoryRepo.Update(this.Product))
                 {
                     MessageBox.Show("Product updated successfully");
                     this.PopulateGridView();
@@ -164,13 +164,13 @@
                     this.dgvProductdetails.Refresh();
                     this.ClearInputs();
                 }
-                this.currentAppId = null;
+                this.CurrentAppId = null;
 
             }
             else
             {
                 this.FillEntity();
-                if (InventoryRepo.Save(Product))
+                if (InventoryRepo.Save(this.Product))
                 {
                     MessageBox.Show("Product added successfully");
                     this.PopulateGridView();
@@ -268,7 +268,7 @@
         private void UpdateFillEntity()
         {
             this.Product = new Products();
-            this.Product.AppId = this.currentAppId;
+            this.Product.AppId = this.CurrentAppId;
             this.Product.Title = this.txtProductTitle.Text;
             this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
@@ -309,7 +309,7 @@
 
         private void dgvProductdetails_DoubleClick(object sender, EventArgs e)
         {
-            this.currentAppId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
+            this.CurrentAppId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
             this.txtProductTitle.Text = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
             this.txtPrice.Text = this.dgvProductdetails.CurrentRow.Cells["price"].Value.ToString();
             this.txtPurchasePrice.Text = this.dgvProductdetails.CurrentRow.Cells["purchase_price"].Value.ToString();

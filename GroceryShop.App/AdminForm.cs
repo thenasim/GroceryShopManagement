@@ -19,6 +19,7 @@
         private byte move;
         private int moveX;
         private int moveY;
+        private string CurrentUserId { get; set; }
         public AdminForm()
         {
             InitializeComponent();
@@ -265,39 +266,76 @@
         {
             this.dgvUsersGrid.AutoGenerateColumns = false;
             this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
+            this.dgvUsersGrid.ClearSelection();
+            this.dgvUsersGrid.Refresh();
         }
 
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
-            this.FillEntity();
-            try
+            var idExists = UserRepo.SearchUserId(this.CurrentUserId);
+            if (idExists)
             {
-                if (UserRepo.Save(this.User))
+                this.UpdateFillEntity();
+                try
                 {
-                    if (LoginRepo.Save(this.Login))
+                    if (UserRepo.Update(this.User))
                     {
-                        MessageBox.Show($"Successfully created new user");
-                        this.PopulateGridView();
-                        this.txtAppId.Text = UserRepo.GetAppId();
+                        if (LoginRepo.Update(this.Login))
+                        {
+                            MessageBox.Show("Successfully updated  user");
+                            this.PopulateGridView();
+                            this.txtAppId.Text = UserRepo.GetAppId();
+                            this.ClearUserInput();
+                        }
                     }
-                } else
-                {
-                    MessageBox.Show("Creating user failed");
+                    else
+                    {
+                        MessageBox.Show("Updating user failed");
+                    }
                 }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Cann't update user\n" + error.Message);
+                }
+                this.CurrentUserId = null;
             }
-            catch (Exception error)
+            else
             {
-                MessageBox.Show("Cann't add user\n" + error.Message);
+                this.FillEntity();
+                try
+                {
+                    if (UserRepo.Save(this.User))
+                    {
+                        if (LoginRepo.Save(this.Login))
+                        {
+                            MessageBox.Show($"Successfully created new user");
+                            this.PopulateGridView();
+                            this.txtAppId.Text = UserRepo.GetAppId();
+                            this.ClearUserInput();
+                        }
+                    } else
+                    {
+                        MessageBox.Show("Creating user failed");
+                    }
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Cann't add user\n" + error.Message);
+                }
             }
         }
 
         private void btnClearUser_Click(object sender, EventArgs e)
         {
             this.ClearUserInput();
+            txtSearchbar.Text = "Search here";
+            txtSearchbar.ForeColor = Color.Gray;
+            this.dgvUsersGrid.DataSource = null;
         }
 
         private void ClearUserInput()
         {
+            this.txtAppId.Text = "";
             this.txtPassword.Text = "";
             this.txtUserName.Text = "";
             this.cboUserType.Text = "";
@@ -321,7 +359,60 @@
             this.Login.Password = this.txtPassword.Text;
             this.Login.UserId = this.User.AppId;
         }
+        private void UpdateFillEntity()
+        {
+            this.User = new Users();
+            this.User.AppId = this.CurrentUserId;
+            this.User.FullName = this.txtUserName.Text;
+            this.User.UserType = this.cboUserType.Text;
 
-        
+            this.Login = new Logins();
+            this.Login.Password = this.txtPassword.Text;
+            this.Login.UserId = this.User.AppId;
+        }
+
+        private void dgvUsersGrid_DoubleClick(object sender, EventArgs e)
+        {
+            this.CurrentUserId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
+            this.txtAppId.Text = this.CurrentUserId;
+            this.txtPassword.Text = this.dgvUsersGrid.CurrentRow.Cells["password"].Value.ToString();
+            this.txtUserName.Text = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
+            this.cboUserType.Text = this.dgvUsersGrid.CurrentRow.Cells["user_type"].Value.ToString();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+
+            string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
+            string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
+            if (UserRepo.Delete(appId))
+            {
+                if (LoginRepo.Delete(appId))
+                {
+                    MessageBox.Show(name + " has been deleted successfully");
+                    this.PopulateGridView();
+                    this.dgvUsersGrid.ClearSelection();
+                    this.dgvUsersGrid.Refresh();
+                    this.ClearUserInput();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("User couldn't be deleted");
+            }
+        }
+
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            this.dgvUsersGrid.AutoGenerateColumns = false;
+            this.dgvUsersGrid.DataSource = UserRepo.SearchUser(this.txtSearchbar.Text);
+            this.dgvUsersGrid.ClearSelection();
+            this.dgvUsersGrid.Refresh();
+            if (this.dgvUsersGrid.RowCount == 0)
+            {
+                MessageBox.Show("No Data Found!");
+            }
+        }
     }
 }

@@ -24,10 +24,37 @@
             }
             return "us-1";
         }
+        public static List<Users> SearchUser(string key)
+        {
+            var userList = new List<Users>();
+            if (key == "Search here")
+            {
+                return ShowAll();
+            }
+
+            else
+            {
+                var sql = @"SELECT users.appid, users.full_name, users.user_type,
+                       logins.password FROM users INNER JOIN logins 
+                        ON users.appid = logins.user_id WHERE users.full_name like '" + key + "%';";
+                var dt = DataAccess.GetDataTable(sql);
+                int row = 0;
+                while (row < dt.Rows.Count)
+                {
+                    Users users = ConvertToEntity(dt.Rows[row]);
+                    userList.Add(users);
+                    row++;
+                }
+                return userList;
+            }
+
+        }
         public static List<Users> ShowAll()
         {
             var userList = new List<Users>();
-            var sql = "SELECT * FROM users;";
+            var sql = @"SELECT users.appid, users.full_name, users.user_type,
+                       logins.password FROM users INNER JOIN logins 
+                        ON users.appid = logins.user_id;";
             var dt = DataAccess.GetDataTable(sql);
             int row = 0;
             while (row < dt.Rows.Count)
@@ -46,16 +73,36 @@
             }
             var u = new Users();
             u.AppId = row["appid"].ToString();
-            u.UpdatedAt = row["updated_at"].ToString();
-            u.EmployeeId = row["employee_id"].ToString();
+            //u.UpdatedAt = row["updated_at"].ToString();
+            //u.EmployeeId = row["employee_id"].ToString();
             u.FullName = row["full_name"].ToString();
             u.UserType = row["user_type"].ToString();
+            u.Password = row["password"].ToString();
 
             return u;
         }
         public static bool Save(Users u)
         {
             var sql = $"INSERT INTO users VALUES('{u.AppId}', '{u.FullName}', {u.UpdatedAt}, '{u.UserType}', NULL)";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
+        public static bool Update(Users p)
+        {
+            var sql = $"update users set full_name = '{p.FullName}', user_type = {p.UserType} where appid = '{p.AppId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
+
+        public static bool SearchUserId(string key)
+        {
+            var sql = "select * from users where appid = '" + key + "';";
+            var dt = DataAccess.GetDataTable(sql);
+            return dt.Rows.Count == 1;
+        }
+        public static bool Delete(string key)
+        {
+            var sql = "delete from users where appid = '" + key + "';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
