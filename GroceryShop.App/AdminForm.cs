@@ -117,22 +117,6 @@
             iconPictureBoxSalesReport.ForeColor = Color.White;
         }
 
-        //Hover color of manage carts button
-        private void btnMangeCarts_MouseEnter(object sender, EventArgs e)
-        {
-            btnMangeCarts.ForeColor = Color.DeepSkyBlue;
-            btnMangeCarts.FlatAppearance.BorderColor = Color.DeepSkyBlue;
-            iconPictureBoxManageCart.ForeColor = Color.DeepSkyBlue;
-        }
-
-        //Hover color of manage carts button
-        private void btnMangeCarts_MouseLeave(object sender, EventArgs e)
-        {
-            btnMangeCarts.ForeColor = Color.White;
-            btnMangeCarts.FlatAppearance.BorderColor = Color.White;
-            iconPictureBoxManageCart.ForeColor = Color.White;
-        }
-
         //Hover color of manage inventory button
         private void btnManageInventory_MouseEnter(object sender, EventArgs e)
         {
@@ -154,9 +138,8 @@
         {
             pnlManageUsers.Visible = true;
             pnlSalesReport.Visible = false;
-            pnlManageCarts.Visible = false;
             this.PopulateGridView();
-            this.txtAppId.Text = UserRepo.GetAppId();
+            this.txtAppId.Text = UserRepo.GetAppId();   
         }
 
         //Sales reports button click
@@ -164,7 +147,7 @@
         {
             pnlSalesReport.Visible = true;
             pnlManageUsers.Visible = false;
-            pnlManageCarts.Visible = false;
+            
         }
 
         //Manage cart button click
@@ -172,7 +155,7 @@
         {
             pnlManageUsers.Visible = false;
             pnlSalesReport.Visible = false;
-            pnlManageCarts.Visible = true;
+           
         }
 
         //To hide all panel at starting
@@ -180,7 +163,7 @@
         {
             pnlManageUsers.Visible = false;
             pnlSalesReport.Visible = false;
-            pnlManageCarts.Visible = false;
+           
 
         }
 
@@ -225,6 +208,57 @@
             btnShowUsers.ForeColor = Color.White;
             btnShowUsers.FlatAppearance.BorderColor = Color.White;
         }
+
+        //Hover color for delete user button
+        private void btnDeleteUser_MouseEnter(object sender, EventArgs e)
+        {
+            btnDeleteUser.ForeColor = Color.Red;
+            btnDeleteUser.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        //Hover color for delete user button
+        private void btnDeleteUser_MouseLeave(object sender, EventArgs e)
+        {
+            btnDeleteUser.ForeColor = Color.White;
+            btnDeleteUser.FlatAppearance.BorderColor = Color.White;
+        }
+        //Hover color for search button
+        private void btnSearchInventory_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearchInventory.IconColor = Color.SkyBlue;
+        }
+
+        //Hover color for search button
+        private void btnSearchInventory_Leave(object sender, EventArgs e)
+        {
+            btnSearchInventory.IconColor = Color.White;
+        }
+
+        //Search bar water mark
+        private void txtSearchbar_Enter(object sender, EventArgs e)
+        {
+            if (txtSearchbar.Text == "Search here")
+            {
+                txtSearchbar.Text = "";
+                txtSearchbar.ForeColor = Color.White;
+            }
+        }
+
+        //Search bar watar mark
+        private void txtSearchbar_Leave(object sender, EventArgs e)
+        {
+            if (txtSearchbar.Text == "")
+            {
+                txtSearchbar.Text = "Search here";
+                txtSearchbar.ForeColor = Color.Gray;
+            }
+        }
+
+
+
+        /*
+         backend code
+         */
 
 
         private void PopulateGridView()
@@ -287,5 +321,7 @@
             this.Login.Password = this.txtPassword.Text;
             this.Login.UserId = this.User.AppId;
         }
+
+        
     }
 }
