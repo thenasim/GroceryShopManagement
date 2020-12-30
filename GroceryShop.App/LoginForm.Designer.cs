@@ -86,7 +86,7 @@ namespace GroceryShop.App
             this.txtUsername.ForeColor = System.Drawing.Color.Gray;
             this.txtUsername.Location = new System.Drawing.Point(117, 253);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(197, 22);
+            this.txtUsername.Size = new System.Drawing.Size(197, 27);
             this.txtUsername.TabIndex = 2;
             this.txtUsername.Text = "Username";
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
@@ -100,7 +100,7 @@ namespace GroceryShop.App
             this.txtPassword.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword.Location = new System.Drawing.Point(117, 334);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(197, 22);
+            this.txtPassword.Size = new System.Drawing.Size(197, 27);
             this.txtPassword.TabIndex = 3;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -191,7 +191,7 @@ namespace GroceryShop.App
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(400, 600);

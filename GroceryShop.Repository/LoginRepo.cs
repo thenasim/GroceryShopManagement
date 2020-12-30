@@ -70,5 +70,11 @@
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
+        public static bool SearchPassword(string key)
+        {
+            var sql = "select * from logins where password = '" + key + "';";
+            var dt = DataAccess.GetDataTable(sql);
+            return dt.Rows.Count == 1;
+        }
     }
 }

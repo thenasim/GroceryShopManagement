@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GroceryShop.Entity;
+using GroceryShop.Repository;
 
 namespace GroceryShop.App
 {
@@ -57,11 +59,7 @@ namespace GroceryShop.App
         {
             btnCloseLogIn.ForeColor = Color.White;
         }
-        //LogIn button 
-        private void btnLogIn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         // enters username textbox
         private void txtUsername_Enter(object sender, EventArgs e)
@@ -126,6 +124,45 @@ namespace GroceryShop.App
             move = 1;
             moveX = e.X;
             moveY = e.Y;
+        }
+
+        //LogIn button 
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var idExists = UserRepo.SearchUserId(this.txtUsername.Text);
+                var passwordExists = LoginRepo.SearchPassword(this.txtPassword.Text);
+                var userType = UserRepo.GetUserType(this.txtUsername.Text);
+                if (idExists && passwordExists)
+                {
+                    MessageBox.Show("Login Successful");
+                    if (userType == "Admin")
+                    {
+                        new AdminForm().Show();
+                    }
+                    else if(userType == "Manager")
+                    {
+                        new ManagerForm().Show();
+                    }
+                    else if (userType == "Employee")
+                    {
+                        new EmployeeForm().Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password");
+                }
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show("Invalid Username or Password\n" + error.Message);
+            }
+
+
+
         }
     }
 }
