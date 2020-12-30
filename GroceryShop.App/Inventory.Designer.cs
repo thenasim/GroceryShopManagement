@@ -48,15 +48,6 @@
             this.pnlGridview = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvProductdetails = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.purchase_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updated_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnShowdetails = new System.Windows.Forms.Button();
             this.btnCloseInventory = new System.Windows.Forms.Button();
             this.btnMinimizeInventory = new System.Windows.Forms.Button();
@@ -66,6 +57,16 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlForSearchbar = new System.Windows.Forms.Panel();
             this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purchase_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updated_at = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlProductlist.SuspendLayout();
             this.pnlGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).BeginInit();
@@ -280,6 +281,7 @@
             this.purchase_price,
             this.quantity,
             this.updated_at,
+            this.category_name,
             this.user_id,
             this.category_id});
             this.dgvProductdetails.GridColor = System.Drawing.Color.Black;
@@ -299,93 +301,6 @@
             this.dgvProductdetails.Size = new System.Drawing.Size(1104, 612);
             this.dgvProductdetails.TabIndex = 7;
             this.dgvProductdetails.DoubleClick += new System.EventHandler(this.dgvProductdetails_DoubleClick);
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 125;
-            // 
-            // appid
-            // 
-            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.appid.DataPropertyName = "AppId";
-            this.appid.HeaderText = "AppId";
-            this.appid.MinimumWidth = 6;
-            this.appid.Name = "appid";
-            this.appid.ReadOnly = true;
-            this.appid.Visible = false;
-            // 
-            // title
-            // 
-            this.title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 6;
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.price.DataPropertyName = "Price";
-            this.price.HeaderText = "Price";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // purchase_price
-            // 
-            this.purchase_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.purchase_price.DataPropertyName = "PurchasePrice";
-            this.purchase_price.HeaderText = "Purchase_price";
-            this.purchase_price.MinimumWidth = 6;
-            this.purchase_price.Name = "purchase_price";
-            this.purchase_price.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quantity.DataPropertyName = "Quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // updated_at
-            // 
-            this.updated_at.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.updated_at.DataPropertyName = "UpdatedAt";
-            this.updated_at.HeaderText = "Updated_at";
-            this.updated_at.MinimumWidth = 6;
-            this.updated_at.Name = "updated_at";
-            this.updated_at.ReadOnly = true;
-            this.updated_at.Visible = false;
-            // 
-            // user_id
-            // 
-            this.user_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.user_id.DataPropertyName = "UserId";
-            this.user_id.HeaderText = "User_id";
-            this.user_id.MinimumWidth = 6;
-            this.user_id.Name = "user_id";
-            this.user_id.ReadOnly = true;
-            this.user_id.Visible = false;
-            // 
-            // category_id
-            // 
-            this.category_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category_id.DataPropertyName = "CategoryId";
-            this.category_id.HeaderText = "Category_id";
-            this.category_id.MinimumWidth = 6;
-            this.category_id.Name = "category_id";
-            this.category_id.ReadOnly = true;
-            this.category_id.Visible = false;
             // 
             // btnShowdetails
             // 
@@ -531,6 +446,102 @@
             this.iconPictureBoxInventory.TabIndex = 7;
             this.iconPictureBoxInventory.TabStop = false;
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 48;
+            // 
+            // appid
+            // 
+            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.appid.DataPropertyName = "AppId";
+            this.appid.HeaderText = "AppId";
+            this.appid.MinimumWidth = 6;
+            this.appid.Name = "appid";
+            this.appid.ReadOnly = true;
+            this.appid.Visible = false;
+            // 
+            // title
+            // 
+            this.title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 6;
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.price.DataPropertyName = "Price";
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // purchase_price
+            // 
+            this.purchase_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.purchase_price.DataPropertyName = "PurchasePrice";
+            this.purchase_price.HeaderText = "Purchase_price";
+            this.purchase_price.MinimumWidth = 6;
+            this.purchase_price.Name = "purchase_price";
+            this.purchase_price.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // updated_at
+            // 
+            this.updated_at.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.updated_at.DataPropertyName = "UpdatedAt";
+            this.updated_at.HeaderText = "Updated_at";
+            this.updated_at.MinimumWidth = 6;
+            this.updated_at.Name = "updated_at";
+            this.updated_at.ReadOnly = true;
+            this.updated_at.Visible = false;
+            // 
+            // category_name
+            // 
+            this.category_name.DataPropertyName = "CategoryName";
+            this.category_name.HeaderText = "CategoryName";
+            this.category_name.MinimumWidth = 6;
+            this.category_name.Name = "category_name";
+            this.category_name.ReadOnly = true;
+            this.category_name.Width = 125;
+            // 
+            // user_id
+            // 
+            this.user_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.user_id.DataPropertyName = "UserId";
+            this.user_id.HeaderText = "User_id";
+            this.user_id.MinimumWidth = 6;
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
+            // 
+            // category_id
+            // 
+            this.category_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category_id.DataPropertyName = "CategoryId";
+            this.category_id.HeaderText = "Category_id";
+            this.category_id.MinimumWidth = 6;
+            this.category_id.Name = "category_id";
+            this.category_id.ReadOnly = true;
+            this.category_id.Visible = false;
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -582,6 +593,8 @@
         private System.Windows.Forms.Label lblPurchasePrice;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.ComboBox cboCategory;
+        private System.Windows.Forms.Button btnDelete;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn appid;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
@@ -589,9 +602,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn purchase_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn updated_at;
+        private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
-        private System.Windows.Forms.Button btnDelete;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
     }
 }
