@@ -28,7 +28,13 @@ namespace GroceryShop.Repository
 
             else
             {
-                var sql = "select * from products where title like '" + key + "%';";
+                var sql = @"SELECT products.id, products.appid, products.title,
+	            products.price, products.purchase_price, products.quantity,
+	            products.updated_at, products.user_id,
+	            products.category_id,
+	            category.name as category_name
+		            FROM products
+	            INNER JOIN category ON products.category_id = category.appid WHERE products.title = '"+ key +"';";
                 var dt = DataAccess.GetDataTable(sql);
                 int row = 0;
                 while (row < dt.Rows.Count)

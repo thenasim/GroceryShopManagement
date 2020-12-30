@@ -48,15 +48,6 @@
             this.pnlGridview = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dgvProductdetails = new System.Windows.Forms.DataGridView();
-            this.btnShowdetails = new System.Windows.Forms.Button();
-            this.btnCloseInventory = new System.Windows.Forms.Button();
-            this.btnMinimizeInventory = new System.Windows.Forms.Button();
-            this.lblInventoryname = new System.Windows.Forms.Label();
-            this.txtSearchbar = new System.Windows.Forms.TextBox();
-            this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pnlForSearchbar = new System.Windows.Forms.Panel();
-            this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +58,15 @@
             this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnShowdetails = new System.Windows.Forms.Button();
+            this.btnCloseInventory = new System.Windows.Forms.Button();
+            this.btnMinimizeInventory = new System.Windows.Forms.Button();
+            this.lblInventoryname = new System.Windows.Forms.Label();
+            this.txtSearchbar = new System.Windows.Forms.TextBox();
+            this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlForSearchbar = new System.Windows.Forms.Panel();
+            this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
             this.pnlProductlist.SuspendLayout();
             this.pnlGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).BeginInit();
@@ -100,7 +100,7 @@
             // 
             this.cboCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(27, 370);
+            this.cboCategory.Location = new System.Drawing.Point(27, 382);
             this.cboCategory.Margin = new System.Windows.Forms.Padding(4);
             this.cboCategory.Name = "cboCategory";
             this.cboCategory.Size = new System.Drawing.Size(388, 36);
@@ -111,7 +111,7 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(31, 457);
+            this.lblQuantity.Location = new System.Drawing.Point(22, 447);
             this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
             this.lblQuantity.Size = new System.Drawing.Size(88, 28);
@@ -123,7 +123,7 @@
             this.lblCategory.AutoSize = true;
             this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(31, 340);
+            this.lblCategory.Location = new System.Drawing.Point(22, 346);
             this.lblCategory.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(92, 28);
@@ -135,7 +135,7 @@
             this.lblPurchasePrice.AutoSize = true;
             this.lblPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPurchasePrice.ForeColor = System.Drawing.Color.White;
-            this.lblPurchasePrice.Location = new System.Drawing.Point(31, 239);
+            this.lblPurchasePrice.Location = new System.Drawing.Point(22, 245);
             this.lblPurchasePrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPurchasePrice.Name = "lblPurchasePrice";
             this.lblPurchasePrice.Size = new System.Drawing.Size(136, 28);
@@ -147,7 +147,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(31, 140);
+            this.lblPrice.Location = new System.Drawing.Point(22, 144);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(54, 28);
@@ -157,7 +157,7 @@
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(27, 486);
+            this.txtQuantity.Location = new System.Drawing.Point(27, 485);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(392, 34);
@@ -166,7 +166,7 @@
             // txtPurchasePrice
             // 
             this.txtPurchasePrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPurchasePrice.Location = new System.Drawing.Point(27, 268);
+            this.txtPurchasePrice.Location = new System.Drawing.Point(27, 281);
             this.txtPurchasePrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPurchasePrice.Name = "txtPurchasePrice";
             this.txtPurchasePrice.Size = new System.Drawing.Size(392, 34);
@@ -175,7 +175,7 @@
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(27, 170);
+            this.txtPrice.Location = new System.Drawing.Point(27, 180);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(392, 34);
@@ -186,7 +186,7 @@
             this.lblProductTitle.AutoSize = true;
             this.lblProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductTitle.ForeColor = System.Drawing.Color.White;
-            this.lblProductTitle.Location = new System.Drawing.Point(31, 41);
+            this.lblProductTitle.Location = new System.Drawing.Point(22, 43);
             this.lblProductTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProductTitle.Name = "lblProductTitle";
             this.lblProductTitle.Size = new System.Drawing.Size(123, 28);
@@ -301,6 +301,102 @@
             this.dgvProductdetails.Size = new System.Drawing.Size(1104, 612);
             this.dgvProductdetails.TabIndex = 7;
             this.dgvProductdetails.DoubleClick += new System.EventHandler(this.dgvProductdetails_DoubleClick);
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 125;
+            // 
+            // appid
+            // 
+            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.appid.DataPropertyName = "AppId";
+            this.appid.HeaderText = "AppId";
+            this.appid.MinimumWidth = 6;
+            this.appid.Name = "appid";
+            this.appid.ReadOnly = true;
+            this.appid.Visible = false;
+            // 
+            // title
+            // 
+            this.title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.title.DataPropertyName = "Title";
+            this.title.HeaderText = "Title";
+            this.title.MinimumWidth = 6;
+            this.title.Name = "title";
+            this.title.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.price.DataPropertyName = "Price";
+            this.price.HeaderText = "Price";
+            this.price.MinimumWidth = 6;
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // purchase_price
+            // 
+            this.purchase_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.purchase_price.DataPropertyName = "PurchasePrice";
+            this.purchase_price.HeaderText = "Purchase_price";
+            this.purchase_price.MinimumWidth = 6;
+            this.purchase_price.Name = "purchase_price";
+            this.purchase_price.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // updated_at
+            // 
+            this.updated_at.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.updated_at.DataPropertyName = "UpdatedAt";
+            this.updated_at.HeaderText = "Updated_at";
+            this.updated_at.MinimumWidth = 6;
+            this.updated_at.Name = "updated_at";
+            this.updated_at.ReadOnly = true;
+            this.updated_at.Visible = false;
+            // 
+            // category_name
+            // 
+            this.category_name.DataPropertyName = "CategoryName";
+            this.category_name.HeaderText = "CategoryName";
+            this.category_name.MinimumWidth = 6;
+            this.category_name.Name = "category_name";
+            this.category_name.ReadOnly = true;
+            this.category_name.Width = 125;
+            // 
+            // user_id
+            // 
+            this.user_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.user_id.DataPropertyName = "UserId";
+            this.user_id.HeaderText = "User_id";
+            this.user_id.MinimumWidth = 6;
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
+            // 
+            // category_id
+            // 
+            this.category_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.category_id.DataPropertyName = "CategoryId";
+            this.category_id.HeaderText = "Category_id";
+            this.category_id.MinimumWidth = 6;
+            this.category_id.Name = "category_id";
+            this.category_id.ReadOnly = true;
+            this.category_id.Visible = false;
             // 
             // btnShowdetails
             // 
@@ -445,102 +541,6 @@
             this.iconPictureBoxInventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPictureBoxInventory.TabIndex = 7;
             this.iconPictureBoxInventory.TabStop = false;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 48;
-            // 
-            // appid
-            // 
-            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.appid.DataPropertyName = "AppId";
-            this.appid.HeaderText = "AppId";
-            this.appid.MinimumWidth = 6;
-            this.appid.Name = "appid";
-            this.appid.ReadOnly = true;
-            this.appid.Visible = false;
-            // 
-            // title
-            // 
-            this.title.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.title.DataPropertyName = "Title";
-            this.title.HeaderText = "Title";
-            this.title.MinimumWidth = 6;
-            this.title.Name = "title";
-            this.title.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.price.DataPropertyName = "Price";
-            this.price.HeaderText = "Price";
-            this.price.MinimumWidth = 6;
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // purchase_price
-            // 
-            this.purchase_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.purchase_price.DataPropertyName = "PurchasePrice";
-            this.purchase_price.HeaderText = "Purchase_price";
-            this.purchase_price.MinimumWidth = 6;
-            this.purchase_price.Name = "purchase_price";
-            this.purchase_price.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quantity.DataPropertyName = "Quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // updated_at
-            // 
-            this.updated_at.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.updated_at.DataPropertyName = "UpdatedAt";
-            this.updated_at.HeaderText = "Updated_at";
-            this.updated_at.MinimumWidth = 6;
-            this.updated_at.Name = "updated_at";
-            this.updated_at.ReadOnly = true;
-            this.updated_at.Visible = false;
-            // 
-            // category_name
-            // 
-            this.category_name.DataPropertyName = "CategoryName";
-            this.category_name.HeaderText = "CategoryName";
-            this.category_name.MinimumWidth = 6;
-            this.category_name.Name = "category_name";
-            this.category_name.ReadOnly = true;
-            this.category_name.Width = 125;
-            // 
-            // user_id
-            // 
-            this.user_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.user_id.DataPropertyName = "UserId";
-            this.user_id.HeaderText = "User_id";
-            this.user_id.MinimumWidth = 6;
-            this.user_id.Name = "user_id";
-            this.user_id.ReadOnly = true;
-            this.user_id.Visible = false;
-            // 
-            // category_id
-            // 
-            this.category_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.category_id.DataPropertyName = "CategoryId";
-            this.category_id.HeaderText = "Category_id";
-            this.category_id.MinimumWidth = 6;
-            this.category_id.Name = "category_id";
-            this.category_id.ReadOnly = true;
-            this.category_id.Visible = false;
             // 
             // Inventory
             // 
