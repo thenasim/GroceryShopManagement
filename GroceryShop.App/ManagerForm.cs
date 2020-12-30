@@ -80,5 +80,53 @@
                 this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
             }
         }
+
+        //Hover color for Sales report button
+        private void btnSaleReport_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaleReport.ForeColor = Color.DeepSkyBlue;
+            btnSaleReport.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxSalesReport.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color for Sales report button
+        private void btnSaleReport_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaleReport.ForeColor = Color.White;
+            btnSaleReport.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxSalesReport.ForeColor = Color.White;
+        }
+
+        //Hover color for manage carts button
+        private void btnManageCarts_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageCarts.ForeColor = Color.DeepSkyBlue;
+            btnManageCarts.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxManageCarts.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color for manage carts button
+        private void btnManageCarts_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageCarts.ForeColor = Color.White;
+            btnManageCarts.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxManageCarts.ForeColor = Color.White;
+        }
+
+        //Hover color for manage salesmen button
+        private void btnMangeSalesmen_MouseEnter(object sender, EventArgs e)
+        {
+            btnMangeSalesmen.ForeColor = Color.DeepSkyBlue;
+            btnMangeSalesmen.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxManageSalesmen.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Hover color for manage salesmen button
+        private void btnMangeSalesmen_MouseLeave(object sender, EventArgs e)
+        {
+            btnMangeSalesmen.ForeColor = Color.White;
+            btnMangeSalesmen.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxManageSalesmen.ForeColor = Color.White;
+        }
     }
 }
