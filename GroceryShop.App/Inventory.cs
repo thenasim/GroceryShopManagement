@@ -21,6 +21,7 @@
         private byte move;
         private int moveX;
         private int moveY;
+        private string currentAppId;
         public Inventory()
         {
             InitializeComponent();
@@ -113,6 +114,9 @@
         private void btnClear_Click(object sender, EventArgs e)
         {
             this.ClearInputs();
+            txtSearchbar.Text = "Search here";
+            txtSearchbar.ForeColor = Color.Gray;
+            this.dgvProductdetails.DataSource = null;
         }
 
         //Clear button Hover
@@ -152,28 +156,52 @@
         }
         private void btnADD_Click(object sender, EventArgs e)
         {
-            this.FillEntity();
-            if (InventoryRepo.Save(Product))
+            var dt = InventoryRepo.SearchAppId(this.currentAppId);
+            if (dt.Rows.Count == 1)
             {
-                MessageBox.Show("Product added successfully");
-                this.PopulateGridView(this.INRepo.ShowAll());
-                this.ClearInputs();
+                this.UpdateFillEntity();
+                if (InventoryRepo.Update(Product))
+                {
+                    MessageBox.Show("Product updated successfully");
+                    this.PopulateGridView();
+                    this.dgvProductdetails.ClearSelection();
+                    this.dgvProductdetails.Refresh();
+                    this.ClearInputs();
+                }
+                this.currentAppId = null;
+
             }
-            else
+            else if(dt.Rows.Count == 0)
             {
-                MessageBox.Show("Product couldn't be added");
+                this.FillEntity();
+                if (InventoryRepo.Save(Product))
+                {
+                    MessageBox.Show("Product added successfully");
+                    this.PopulateGridView();
+                    this.dgvProductdetails.ClearSelection();
+                    this.dgvProductdetails.Refresh();
+                    this.ClearInputs();
+                }
+                else
+                {
+                    MessageBox.Show("Product couldn't be added");
+                }
             }
+            
+ 
         }
 
         //Show details button click 
         private void btnShowdetails_Click(object sender, EventArgs e)
         {
-            var dt = this.INRepo.ShowAll();
-            this.PopulateGridView(dt);
+            this.PopulateGridView();
+            this.dgvProductdetails.ClearSelection();
+            this.dgvProductdetails.Refresh();
         }
 
         private void Inventory_Load(object sender, EventArgs e)
         {
+            this.PopulateGridView();
             this.dgvProductdetails.ClearSelection();
             this.dgvProductdetails.Refresh();
 
@@ -194,17 +222,23 @@
         /*
          * Backend Code
         */
-        private void PopulateGridView(DataTable dt)
+        private void PopulateGridView()
         {
             this.dgvProductdetails.AutoGenerateColumns = false;
-            this.dgvProductdetails.DataSource = dt;
+            this.dgvProductdetails.DataSource = InventoryRepo.ShowAll();
 
         }
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
-            var dt = this.INRepo.SearchInventory(this.txtSearchbar.Text);
-            this.PopulateGridView(dt);
+            this.dgvProductdetails.AutoGenerateColumns = false;
+            this.dgvProductdetails.DataSource = InventoryRepo.SearchInventory(this.txtSearchbar.Text);
+            this.dgvProductdetails.ClearSelection();
+            this.dgvProductdetails.Refresh();
+            if (this.dgvProductdetails.RowCount == 0)
+            {
+                MessageBox.Show("No Data Found!");
+            }
         }
         private string GetCategoryId()
         {
@@ -240,7 +274,55 @@
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
             this.Product.CategoryId = this.GetCategoryId();
         }
+        private void UpdateFillEntity()
+        {
+            this.Product = new Products();
+            this.Product.AppId = this.currentAppId;
+            this.Product.Title = this.txtProductTitle.Text;
+            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
+            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
+            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
+        }
 
-       
+
+        // Delete Hover
+        private void btnDelete_MouseEnter(object sender, EventArgs e)
+        {
+            btnDelete.ForeColor = Color.Red;
+            btnDelete.FlatAppearance.BorderColor = Color.Red;
+        }
+        // Delete Hover
+        private void btnDelete_MouseLeave(object sender, EventArgs e)
+        {
+            btnDelete.ForeColor = Color.White;
+            btnDelete.FlatAppearance.BorderColor = Color.White;
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string appId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
+            string title = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
+            if (InventoryRepo.Delete(appId))
+            {
+                MessageBox.Show(title + " has been deleted successfully");
+                this.PopulateGridView();
+                this.dgvProductdetails.ClearSelection();
+                this.dgvProductdetails.Refresh();
+                this.ClearInputs();
+            }
+            else
+            {
+                MessageBox.Show("Product couldn't be deleted");
+            }
+        }
+
+        private void dgvProductdetails_DoubleClick(object sender, EventArgs e)
+        {
+            this.currentAppId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
+            this.txtProductTitle.Text = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
+            this.txtPrice.Text = this.dgvProductdetails.CurrentRow.Cells["price"].Value.ToString();
+            this.txtPurchasePrice.Text = this.dgvProductdetails.CurrentRow.Cells["purchase_price"].Value.ToString();
+            //this.cboCategory.Text = this.dgvProductdetails.CurrentRow.Cells[""].Value.ToString();
+            this.txtQuantity.Text = this.dgvProductdetails.CurrentRow.Cells["quantity"].Value.ToString();
+        }
     }
 }
