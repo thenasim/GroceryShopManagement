@@ -1,5 +1,7 @@
 ﻿namespace GroceryShop.App
 {
+    using GroceryShop.Entity;
+    using GroceryShop.Repository;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -12,6 +14,8 @@
 
     public partial class AdminForm : Form
     {
+        private Users User { get; set; }
+        private Logins Login { get; set; }
         private byte move;
         private int moveX;
         private int moveY;
@@ -151,6 +155,8 @@
             pnlManageUsers.Visible = true;
             pnlSalesReport.Visible = false;
             pnlManageCarts.Visible = false;
+            this.PopulateGridView();
+            this.txtAppId.Text = UserRepo.GetAppId();
         }
 
         //Sales reports button click
@@ -218,6 +224,68 @@
         {
             btnShowUsers.ForeColor = Color.White;
             btnShowUsers.FlatAppearance.BorderColor = Color.White;
+        }
+
+
+        private void PopulateGridView()
+        {
+            this.dgvUsersGrid.AutoGenerateColumns = false;
+            this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
+        }
+
+        private void btnUserAdd_Click(object sender, EventArgs e)
+        {
+            this.FillEntity();
+            MessageBox.Show(this.Login.AppId);
+            try
+            {
+                if (UserRepo.Save(this.User))
+                {
+                    if (LoginRepo.Save(this.Login))
+                    {
+                        MessageBox.Show($"Success \n your id is: {this.User.AppId}");
+                        this.PopulateGridView();
+                    }
+                } else
+                {
+                    MessageBox.Show("Creating user failed");
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Cann't add user\n" + error.Message);
+            }
+        }
+
+        private void btnClearUser_Click(object sender, EventArgs e)
+        {
+            this.ClearUserInput();
+        }
+
+        private void ClearUserInput()
+        {
+            this.txtPassword.Text = "";
+            this.txtUserName.Text = "";
+            this.cboUserType.Text = "";
+        }
+
+        private void btnShowUsers_Click(object sender, EventArgs e)
+        {
+            this.PopulateGridView();
+        }
+
+        private void FillEntity()
+        {
+            this.User = new Users();
+            this.User.AppId = UserRepo.GetAppId();
+            this.User.FullName = this.txtUserName.Text;
+            this.User.UserType = this.cboUserType.Text;
+            this.User.EmployeeId = null;
+
+            this.Login = new Logins();
+            this.Login.AppId = LoginRepo.GetAppId();
+            this.Login.Password = this.txtPassword.Text;
+            this.Login.UserId = this.User.AppId;
         }
     }
 }
