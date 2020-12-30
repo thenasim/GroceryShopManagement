@@ -65,10 +65,20 @@
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.btnShowdetails = new System.Windows.Forms.Button();
+            this.btnCloseInventory = new System.Windows.Forms.Button();
+            this.btnMinimizeInventory = new System.Windows.Forms.Button();
+            this.lblInventoryname = new System.Windows.Forms.Label();
+            this.txtSearchbar = new System.Windows.Forms.TextBox();
+            this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlForSearchbar = new System.Windows.Forms.Panel();
+            this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
             this.pnlProductlist.SuspendLayout();
             this.pnlGridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).BeginInit();
             this.pnlForSearchbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlProductlist
@@ -393,6 +403,7 @@
             // pnlForSearchbar
             // 
             this.pnlForSearchbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.pnlForSearchbar.Controls.Add(this.iconPictureBoxInventory);
             this.pnlForSearchbar.Controls.Add(this.panel3);
             this.pnlForSearchbar.Controls.Add(this.btnSearchInventory);
             this.pnlForSearchbar.Controls.Add(this.txtSearchbar);
@@ -513,6 +524,19 @@
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             this.btnDelete.MouseEnter += new System.EventHandler(this.btnDelete_MouseEnter);
             this.btnDelete.MouseLeave += new System.EventHandler(this.btnDelete_MouseLeave);
+            // iconPictureBoxInventory
+            // 
+            this.iconPictureBoxInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.iconPictureBoxInventory.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
+            this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxInventory.IconSize = 37;
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(8, 4);
+            this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
+            this.iconPictureBoxInventory.Size = new System.Drawing.Size(39, 37);
+            this.iconPictureBoxInventory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBoxInventory.TabIndex = 7;
+            this.iconPictureBoxInventory.TabStop = false;
             // 
             // Inventory
             // 
@@ -536,6 +560,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductdetails)).EndInit();
             this.pnlForSearchbar.ResumeLayout(false);
             this.pnlForSearchbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -574,5 +599,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
         private System.Windows.Forms.Button btnDelete;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
     }
 }
