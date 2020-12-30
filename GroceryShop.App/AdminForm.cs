@@ -267,7 +267,6 @@
             this.dgvUsersGrid.AutoGenerateColumns = false;
             this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
             this.dgvUsersGrid.ClearSelection();
-            this.dgvUsersGrid.Refresh();
         }
 
         private void btnUserAdd_Click(object sender, EventArgs e)
@@ -296,6 +295,7 @@
                 catch (Exception error)
                 {
                     MessageBox.Show("Cann't update user\n" + error.Message);
+                    this.ClearUserInput();
                 }
                 this.CurrentUserId = null;
             }
@@ -335,7 +335,7 @@
 
         private void ClearUserInput()
         {
-            this.txtAppId.Text = "";
+            this.txtAppId.Text = UserRepo.GetAppId();
             this.txtPassword.Text = "";
             this.txtUserName.Text = "";
             this.cboUserType.Text = "";
@@ -385,9 +385,9 @@
 
             string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
             string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
-            if (UserRepo.Delete(appId))
+            if (LoginRepo.Delete(appId))
             {
-                if (LoginRepo.Delete(appId))
+                if (UserRepo.Delete(appId))
                 {
                     MessageBox.Show(name + " has been deleted successfully");
                     this.PopulateGridView();
@@ -395,7 +395,6 @@
                     this.dgvUsersGrid.Refresh();
                     this.ClearUserInput();
                 }
-                
             }
             else
             {

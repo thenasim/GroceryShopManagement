@@ -131,12 +131,13 @@ namespace GroceryShop.App
         {
             try
             {
-                var idExists = UserRepo.SearchUserId(this.txtUsername.Text);
-                var passwordExists = LoginRepo.SearchPassword(this.txtPassword.Text);
+                var userId = this.txtUsername.Text;
+                var passwordID = LoginRepo.GetPasswordId(this.txtPassword.Text);
                 var userType = UserRepo.GetUserType(this.txtUsername.Text);
-                if (idExists && passwordExists)
+                if (userId == passwordID)
                 {
                     MessageBox.Show("Login Successful");
+                    this.Visible = false;
                     if (userType == "Admin")
                     {
                         new AdminForm().Show();
@@ -147,7 +148,7 @@ namespace GroceryShop.App
                     }
                     else if (userType == "Employee")
                     {
-                        new EmployeeForm().Show();
+                        new SalesmanForm().Show();
                     }
 
                 }
