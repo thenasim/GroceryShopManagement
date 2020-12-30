@@ -58,5 +58,17 @@
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
+        public static bool Update(Logins p)
+        {
+            var sql = $"update logins set password = '{p.Password}' where user_id = '{p.UserId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
+        public static bool Delete(string key)
+        {
+            var sql = "delete from logins where user_id = '" + key + "';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
     }
 }
