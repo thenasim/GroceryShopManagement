@@ -11,10 +11,11 @@ namespace GroceryShop.Repository
 {
     public class InventoryRepo
     {
-        public static DataTable SearchAppId(string key)
+        public static bool SearchAppId(string key)
         {
             var sql = "select * from products where appid = '" + key + "';";
-            return DataAccess.GetDataTable(sql);
+            var dt = DataAccess.GetDataTable(sql);
+            return dt.Rows.Count == 1;
         }
 
         public static List<Products> SearchInventory(string key)
@@ -43,7 +44,13 @@ namespace GroceryShop.Repository
         public static List<Products> ShowAll()
         {
             var productList = new List<Products>();
-            var sql = "select * from products;";
+            var sql = @"SELECT products.id, products.appid, products.title,
+	            products.price, products.purchase_price, products.quantity,
+	            products.updated_at, products.user_id,
+	            products.category_id,
+	            category.name as category_name
+		            FROM products
+	            INNER JOIN category ON products.category_id = category.appid;";
             var dt = DataAccess.GetDataTable(sql);
             int row = 0;
             while (row < dt.Rows.Count)
@@ -69,6 +76,7 @@ namespace GroceryShop.Repository
             p.UpdatedAt = row["updated_at"].ToString();
             p.UserId= row["user_id"].ToString();
             p.CategoryId = row["category_id"].ToString();
+            p.CategoryName = row["category_name"].ToString();
             return p;
 
         }
@@ -93,7 +101,7 @@ namespace GroceryShop.Repository
         }
         public static bool Update(Products p)
         {
-            var sql = "update products set title = '" + p.Title + "', price = " + p.Price + ", purchase_price = " + p.PurchasePrice + ", quantity = " + p.Quantity + " where appid = '" + p.AppId + "';";
+            var sql = $"update products set title = '{p.Title}', price = {p.Price}, purchase_price = { p.PurchasePrice}, quantity = {p.Quantity}, category_id = '{p.CategoryId}' where appid = '{p.AppId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

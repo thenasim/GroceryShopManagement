@@ -21,7 +21,7 @@
         private byte move;
         private int moveX;
         private int moveY;
-        private string currentAppId;
+        private string currentAppId { get; set; }
         public Inventory()
         {
             InitializeComponent();
@@ -156,8 +156,8 @@
         }
         private void btnADD_Click(object sender, EventArgs e)
         {
-            var dt = InventoryRepo.SearchAppId(this.currentAppId);
-            if (dt.Rows.Count == 1)
+            var idExists = InventoryRepo.SearchAppId(this.currentAppId);
+            if (idExists)
             {
                 this.UpdateFillEntity();
                 if (InventoryRepo.Update(Product))
@@ -171,7 +171,7 @@
                 this.currentAppId = null;
 
             }
-            else if(dt.Rows.Count == 0)
+            else
             {
                 this.FillEntity();
                 if (InventoryRepo.Save(Product))
@@ -226,7 +226,6 @@
         {
             this.dgvProductdetails.AutoGenerateColumns = false;
             this.dgvProductdetails.DataSource = InventoryRepo.ShowAll();
-
         }
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
@@ -242,8 +241,6 @@
         }
         private string GetCategoryId()
         {
-            if (this.cboCategory.Text == "") return "";
-
             string appId = "";
             foreach (DataRow row in this.CatDt.Rows)
             {
@@ -282,6 +279,7 @@
             this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
+            this.Product.CategoryId = this.GetCategoryId();
         }
 
 
@@ -321,7 +319,7 @@
             this.txtProductTitle.Text = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
             this.txtPrice.Text = this.dgvProductdetails.CurrentRow.Cells["price"].Value.ToString();
             this.txtPurchasePrice.Text = this.dgvProductdetails.CurrentRow.Cells["purchase_price"].Value.ToString();
-            //this.cboCategory.Text = this.dgvProductdetails.CurrentRow.Cells[""].Value.ToString();
+            this.cboCategory.Text = this.dgvProductdetails.CurrentRow.Cells["category_name"].Value.ToString();
             this.txtQuantity.Text = this.dgvProductdetails.CurrentRow.Cells["quantity"].Value.ToString();
         }
     }
