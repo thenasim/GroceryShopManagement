@@ -34,7 +34,7 @@ namespace GroceryShop.Repository
 	            products.category_id,
 	            category.name as category_name
 		            FROM products
-	            INNER JOIN category ON products.category_id = category.appid WHERE products.title = '"+ key +"';";
+	            INNER JOIN category ON products.category_id = category.appid WHERE products.title like '"+ key +"%';";
                 var dt = DataAccess.GetDataTable(sql);
                 int row = 0;
                 while (row < dt.Rows.Count)

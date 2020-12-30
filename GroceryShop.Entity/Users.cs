@@ -10,8 +10,7 @@
     {
         public string AppId { get; set; }
         public string FullName { get; set; }
-        public string Email { get; set; }
-        public string RoleId { get; set; }
+        public string UserType { get; set; }
         public string EmployeeId { get; set; }
         public string UpdatedAt = "GETDATE()";
     }
