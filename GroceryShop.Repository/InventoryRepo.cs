@@ -80,7 +80,7 @@ namespace GroceryShop.Repository
             return p;
 
         }
-        public string GetAppId()
+        public static string GetAppId()
         {
             var sql = "SELECT TOP 1 * FROM products ORDER BY id DESC;";
             var data = DataAccess.GetDataTable(sql);

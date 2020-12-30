@@ -11,12 +11,35 @@
 
     public class CategoryRepo
     {
-        public DataTable ShowAll()
+        public static List<Category> GetAll()
         {
-            var sql = "SELECT * FROM category;";
-            return DataAccess.GetDataTable(sql);
+            var catList = new List<Category>();
+            string sql = "SELECT * FROM category";
+            var dt = DataAccess.GetDataTable(sql);
+            int row = 0;
+            while (row < dt.Rows.Count)
+            {
+                Category categories = ConvertToEntity(dt.Rows[row]);
+                catList.Add(categories);
+                row++;
+            }
+            return catList;
         }
-        public string GetAppId()
+        private static Category ConvertToEntity(DataRow row)
+        {
+            if (row == null)
+            {
+                return null;
+            }
+            var c = new Category();
+            c.AppId = row["appid"].ToString();
+            c.Name= row["name"].ToString();
+            c.Discount = Convert.ToDouble(row["discount"].ToString());
+            c.Description = row["description"].ToString();
+            c.UpdatedAt = row["updated_at"].ToString();
+            return c;
+        }
+        public static string GetAppId()
         {
             var sql = "SELECT TOP 1 * FROM category ORDER BY id DESC;";
             var data = DataAccess.GetDataTable(sql);
@@ -29,16 +52,16 @@
             }
             return "ca-1";
         }
-        public string SaveWithName(string name)
+        public static string SaveWithName(string name)
         {
-            string appId = this.GetAppId();
+            string appId = GetAppId();
             var sql = $"INSERT INTO category VALUES('{appId}', '{name}', 0, '', GETDATE())";
             var row = DataAccess.ExecuteDmlQuery(sql);
             if (row == 1)
                 return appId;
             return "";
         }
-        public bool Save(Category p)
+        public static bool Save(Category p)
         {
             var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.Discount}, '', {p.UpdatedAt})";
             var row = DataAccess.ExecuteDmlQuery(sql);
