@@ -236,15 +236,15 @@
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
             this.FillEntity();
-            MessageBox.Show(this.Login.AppId);
             try
             {
                 if (UserRepo.Save(this.User))
                 {
                     if (LoginRepo.Save(this.Login))
                     {
-                        MessageBox.Show($"Success \n your id is: {this.User.AppId}");
+                        MessageBox.Show($"Successfully created new user");
                         this.PopulateGridView();
+                        this.txtAppId.Text = UserRepo.GetAppId();
                     }
                 } else
                 {
