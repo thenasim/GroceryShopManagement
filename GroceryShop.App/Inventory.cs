@@ -15,9 +15,7 @@
     public partial class Inventory : Form
     {
         private Products Product { get; set; }
-        private InventoryRepo INRepo { get; set; }
-        private CategoryRepo CatRepo { get; set; }
-        private DataTable CatDt { get; set; }
+        private List<Category> CatList;
         private byte move;
         private int moveX;
         private int moveY;
@@ -25,8 +23,6 @@
         public Inventory()
         {
             InitializeComponent();
-            this.INRepo = new InventoryRepo();
-            this.CatRepo = new CategoryRepo();
         }
         //Inventory form close
         private void btnCloseInventory_Click(object sender, EventArgs e)
@@ -207,11 +203,9 @@
 
             try
             {
-                this.CatDt = this.CatRepo.ShowAll();
-                foreach (DataRow row in this.CatDt.Rows)
-                {
-                    this.cboCategory.Items.Add(row.Field<string>(2)); // row.Field(2) here 2 is column of category table
-                }
+                this.CatList = CategoryRepo.GetAll();
+                foreach (var category in this.CatList)
+                    this.cboCategory.Items.Add(category.Name);
             }
             catch(Exception error)
             {
@@ -242,14 +236,14 @@
         private string GetCategoryId()
         {
             string appId = "";
-            foreach (DataRow row in this.CatDt.Rows)
+            foreach (var category in this.CatList)
             {
-                if (row.Field<string>(2) == this.cboCategory.Text)
-                    appId = row.Field<string>(1);
+                if (category.Name == this.cboCategory.Text)
+                    appId = category.AppId;
             }
 
             if (appId == "")
-                appId = this.CatRepo.SaveWithName(this.cboCategory.Text);
+                appId = CategoryRepo.SaveWithName(this.cboCategory.Text);
 
             return appId;
         }
@@ -264,7 +258,7 @@
         private void FillEntity()
         {
             this.Product = new Products();
-            this.Product.AppId = this.INRepo.GetAppId();
+            this.Product.AppId = InventoryRepo.GetAppId();
             this.Product.Title = this.txtProductTitle.Text;
             this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
