@@ -31,6 +31,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
             this.pnlToMoveForm = new System.Windows.Forms.Panel();
+            this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
+            this.txtSearchbar = new System.Windows.Forms.TextBox();
             this.btnMinimizeInventory = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -38,43 +40,41 @@
             this.iconPictureBoxSalesReport = new FontAwesome.Sharp.IconPictureBox();
             this.btnMangeSalesmen = new System.Windows.Forms.Button();
             this.iconPictureBoxManageSalesmen = new FontAwesome.Sharp.IconPictureBox();
-            this.btnManageCarts = new System.Windows.Forms.Button();
-            this.iconPictureBoxManageCarts = new FontAwesome.Sharp.IconPictureBox();
-            this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
-            this.txtSearchbar = new System.Windows.Forms.TextBox();
-            this.pnlManageCarts = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnPrintInvoice = new System.Windows.Forms.Button();
-            this.pnlInvoice = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblInvoiceTotalPrice = new System.Windows.Forms.Label();
-            this.btnClearInvoice = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtQunatity = new System.Windows.Forms.TextBox();
-            this.txtCartPrice = new System.Windows.Forms.TextBox();
-            this.cmbProductTitle = new System.Windows.Forms.ComboBox();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.btnADD = new System.Windows.Forms.Button();
+            this.btnManageInventory = new System.Windows.Forms.Button();
+            this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
+            this.pnlManageUsers = new System.Windows.Forms.Panel();
+            this.pnlAdduser = new System.Windows.Forms.Panel();
+            this.txtPhonenumber = new System.Windows.Forms.TextBox();
+            this.txtSalary = new System.Windows.Forms.TextBox();
+            this.dtpBirthdate = new System.Windows.Forms.DateTimePicker();
+            this.dtpJoindate = new System.Windows.Forms.DateTimePicker();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.lblSalary = new System.Windows.Forms.Label();
+            this.lblJoinDate = new System.Windows.Forms.Label();
+            this.lblBirthdate = new System.Windows.Forms.Label();
+            this.lblPhonenumber = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.lblGender = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.lblPrice = new System.Windows.Forms.Label();
-            this.cboCategory = new System.Windows.Forms.ComboBox();
-            this.lblCategory = new System.Windows.Forms.Label();
-            this.lblManageUsers = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblAppId = new System.Windows.Forms.Label();
+            this.txtAppId = new System.Windows.Forms.TextBox();
+            this.pnlGridviewAllusers = new System.Windows.Forms.Panel();
+            this.dgvSalesmen = new System.Windows.Forms.DataGridView();
+            this.btnDeleteSalesman = new System.Windows.Forms.Button();
+            this.btnShowUsers = new System.Windows.Forms.Button();
+            this.lblManageSalesman = new System.Windows.Forms.Label();
+            this.iconPictureBoxSalesmen = new FontAwesome.Sharp.IconPictureBox();
             this.pnlToMoveForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageSalesmen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).BeginInit();
-            this.pnlManageCarts.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.pnlInvoice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).BeginInit();
+            this.pnlManageUsers.SuspendLayout();
+            this.pnlAdduser.SuspendLayout();
+            this.pnlGridviewAllusers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesmen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesmen)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlToMoveForm
@@ -92,6 +92,33 @@
             this.pnlToMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseDown);
             this.pnlToMoveForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseMove);
             this.pnlToMoveForm.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseUp);
+            // 
+            // btnSearchInventory
+            // 
+            this.btnSearchInventory.FlatAppearance.BorderSize = 0;
+            this.btnSearchInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.btnSearchInventory.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSearchInventory.IconColor = System.Drawing.Color.White;
+            this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSearchInventory.IconSize = 27;
+            this.btnSearchInventory.Location = new System.Drawing.Point(770, 7);
+            this.btnSearchInventory.Name = "btnSearchInventory";
+            this.btnSearchInventory.Size = new System.Drawing.Size(28, 27);
+            this.btnSearchInventory.TabIndex = 7;
+            this.btnSearchInventory.UseVisualStyleBackColor = true;
+            // 
+            // txtSearchbar
+            // 
+            this.txtSearchbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.txtSearchbar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
+            this.txtSearchbar.Location = new System.Drawing.Point(353, 8);
+            this.txtSearchbar.Name = "txtSearchbar";
+            this.txtSearchbar.Size = new System.Drawing.Size(413, 22);
+            this.txtSearchbar.TabIndex = 6;
+            this.txtSearchbar.Text = "Search here";
             // 
             // btnMinimizeInventory
             // 
@@ -176,243 +203,215 @@
             this.btnMangeSalesmen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangeSalesmen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangeSalesmen.ForeColor = System.Drawing.Color.White;
-            this.btnMangeSalesmen.Location = new System.Drawing.Point(12, 447);
+            this.btnMangeSalesmen.Location = new System.Drawing.Point(12, 260);
             this.btnMangeSalesmen.Name = "btnMangeSalesmen";
             this.btnMangeSalesmen.Size = new System.Drawing.Size(182, 80);
             this.btnMangeSalesmen.TabIndex = 19;
             this.btnMangeSalesmen.Text = "Manage Salesmen";
             this.btnMangeSalesmen.UseVisualStyleBackColor = true;
+            this.btnMangeSalesmen.Click += new System.EventHandler(this.btnMangeSalesmen_Click);
             this.btnMangeSalesmen.MouseEnter += new System.EventHandler(this.btnMangeSalesmen_MouseEnter);
             this.btnMangeSalesmen.MouseLeave += new System.EventHandler(this.btnMangeSalesmen_MouseLeave);
             // 
             // iconPictureBoxManageSalesmen
             // 
             this.iconPictureBoxManageSalesmen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.iconPictureBoxManageSalesmen.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            this.iconPictureBoxManageSalesmen.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             this.iconPictureBoxManageSalesmen.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxManageSalesmen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxManageSalesmen.IconSize = 64;
-            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(68, 387);
+            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(68, 200);
             this.iconPictureBoxManageSalesmen.Name = "iconPictureBoxManageSalesmen";
             this.iconPictureBoxManageSalesmen.Size = new System.Drawing.Size(65, 64);
             this.iconPictureBoxManageSalesmen.TabIndex = 18;
             this.iconPictureBoxManageSalesmen.TabStop = false;
             // 
-            // btnManageCarts
+            // btnManageInventory
             // 
-            this.btnManageCarts.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnManageCarts.FlatAppearance.BorderSize = 2;
-            this.btnManageCarts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnManageCarts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageCarts.ForeColor = System.Drawing.Color.White;
-            this.btnManageCarts.Location = new System.Drawing.Point(12, 280);
-            this.btnManageCarts.Name = "btnManageCarts";
-            this.btnManageCarts.Size = new System.Drawing.Size(182, 40);
-            this.btnManageCarts.TabIndex = 21;
-            this.btnManageCarts.Text = "Manage Carts";
-            this.btnManageCarts.UseVisualStyleBackColor = true;
-            this.btnManageCarts.MouseEnter += new System.EventHandler(this.btnManageCarts_MouseEnter);
-            this.btnManageCarts.MouseLeave += new System.EventHandler(this.btnManageCarts_MouseLeave);
+            this.btnManageInventory.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnManageInventory.FlatAppearance.BorderSize = 2;
+            this.btnManageInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageInventory.ForeColor = System.Drawing.Color.White;
+            this.btnManageInventory.Location = new System.Drawing.Point(11, 449);
+            this.btnManageInventory.Name = "btnManageInventory";
+            this.btnManageInventory.Size = new System.Drawing.Size(182, 70);
+            this.btnManageInventory.TabIndex = 21;
+            this.btnManageInventory.Text = "Manage  Inventory";
+            this.btnManageInventory.UseVisualStyleBackColor = true;
+            this.btnManageInventory.Click += new System.EventHandler(this.btnManageInventory_Click);
             // 
-            // iconPictureBoxManageCarts
+            // iconPictureBoxInventory
             // 
-            this.iconPictureBoxManageCarts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.iconPictureBoxManageCarts.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.iconPictureBoxManageCarts.IconColor = System.Drawing.Color.White;
-            this.iconPictureBoxManageCarts.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxManageCarts.IconSize = 64;
-            this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(68, 220);
-            this.iconPictureBoxManageCarts.Name = "iconPictureBoxManageCarts";
-            this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(65, 64);
-            this.iconPictureBoxManageCarts.TabIndex = 20;
-            this.iconPictureBoxManageCarts.TabStop = false;
+            this.iconPictureBoxInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
+            this.iconPictureBoxInventory.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
+            this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
+            this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxInventory.IconSize = 64;
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(71, 385);
+            this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
+            this.iconPictureBoxInventory.Size = new System.Drawing.Size(65, 64);
+            this.iconPictureBoxInventory.TabIndex = 20;
+            this.iconPictureBoxInventory.TabStop = false;
             // 
-            // btnSearchInventory
+            // pnlManageUsers
             // 
-            this.btnSearchInventory.FlatAppearance.BorderSize = 0;
-            this.btnSearchInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchInventory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.btnSearchInventory.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSearchInventory.IconColor = System.Drawing.Color.White;
-            this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearchInventory.IconSize = 27;
-            this.btnSearchInventory.Location = new System.Drawing.Point(770, 7);
-            this.btnSearchInventory.Name = "btnSearchInventory";
-            this.btnSearchInventory.Size = new System.Drawing.Size(28, 27);
-            this.btnSearchInventory.TabIndex = 7;
-            this.btnSearchInventory.UseVisualStyleBackColor = true;
+            this.pnlManageUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.pnlManageUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlManageUsers.Controls.Add(this.pnlAdduser);
+            this.pnlManageUsers.Controls.Add(this.pnlGridviewAllusers);
+            this.pnlManageUsers.Controls.Add(this.lblManageSalesman);
+            this.pnlManageUsers.Controls.Add(this.iconPictureBoxSalesmen);
+            this.pnlManageUsers.Location = new System.Drawing.Point(208, 56);
+            this.pnlManageUsers.Name = "pnlManageUsers";
+            this.pnlManageUsers.Size = new System.Drawing.Size(930, 585);
+            this.pnlManageUsers.TabIndex = 22;
             // 
-            // txtSearchbar
+            // pnlAdduser
             // 
-            this.txtSearchbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.txtSearchbar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearchbar.Location = new System.Drawing.Point(353, 8);
-            this.txtSearchbar.Name = "txtSearchbar";
-            this.txtSearchbar.Size = new System.Drawing.Size(413, 22);
-            this.txtSearchbar.TabIndex = 6;
-            this.txtSearchbar.Text = "Search here";
+            this.pnlAdduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
+            this.pnlAdduser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdduser.Controls.Add(this.txtPhonenumber);
+            this.pnlAdduser.Controls.Add(this.txtSalary);
+            this.pnlAdduser.Controls.Add(this.dtpBirthdate);
+            this.pnlAdduser.Controls.Add(this.dtpJoindate);
+            this.pnlAdduser.Controls.Add(this.cmbGender);
+            this.pnlAdduser.Controls.Add(this.lblSalary);
+            this.pnlAdduser.Controls.Add(this.lblJoinDate);
+            this.pnlAdduser.Controls.Add(this.lblBirthdate);
+            this.pnlAdduser.Controls.Add(this.lblPhonenumber);
+            this.pnlAdduser.Controls.Add(this.lblAddress);
+            this.pnlAdduser.Controls.Add(this.txtAddress);
+            this.pnlAdduser.Controls.Add(this.lblGender);
+            this.pnlAdduser.Controls.Add(this.btnClear);
+            this.pnlAdduser.Controls.Add(this.btnSave);
+            this.pnlAdduser.Controls.Add(this.lblAppId);
+            this.pnlAdduser.Controls.Add(this.txtAppId);
+            this.pnlAdduser.Location = new System.Drawing.Point(10, 56);
+            this.pnlAdduser.Name = "pnlAdduser";
+            this.pnlAdduser.Size = new System.Drawing.Size(911, 227);
+            this.pnlAdduser.TabIndex = 2;
             // 
-            // pnlManageCarts
+            // txtPhonenumber
             // 
-            this.pnlManageCarts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.pnlManageCarts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlManageCarts.Controls.Add(this.panel2);
-            this.pnlManageCarts.Controls.Add(this.panel1);
-            this.pnlManageCarts.Controls.Add(this.lblManageUsers);
-            this.pnlManageCarts.Controls.Add(this.iconPictureBox1);
-            this.pnlManageCarts.Location = new System.Drawing.Point(213, 51);
-            this.pnlManageCarts.Name = "pnlManageCarts";
-            this.pnlManageCarts.Size = new System.Drawing.Size(927, 591);
-            this.pnlManageCarts.TabIndex = 22;
+            this.txtPhonenumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhonenumber.Location = new System.Drawing.Point(113, 178);
+            this.txtPhonenumber.Name = "txtPhonenumber";
+            this.txtPhonenumber.Size = new System.Drawing.Size(224, 25);
+            this.txtPhonenumber.TabIndex = 32;
             // 
-            // panel2
+            // txtSalary
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnPrintInvoice);
-            this.panel2.Controls.Add(this.pnlInvoice);
-            this.panel2.Controls.Add(this.btnClearInvoice);
-            this.panel2.Location = new System.Drawing.Point(353, 66);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(562, 507);
-            this.panel2.TabIndex = 3;
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalary.Location = new System.Drawing.Point(485, 117);
+            this.txtSalary.Name = "txtSalary";
+            this.txtSalary.Size = new System.Drawing.Size(224, 25);
+            this.txtSalary.TabIndex = 31;
             // 
-            // btnPrintInvoice
+            // dtpBirthdate
             // 
-            this.btnPrintInvoice.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnPrintInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrintInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnPrintInvoice.Location = new System.Drawing.Point(330, 468);
-            this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(100, 27);
-            this.btnPrintInvoice.TabIndex = 32;
-            this.btnPrintInvoice.Text = "Print";
-            this.btnPrintInvoice.UseVisualStyleBackColor = true;
+            this.dtpBirthdate.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthdate.Location = new System.Drawing.Point(488, 20);
+            this.dtpBirthdate.Name = "dtpBirthdate";
+            this.dtpBirthdate.Size = new System.Drawing.Size(221, 25);
+            this.dtpBirthdate.TabIndex = 30;
             // 
-            // pnlInvoice
+            // dtpJoindate
             // 
-            this.pnlInvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlInvoice.Controls.Add(this.dataGridView1);
-            this.pnlInvoice.Controls.Add(this.textBox1);
-            this.pnlInvoice.Controls.Add(this.lblInvoiceTotalPrice);
-            this.pnlInvoice.Location = new System.Drawing.Point(10, 14);
-            this.pnlInvoice.Name = "pnlInvoice";
-            this.pnlInvoice.Size = new System.Drawing.Size(541, 439);
-            this.pnlInvoice.TabIndex = 31;
+            this.dtpJoindate.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJoindate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJoindate.Location = new System.Drawing.Point(488, 70);
+            this.dtpJoindate.Name = "dtpJoindate";
+            this.dtpJoindate.Size = new System.Drawing.Size(221, 25);
+            this.dtpJoindate.TabIndex = 29;
             // 
-            // dataGridView1
+            // cmbGender
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(536, 392);
-            this.dataGridView1.TabIndex = 2;
+            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Other"});
+            this.cmbGender.Location = new System.Drawing.Point(113, 67);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(223, 25);
+            this.cmbGender.TabIndex = 27;
             // 
-            // textBox1
+            // lblSalary
             // 
-            this.textBox1.Location = new System.Drawing.Point(393, 409);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 1;
+            this.lblSalary.AutoSize = true;
+            this.lblSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSalary.ForeColor = System.Drawing.Color.White;
+            this.lblSalary.Location = new System.Drawing.Point(395, 121);
+            this.lblSalary.Name = "lblSalary";
+            this.lblSalary.Size = new System.Drawing.Size(58, 21);
+            this.lblSalary.TabIndex = 24;
+            this.lblSalary.Text = "Salary";
             // 
-            // lblInvoiceTotalPrice
+            // lblJoinDate
             // 
-            this.lblInvoiceTotalPrice.AutoSize = true;
-            this.lblInvoiceTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoiceTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblInvoiceTotalPrice.Location = new System.Drawing.Point(298, 411);
-            this.lblInvoiceTotalPrice.Name = "lblInvoiceTotalPrice";
-            this.lblInvoiceTotalPrice.Size = new System.Drawing.Size(84, 16);
-            this.lblInvoiceTotalPrice.TabIndex = 0;
-            this.lblInvoiceTotalPrice.Text = "Total Price";
+            this.lblJoinDate.AutoSize = true;
+            this.lblJoinDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJoinDate.ForeColor = System.Drawing.Color.White;
+            this.lblJoinDate.Location = new System.Drawing.Point(395, 70);
+            this.lblJoinDate.Name = "lblJoinDate";
+            this.lblJoinDate.Size = new System.Drawing.Size(82, 21);
+            this.lblJoinDate.TabIndex = 22;
+            this.lblJoinDate.Text = "Join Date";
             // 
-            // btnClearInvoice
+            // lblBirthdate
             // 
-            this.btnClearInvoice.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClearInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnClearInvoice.Location = new System.Drawing.Point(450, 467);
-            this.btnClearInvoice.Name = "btnClearInvoice";
-            this.btnClearInvoice.Size = new System.Drawing.Size(100, 27);
-            this.btnClearInvoice.TabIndex = 30;
-            this.btnClearInvoice.Text = "CLEAR";
-            this.btnClearInvoice.UseVisualStyleBackColor = true;
+            this.lblBirthdate.AutoSize = true;
+            this.lblBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthdate.ForeColor = System.Drawing.Color.White;
+            this.lblBirthdate.Location = new System.Drawing.Point(395, 20);
+            this.lblBirthdate.Name = "lblBirthdate";
+            this.lblBirthdate.Size = new System.Drawing.Size(87, 21);
+            this.lblBirthdate.TabIndex = 20;
+            this.lblBirthdate.Text = "Birth Date";
             // 
-            // panel1
+            // lblPhonenumber
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtQunatity);
-            this.panel1.Controls.Add(this.txtCartPrice);
-            this.panel1.Controls.Add(this.cmbProductTitle);
-            this.panel1.Controls.Add(this.lblQuantity);
-            this.panel1.Controls.Add(this.btnADD);
-            this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lblDiscount);
-            this.panel1.Controls.Add(this.txtDiscount);
-            this.panel1.Controls.Add(this.lblPrice);
-            this.panel1.Controls.Add(this.cboCategory);
-            this.panel1.Controls.Add(this.lblCategory);
-            this.panel1.Location = new System.Drawing.Point(10, 66);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 507);
-            this.panel1.TabIndex = 2;
+            this.lblPhonenumber.AutoSize = true;
+            this.lblPhonenumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhonenumber.ForeColor = System.Drawing.Color.White;
+            this.lblPhonenumber.Location = new System.Drawing.Point(17, 182);
+            this.lblPhonenumber.Name = "lblPhonenumber";
+            this.lblPhonenumber.Size = new System.Drawing.Size(86, 21);
+            this.lblPhonenumber.TabIndex = 18;
+            this.lblPhonenumber.Text = "Phone No";
             // 
-            // txtQunatity
+            // lblAddress
             // 
-            this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQunatity.Location = new System.Drawing.Point(19, 216);
-            this.txtQunatity.Name = "txtQunatity";
-            this.txtQunatity.Size = new System.Drawing.Size(295, 29);
-            this.txtQunatity.TabIndex = 35;
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.ForeColor = System.Drawing.Color.White;
+            this.lblAddress.Location = new System.Drawing.Point(17, 121);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(70, 21);
+            this.lblAddress.TabIndex = 16;
+            this.lblAddress.Text = "Address";
             // 
-            // txtCartPrice
+            // txtAddress
             // 
-            this.txtCartPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCartPrice.Location = new System.Drawing.Point(19, 289);
-            this.txtCartPrice.Name = "txtCartPrice";
-            this.txtCartPrice.ReadOnly = true;
-            this.txtCartPrice.Size = new System.Drawing.Size(295, 29);
-            this.txtCartPrice.TabIndex = 34;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(113, 121);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(224, 25);
+            this.txtAddress.TabIndex = 15;
             // 
-            // cmbProductTitle
+            // lblGender
             // 
-            this.cmbProductTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProductTitle.FormattingEnabled = true;
-            this.cmbProductTitle.Location = new System.Drawing.Point(19, 128);
-            this.cmbProductTitle.Name = "cmbProductTitle";
-            this.cmbProductTitle.Size = new System.Drawing.Size(292, 29);
-            this.cmbProductTitle.TabIndex = 32;
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(15, 187);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(70, 21);
-            this.lblQuantity.TabIndex = 30;
-            this.lblQuantity.Text = "Quantity";
-            // 
-            // btnADD
-            // 
-            this.btnADD.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.ForeColor = System.Drawing.Color.White;
-            this.btnADD.Location = new System.Drawing.Point(19, 450);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(115, 36);
-            this.btnADD.TabIndex = 29;
-            this.btnADD.Text = "ADD";
-            this.btnADD.UseVisualStyleBackColor = true;
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.ForeColor = System.Drawing.Color.White;
+            this.lblGender.Location = new System.Drawing.Point(17, 66);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(65, 21);
+            this.lblGender.TabIndex = 14;
+            this.lblGender.Text = "Gender";
             // 
             // btnClear
             // 
@@ -420,98 +419,123 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(151, 450);
+            this.btnClear.Location = new System.Drawing.Point(780, 134);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 36);
-            this.btnClear.TabIndex = 19;
+            this.btnClear.Size = new System.Drawing.Size(115, 39);
+            this.btnClear.TabIndex = 12;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
+            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             // 
-            // label1
+            // btnSave
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(15, 104);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Product TItle";
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(780, 61);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(115, 39);
+            this.btnSave.TabIndex = 11;
+            this.btnSave.Text = "SAVE";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
+            this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
-            // lblDiscount
+            // lblAppId
             // 
-            this.lblDiscount.AutoSize = true;
-            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(15, 341);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(71, 21);
-            this.lblDiscount.TabIndex = 26;
-            this.lblDiscount.Text = "Discount";
+            this.lblAppId.AutoSize = true;
+            this.lblAppId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppId.ForeColor = System.Drawing.Color.White;
+            this.lblAppId.Location = new System.Drawing.Point(17, 18);
+            this.lblAppId.Name = "lblAppId";
+            this.lblAppId.Size = new System.Drawing.Size(65, 21);
+            this.lblAppId.TabIndex = 1;
+            this.lblAppId.Text = "User ID";
             // 
-            // txtDiscount
+            // txtAppId
             // 
-            this.txtDiscount.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(19, 365);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(295, 29);
-            this.txtDiscount.TabIndex = 25;
+            this.txtAppId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAppId.Location = new System.Drawing.Point(113, 18);
+            this.txtAppId.Name = "txtAppId";
+            this.txtAppId.ReadOnly = true;
+            this.txtAppId.Size = new System.Drawing.Size(224, 25);
+            this.txtAppId.TabIndex = 0;
             // 
-            // lblPrice
+            // pnlGridviewAllusers
             // 
-            this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(15, 265);
-            this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 21);
-            this.lblPrice.TabIndex = 24;
-            this.lblPrice.Text = "Price";
+            this.pnlGridviewAllusers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
+            this.pnlGridviewAllusers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlGridviewAllusers.Controls.Add(this.dgvSalesmen);
+            this.pnlGridviewAllusers.Controls.Add(this.btnDeleteSalesman);
+            this.pnlGridviewAllusers.Controls.Add(this.btnShowUsers);
+            this.pnlGridviewAllusers.Location = new System.Drawing.Point(10, 289);
+            this.pnlGridviewAllusers.Name = "pnlGridviewAllusers";
+            this.pnlGridviewAllusers.Size = new System.Drawing.Size(911, 282);
+            this.pnlGridviewAllusers.TabIndex = 3;
             // 
-            // cboCategory
+            // dgvSalesmen
             // 
-            this.cboCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategory.FormattingEnabled = true;
-            this.cboCategory.Location = new System.Drawing.Point(19, 49);
-            this.cboCategory.Name = "cboCategory";
-            this.cboCategory.Size = new System.Drawing.Size(292, 29);
-            this.cboCategory.TabIndex = 22;
+            this.dgvSalesmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalesmen.Location = new System.Drawing.Point(3, 3);
+            this.dgvSalesmen.Name = "dgvSalesmen";
+            this.dgvSalesmen.Size = new System.Drawing.Size(903, 208);
+            this.dgvSalesmen.TabIndex = 23;
             // 
-            // lblCategory
+            // btnDeleteSalesman
             // 
-            this.lblCategory.AutoSize = true;
-            this.lblCategory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategory.ForeColor = System.Drawing.Color.White;
-            this.lblCategory.Location = new System.Drawing.Point(15, 20);
-            this.lblCategory.Name = "lblCategory";
-            this.lblCategory.Size = new System.Drawing.Size(73, 21);
-            this.lblCategory.TabIndex = 21;
-            this.lblCategory.Text = "Category";
+            this.btnDeleteSalesman.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnDeleteSalesman.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteSalesman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteSalesman.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteSalesman.Location = new System.Drawing.Point(543, 241);
+            this.btnDeleteSalesman.Name = "btnDeleteSalesman";
+            this.btnDeleteSalesman.Size = new System.Drawing.Size(160, 33);
+            this.btnDeleteSalesman.TabIndex = 22;
+            this.btnDeleteSalesman.Text = "DELETE";
+            this.btnDeleteSalesman.UseVisualStyleBackColor = true;
+            this.btnDeleteSalesman.MouseEnter += new System.EventHandler(this.btnDeleteSalesman_MouseEnter);
+            this.btnDeleteSalesman.MouseLeave += new System.EventHandler(this.btnDeleteSalesman_MouseLeave);
             // 
-            // lblManageUsers
+            // btnShowUsers
             // 
-            this.lblManageUsers.AutoSize = true;
-            this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
-            this.lblManageUsers.Location = new System.Drawing.Point(54, 18);
-            this.lblManageUsers.Name = "lblManageUsers";
-            this.lblManageUsers.Size = new System.Drawing.Size(54, 30);
-            this.lblManageUsers.TabIndex = 1;
-            this.lblManageUsers.Text = "Cart";
+            this.btnShowUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnShowUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowUsers.ForeColor = System.Drawing.Color.White;
+            this.btnShowUsers.Location = new System.Drawing.Point(742, 241);
+            this.btnShowUsers.Name = "btnShowUsers";
+            this.btnShowUsers.Size = new System.Drawing.Size(160, 33);
+            this.btnShowUsers.TabIndex = 11;
+            this.btnShowUsers.Text = "Show All Salesman";
+            this.btnShowUsers.UseVisualStyleBackColor = true;
+            this.btnShowUsers.MouseEnter += new System.EventHandler(this.btnShowUsers_MouseEnter);
+            this.btnShowUsers.MouseLeave += new System.EventHandler(this.btnShowUsers_MouseLeave);
             // 
-            // iconPictureBox1
+            // lblManageSalesman
             // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 42;
-            this.iconPictureBox1.Location = new System.Drawing.Point(10, 13);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(50, 42);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 0;
-            this.iconPictureBox1.TabStop = false;
+            this.lblManageSalesman.AutoSize = true;
+            this.lblManageSalesman.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageSalesman.ForeColor = System.Drawing.Color.White;
+            this.lblManageSalesman.Location = new System.Drawing.Point(63, 16);
+            this.lblManageSalesman.Name = "lblManageSalesman";
+            this.lblManageSalesman.Size = new System.Drawing.Size(241, 30);
+            this.lblManageSalesman.TabIndex = 1;
+            this.lblManageSalesman.Text = "Salesmen Management";
+            // 
+            // iconPictureBoxSalesmen
+            // 
+            this.iconPictureBoxSalesmen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.iconPictureBoxSalesmen.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.iconPictureBoxSalesmen.IconColor = System.Drawing.Color.White;
+            this.iconPictureBoxSalesmen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxSalesmen.IconSize = 37;
+            this.iconPictureBoxSalesmen.Location = new System.Drawing.Point(22, 12);
+            this.iconPictureBoxSalesmen.Name = "iconPictureBoxSalesmen";
+            this.iconPictureBoxSalesmen.Size = new System.Drawing.Size(37, 37);
+            this.iconPictureBoxSalesmen.TabIndex = 0;
+            this.iconPictureBoxSalesmen.TabStop = false;
             // 
             // ManagerForm
             // 
@@ -519,10 +543,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1150, 650);
-            this.Controls.Add(this.pnlManageCarts);
+            this.Controls.Add(this.pnlManageUsers);
+            this.Controls.Add(this.btnManageInventory);
+            this.Controls.Add(this.iconPictureBoxInventory);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnManageCarts);
-            this.Controls.Add(this.iconPictureBoxManageCarts);
             this.Controls.Add(this.btnMangeSalesmen);
             this.Controls.Add(this.iconPictureBoxManageSalesmen);
             this.Controls.Add(this.btnSaleReport);
@@ -533,20 +557,19 @@
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerForm";
+            this.Load += new System.EventHandler(this.ManagerForm_Load);
             this.pnlToMoveForm.ResumeLayout(false);
             this.pnlToMoveForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesReport)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageSalesmen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).EndInit();
-            this.pnlManageCarts.ResumeLayout(false);
-            this.pnlManageCarts.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.pnlInvoice.ResumeLayout(false);
-            this.pnlInvoice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).EndInit();
+            this.pnlManageUsers.ResumeLayout(false);
+            this.pnlManageUsers.PerformLayout();
+            this.pnlAdduser.ResumeLayout(false);
+            this.pnlAdduser.PerformLayout();
+            this.pnlGridviewAllusers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalesmen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesmen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -561,32 +584,33 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalesReport;
         private System.Windows.Forms.Button btnMangeSalesmen;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxManageSalesmen;
-        private System.Windows.Forms.Button btnManageCarts;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBoxManageCarts;
         private FontAwesome.Sharp.IconButton btnSearchInventory;
         private System.Windows.Forms.TextBox txtSearchbar;
-        private System.Windows.Forms.Panel pnlManageCarts;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnPrintInvoice;
-        private System.Windows.Forms.Panel pnlInvoice;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblInvoiceTotalPrice;
-        private System.Windows.Forms.Button btnClearInvoice;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtQunatity;
-        private System.Windows.Forms.TextBox txtCartPrice;
-        private System.Windows.Forms.ComboBox cmbProductTitle;
-        private System.Windows.Forms.Label lblQuantity;
-        private System.Windows.Forms.Button btnADD;
+        private System.Windows.Forms.Button btnManageInventory;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
+        private System.Windows.Forms.Panel pnlManageUsers;
+        private System.Windows.Forms.Panel pnlAdduser;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblDiscount;
-        private System.Windows.Forms.TextBox txtDiscount;
-        private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.ComboBox cboCategory;
-        private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.Label lblManageUsers;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Label lblAppId;
+        private System.Windows.Forms.TextBox txtAppId;
+        private System.Windows.Forms.Panel pnlGridviewAllusers;
+        private System.Windows.Forms.Button btnDeleteSalesman;
+        private System.Windows.Forms.Button btnShowUsers;
+        private System.Windows.Forms.Label lblManageSalesman;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalesmen;
+        private System.Windows.Forms.DataGridView dgvSalesmen;
+        private System.Windows.Forms.Label lblSalary;
+        private System.Windows.Forms.Label lblJoinDate;
+        private System.Windows.Forms.Label lblBirthdate;
+        private System.Windows.Forms.Label lblPhonenumber;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.DateTimePicker dtpBirthdate;
+        private System.Windows.Forms.DateTimePicker dtpJoindate;
+        private System.Windows.Forms.TextBox txtPhonenumber;
+        private System.Windows.Forms.TextBox txtSalary;
     }
 }

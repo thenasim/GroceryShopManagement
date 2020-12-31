@@ -23,6 +23,8 @@ namespace GroceryShop.App
             //Application.Run(new EmployeeForm());
             //Application.Run(new SalesmanForm());
             //Application.Run(new ManagerForm());
+            //Application.Run(new SalesmanForm());
+            //Application.Run(new ManagerForm());
         }
     }
 }
