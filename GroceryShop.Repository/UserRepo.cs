@@ -34,9 +34,11 @@
 
             else
             {
-                var sql = @"SELECT users.appid, users.full_name, users.user_type,
-                       logins.password FROM users INNER JOIN logins 
-                        ON users.appid = logins.user_id WHERE users.full_name like '" + key + "%';";
+                var sql = @"SELECT users.appid, employee.full_name, users.user_type, logins.password FROM users
+                    INNER JOIN logins 
+                        ON users.appid = logins.user_id 
+                    INNER JOIN employee
+	                    ON employee.user_id = users.appid WHERE employee.full_name like '" + key + "%';";
                 var dt = DataAccess.GetDataTable(sql);
                 int row = 0;
                 while (row < dt.Rows.Count)
@@ -52,9 +54,11 @@
         public static List<Users> ShowAll()
         {
             var userList = new List<Users>();
-            var sql = @"SELECT users.appid, users.full_name, users.user_type,
-                       logins.password FROM users INNER JOIN logins 
-                        ON users.appid = logins.user_id;";
+            var sql = @"SELECT users.appid, employee.full_name, users.user_type, logins.password FROM users
+                        INNER JOIN logins 
+                            ON users.appid = logins.user_id
+                        INNER JOIN employee
+	                        ON employee.user_id = users.appid;";
             var dt = DataAccess.GetDataTable(sql);
             int row = 0;
             while (row < dt.Rows.Count)
@@ -73,7 +77,6 @@
             }
             var u = new Users();
             u.AppId = row["appid"].ToString();
-            //u.UpdatedAt = row["updated_at"].ToString();
             u.FullName = row["full_name"].ToString();
             u.UserType = row["user_type"].ToString();
             u.Password = row["password"].ToString();
@@ -82,13 +85,13 @@
         }
         public static bool Save(Users u)
         {
-            var sql = $"INSERT INTO users VALUES('{u.AppId}', '{u.FullName}', {u.UpdatedAt}, '{u.UserType}')";
+            var sql = $"INSERT INTO users VALUES('{u.AppId}', {u.UpdatedAt}, '{u.UserType}')";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
         public static bool Update(Users p)
         {
-            var sql = $"update users set full_name = '{p.FullName}', user_type = '{p.UserType}', updated_at = {p.UpdatedAt} where appid = '{p.AppId}';";
+            var sql = $"update users set user_type = '{p.UserType}', updated_at = {p.UpdatedAt} where appid = '{p.AppId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

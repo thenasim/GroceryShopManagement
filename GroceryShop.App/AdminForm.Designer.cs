@@ -218,7 +218,7 @@
             this.btnSaleReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaleReport.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleReport.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReport.Location = new System.Drawing.Point(16, 276);
+            this.btnSaleReport.Location = new System.Drawing.Point(16, 272);
             this.btnSaleReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaleReport.Name = "btnSaleReport";
             this.btnSaleReport.Size = new System.Drawing.Size(243, 49);
@@ -236,10 +236,10 @@
             this.btnManageInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInventory.ForeColor = System.Drawing.Color.White;
-            this.btnManageInventory.Location = new System.Drawing.Point(16, 460);
+            this.btnManageInventory.Location = new System.Drawing.Point(16, 459);
             this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(243, 86);
+            this.btnManageInventory.Size = new System.Drawing.Size(253, 49);
             this.btnManageInventory.TabIndex = 17;
             this.btnManageInventory.Text = "Manage  Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxInventory.IconSize = 79;
-            this.iconPictureBoxInventory.Location = new System.Drawing.Point(95, 382);
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(95, 381);
             this.iconPictureBoxInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
             this.iconPictureBoxInventory.Size = new System.Drawing.Size(87, 79);
@@ -299,7 +299,7 @@
             this.iconPictureBoxSalesReport.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxSalesReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxSalesReport.IconSize = 79;
-            this.iconPictureBoxSalesReport.Location = new System.Drawing.Point(91, 201);
+            this.iconPictureBoxSalesReport.Location = new System.Drawing.Point(91, 199);
             this.iconPictureBoxSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxSalesReport.Name = "iconPictureBoxSalesReport";
             this.iconPictureBoxSalesReport.Size = new System.Drawing.Size(87, 79);

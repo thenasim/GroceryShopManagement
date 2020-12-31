@@ -67,7 +67,10 @@
             this.btnShowEmployee = new System.Windows.Forms.Button();
             this.lblManageEmployee = new System.Windows.Forms.Label();
             this.iconPictureBoxSalesmen = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtEmpName = new System.Windows.Forms.TextBox();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -193,7 +196,7 @@
             this.btnSaleReport.Location = new System.Drawing.Point(16, 144);
             this.btnSaleReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaleReport.Name = "btnSaleReport";
-            this.btnSaleReport.Size = new System.Drawing.Size(243, 49);
+            this.btnSaleReport.Size = new System.Drawing.Size(253, 49);
             this.btnSaleReport.TabIndex = 17;
             this.btnSaleReport.Text = "Sales Report";
             this.btnSaleReport.UseVisualStyleBackColor = true;
@@ -221,10 +224,10 @@
             this.btnMangeEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangeEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangeEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnMangeEmployee.Location = new System.Drawing.Point(16, 320);
+            this.btnMangeEmployee.Location = new System.Drawing.Point(16, 348);
             this.btnMangeEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnMangeEmployee.Name = "btnMangeEmployee";
-            this.btnMangeEmployee.Size = new System.Drawing.Size(243, 98);
+            this.btnMangeEmployee.Size = new System.Drawing.Size(243, 49);
             this.btnMangeEmployee.TabIndex = 19;
             this.btnMangeEmployee.Text = "Manage Employee";
             this.btnMangeEmployee.UseVisualStyleBackColor = true;
@@ -239,7 +242,7 @@
             this.iconPictureBoxManageSalesmen.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxManageSalesmen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxManageSalesmen.IconSize = 79;
-            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(91, 246);
+            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(91, 271);
             this.iconPictureBoxManageSalesmen.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxManageSalesmen.Name = "iconPictureBoxManageSalesmen";
             this.iconPictureBoxManageSalesmen.Size = new System.Drawing.Size(87, 79);
@@ -253,10 +256,10 @@
             this.btnManageInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInventory.ForeColor = System.Drawing.Color.White;
-            this.btnManageInventory.Location = new System.Drawing.Point(15, 553);
+            this.btnManageInventory.Location = new System.Drawing.Point(15, 552);
             this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(243, 86);
+            this.btnManageInventory.Size = new System.Drawing.Size(253, 49);
             this.btnManageInventory.TabIndex = 21;
             this.btnManageInventory.Text = "Manage  Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
@@ -269,7 +272,7 @@
             this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxInventory.IconSize = 79;
-            this.iconPictureBoxInventory.Location = new System.Drawing.Point(95, 474);
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(95, 473);
             this.iconPictureBoxInventory.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
             this.iconPictureBoxInventory.Size = new System.Drawing.Size(87, 79);
@@ -294,6 +297,8 @@
             // 
             this.pnlAdduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
             this.pnlAdduser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdduser.Controls.Add(this.label1);
+            this.pnlAdduser.Controls.Add(this.txtEmpName);
             this.pnlAdduser.Controls.Add(this.lblEmail);
             this.pnlAdduser.Controls.Add(this.txtEmail);
             this.pnlAdduser.Controls.Add(this.txtPhonenumber);
@@ -315,7 +320,7 @@
             this.pnlAdduser.Location = new System.Drawing.Point(13, 69);
             this.pnlAdduser.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdduser.Name = "pnlAdduser";
-            this.pnlAdduser.Size = new System.Drawing.Size(1214, 279);
+            this.pnlAdduser.Size = new System.Drawing.Size(1214, 307);
             this.pnlAdduser.TabIndex = 2;
             // 
             // lblEmail
@@ -342,7 +347,7 @@
             // txtPhonenumber
             // 
             this.txtPhonenumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhonenumber.Location = new System.Drawing.Point(151, 219);
+            this.txtPhonenumber.Location = new System.Drawing.Point(151, 257);
             this.txtPhonenumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhonenumber.Name = "txtPhonenumber";
             this.txtPhonenumber.Size = new System.Drawing.Size(297, 30);
@@ -363,7 +368,7 @@
             this.dtpBirthdate.CustomFormat = "yyyy-MM-dd";
             this.dtpBirthdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBirthdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBirthdate.Location = new System.Drawing.Point(651, 23);
+            this.dtpBirthdate.Location = new System.Drawing.Point(647, 23);
             this.dtpBirthdate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpBirthdate.Name = "dtpBirthdate";
             this.dtpBirthdate.Size = new System.Drawing.Size(293, 29);
@@ -375,7 +380,7 @@
             this.dtpJoindate.CustomFormat = "yyyy-MM-dd";
             this.dtpJoindate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpJoindate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpJoindate.Location = new System.Drawing.Point(651, 83);
+            this.dtpJoindate.Location = new System.Drawing.Point(647, 83);
             this.dtpJoindate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpJoindate.Name = "dtpJoindate";
             this.dtpJoindate.Size = new System.Drawing.Size(293, 29);
@@ -389,7 +394,7 @@
             "Male",
             "Female",
             "Other"});
-            this.cmbGender.Location = new System.Drawing.Point(151, 88);
+            this.cmbGender.Location = new System.Drawing.Point(151, 140);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(296, 29);
@@ -436,7 +441,7 @@
             this.lblPhonenumber.AutoSize = true;
             this.lblPhonenumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhonenumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhonenumber.Location = new System.Drawing.Point(23, 223);
+            this.lblPhonenumber.Location = new System.Drawing.Point(23, 262);
             this.lblPhonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhonenumber.Name = "lblPhonenumber";
             this.lblPhonenumber.Size = new System.Drawing.Size(105, 28);
@@ -448,7 +453,7 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(23, 156);
+            this.lblAddress.Location = new System.Drawing.Point(23, 202);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(87, 28);
@@ -458,7 +463,7 @@
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(151, 153);
+            this.txtAddress.Location = new System.Drawing.Point(151, 198);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(297, 30);
@@ -469,7 +474,7 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(23, 89);
+            this.lblGender.Location = new System.Drawing.Point(23, 142);
             this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(80, 28);
@@ -538,17 +543,20 @@
             this.pnlGridviewAllusers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGridviewAllusers.Controls.Add(this.dgvSalesmen);
             this.pnlGridviewAllusers.Controls.Add(this.btnShowEmployee);
-            this.pnlGridviewAllusers.Location = new System.Drawing.Point(13, 356);
+            this.pnlGridviewAllusers.Location = new System.Drawing.Point(13, 384);
             this.pnlGridviewAllusers.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGridviewAllusers.Name = "pnlGridviewAllusers";
-            this.pnlGridviewAllusers.Size = new System.Drawing.Size(1214, 347);
+            this.pnlGridviewAllusers.Size = new System.Drawing.Size(1214, 319);
             this.pnlGridviewAllusers.TabIndex = 3;
             // 
             // dgvSalesmen
             // 
+            this.dgvSalesmen.AllowUserToAddRows = false;
+            this.dgvSalesmen.AllowUserToDeleteRows = false;
             this.dgvSalesmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSalesmen.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.user_id,
+            this.full_name,
             this.gender,
             this.address,
             this.phone,
@@ -556,9 +564,10 @@
             this.join_date,
             this.salary,
             this.email});
-            this.dgvSalesmen.Location = new System.Drawing.Point(4, 4);
+            this.dgvSalesmen.Location = new System.Drawing.Point(4, 10);
             this.dgvSalesmen.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSalesmen.Name = "dgvSalesmen";
+            this.dgvSalesmen.ReadOnly = true;
             this.dgvSalesmen.RowHeadersWidth = 51;
             this.dgvSalesmen.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSalesmen.Size = new System.Drawing.Size(1204, 256);
@@ -571,7 +580,7 @@
             this.btnShowEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnShowEmployee.Location = new System.Drawing.Point(989, 297);
+            this.btnShowEmployee.Location = new System.Drawing.Point(989, 272);
             this.btnShowEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowEmployee.Name = "btnShowEmployee";
             this.btnShowEmployee.Size = new System.Drawing.Size(213, 41);
@@ -608,6 +617,27 @@
             this.iconPictureBoxSalesmen.TabIndex = 0;
             this.iconPictureBoxSalesmen.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(22, 82);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(68, 28);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Name";
+            // 
+            // txtEmpName
+            // 
+            this.txtEmpName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmpName.Location = new System.Drawing.Point(150, 81);
+            this.txtEmpName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmpName.Name = "txtEmpName";
+            this.txtEmpName.Size = new System.Drawing.Size(297, 30);
+            this.txtEmpName.TabIndex = 35;
+            // 
             // user_id
             // 
             this.user_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -615,7 +645,17 @@
             this.user_id.HeaderText = "UserId";
             this.user_id.MinimumWidth = 6;
             this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
             this.user_id.Width = 78;
+            // 
+            // full_name
+            // 
+            this.full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.full_name.DataPropertyName = "FullName";
+            this.full_name.HeaderText = "Name";
+            this.full_name.MinimumWidth = 6;
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
             // 
             // gender
             // 
@@ -624,6 +664,7 @@
             this.gender.HeaderText = "Gender";
             this.gender.MinimumWidth = 6;
             this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
             this.gender.Width = 85;
             // 
             // address
@@ -633,6 +674,7 @@
             this.address.HeaderText = "Address";
             this.address.MinimumWidth = 6;
             this.address.Name = "address";
+            this.address.ReadOnly = true;
             // 
             // phone
             // 
@@ -641,6 +683,7 @@
             this.phone.HeaderText = "Phone";
             this.phone.MinimumWidth = 6;
             this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
             // 
             // birthdate
             // 
@@ -649,6 +692,7 @@
             this.birthdate.HeaderText = "Birthdate";
             this.birthdate.MinimumWidth = 6;
             this.birthdate.Name = "birthdate";
+            this.birthdate.ReadOnly = true;
             this.birthdate.Width = 94;
             // 
             // join_date
@@ -658,6 +702,7 @@
             this.join_date.HeaderText = "Join date";
             this.join_date.MinimumWidth = 6;
             this.join_date.Name = "join_date";
+            this.join_date.ReadOnly = true;
             this.join_date.Width = 95;
             // 
             // salary
@@ -667,6 +712,7 @@
             this.salary.HeaderText = "Salary";
             this.salary.MinimumWidth = 6;
             this.salary.Name = "salary";
+            this.salary.ReadOnly = true;
             this.salary.Width = 77;
             // 
             // email
@@ -676,6 +722,7 @@
             this.email.HeaderText = "Email";
             this.email.MinimumWidth = 6;
             this.email.Name = "email";
+            this.email.ReadOnly = true;
             // 
             // ManagerForm
             // 
@@ -754,7 +801,10 @@
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEmpName;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;

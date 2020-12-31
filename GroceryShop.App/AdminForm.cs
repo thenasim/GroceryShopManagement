@@ -292,15 +292,12 @@
                 this.UpdateFillEntity();
                 try
                 {
-                    if (UserRepo.Update(this.User))
+                    if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
                     {
-                        if (LoginRepo.Update(this.Login))
-                        {
-                            MessageBox.Show("Successfully updated  user");
-                            this.PopulateGridView();
-                            this.txtAppId.Text = UserRepo.GetAppId();
-                            this.ClearUserInput();
-                        }
+                        MessageBox.Show("Successfully updated  user");
+                        this.PopulateGridView();
+                        this.txtAppId.Text = UserRepo.GetAppId();
+                        this.ClearUserInput();
                     }
                     else
                     {
@@ -369,7 +366,6 @@
         {
             this.User = new Users();
             this.User.AppId = UserRepo.GetAppId();
-            this.User.FullName = this.txtUserName.Text;
             this.User.UserType = this.cboUserType.Text;
 
             this.Login = new Logins();
@@ -379,6 +375,7 @@
 
             this.Emp = new Employee();
             this.Emp.AppId = EmployeeRepo.GetAppId();
+            this.Emp.FullName = this.txtUserName.Text;
             this.Emp.Email = null;
             this.Emp.Gender = null;
             this.Emp.Address = null;
@@ -392,12 +389,15 @@
         {
             this.User = new Users();
             this.User.AppId = this.CurrentUserId;
-            this.User.FullName = this.txtUserName.Text;
             this.User.UserType = this.cboUserType.Text;
 
             this.Login = new Logins();
             this.Login.Password = this.txtPassword.Text;
             this.Login.UserId = this.User.AppId;
+
+            this.Emp = new Employee();
+            this.Emp.FullName = this.txtUserName.Text;
+            this.Emp.UserId = this.User.AppId;
         }
 
         private void dgvUsersGrid_DoubleClick(object sender, EventArgs e)
