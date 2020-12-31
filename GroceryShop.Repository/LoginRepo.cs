@@ -60,7 +60,7 @@
         }
         public static bool Update(Logins p)
         {
-            var sql = $"update logins set password = '{p.Password}' where user_id = '{p.UserId}';";
+            var sql = $"update logins set password = '{p.Password}', updated_at = {p.UpdatedAt} where user_id = '{p.UserId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

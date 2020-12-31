@@ -100,16 +100,16 @@
         //Hover color for manage salesmen button
         private void btnMangeSalesmen_MouseEnter(object sender, EventArgs e)
         {
-            btnMangeSalesmen.ForeColor = Color.DeepSkyBlue;
-            btnMangeSalesmen.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            btnMangeEmployee.ForeColor = Color.DeepSkyBlue;
+            btnMangeEmployee.FlatAppearance.BorderColor = Color.DeepSkyBlue;
             iconPictureBoxManageSalesmen.ForeColor = Color.DeepSkyBlue;
         }
 
         //Hover color for manage salesmen button
         private void btnMangeSalesmen_MouseLeave(object sender, EventArgs e)
         {
-            btnMangeSalesmen.ForeColor = Color.White;
-            btnMangeSalesmen.FlatAppearance.BorderColor = Color.White;
+            btnMangeEmployee.ForeColor = Color.White;
+            btnMangeEmployee.FlatAppearance.BorderColor = Color.White;
             iconPictureBoxManageSalesmen.ForeColor = Color.White;
         }
 
@@ -166,15 +166,15 @@
         //Show users button hover color
         private void btnShowUsers_MouseEnter(object sender, EventArgs e)
         {
-            btnShowUsers.FlatAppearance.BorderColor = Color.LightBlue;
-            btnShowUsers.ForeColor = Color.LightBlue;
+            btnShowEmployee.FlatAppearance.BorderColor = Color.LightBlue;
+            btnShowEmployee.ForeColor = Color.LightBlue;
         }
 
         //Show users button hover color
         private void btnShowUsers_MouseLeave(object sender, EventArgs e)
         {
-            btnShowUsers.FlatAppearance.BorderColor = Color.White;
-            btnShowUsers.ForeColor = Color.White;
+            btnShowEmployee.FlatAppearance.BorderColor = Color.White;
+            btnShowEmployee.ForeColor = Color.White;
         }
 
         //Hide all panel visibility at the beginning

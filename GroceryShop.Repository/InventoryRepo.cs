@@ -107,7 +107,7 @@ namespace GroceryShop.Repository
         }
         public static bool Update(Products p)
         {
-            var sql = $"update products set title = '{p.Title}', price = {p.Price}, purchase_price = { p.PurchasePrice}, quantity = {p.Quantity}, category_id = '{p.CategoryId}' where appid = '{p.AppId}';";
+            var sql = $"update products set title = '{p.Title}', price = {p.Price}, purchase_price = { p.PurchasePrice}, quantity = {p.Quantity}, category_id = '{p.CategoryId}', updated_at = {p.UpdatedAt} where appid = '{p.AppId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
