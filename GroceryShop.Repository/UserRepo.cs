@@ -73,7 +73,7 @@
             }
             var u = new Users();
             u.AppId = row["appid"].ToString();
-            u.UpdatedAt = row["updated_at"].ToString();
+            //u.UpdatedAt = row["updated_at"].ToString();
             u.FullName = row["full_name"].ToString();
             u.UserType = row["user_type"].ToString();
             u.Password = row["password"].ToString();

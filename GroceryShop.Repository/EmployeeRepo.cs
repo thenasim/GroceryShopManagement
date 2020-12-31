@@ -9,7 +9,7 @@
     using GroceryShop.Data;
     using GroceryShop.Entity;
 
-    class EmployeeRepo
+    public class EmployeeRepo
     {
         public static string GetAppId()
         {
@@ -62,6 +62,42 @@
             var sql = $"INSERT INTO employee VALUES('{e.AppId}', '{e.Email}', '{e.Gender}', '{e.Address}', '{e.BirthDate}', '{e.PhoneNumber}', '{e.JoinDate}', {e.Salary}, '{e.UserId}', {e.UpdatedAt})";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
+        }
+        public static bool Update(Employee u)
+        {
+            var sql = $"update employee set email = '{u.Email}', gender = '{u.Gender}', address = '{u.Address}', birthdate = '{u.BirthDate}', phone = '{u.PhoneNumber}', join_date = '{u.JoinDate}', salary = {u.Salary}, updated_at = {u.UpdatedAt} where user_id = '{u.UserId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
+
+        public static bool Delete(string key)
+        {
+            var sql = "delete from employee where user_id = '" + key + "';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
+        public static List<Employee> SearchEmployee(string key)
+        {
+            var employeeList = new List<Employee>();
+            if (key == "Search here")
+            {
+                return ShowAll();
+            }
+
+            else
+            {
+                var sql = @"SELECT * from employee WHERE user_id like '" + key + "%';";
+                var dt = DataAccess.GetDataTable(sql);
+                int row = 0;
+                while (row < dt.Rows.Count)
+                {
+                    Employee emp = ConvertToEntity(dt.Rows[row]);
+                    employeeList.Add(emp);
+                    row++;
+                }
+                return employeeList;
+            }
+
         }
     }
 }
