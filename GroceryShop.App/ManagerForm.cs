@@ -176,6 +176,7 @@
         private void btnMangeSalesmen_Click(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = true;
+            this.PopulateGridView();
         }
 
         private void PopulateGridView()
@@ -211,10 +212,9 @@
         }
         private void UpdateFillEntity()
         {
-            MessageBox.Show(this.dtpBirthdate.Text);
-            //return;
             this.Emp = new Employee();
             this.Emp.Email = this.txtEmail.Text;
+            this.Emp.FullName = this.txtEmpName.Text;
             this.Emp.Gender = this.cmbGender.Text;
             this.Emp.Address = this.txtAddress.Text;
             this.Emp.BirthDate = this.dtpBirthdate.Text;
@@ -234,6 +234,7 @@
         private void ClearInput()
         {
             this.txtUserId.Text = "";
+            this.txtEmpName.Text = "";
             this.txtEmail.Text = "";
             this.txtAddress.Text = "";
             this.cmbGender.Text = "";
@@ -251,6 +252,7 @@
         private void dgvSalesmen_DoubleClick(object sender, EventArgs e)
         {
             this.txtUserId.Text = this.dgvSalesmen.CurrentRow.Cells["user_id"].Value.ToString();
+            this.txtEmpName.Text = this.dgvSalesmen.CurrentRow.Cells["full_name"].Value.ToString();
             this.txtEmail.Text = this.dgvSalesmen.CurrentRow.Cells["email"].Value.ToString();
             this.txtAddress.Text = this.dgvSalesmen.CurrentRow.Cells["address"].Value.ToString();
             this.cmbGender.Text = this.dgvSalesmen.CurrentRow.Cells["gender"].Value.ToString();
