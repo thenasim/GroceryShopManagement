@@ -152,20 +152,6 @@
             btnClear.FlatAppearance.BorderColor = Color.White;
         }
 
-        //Delete Salesman button hover color
-        private void btnDeleteSalesman_MouseEnter(object sender, EventArgs e)
-        {
-            btnDeleteSalesman.ForeColor = Color.Red;
-            btnDeleteSalesman.FlatAppearance.BorderColor = Color.Red;
-        }
-
-        //Delete salesman button hover color
-        private void btnDeleteSalesman_MouseLeave(object sender, EventArgs e)
-        {
-            btnDeleteSalesman.ForeColor = Color.White;
-            btnDeleteSalesman.FlatAppearance.BorderColor = Color.White;
-        }
-
         //Show users button hover color
         private void btnShowUsers_MouseEnter(object sender, EventArgs e)
         {
@@ -225,6 +211,8 @@
         }
         private void UpdateFillEntity()
         {
+            MessageBox.Show(this.dtpBirthdate.Text);
+            //return;
             this.Emp = new Employee();
             this.Emp.Email = this.txtEmail.Text;
             this.Emp.Gender = this.cmbGender.Text;
