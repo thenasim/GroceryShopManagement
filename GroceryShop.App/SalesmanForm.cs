@@ -1,5 +1,6 @@
 ﻿namespace GroceryShop.App
 {
+    using GroceryShop.Repository;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -183,6 +184,34 @@
         {
             btnClearInvoice.ForeColor = Color.White;
             btnClearInvoice.FlatAppearance.BorderColor = Color.White;
+        }
+
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            this.SearchInventory();
+        }
+
+        private void txtSearchbar_KeyUp(object sender, KeyEventArgs e)
+        {
+            this.SearchInventory();
+        }
+
+        private void PopulateGridView()
+        {
+            this.dgbShowProduct.AutoGenerateColumns = false;
+            this.dgbShowProduct.DataSource = InventoryRepo.SearchInventory(this.txtSearchbar.Text);
+        }
+
+        private void SearchInventory()
+        {
+            if (String.IsNullOrEmpty(this.txtSearchbar.Text) || this.txtSearchbar.Text == "Search here")
+            {
+                this.dgbShowProduct.ClearSelection();
+                this.dgbShowProduct.Refresh();
+                return;
+            }
+            this.PopulateGridView();
+            this.dgbShowProduct.ClearSelection();
         }
     }
 }
