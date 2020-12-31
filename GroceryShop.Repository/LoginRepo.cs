@@ -70,15 +70,11 @@
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
-        public static string GetPasswordId(string key)
+        public static bool Validation(string id, string pass)
         {
-            var sql = "select user_id from logins where password = '" + key + "';";
+            var sql = "select user_id, password from logins where user_id = '" + id + "' and password = '" + pass + "';";
             var dt = DataAccess.GetDataTable(sql);
-            foreach (DataRow row in dt.Rows)
-            {
-                return (row["user_id"].ToString());
-            }
-            return null;
+            return dt.Rows.Count == 1;
         }
     }
 }
