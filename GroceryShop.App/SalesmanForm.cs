@@ -213,6 +213,7 @@
             this.dgbShowProduct.ClearSelection();
         }
 
+        // disable the trackbar and textbox quantity
         private void DisableAndClearQuantity()
         {
             this.trkQuantity.Enabled = false;
@@ -240,11 +241,13 @@
             this.txtQunatity.Enabled = true;
             this.trkQuantity.Maximum = quantity;
 
+            // determine the tick frequency of trackbar based on what's available
             double res = quantity / 10;
             int tick = Convert.ToInt32(Math.Floor(res));
             this.trkQuantity.TickFrequency = tick;
         }
 
+        // Add to the cart list
         private void btnADD_Click(object sender, EventArgs e)
         {
             if (this.dgbShowProduct.CurrentRow == null)
@@ -256,13 +259,14 @@
                 return;
             }
 
+            // Get data from datagrid view
             string title = this.dgbShowProduct.CurrentRow.Cells["title"].Value.ToString();
             string quanity = this.txtQunatity.Text;
             string productQuantity = this.dgbShowProduct.CurrentRow.Cells["quantity"].Value.ToString();
             string price = this.dgbShowProduct.CurrentRow.Cells["price"].Value.ToString();
             string appId = this.dgbShowProduct.CurrentRow.Cells["appid"].Value.ToString();
             double totalProductPrice = Convert.ToDouble(price) * Convert.ToDouble(quanity);
-            this.TotalPrice += totalProductPrice;
+            this.TotalPrice += totalProductPrice; // total price updated
 
             string total = Convert.ToString(totalProductPrice);
 
@@ -275,16 +279,17 @@
             lvItem.SubItems.Add(productQuantity); //  4
             lvItem.SubItems.Add(appId); // 5
 
-            if (this.cartListItems.Exists(item => item.SubItems[5].Text == appId))
+            if (this.cartListItems.Exists(item => item.SubItems[5].Text == appId)) // check if the product already added in cart list
             {
                 MessageBox.Show("Already added in cart");
                 return;
             }
 
-            this.cartListItems.Add(lvItem);
-            this.lsvCart.Items.Add(lvItem);
+            this.cartListItems.Add(lvItem); // add to the property declared in top
+            this.lsvCart.Items.Add(lvItem); // add to the listView items
         }
 
+        // Clear the cart
         private void btnClearInvoice_Click(object sender, EventArgs e)
         {
             this.cartListItems.Clear();
@@ -293,6 +298,7 @@
             this.lblTotalCartPrice.Text = "0";
         }
 
+        // Print invoice
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Printed successfully");
@@ -304,6 +310,7 @@
             this.lblTotalCartPrice.Text = "0";
         }
 
+        // Update product quantity in Products table of all the cart product
         private void UpdateProductsTable()
         {
             foreach (var row in this.cartListItems)
@@ -313,12 +320,14 @@
             }
         }
 
+        // Fill the product entity
         private void FillEntity(double quantity, string appId)
         {
             this.Product.AppId = appId;
             this.Product.Quantity = quantity;
         }
 
+        // Trackbar Quantity updates when text Quantity changes
         private void txtQunatity_KeyUp(object sender, KeyEventArgs e)
         {
             if (String.IsNullOrEmpty(this.txtQunatity.Text))
@@ -329,6 +338,11 @@
             {
                 this.trkQuantity.Value = q;
             }
+        }
+
+        private void SalesmanForm_Shown(object sender, EventArgs e)
+        {
+            this.txtSearchbar.Focus();
         }
     }
 }

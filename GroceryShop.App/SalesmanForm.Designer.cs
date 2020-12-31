@@ -49,6 +49,8 @@
             this.ch_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_product_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_appid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lblInvoiceTotalPrice = new System.Windows.Forms.Label();
             this.btnClearInvoice = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -63,8 +65,6 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnADD = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.ch_product_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_appid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlToMoveForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).BeginInit();
             this.pnlEmployeeform.SuspendLayout();
@@ -325,6 +325,16 @@
             this.ch_total.Text = "Total";
             this.ch_total.Width = 146;
             // 
+            // ch_product_quantity
+            // 
+            this.ch_product_quantity.Text = "Product Quantity";
+            this.ch_product_quantity.Width = 0;
+            // 
+            // ch_appid
+            // 
+            this.ch_appid.Text = "AppId";
+            this.ch_appid.Width = 0;
+            // 
             // lblInvoiceTotalPrice
             // 
             this.lblInvoiceTotalPrice.AutoSize = true;
@@ -508,16 +518,6 @@
             this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
             this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             // 
-            // ch_product_quantity
-            // 
-            this.ch_product_quantity.Text = "Product Quantity";
-            this.ch_product_quantity.Width = 0;
-            // 
-            // ch_appid
-            // 
-            this.ch_appid.Text = "AppId";
-            this.ch_appid.Width = 0;
-            // 
             // SalesmanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -532,6 +532,7 @@
             this.Name = "SalesmanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
+            this.Shown += new System.EventHandler(this.SalesmanForm_Shown);
             this.pnlToMoveForm.ResumeLayout(false);
             this.pnlToMoveForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).EndInit();
