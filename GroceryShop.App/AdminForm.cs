@@ -255,6 +255,20 @@
             }
         }
 
+        //Sales report clear button hover color
+        private void btnClearSalesReport_MouseEnter(object sender, EventArgs e)
+        {
+            btnClearSalesReport.ForeColor = Color.Red;
+            btnClearSalesReport.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        //Sales report clear button hover color
+        private void btnClearSalesReport_MouseLeave(object sender, EventArgs e)
+        {
+            btnClearSalesReport.ForeColor = Color.White;
+            btnClearSalesReport.FlatAppearance.BorderColor = Color.White;
+        }
+
 
 
         /*
@@ -413,5 +427,7 @@
                 MessageBox.Show("No Data Found!");
             }
         }
+
+
     }
 }
