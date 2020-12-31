@@ -131,10 +131,9 @@ namespace GroceryShop.App
         {
             try
             {
-                var userId = this.txtUsername.Text;
-                var passwordID = LoginRepo.GetPasswordId(this.txtPassword.Text);
+                var isValid = LoginRepo.Validation(this.txtUsername.Text,this.txtPassword.Text);
                 var userType = UserRepo.GetUserType(this.txtUsername.Text);
-                if (userId == passwordID)
+                if (isValid)
                 {
                     MessageBox.Show("Login Successful");
                     this.Visible = false;
