@@ -100,6 +100,16 @@
             var dt = DataAccess.GetDataTable(sql);
             return dt.Rows.Count == 1;
         }
+        public static string GetUserType(string key)
+        {
+            var sql = "select user_type from users where appid = '" + key + "';";
+            var dt = DataAccess.GetDataTable(sql);
+            foreach (DataRow row in dt.Rows)
+            {
+                return (row["user_type"].ToString());
+            }
+            return null;
+        }
         public static bool Delete(string key)
         {
             var sql = "delete from users where appid = '" + key + "';";
