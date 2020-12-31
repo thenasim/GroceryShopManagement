@@ -21,11 +21,11 @@ namespace GroceryShop.App
             //Application.Run(new Userdetails());
             //Application.Run(new AdminForm());
             //Application.Run(new AdminForm());
-            //Application.Run(new EmployeeForm());
             //Application.Run(new SalesmanForm());
             //Application.Run(new ManagerForm());
-            Application.Run(new SalesmanForm());
+            //Application.Run(new SalesReportForm());
             //Application.Run(new ManagerForm());
+            //Application.Run(new AddProduct());
         }
     }
 }

@@ -38,6 +38,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,11 +88,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Userdetails.cs">
+    <Compile Include="SalesReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Userdetails.Designer.cs">
-      <DependentUpon>Userdetails.cs</DependentUpon>
+    <Compile Include="SalesReportForm.Designer.cs">
+      <DependentUpon>SalesReportForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
@@ -120,8 +121,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Userdetails.resx">
-      <DependentUpon>Userdetails.cs</DependentUpon>
+    <EmbeddedResource Include="SalesReportForm.resx">
+      <DependentUpon>SalesReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="App.config.example" />

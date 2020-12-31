@@ -39,6 +39,11 @@
             btnClose.ForeColor = Color.White;
         }
 
-      
+        //Border color
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, e.ClipRectangle, Color.DeepPink, ButtonBorderStyle.Solid);
+        }
+
     }
 }

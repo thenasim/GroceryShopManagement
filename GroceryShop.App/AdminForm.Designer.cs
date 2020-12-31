@@ -43,16 +43,6 @@
             this.btnManageUers = new System.Windows.Forms.Button();
             this.iconPictureBoxManageUsers = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBoxSalesReport = new FontAwesome.Sharp.IconPictureBox();
-            this.pnlSalesReport = new System.Windows.Forms.Panel();
-            this.pnlSalesgraphs = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.rdoWeeklyreport = new System.Windows.Forms.RadioButton();
-            this.pnlGridviewSalesreport = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnClearSalesReport = new System.Windows.Forms.Button();
-            this.lblSalesReport = new System.Windows.Forms.Label();
-            this.iconPictureBoxSale = new FontAwesome.Sharp.IconPictureBox();
             this.pnlManageUsers = new System.Windows.Forms.Panel();
             this.pnlAdduser = new System.Windows.Forms.Panel();
             this.cboUserType = new System.Windows.Forms.ComboBox();
@@ -80,11 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesReport)).BeginInit();
-            this.pnlSalesReport.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnlGridviewSalesreport.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSale)).BeginInit();
             this.pnlManageUsers.SuspendLayout();
             this.pnlAdduser.SuspendLayout();
             this.pnlGridviewAllusers.SuspendLayout();
@@ -184,6 +169,7 @@
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
             this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
@@ -196,7 +182,6 @@
             this.pnlFeaturesButtons.Controls.Add(this.btnManageUers);
             this.pnlFeaturesButtons.Controls.Add(this.iconPictureBoxManageUsers);
             this.pnlFeaturesButtons.Controls.Add(this.iconPictureBoxSalesReport);
-            this.pnlFeaturesButtons.Controls.Add(this.pnlSalesReport);
             this.pnlFeaturesButtons.Controls.Add(this.pnlManageUsers);
             this.pnlFeaturesButtons.Location = new System.Drawing.Point(0, 41);
             this.pnlFeaturesButtons.Name = "pnlFeaturesButtons";
@@ -234,6 +219,7 @@
             this.btnManageInventory.TabIndex = 17;
             this.btnManageInventory.Text = "Manage  Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
+            this.btnManageInventory.Click += new System.EventHandler(this.btnManageInventory_Click);
             this.btnManageInventory.MouseEnter += new System.EventHandler(this.btnManageInventory_MouseEnter);
             this.btnManageInventory.MouseLeave += new System.EventHandler(this.btnManageInventory_MouseLeave);
             // 
@@ -292,122 +278,6 @@
             this.iconPictureBoxSalesReport.Size = new System.Drawing.Size(65, 64);
             this.iconPictureBoxSalesReport.TabIndex = 12;
             this.iconPictureBoxSalesReport.TabStop = false;
-            // 
-            // pnlSalesReport
-            // 
-            this.pnlSalesReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.pnlSalesReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSalesReport.Controls.Add(this.pnlSalesgraphs);
-            this.pnlSalesReport.Controls.Add(this.panel1);
-            this.pnlSalesReport.Controls.Add(this.pnlGridviewSalesreport);
-            this.pnlSalesReport.Controls.Add(this.lblSalesReport);
-            this.pnlSalesReport.Controls.Add(this.iconPictureBoxSale);
-            this.pnlSalesReport.Location = new System.Drawing.Point(208, 12);
-            this.pnlSalesReport.Name = "pnlSalesReport";
-            this.pnlSalesReport.Size = new System.Drawing.Size(930, 583);
-            this.pnlSalesReport.TabIndex = 18;
-            // 
-            // pnlSalesgraphs
-            // 
-            this.pnlSalesgraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
-            this.pnlSalesgraphs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlSalesgraphs.Location = new System.Drawing.Point(10, 107);
-            this.pnlSalesgraphs.Name = "pnlSalesgraphs";
-            this.pnlSalesgraphs.Size = new System.Drawing.Size(304, 463);
-            this.pnlSalesgraphs.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.rdoWeeklyreport);
-            this.panel1.Location = new System.Drawing.Point(10, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 44);
-            this.panel1.TabIndex = 5;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(153, 15);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(135, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Monthly Sales Report";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // rdoWeeklyreport
-            // 
-            this.rdoWeeklyreport.AutoSize = true;
-            this.rdoWeeklyreport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoWeeklyreport.ForeColor = System.Drawing.Color.White;
-            this.rdoWeeklyreport.Location = new System.Drawing.Point(12, 15);
-            this.rdoWeeklyreport.Name = "rdoWeeklyreport";
-            this.rdoWeeklyreport.Size = new System.Drawing.Size(129, 17);
-            this.rdoWeeklyreport.TabIndex = 0;
-            this.rdoWeeklyreport.TabStop = true;
-            this.rdoWeeklyreport.Text = "Weekly Sales Report";
-            this.rdoWeeklyreport.UseVisualStyleBackColor = true;
-            // 
-            // pnlGridviewSalesreport
-            // 
-            this.pnlGridviewSalesreport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
-            this.pnlGridviewSalesreport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlGridviewSalesreport.Controls.Add(this.dataGridView1);
-            this.pnlGridviewSalesreport.Controls.Add(this.btnClearSalesReport);
-            this.pnlGridviewSalesreport.Location = new System.Drawing.Point(328, 56);
-            this.pnlGridviewSalesreport.Name = "pnlGridviewSalesreport";
-            this.pnlGridviewSalesreport.Size = new System.Drawing.Size(589, 514);
-            this.pnlGridviewSalesreport.TabIndex = 4;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 8);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(576, 457);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // btnClearSalesReport
-            // 
-            this.btnClearSalesReport.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClearSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearSalesReport.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearSalesReport.ForeColor = System.Drawing.Color.White;
-            this.btnClearSalesReport.Location = new System.Drawing.Point(471, 471);
-            this.btnClearSalesReport.Name = "btnClearSalesReport";
-            this.btnClearSalesReport.Size = new System.Drawing.Size(108, 32);
-            this.btnClearSalesReport.TabIndex = 19;
-            this.btnClearSalesReport.Text = "CLEAR";
-            this.btnClearSalesReport.UseVisualStyleBackColor = true;
-            this.btnClearSalesReport.MouseEnter += new System.EventHandler(this.btnClearSalesReport_MouseEnter);
-            this.btnClearSalesReport.MouseLeave += new System.EventHandler(this.btnClearSalesReport_MouseLeave);
-            // 
-            // lblSalesReport
-            // 
-            this.lblSalesReport.AutoSize = true;
-            this.lblSalesReport.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalesReport.ForeColor = System.Drawing.Color.White;
-            this.lblSalesReport.Location = new System.Drawing.Point(58, 18);
-            this.lblSalesReport.Name = "lblSalesReport";
-            this.lblSalesReport.Size = new System.Drawing.Size(144, 30);
-            this.lblSalesReport.TabIndex = 3;
-            this.lblSalesReport.Text = "Sales Reports";
-            // 
-            // iconPictureBoxSale
-            // 
-            this.iconPictureBoxSale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.iconPictureBoxSale.IconChar = FontAwesome.Sharp.IconChar.Receipt;
-            this.iconPictureBoxSale.IconColor = System.Drawing.Color.White;
-            this.iconPictureBoxSale.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxSale.IconSize = 37;
-            this.iconPictureBoxSale.Location = new System.Drawing.Point(19, 14);
-            this.iconPictureBoxSale.Name = "iconPictureBoxSale";
-            this.iconPictureBoxSale.Size = new System.Drawing.Size(37, 37);
-            this.iconPictureBoxSale.TabIndex = 2;
-            this.iconPictureBoxSale.TabStop = false;
             // 
             // pnlManageUsers
             // 
@@ -697,13 +567,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesReport)).EndInit();
-            this.pnlSalesReport.ResumeLayout(false);
-            this.pnlSalesReport.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnlGridviewSalesreport.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSale)).EndInit();
             this.pnlManageUsers.ResumeLayout(false);
             this.pnlManageUsers.PerformLayout();
             this.pnlAdduser.ResumeLayout(false);
@@ -731,9 +594,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxInventory;
         private System.Windows.Forms.Button btnSaleReport;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalesReport;
-        private System.Windows.Forms.Panel pnlSalesReport;
-        private System.Windows.Forms.Label lblSalesReport;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBoxSale;
         private System.Windows.Forms.Button btnShowUsers;
         private System.Windows.Forms.Panel pnlGridviewAllusers;
         private System.Windows.Forms.Panel pnlAdduser;
@@ -755,12 +615,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.Panel pnlGridviewSalesreport;
-        private System.Windows.Forms.Panel pnlSalesgraphs;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton rdoWeeklyreport;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnClearSalesReport;
     }
 }

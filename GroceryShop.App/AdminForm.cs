@@ -138,7 +138,6 @@
         private void btnManageUers_Click(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = true;
-            pnlSalesReport.Visible = false;
             this.PopulateGridView();
             this.txtAppId.Text = UserRepo.GetAppId();   
         }
@@ -146,26 +145,21 @@
         //Sales reports button click
         private void btnSaleReport_Click(object sender, EventArgs e)
         {
-            pnlSalesReport.Visible = true;
-            pnlManageUsers.Visible = false;
-            
+            SalesReportForm sAdmin = new SalesReportForm();
+            sAdmin.Show();
+            this.Hide();
         }
 
         //Manage cart button click
         private void btnMangeCarts_Click(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = false;
-            pnlSalesReport.Visible = false;
-           
         }
 
         //To hide all panel at starting
         private void pnlFeaturesButtons_Paint(object sender, PaintEventArgs e)
         {
             pnlManageUsers.Visible = false;
-            pnlSalesReport.Visible = false;
-           
-
         }
 
         //Hover color for user management add button
@@ -254,20 +248,22 @@
                 txtSearchbar.ForeColor = Color.Gray;
             }
         }
-
-        //Sales report clear button hover color
-        private void btnClearSalesReport_MouseEnter(object sender, EventArgs e)
+        //Manage button 
+        private void btnManageInventory_Click(object sender, EventArgs e)
         {
-            btnClearSalesReport.ForeColor = Color.Red;
-            btnClearSalesReport.FlatAppearance.BorderColor = Color.Red;
+            Inventory iAdmin = new Inventory();
+            iAdmin.Show();
+            this.Hide();
         }
 
-        //Sales report clear button hover color
-        private void btnClearSalesReport_MouseLeave(object sender, EventArgs e)
+        //Log out button
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            btnClearSalesReport.ForeColor = Color.White;
-            btnClearSalesReport.FlatAppearance.BorderColor = Color.White;
+            LoginForm lAdmin = new LoginForm();
+            lAdmin.Show();
+            this.Visible = false;
         }
+
 
 
 
@@ -428,6 +424,6 @@
             }
         }
 
-
+    
     }
 }

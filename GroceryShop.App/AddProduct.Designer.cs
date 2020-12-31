@@ -40,6 +40,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnClear = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -48,6 +49,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.lblAddproduct);
             this.panel1.Controls.Add(this.btnMinimize);
             this.panel1.Controls.Add(this.btnClose);
@@ -154,6 +156,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(499, 76);
             this.panel3.TabIndex = 8;
+            
             // 
             // btnClear
             // 
@@ -168,15 +171,23 @@
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = true;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.panel4.Location = new System.Drawing.Point(3, 408);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(496, 73);
+            this.panel4.TabIndex = 9;
+            // 
             // AddProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(499, 481);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -202,5 +213,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Panel panel4;
     }
 }

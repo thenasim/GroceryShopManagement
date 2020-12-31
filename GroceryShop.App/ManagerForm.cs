@@ -118,7 +118,7 @@
         {
             Inventory iManager = new Inventory();
             iManager.Show();
-            this.Visible = false;
+            this.Hide();
         }
 
         //Save button hover color
@@ -183,10 +183,27 @@
             pnlManageUsers.Visible = false;
         }
 
-        //Ma
+        //ManageSalesmen button
         private void btnMangeSalesmen_Click(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = true;
+        }
+
+        //Sales report button
+        private void btnSaleReport_Click(object sender, EventArgs e)
+        {
+            SalesReportForm sManager = new SalesReportForm();
+            sManager.Show();
+            this.Hide();
+        }
+
+        //Log out button 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm lManager = new LoginForm();
+            this.Close();
+            this.Visible = false;
+
         }
     }
 
