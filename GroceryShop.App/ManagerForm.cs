@@ -9,12 +9,15 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using GroceryShop.Entity;
+    using GroceryShop.Repository;
 
     public partial class ManagerForm : Form
     {
         private byte move;
         private int moveX;
         private int moveY;
+        private Employee Emp { get; set; }
         public ManagerForm()
         {
             InitializeComponent();
@@ -187,6 +190,98 @@
         private void btnMangeSalesmen_Click(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = true;
+        }
+
+        private void PopulateGridView()
+        {
+            this.dgvSalesmen.AutoGenerateColumns = false;
+            this.dgvSalesmen.DataSource = EmployeeRepo.ShowAll();
+            this.dgvSalesmen.ClearSelection();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.UpdateFillEntity();
+            try
+            {
+                if (EmployeeRepo.Update(this.Emp))
+                {
+                    MessageBox.Show("Successfully updated  user");
+                    this.PopulateGridView();
+                    this.ClearInput();
+
+                }
+                else
+                {
+                    MessageBox.Show("Updating employee failed");
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Can not update employee\n" + error.Message);
+                this.ClearInput();
+            }
+
+        }
+        private void UpdateFillEntity()
+        {
+            this.Emp = new Employee();
+            this.Emp.Email = this.txtEmail.Text;
+            this.Emp.Gender = this.cmbGender.Text;
+            this.Emp.Address = this.txtAddress.Text;
+            this.Emp.BirthDate = this.dtpBirthdate.Text;
+            this.Emp.PhoneNumber = this.txtPhonenumber.Text;
+            this.Emp.JoinDate = this.dtpJoindate.Text;
+            this.Emp.Salary = Convert.ToDouble(this.txtSalary.Text);
+            this.Emp.UserId = this.txtUserId.Text;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.ClearInput();
+            txtSearchbar.Text = "Search here";
+            txtSearchbar.ForeColor = Color.Gray;
+            this.dgvSalesmen.DataSource = null;
+        }
+        private void ClearInput()
+        {
+            this.txtUserId.Text = "";
+            this.txtEmail.Text = "";
+            this.txtAddress.Text = "";
+            this.cmbGender.Text = "";
+            this.dtpBirthdate.Text = "";
+            this.txtSalary.Text = "";
+            this.txtPhonenumber.Text = "";
+            this.dtpJoindate.Text = "";
+        }
+
+        private void btnShowEmployee_Click(object sender, EventArgs e)
+        {
+            this.PopulateGridView();
+        }
+
+        private void dgvSalesmen_DoubleClick(object sender, EventArgs e)
+        {
+            this.txtUserId.Text = this.dgvSalesmen.CurrentRow.Cells["user_id"].Value.ToString();
+            this.txtEmail.Text = this.dgvSalesmen.CurrentRow.Cells["email"].Value.ToString();
+            this.txtAddress.Text = this.dgvSalesmen.CurrentRow.Cells["address"].Value.ToString();
+            this.cmbGender.Text = this.dgvSalesmen.CurrentRow.Cells["gender"].Value.ToString();
+            this.dtpBirthdate.Text = this.dgvSalesmen.CurrentRow.Cells["birthdate"].Value.ToString();
+            this.txtSalary.Text = this.dgvSalesmen.CurrentRow.Cells["salary"].Value.ToString();
+            this.txtPhonenumber.Text = this.dgvSalesmen.CurrentRow.Cells["phone"].Value.ToString();
+            this.dtpJoindate.Text = this.dgvSalesmen.CurrentRow.Cells["join_date"].Value.ToString();
+        }
+
+        private void btnSearchInventory_Click(object sender, EventArgs e)
+        {
+            this.dgvSalesmen.AutoGenerateColumns = false;
+            this.dgvSalesmen.DataSource = EmployeeRepo.SearchEmployee(this.txtSearchbar.Text);
+            this.dgvSalesmen.ClearSelection();
+            this.dgvSalesmen.Refresh();
+            if (this.dgvSalesmen.RowCount == 0)
+            {
+                MessageBox.Show("No Data Found!");
+            }
         }
     }
 
