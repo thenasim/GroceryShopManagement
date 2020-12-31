@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanForm));
             this.pnlToMoveForm = new System.Windows.Forms.Panel();
             this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.txtSearchbar = new System.Windows.Forms.TextBox();
             this.btnMinimizeInventory = new System.Windows.Forms.Button();
             this.lblManageUsers = new System.Windows.Forms.Label();
@@ -42,28 +43,28 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.pnlInvoice = new System.Windows.Forms.Panel();
-            this.lblInvoiceTotalPrice = new System.Windows.Forms.Label();
-            this.btnClearInvoice = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgbShowProduct = new System.Windows.Forms.DataGridView();
-            this.trkQuantity = new System.Windows.Forms.TrackBar();
-            this.txtQunatity = new System.Windows.Forms.TextBox();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.btnADD = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
+            this.lblTotalCartPrice = new System.Windows.Forms.Label();
             this.lsvCart = new System.Windows.Forms.ListView();
             this.ch_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_product_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_appid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblInvoiceTotalPrice = new System.Windows.Forms.Label();
+            this.btnClearInvoice = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgbShowProduct = new System.Windows.Forms.DataGridView();
             this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ch_total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_appid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lblTotalCartPrice = new System.Windows.Forms.Label();
+            this.trkQuantity = new System.Windows.Forms.TrackBar();
+            this.txtQunatity = new System.Windows.Forms.TextBox();
+            this.lblQuantity = new System.Windows.Forms.Label();
+            this.btnADD = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.pnlToMoveForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).BeginInit();
             this.pnlEmployeeform.SuspendLayout();
@@ -113,6 +114,22 @@
             this.btnSearchInventory.Click += new System.EventHandler(this.btnSearchInventory_Click);
             this.btnSearchInventory.MouseEnter += new System.EventHandler(this.btnSearchInventory_MouseEnter);
             this.btnSearchInventory.MouseLeave += new System.EventHandler(this.btnSearchInventory_MouseLeave);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1259, 5);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(126, 38);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
+            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
             // txtSearchbar
             // 
@@ -255,6 +272,69 @@
             this.pnlInvoice.Size = new System.Drawing.Size(722, 543);
             this.pnlInvoice.TabIndex = 31;
             // 
+            // lblTotalCartPrice
+            // 
+            this.lblTotalCartPrice.AutoSize = true;
+            this.lblTotalCartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCartPrice.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCartPrice.Location = new System.Drawing.Point(506, 502);
+            this.lblTotalCartPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCartPrice.Name = "lblTotalCartPrice";
+            this.lblTotalCartPrice.Size = new System.Drawing.Size(21, 24);
+            this.lblTotalCartPrice.TabIndex = 3;
+            this.lblTotalCartPrice.Text = "0";
+            // 
+            // lsvCart
+            // 
+            this.lsvCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.lsvCart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ch_title,
+            this.ch_quantity,
+            this.ch_price,
+            this.ch_total,
+            this.ch_product_quantity,
+            this.ch_appid});
+            this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvCart.ForeColor = System.Drawing.Color.White;
+            this.lsvCart.HideSelection = false;
+            this.lsvCart.Location = new System.Drawing.Point(3, 3);
+            this.lsvCart.MultiSelect = false;
+            this.lsvCart.Name = "lsvCart";
+            this.lsvCart.Size = new System.Drawing.Size(714, 485);
+            this.lsvCart.TabIndex = 2;
+            this.lsvCart.UseCompatibleStateImageBehavior = false;
+            this.lsvCart.View = System.Windows.Forms.View.Details;
+            // 
+            // ch_title
+            // 
+            this.ch_title.Text = "Title";
+            this.ch_title.Width = 304;
+            // 
+            // ch_quantity
+            // 
+            this.ch_quantity.Text = "Quantity";
+            this.ch_quantity.Width = 131;
+            // 
+            // ch_price
+            // 
+            this.ch_price.Text = "Price";
+            this.ch_price.Width = 120;
+            // 
+            // ch_total
+            // 
+            this.ch_total.Text = "Total";
+            this.ch_total.Width = 146;
+            // 
+            // ch_product_quantity
+            // 
+            this.ch_product_quantity.Text = "Product Quantity";
+            this.ch_product_quantity.Width = 0;
+            // 
+            // ch_appid
+            // 
+            this.ch_appid.Text = "AppId";
+            this.ch_appid.Width = 0;
+            // 
             // lblInvoiceTotalPrice
             // 
             this.lblInvoiceTotalPrice.AutoSize = true;
@@ -283,22 +363,6 @@
             this.btnClearInvoice.Click += new System.EventHandler(this.btnClearInvoice_Click);
             this.btnClearInvoice.MouseEnter += new System.EventHandler(this.btnClearInvoice_MouseEnter);
             this.btnClearInvoice.MouseLeave += new System.EventHandler(this.btnClearInvoice_MouseLeave);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1259, 5);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 38);
-            this.btnLogout.TabIndex = 11;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
-            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
             // panel1
             // 
@@ -336,109 +400,6 @@
             this.dgbShowProduct.Size = new System.Drawing.Size(727, 483);
             this.dgbShowProduct.TabIndex = 36;
             this.dgbShowProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbShowProduct_CellClick);
-            // 
-            // trkQuantity
-            // 
-            this.trkQuantity.Enabled = false;
-            this.trkQuantity.Location = new System.Drawing.Point(193, 586);
-            this.trkQuantity.Minimum = 1;
-            this.trkQuantity.Name = "trkQuantity";
-            this.trkQuantity.Size = new System.Drawing.Size(552, 56);
-            this.trkQuantity.TabIndex = 19;
-            this.trkQuantity.Value = 1;
-            this.trkQuantity.Scroll += new System.EventHandler(this.trkQuantity_Scroll);
-            // 
-            // txtQunatity
-            // 
-            this.txtQunatity.Enabled = false;
-            this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQunatity.Location = new System.Drawing.Point(18, 586);
-            this.txtQunatity.Margin = new System.Windows.Forms.Padding(4);
-            this.txtQunatity.Name = "txtQunatity";
-            this.txtQunatity.Size = new System.Drawing.Size(152, 34);
-            this.txtQunatity.TabIndex = 35;
-            this.txtQunatity.Text = "1";
-            // 
-            // lblQuantity
-            // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(14, 551);
-            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(88, 28);
-            this.lblQuantity.TabIndex = 30;
-            this.lblQuantity.Text = "Quantity";
-            // 
-            // btnADD
-            // 
-            this.btnADD.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnADD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnADD.ForeColor = System.Drawing.Color.White;
-            this.btnADD.Location = new System.Drawing.Point(17, 665);
-            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
-            this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(153, 44);
-            this.btnADD.TabIndex = 29;
-            this.btnADD.Text = "ADD";
-            this.btnADD.UseVisualStyleBackColor = true;
-            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
-            this.btnADD.MouseEnter += new System.EventHandler(this.btnADD_MouseEnter);
-            this.btnADD.MouseLeave += new System.EventHandler(this.btnADD_MouseLeave);
-            // 
-            // btnClear
-            // 
-            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(210, 665);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(153, 44);
-            this.btnClear.TabIndex = 19;
-            this.btnClear.Text = "CLEAR";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-            this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
-            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
-            // 
-            // lsvCart
-            // 
-            this.lsvCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
-            this.lsvCart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ch_title,
-            this.ch_quantity,
-            this.ch_price,
-            this.ch_total,
-            this.ch_appid});
-            this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lsvCart.ForeColor = System.Drawing.Color.White;
-            this.lsvCart.HideSelection = false;
-            this.lsvCart.Location = new System.Drawing.Point(3, 3);
-            this.lsvCart.MultiSelect = false;
-            this.lsvCart.Name = "lsvCart";
-            this.lsvCart.Size = new System.Drawing.Size(714, 485);
-            this.lsvCart.TabIndex = 2;
-            this.lsvCart.UseCompatibleStateImageBehavior = false;
-            this.lsvCart.View = System.Windows.Forms.View.Details;
-            // 
-            // ch_title
-            // 
-            this.ch_title.Text = "Title";
-            this.ch_title.Width = 304;
-            // 
-            // ch_quantity
-            // 
-            this.ch_quantity.Text = "Quantity";
-            this.ch_quantity.Width = 131;
-            // 
-            // ch_price
-            // 
-            this.ch_price.Text = "Price";
-            this.ch_price.Width = 120;
             // 
             // appid
             // 
@@ -488,27 +449,74 @@
             this.category_name.Name = "category_name";
             this.category_name.ReadOnly = true;
             // 
-            // ch_total
+            // trkQuantity
             // 
-            this.ch_total.Text = "Total";
-            this.ch_total.Width = 146;
+            this.trkQuantity.Enabled = false;
+            this.trkQuantity.Location = new System.Drawing.Point(193, 586);
+            this.trkQuantity.Minimum = 1;
+            this.trkQuantity.Name = "trkQuantity";
+            this.trkQuantity.Size = new System.Drawing.Size(552, 56);
+            this.trkQuantity.TabIndex = 19;
+            this.trkQuantity.Value = 1;
+            this.trkQuantity.Scroll += new System.EventHandler(this.trkQuantity_Scroll);
             // 
-            // ch_appid
+            // txtQunatity
             // 
-            this.ch_appid.Text = "AppId";
-            this.ch_appid.Width = 0;
+            this.txtQunatity.Enabled = false;
+            this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQunatity.Location = new System.Drawing.Point(18, 586);
+            this.txtQunatity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtQunatity.Name = "txtQunatity";
+            this.txtQunatity.Size = new System.Drawing.Size(152, 34);
+            this.txtQunatity.TabIndex = 35;
+            this.txtQunatity.Text = "1";
+            this.txtQunatity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQunatity_KeyUp);
             // 
-            // lblTotalCartPrice
+            // lblQuantity
             // 
-            this.lblTotalCartPrice.AutoSize = true;
-            this.lblTotalCartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalCartPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCartPrice.Location = new System.Drawing.Point(506, 502);
-            this.lblTotalCartPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTotalCartPrice.Name = "lblTotalCartPrice";
-            this.lblTotalCartPrice.Size = new System.Drawing.Size(21, 24);
-            this.lblTotalCartPrice.TabIndex = 3;
-            this.lblTotalCartPrice.Text = "0";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuantity.ForeColor = System.Drawing.Color.White;
+            this.lblQuantity.Location = new System.Drawing.Point(14, 551);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(88, 28);
+            this.lblQuantity.TabIndex = 30;
+            this.lblQuantity.Text = "Quantity";
+            // 
+            // btnADD
+            // 
+            this.btnADD.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnADD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnADD.ForeColor = System.Drawing.Color.White;
+            this.btnADD.Location = new System.Drawing.Point(17, 665);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
+            this.btnADD.Name = "btnADD";
+            this.btnADD.Size = new System.Drawing.Size(153, 44);
+            this.btnADD.TabIndex = 29;
+            this.btnADD.Text = "ADD";
+            this.btnADD.UseVisualStyleBackColor = true;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
+            this.btnADD.MouseEnter += new System.EventHandler(this.btnADD_MouseEnter);
+            this.btnADD.MouseLeave += new System.EventHandler(this.btnADD_MouseLeave);
+            // 
+            // btnClear
+            // 
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(210, 665);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(153, 44);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
+            this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             // 
             // SalesmanForm
             // 
@@ -524,6 +532,7 @@
             this.Name = "SalesmanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
+            this.Shown += new System.EventHandler(this.SalesmanForm_Shown);
             this.pnlToMoveForm.ResumeLayout(false);
             this.pnlToMoveForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).EndInit();
@@ -574,7 +583,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
         private System.Windows.Forms.ColumnHeader ch_total;
-        private System.Windows.Forms.ColumnHeader ch_appid;
         private System.Windows.Forms.Label lblTotalCartPrice;
+        private System.Windows.Forms.ColumnHeader ch_product_quantity;
+        private System.Windows.Forms.ColumnHeader ch_appid;
     }
 }

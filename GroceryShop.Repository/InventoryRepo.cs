@@ -111,6 +111,12 @@ namespace GroceryShop.Repository
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
+        public static bool UpdateProductQuantity(Products p)
+        {
+            var sql = $"UPDATE products SET quantity = {p.Quantity} WHERE appid = '{p.AppId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
         public static bool Delete(string key)
         {
             var sql = "delete from products where appid = '" + key + "';";
