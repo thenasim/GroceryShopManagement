@@ -97,22 +97,6 @@
             iconPictureBoxSalesReport.ForeColor = Color.White;
         }
 
-        //Hover color for manage carts button
-        private void btnManageCarts_MouseEnter(object sender, EventArgs e)
-        {
-            btnManageCarts.ForeColor = Color.DeepSkyBlue;
-            btnManageCarts.FlatAppearance.BorderColor = Color.DeepSkyBlue;
-            iconPictureBoxManageCarts.ForeColor = Color.DeepSkyBlue;
-        }
-
-        //Hover color for manage carts button
-        private void btnManageCarts_MouseLeave(object sender, EventArgs e)
-        {
-            btnManageCarts.ForeColor = Color.White;
-            btnManageCarts.FlatAppearance.BorderColor = Color.White;
-            iconPictureBoxManageCarts.ForeColor = Color.White;
-        }
-
         //Hover color for manage salesmen button
         private void btnMangeSalesmen_MouseEnter(object sender, EventArgs e)
         {
@@ -128,5 +112,83 @@
             btnMangeSalesmen.FlatAppearance.BorderColor = Color.White;
             iconPictureBoxManageSalesmen.ForeColor = Color.White;
         }
+
+        //Manage Inventory button click
+        private void btnManageInventory_Click(object sender, EventArgs e)
+        {
+            Inventory iManager = new Inventory();
+            iManager.Show();
+            this.Visible = false;
+        }
+
+        //Save button hover color
+        private void btnSave_MouseEnter(object sender, EventArgs e)
+        {
+            btnSave.ForeColor = Color.ForestGreen;
+            btnSave.FlatAppearance.BorderColor = Color.ForestGreen;
+        }
+
+        //Save button hover color
+        private void btnSave_MouseLeave(object sender, EventArgs e)
+        {
+            btnSave.ForeColor = Color.White;
+            btnSave.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Clear button hover color
+        private void btnClear_MouseEnter(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.Red;
+            btnClear.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        //Clear button hover color
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            btnClear.ForeColor = Color.White;
+            btnClear.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Delete Salesman button hover color
+        private void btnDeleteSalesman_MouseEnter(object sender, EventArgs e)
+        {
+            btnDeleteSalesman.ForeColor = Color.Red;
+            btnDeleteSalesman.FlatAppearance.BorderColor = Color.Red;
+        }
+
+        //Delete salesman button hover color
+        private void btnDeleteSalesman_MouseLeave(object sender, EventArgs e)
+        {
+            btnDeleteSalesman.ForeColor = Color.White;
+            btnDeleteSalesman.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Show users button hover color
+        private void btnShowUsers_MouseEnter(object sender, EventArgs e)
+        {
+            btnShowUsers.FlatAppearance.BorderColor = Color.LightBlue;
+            btnShowUsers.ForeColor = Color.LightBlue;
+        }
+
+        //Show users button hover color
+        private void btnShowUsers_MouseLeave(object sender, EventArgs e)
+        {
+            btnShowUsers.FlatAppearance.BorderColor = Color.White;
+            btnShowUsers.ForeColor = Color.White;
+        }
+
+        //Hide all panel visibility at the beginning
+        private void ManagerForm_Load(object sender, EventArgs e)
+        {
+            pnlManageUsers.Visible = false;
+        }
+
+        private void btnMangeSalesmen_Click(object sender, EventArgs e)
+        {
+            pnlManageUsers.Visible = true;
+        }
     }
+
+        
+    
 }
