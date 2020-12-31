@@ -13,6 +13,8 @@
 
     public partial class SalesmanForm : Form
     {
+        List<ListViewItem> cartListItems = new List<ListViewItem>();
+        double TotalPrice { get; set; } = 0;
         private byte move;
         private int moveX;
         private int moveY;
@@ -87,12 +89,6 @@
 
         //To hide all visibility of all features panels at starting
         private void pnlEmployeeform_Paint(object sender, PaintEventArgs e)
-        {
-            pnlManageCarts.Visible = true;
-        }
-
-        //Manage cart button
-        private void btnMangeCarts_Click(object sender, EventArgs e)
         {
             pnlManageCarts.Visible = true;
         }
@@ -206,12 +202,94 @@
         {
             if (String.IsNullOrEmpty(this.txtSearchbar.Text) || this.txtSearchbar.Text == "Search here")
             {
-                this.dgbShowProduct.ClearSelection();
-                this.dgbShowProduct.Refresh();
+                this.dgbShowProduct.DataSource = null;
+                this.dgbShowProduct.Rows.Clear();
+                this.DisableAndClearQuantity();
                 return;
             }
             this.PopulateGridView();
             this.dgbShowProduct.ClearSelection();
+        }
+
+        private void DisableAndClearQuantity()
+        {
+            this.trkQuantity.Enabled = false;
+            this.txtQunatity.Enabled = false;
+            this.txtQunatity.Text = "1";
+            this.trkQuantity.Value = 1;
+        }
+
+        private void trkQuantity_Scroll(object sender, EventArgs e)
+        {
+            this.txtQunatity.Text = Convert.ToString(this.trkQuantity.Value);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            this.dgbShowProduct.DataSource = null;
+            this.dgbShowProduct.Rows.Clear();
+            this.DisableAndClearQuantity();
+        }
+
+        private void dgbShowProduct_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int quantity = Convert.ToInt32(this.dgbShowProduct.CurrentRow.Cells["quantity"].Value.ToString());
+            this.trkQuantity.Enabled = true;
+            this.txtQunatity.Enabled = true;
+            this.trkQuantity.Maximum = quantity;
+
+            double res = quantity / 10;
+            int tick = Convert.ToInt32(Math.Floor(res));
+            this.trkQuantity.TickFrequency = tick;
+        }
+
+        private void btnADD_Click(object sender, EventArgs e)
+        {
+            if (this.dgbShowProduct.CurrentRow == null)
+                return;
+
+            if (String.IsNullOrEmpty(this.txtQunatity.Text))
+            {
+                MessageBox.Show("Please add quantity");
+                return;
+            }
+
+            string title = this.dgbShowProduct.CurrentRow.Cells["title"].Value.ToString();
+            string quanity = this.txtQunatity.Text;
+            string price = this.dgbShowProduct.CurrentRow.Cells["price"].Value.ToString();
+            string appId = this.dgbShowProduct.CurrentRow.Cells["appid"].Value.ToString();
+            double totalProductPrice = Convert.ToDouble(price) * Convert.ToDouble(quanity);
+            this.TotalPrice += totalProductPrice;
+
+            string total = Convert.ToString(totalProductPrice);
+
+            this.lblTotalCartPrice.Text = Convert.ToString(this.TotalPrice);
+
+            ListViewItem lvItem = new ListViewItem(title, 0);
+            lvItem.SubItems.Add(quanity);
+            lvItem.SubItems.Add(price);
+            lvItem.SubItems.Add(total);
+            lvItem.SubItems.Add(appId);
+
+            if (this.cartListItems.Exists(item => item.SubItems[4].Text == appId))
+            {
+                MessageBox.Show("Already added in cart");
+                return;
+            }
+
+            this.cartListItems.Add(lvItem);
+            this.lsvCart.Items.Add(lvItem);
+        }
+
+        private void btnClearInvoice_Click(object sender, EventArgs e)
+        {
+            this.cartListItems.Clear();
+            this.lsvCart.Items.Clear();
+        }
+
+        private void btnPrintInvoice_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Printed successfully");
         }
     }
 }

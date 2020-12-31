@@ -34,47 +34,52 @@
             this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
             this.txtSearchbar = new System.Windows.Forms.TextBox();
             this.btnMinimizeInventory = new System.Windows.Forms.Button();
+            this.lblManageUsers = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.iconPictureBoxManageCarts = new FontAwesome.Sharp.IconPictureBox();
             this.pnlEmployeeform = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.pnlManageCarts = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPrintInvoice = new System.Windows.Forms.Button();
             this.pnlInvoice = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblInvoiceTotalPrice = new System.Windows.Forms.Label();
             this.btnClearInvoice = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgbShowProduct = new System.Windows.Forms.DataGridView();
+            this.trkQuantity = new System.Windows.Forms.TrackBar();
             this.txtQunatity = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.btnADD = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lblManageUsers = new System.Windows.Forms.Label();
-            this.iconPictureBoxManageCarts = new FontAwesome.Sharp.IconPictureBox();
-            this.trkQuantity = new System.Windows.Forms.TrackBar();
-            this.dgbShowProduct = new System.Windows.Forms.DataGridView();
+            this.lsvCart = new System.Windows.Forms.ListView();
+            this.ch_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_quantity = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.category_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ch_total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_appid = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lblTotalCartPrice = new System.Windows.Forms.Label();
             this.pnlToMoveForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).BeginInit();
             this.pnlEmployeeform.SuspendLayout();
             this.pnlManageCarts.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlInvoice.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trkQuantity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbShowProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trkQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlToMoveForm
             // 
             this.pnlToMoveForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
             this.pnlToMoveForm.Controls.Add(this.btnSearchInventory);
+            this.pnlToMoveForm.Controls.Add(this.btnLogout);
             this.pnlToMoveForm.Controls.Add(this.txtSearchbar);
             this.pnlToMoveForm.Controls.Add(this.btnMinimizeInventory);
             this.pnlToMoveForm.Controls.Add(this.lblManageUsers);
@@ -141,6 +146,18 @@
             this.btnMinimizeInventory.UseVisualStyleBackColor = true;
             this.btnMinimizeInventory.Click += new System.EventHandler(this.btnMinimizeInventory_Click);
             // 
+            // lblManageUsers
+            // 
+            this.lblManageUsers.AutoSize = true;
+            this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
+            this.lblManageUsers.Location = new System.Drawing.Point(72, 8);
+            this.lblManageUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblManageUsers.Name = "lblManageUsers";
+            this.lblManageUsers.Size = new System.Drawing.Size(72, 37);
+            this.lblManageUsers.TabIndex = 1;
+            this.lblManageUsers.Text = "Cart";
+            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
@@ -159,6 +176,21 @@
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
+            // iconPictureBoxManageCarts
+            // 
+            this.iconPictureBoxManageCarts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
+            this.iconPictureBoxManageCarts.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
+            this.iconPictureBoxManageCarts.IconColor = System.Drawing.Color.White;
+            this.iconPictureBoxManageCarts.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBoxManageCarts.IconSize = 43;
+            this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(13, 5);
+            this.iconPictureBoxManageCarts.Margin = new System.Windows.Forms.Padding(4);
+            this.iconPictureBoxManageCarts.Name = "iconPictureBoxManageCarts";
+            this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(51, 43);
+            this.iconPictureBoxManageCarts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconPictureBoxManageCarts.TabIndex = 0;
+            this.iconPictureBoxManageCarts.TabStop = false;
+            // 
             // pnlEmployeeform
             // 
             this.pnlEmployeeform.Controls.Add(this.pnlManageCarts);
@@ -169,28 +201,11 @@
             this.pnlEmployeeform.TabIndex = 3;
             this.pnlEmployeeform.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmployeeform_Paint);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1336, 13);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(165, 43);
-            this.btnLogout.TabIndex = 11;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
-            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
-            // 
             // pnlManageCarts
             // 
             this.pnlManageCarts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
             this.pnlManageCarts.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlManageCarts.Controls.Add(this.panel2);
-            this.pnlManageCarts.Controls.Add(this.btnLogout);
             this.pnlManageCarts.Controls.Add(this.panel1);
             this.pnlManageCarts.Location = new System.Drawing.Point(9, 6);
             this.pnlManageCarts.Margin = new System.Windows.Forms.Padding(4);
@@ -205,10 +220,10 @@
             this.panel2.Controls.Add(this.btnPrintInvoice);
             this.panel2.Controls.Add(this.pnlInvoice);
             this.panel2.Controls.Add(this.btnClearInvoice);
-            this.panel2.Location = new System.Drawing.Point(867, 67);
+            this.panel2.Location = new System.Drawing.Point(774, 4);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(639, 663);
+            this.panel2.Size = new System.Drawing.Size(732, 726);
             this.panel2.TabIndex = 3;
             // 
             // btnPrintInvoice
@@ -224,51 +239,33 @@
             this.btnPrintInvoice.TabIndex = 32;
             this.btnPrintInvoice.Text = "PRINT";
             this.btnPrintInvoice.UseVisualStyleBackColor = true;
+            this.btnPrintInvoice.Click += new System.EventHandler(this.btnPrintInvoice_Click);
             this.btnPrintInvoice.MouseEnter += new System.EventHandler(this.btnPrintInvoice_MouseEnter);
             this.btnPrintInvoice.MouseLeave += new System.EventHandler(this.btnPrintInvoice_MouseLeave);
             // 
             // pnlInvoice
             // 
             this.pnlInvoice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlInvoice.Controls.Add(this.dataGridView1);
-            this.pnlInvoice.Controls.Add(this.textBox1);
+            this.pnlInvoice.Controls.Add(this.lblTotalCartPrice);
+            this.pnlInvoice.Controls.Add(this.lsvCart);
             this.pnlInvoice.Controls.Add(this.lblInvoiceTotalPrice);
-            this.pnlInvoice.Location = new System.Drawing.Point(201, 17);
+            this.pnlInvoice.Location = new System.Drawing.Point(4, 11);
             this.pnlInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInvoice.Name = "pnlInvoice";
-            this.pnlInvoice.Size = new System.Drawing.Size(429, 540);
+            this.pnlInvoice.Size = new System.Drawing.Size(722, 543);
             this.pnlInvoice.TabIndex = 31;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 4);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(416, 482);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(239, 505);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(181, 22);
-            this.textBox1.TabIndex = 1;
             // 
             // lblInvoiceTotalPrice
             // 
             this.lblInvoiceTotalPrice.AutoSize = true;
             this.lblInvoiceTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoiceTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblInvoiceTotalPrice.Location = new System.Drawing.Point(4, 505);
+            this.lblInvoiceTotalPrice.Location = new System.Drawing.Point(385, 504);
             this.lblInvoiceTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvoiceTotalPrice.Name = "lblInvoiceTotalPrice";
-            this.lblInvoiceTotalPrice.Size = new System.Drawing.Size(101, 20);
+            this.lblInvoiceTotalPrice.Size = new System.Drawing.Size(113, 20);
             this.lblInvoiceTotalPrice.TabIndex = 0;
-            this.lblInvoiceTotalPrice.Text = "Total Price";
+            this.lblInvoiceTotalPrice.Text = "Total Price :";
             // 
             // btnClearInvoice
             // 
@@ -283,8 +280,25 @@
             this.btnClearInvoice.TabIndex = 30;
             this.btnClearInvoice.Text = "CLEAR";
             this.btnClearInvoice.UseVisualStyleBackColor = true;
+            this.btnClearInvoice.Click += new System.EventHandler(this.btnClearInvoice_Click);
             this.btnClearInvoice.MouseEnter += new System.EventHandler(this.btnClearInvoice_MouseEnter);
             this.btnClearInvoice.MouseLeave += new System.EventHandler(this.btnClearInvoice_MouseLeave);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1259, 5);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(126, 38);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
+            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
             // 
             // panel1
             // 
@@ -302,14 +316,48 @@
             this.panel1.Size = new System.Drawing.Size(762, 726);
             this.panel1.TabIndex = 2;
             // 
+            // dgbShowProduct
+            // 
+            this.dgbShowProduct.AllowUserToAddRows = false;
+            this.dgbShowProduct.AllowUserToDeleteRows = false;
+            this.dgbShowProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgbShowProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appid,
+            this.title,
+            this.price,
+            this.quantity,
+            this.category_name});
+            this.dgbShowProduct.Location = new System.Drawing.Point(18, 11);
+            this.dgbShowProduct.Name = "dgbShowProduct";
+            this.dgbShowProduct.ReadOnly = true;
+            this.dgbShowProduct.RowHeadersWidth = 51;
+            this.dgbShowProduct.RowTemplate.Height = 24;
+            this.dgbShowProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgbShowProduct.Size = new System.Drawing.Size(727, 483);
+            this.dgbShowProduct.TabIndex = 36;
+            this.dgbShowProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbShowProduct_CellClick);
+            // 
+            // trkQuantity
+            // 
+            this.trkQuantity.Enabled = false;
+            this.trkQuantity.Location = new System.Drawing.Point(193, 586);
+            this.trkQuantity.Minimum = 1;
+            this.trkQuantity.Name = "trkQuantity";
+            this.trkQuantity.Size = new System.Drawing.Size(552, 56);
+            this.trkQuantity.TabIndex = 19;
+            this.trkQuantity.Value = 1;
+            this.trkQuantity.Scroll += new System.EventHandler(this.trkQuantity_Scroll);
+            // 
             // txtQunatity
             // 
+            this.txtQunatity.Enabled = false;
             this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQunatity.Location = new System.Drawing.Point(18, 586);
             this.txtQunatity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQunatity.Name = "txtQunatity";
             this.txtQunatity.Size = new System.Drawing.Size(152, 34);
             this.txtQunatity.TabIndex = 35;
+            this.txtQunatity.Text = "1";
             // 
             // lblQuantity
             // 
@@ -336,6 +384,7 @@
             this.btnADD.TabIndex = 29;
             this.btnADD.Text = "ADD";
             this.btnADD.UseVisualStyleBackColor = true;
+            this.btnADD.Click += new System.EventHandler(this.btnADD_Click);
             this.btnADD.MouseEnter += new System.EventHandler(this.btnADD_MouseEnter);
             this.btnADD.MouseLeave += new System.EventHandler(this.btnADD_MouseLeave);
             // 
@@ -352,64 +401,44 @@
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             this.btnClear.MouseEnter += new System.EventHandler(this.btnClear_MouseEnter);
             this.btnClear.MouseLeave += new System.EventHandler(this.btnClear_MouseLeave);
             // 
-            // lblManageUsers
+            // lsvCart
             // 
-            this.lblManageUsers.AutoSize = true;
-            this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
-            this.lblManageUsers.Location = new System.Drawing.Point(72, 8);
-            this.lblManageUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblManageUsers.Name = "lblManageUsers";
-            this.lblManageUsers.Size = new System.Drawing.Size(72, 37);
-            this.lblManageUsers.TabIndex = 1;
-            this.lblManageUsers.Text = "Cart";
+            this.lsvCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(49)))), ((int)(((byte)(69)))));
+            this.lsvCart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ch_title,
+            this.ch_quantity,
+            this.ch_price,
+            this.ch_total,
+            this.ch_appid});
+            this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsvCart.ForeColor = System.Drawing.Color.White;
+            this.lsvCart.HideSelection = false;
+            this.lsvCart.Location = new System.Drawing.Point(3, 3);
+            this.lsvCart.MultiSelect = false;
+            this.lsvCart.Name = "lsvCart";
+            this.lsvCart.Size = new System.Drawing.Size(714, 485);
+            this.lsvCart.TabIndex = 2;
+            this.lsvCart.UseCompatibleStateImageBehavior = false;
+            this.lsvCart.View = System.Windows.Forms.View.Details;
             // 
-            // iconPictureBoxManageCarts
+            // ch_title
             // 
-            this.iconPictureBoxManageCarts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(55)))));
-            this.iconPictureBoxManageCarts.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
-            this.iconPictureBoxManageCarts.IconColor = System.Drawing.Color.White;
-            this.iconPictureBoxManageCarts.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxManageCarts.IconSize = 43;
-            this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(13, 5);
-            this.iconPictureBoxManageCarts.Margin = new System.Windows.Forms.Padding(4);
-            this.iconPictureBoxManageCarts.Name = "iconPictureBoxManageCarts";
-            this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(51, 43);
-            this.iconPictureBoxManageCarts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBoxManageCarts.TabIndex = 0;
-            this.iconPictureBoxManageCarts.TabStop = false;
+            this.ch_title.Text = "Title";
+            this.ch_title.Width = 304;
             // 
-            // trkQuantity
+            // ch_quantity
             // 
-            this.trkQuantity.Location = new System.Drawing.Point(193, 586);
-            this.trkQuantity.Minimum = 1;
-            this.trkQuantity.Name = "trkQuantity";
-            this.trkQuantity.Size = new System.Drawing.Size(552, 56);
-            this.trkQuantity.TabIndex = 19;
-            this.trkQuantity.Value = 1;
+            this.ch_quantity.Text = "Quantity";
+            this.ch_quantity.Width = 131;
             // 
-            // dgbShowProduct
+            // ch_price
             // 
-            this.dgbShowProduct.AllowUserToAddRows = false;
-            this.dgbShowProduct.AllowUserToDeleteRows = false;
-            this.dgbShowProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbShowProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.appid,
-            this.title,
-            this.price,
-            this.quantity,
-            this.category_name});
-            this.dgbShowProduct.Location = new System.Drawing.Point(18, 11);
-            this.dgbShowProduct.Name = "dgbShowProduct";
-            this.dgbShowProduct.ReadOnly = true;
-            this.dgbShowProduct.RowHeadersWidth = 51;
-            this.dgbShowProduct.RowTemplate.Height = 24;
-            this.dgbShowProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgbShowProduct.Size = new System.Drawing.Size(727, 483);
-            this.dgbShowProduct.TabIndex = 36;
+            this.ch_price.Text = "Price";
+            this.ch_price.Width = 120;
             // 
             // appid
             // 
@@ -459,6 +488,28 @@
             this.category_name.Name = "category_name";
             this.category_name.ReadOnly = true;
             // 
+            // ch_total
+            // 
+            this.ch_total.Text = "Total";
+            this.ch_total.Width = 146;
+            // 
+            // ch_appid
+            // 
+            this.ch_appid.Text = "AppId";
+            this.ch_appid.Width = 0;
+            // 
+            // lblTotalCartPrice
+            // 
+            this.lblTotalCartPrice.AutoSize = true;
+            this.lblTotalCartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCartPrice.ForeColor = System.Drawing.Color.White;
+            this.lblTotalCartPrice.Location = new System.Drawing.Point(506, 502);
+            this.lblTotalCartPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotalCartPrice.Name = "lblTotalCartPrice";
+            this.lblTotalCartPrice.Size = new System.Drawing.Size(21, 24);
+            this.lblTotalCartPrice.TabIndex = 3;
+            this.lblTotalCartPrice.Text = "0";
+            // 
             // SalesmanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,17 +526,16 @@
             this.Text = "EmployeeForm";
             this.pnlToMoveForm.ResumeLayout(false);
             this.pnlToMoveForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).EndInit();
             this.pnlEmployeeform.ResumeLayout(false);
             this.pnlManageCarts.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.pnlInvoice.ResumeLayout(false);
             this.pnlInvoice.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageCarts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trkQuantity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbShowProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trkQuantity)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,18 +558,23 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnPrintInvoice;
         private System.Windows.Forms.Panel pnlInvoice;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblInvoiceTotalPrice;
         private System.Windows.Forms.Button btnClearInvoice;
         private System.Windows.Forms.TextBox txtQunatity;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.TrackBar trkQuantity;
         private System.Windows.Forms.DataGridView dgbShowProduct;
+        private System.Windows.Forms.ListView lsvCart;
+        private System.Windows.Forms.ColumnHeader ch_title;
+        private System.Windows.Forms.ColumnHeader ch_quantity;
+        private System.Windows.Forms.ColumnHeader ch_price;
         private System.Windows.Forms.DataGridViewTextBoxColumn appid;
         private System.Windows.Forms.DataGridViewTextBoxColumn title;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_name;
+        private System.Windows.Forms.ColumnHeader ch_total;
+        private System.Windows.Forms.ColumnHeader ch_appid;
+        private System.Windows.Forms.Label lblTotalCartPrice;
     }
 }
