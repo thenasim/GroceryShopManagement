@@ -16,13 +16,12 @@ namespace GroceryShop.App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new Inventory());
             //Application.Run(new Userdetails());
             //Application.Run(new AdminForm());
-            //Application.Run(new EmployeeForm());
             //Application.Run(new SalesmanForm());
-            //Application.Run(new ManagerForm());
+            Application.Run(new ManagerForm());
             //Application.Run(new SalesmanForm());
             //Application.Run(new ManagerForm());
         }

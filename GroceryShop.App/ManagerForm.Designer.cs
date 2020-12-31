@@ -38,7 +38,7 @@
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnSaleReport = new System.Windows.Forms.Button();
             this.iconPictureBoxSalesReport = new FontAwesome.Sharp.IconPictureBox();
-            this.btnMangeSalesmen = new System.Windows.Forms.Button();
+            this.btnMangeEmployee = new System.Windows.Forms.Button();
             this.iconPictureBoxManageSalesmen = new FontAwesome.Sharp.IconPictureBox();
             this.btnManageInventory = new System.Windows.Forms.Button();
             this.iconPictureBoxInventory = new FontAwesome.Sharp.IconPictureBox();
@@ -58,14 +58,16 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblAppId = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
             this.txtAppId = new System.Windows.Forms.TextBox();
             this.pnlGridviewAllusers = new System.Windows.Forms.Panel();
             this.dgvSalesmen = new System.Windows.Forms.DataGridView();
             this.btnDeleteSalesman = new System.Windows.Forms.Button();
-            this.btnShowUsers = new System.Windows.Forms.Button();
-            this.lblManageSalesman = new System.Windows.Forms.Label();
+            this.btnShowEmployee = new System.Windows.Forms.Button();
+            this.lblManageEmployee = new System.Windows.Forms.Label();
             this.iconPictureBoxSalesmen = new FontAwesome.Sharp.IconPictureBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pnlToMoveForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxSalesReport)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBoxManageSalesmen)).BeginInit();
@@ -86,8 +88,9 @@
             this.pnlToMoveForm.Controls.Add(this.btnClose);
             this.pnlToMoveForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToMoveForm.Location = new System.Drawing.Point(0, 0);
+            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlToMoveForm.Name = "pnlToMoveForm";
-            this.pnlToMoveForm.Size = new System.Drawing.Size(1150, 41);
+            this.pnlToMoveForm.Size = new System.Drawing.Size(1533, 50);
             this.pnlToMoveForm.TabIndex = 0;
             this.pnlToMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseDown);
             this.pnlToMoveForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseMove);
@@ -102,9 +105,10 @@
             this.btnSearchInventory.IconColor = System.Drawing.Color.White;
             this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearchInventory.IconSize = 27;
-            this.btnSearchInventory.Location = new System.Drawing.Point(770, 7);
+            this.btnSearchInventory.Location = new System.Drawing.Point(1027, 9);
+            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchInventory.Name = "btnSearchInventory";
-            this.btnSearchInventory.Size = new System.Drawing.Size(28, 27);
+            this.btnSearchInventory.Size = new System.Drawing.Size(37, 33);
             this.btnSearchInventory.TabIndex = 7;
             this.btnSearchInventory.UseVisualStyleBackColor = true;
             // 
@@ -114,9 +118,10 @@
             this.txtSearchbar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearchbar.Location = new System.Drawing.Point(353, 8);
+            this.txtSearchbar.Location = new System.Drawing.Point(471, 10);
+            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchbar.Name = "txtSearchbar";
-            this.txtSearchbar.Size = new System.Drawing.Size(413, 22);
+            this.txtSearchbar.Size = new System.Drawing.Size(551, 27);
             this.txtSearchbar.TabIndex = 6;
             this.txtSearchbar.Text = "Search here";
             // 
@@ -127,9 +132,10 @@
             this.btnMinimizeInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeInventory.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizeInventory.Location = new System.Drawing.Point(1066, 4);
+            this.btnMinimizeInventory.Location = new System.Drawing.Point(1421, 5);
+            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimizeInventory.Name = "btnMinimizeInventory";
-            this.btnMinimizeInventory.Size = new System.Drawing.Size(36, 33);
+            this.btnMinimizeInventory.Size = new System.Drawing.Size(48, 41);
             this.btnMinimizeInventory.TabIndex = 3;
             this.btnMinimizeInventory.Text = "-";
             this.btnMinimizeInventory.UseVisualStyleBackColor = true;
@@ -142,9 +148,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1111, 3);
+            this.btnClose.Location = new System.Drawing.Point(1481, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(34, 33);
+            this.btnClose.Size = new System.Drawing.Size(45, 41);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -158,9 +165,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(31, 600);
+            this.btnLogout.Location = new System.Drawing.Point(41, 738);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(145, 40);
+            this.btnLogout.Size = new System.Drawing.Size(193, 49);
             this.btnLogout.TabIndex = 11;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -174,9 +182,10 @@
             this.btnSaleReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaleReport.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleReport.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReport.Location = new System.Drawing.Point(12, 117);
+            this.btnSaleReport.Location = new System.Drawing.Point(16, 144);
+            this.btnSaleReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSaleReport.Name = "btnSaleReport";
-            this.btnSaleReport.Size = new System.Drawing.Size(182, 40);
+            this.btnSaleReport.Size = new System.Drawing.Size(243, 49);
             this.btnSaleReport.TabIndex = 17;
             this.btnSaleReport.Text = "Sales Report";
             this.btnSaleReport.UseVisualStyleBackColor = true;
@@ -189,29 +198,31 @@
             this.iconPictureBoxSalesReport.IconChar = FontAwesome.Sharp.IconChar.Receipt;
             this.iconPictureBoxSalesReport.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxSalesReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxSalesReport.IconSize = 64;
-            this.iconPictureBoxSalesReport.Location = new System.Drawing.Point(68, 56);
+            this.iconPictureBoxSalesReport.IconSize = 79;
+            this.iconPictureBoxSalesReport.Location = new System.Drawing.Point(91, 69);
+            this.iconPictureBoxSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxSalesReport.Name = "iconPictureBoxSalesReport";
-            this.iconPictureBoxSalesReport.Size = new System.Drawing.Size(65, 64);
+            this.iconPictureBoxSalesReport.Size = new System.Drawing.Size(87, 79);
             this.iconPictureBoxSalesReport.TabIndex = 16;
             this.iconPictureBoxSalesReport.TabStop = false;
             // 
-            // btnMangeSalesmen
+            // btnMangeEmployee
             // 
-            this.btnMangeSalesmen.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMangeSalesmen.FlatAppearance.BorderSize = 2;
-            this.btnMangeSalesmen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMangeSalesmen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMangeSalesmen.ForeColor = System.Drawing.Color.White;
-            this.btnMangeSalesmen.Location = new System.Drawing.Point(12, 260);
-            this.btnMangeSalesmen.Name = "btnMangeSalesmen";
-            this.btnMangeSalesmen.Size = new System.Drawing.Size(182, 80);
-            this.btnMangeSalesmen.TabIndex = 19;
-            this.btnMangeSalesmen.Text = "Manage Salesmen";
-            this.btnMangeSalesmen.UseVisualStyleBackColor = true;
-            this.btnMangeSalesmen.Click += new System.EventHandler(this.btnMangeSalesmen_Click);
-            this.btnMangeSalesmen.MouseEnter += new System.EventHandler(this.btnMangeSalesmen_MouseEnter);
-            this.btnMangeSalesmen.MouseLeave += new System.EventHandler(this.btnMangeSalesmen_MouseLeave);
+            this.btnMangeEmployee.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMangeEmployee.FlatAppearance.BorderSize = 2;
+            this.btnMangeEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMangeEmployee.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMangeEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnMangeEmployee.Location = new System.Drawing.Point(16, 320);
+            this.btnMangeEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMangeEmployee.Name = "btnMangeEmployee";
+            this.btnMangeEmployee.Size = new System.Drawing.Size(243, 98);
+            this.btnMangeEmployee.TabIndex = 19;
+            this.btnMangeEmployee.Text = "Manage Employee";
+            this.btnMangeEmployee.UseVisualStyleBackColor = true;
+            this.btnMangeEmployee.Click += new System.EventHandler(this.btnMangeSalesmen_Click);
+            this.btnMangeEmployee.MouseEnter += new System.EventHandler(this.btnMangeSalesmen_MouseEnter);
+            this.btnMangeEmployee.MouseLeave += new System.EventHandler(this.btnMangeSalesmen_MouseLeave);
             // 
             // iconPictureBoxManageSalesmen
             // 
@@ -219,10 +230,11 @@
             this.iconPictureBoxManageSalesmen.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             this.iconPictureBoxManageSalesmen.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxManageSalesmen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxManageSalesmen.IconSize = 64;
-            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(68, 200);
+            this.iconPictureBoxManageSalesmen.IconSize = 79;
+            this.iconPictureBoxManageSalesmen.Location = new System.Drawing.Point(91, 246);
+            this.iconPictureBoxManageSalesmen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxManageSalesmen.Name = "iconPictureBoxManageSalesmen";
-            this.iconPictureBoxManageSalesmen.Size = new System.Drawing.Size(65, 64);
+            this.iconPictureBoxManageSalesmen.Size = new System.Drawing.Size(87, 79);
             this.iconPictureBoxManageSalesmen.TabIndex = 18;
             this.iconPictureBoxManageSalesmen.TabStop = false;
             // 
@@ -233,9 +245,10 @@
             this.btnManageInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInventory.ForeColor = System.Drawing.Color.White;
-            this.btnManageInventory.Location = new System.Drawing.Point(11, 449);
+            this.btnManageInventory.Location = new System.Drawing.Point(15, 553);
+            this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(182, 70);
+            this.btnManageInventory.Size = new System.Drawing.Size(243, 86);
             this.btnManageInventory.TabIndex = 21;
             this.btnManageInventory.Text = "Manage  Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
@@ -247,10 +260,11 @@
             this.iconPictureBoxInventory.IconChar = FontAwesome.Sharp.IconChar.BoxOpen;
             this.iconPictureBoxInventory.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxInventory.IconSize = 64;
-            this.iconPictureBoxInventory.Location = new System.Drawing.Point(71, 385);
+            this.iconPictureBoxInventory.IconSize = 79;
+            this.iconPictureBoxInventory.Location = new System.Drawing.Point(95, 474);
+            this.iconPictureBoxInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
-            this.iconPictureBoxInventory.Size = new System.Drawing.Size(65, 64);
+            this.iconPictureBoxInventory.Size = new System.Drawing.Size(87, 79);
             this.iconPictureBoxInventory.TabIndex = 20;
             this.iconPictureBoxInventory.TabStop = false;
             // 
@@ -260,17 +274,20 @@
             this.pnlManageUsers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlManageUsers.Controls.Add(this.pnlAdduser);
             this.pnlManageUsers.Controls.Add(this.pnlGridviewAllusers);
-            this.pnlManageUsers.Controls.Add(this.lblManageSalesman);
+            this.pnlManageUsers.Controls.Add(this.lblManageEmployee);
             this.pnlManageUsers.Controls.Add(this.iconPictureBoxSalesmen);
-            this.pnlManageUsers.Location = new System.Drawing.Point(208, 56);
+            this.pnlManageUsers.Location = new System.Drawing.Point(277, 69);
+            this.pnlManageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlManageUsers.Name = "pnlManageUsers";
-            this.pnlManageUsers.Size = new System.Drawing.Size(930, 585);
+            this.pnlManageUsers.Size = new System.Drawing.Size(1239, 720);
             this.pnlManageUsers.TabIndex = 22;
             // 
             // pnlAdduser
             // 
             this.pnlAdduser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
             this.pnlAdduser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlAdduser.Controls.Add(this.lblEmail);
+            this.pnlAdduser.Controls.Add(this.textBox1);
             this.pnlAdduser.Controls.Add(this.txtPhonenumber);
             this.pnlAdduser.Controls.Add(this.txtSalary);
             this.pnlAdduser.Controls.Add(this.dtpBirthdate);
@@ -285,45 +302,50 @@
             this.pnlAdduser.Controls.Add(this.lblGender);
             this.pnlAdduser.Controls.Add(this.btnClear);
             this.pnlAdduser.Controls.Add(this.btnSave);
-            this.pnlAdduser.Controls.Add(this.lblAppId);
+            this.pnlAdduser.Controls.Add(this.lblUserId);
             this.pnlAdduser.Controls.Add(this.txtAppId);
-            this.pnlAdduser.Location = new System.Drawing.Point(10, 56);
+            this.pnlAdduser.Location = new System.Drawing.Point(13, 69);
+            this.pnlAdduser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlAdduser.Name = "pnlAdduser";
-            this.pnlAdduser.Size = new System.Drawing.Size(911, 227);
+            this.pnlAdduser.Size = new System.Drawing.Size(1214, 279);
             this.pnlAdduser.TabIndex = 2;
             // 
             // txtPhonenumber
             // 
             this.txtPhonenumber.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhonenumber.Location = new System.Drawing.Point(113, 178);
+            this.txtPhonenumber.Location = new System.Drawing.Point(151, 219);
+            this.txtPhonenumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhonenumber.Name = "txtPhonenumber";
-            this.txtPhonenumber.Size = new System.Drawing.Size(224, 25);
+            this.txtPhonenumber.Size = new System.Drawing.Size(297, 30);
             this.txtPhonenumber.TabIndex = 32;
             // 
             // txtSalary
             // 
             this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(485, 117);
+            this.txtSalary.Location = new System.Drawing.Point(647, 144);
+            this.txtSalary.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(224, 25);
+            this.txtSalary.Size = new System.Drawing.Size(297, 30);
             this.txtSalary.TabIndex = 31;
             // 
             // dtpBirthdate
             // 
             this.dtpBirthdate.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBirthdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthdate.Location = new System.Drawing.Point(488, 20);
+            this.dtpBirthdate.Location = new System.Drawing.Point(651, 25);
+            this.dtpBirthdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpBirthdate.Name = "dtpBirthdate";
-            this.dtpBirthdate.Size = new System.Drawing.Size(221, 25);
+            this.dtpBirthdate.Size = new System.Drawing.Size(293, 29);
             this.dtpBirthdate.TabIndex = 30;
             // 
             // dtpJoindate
             // 
             this.dtpJoindate.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpJoindate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpJoindate.Location = new System.Drawing.Point(488, 70);
+            this.dtpJoindate.Location = new System.Drawing.Point(651, 86);
+            this.dtpJoindate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpJoindate.Name = "dtpJoindate";
-            this.dtpJoindate.Size = new System.Drawing.Size(221, 25);
+            this.dtpJoindate.Size = new System.Drawing.Size(293, 29);
             this.dtpJoindate.TabIndex = 29;
             // 
             // cmbGender
@@ -334,9 +356,10 @@
             "Male",
             "Female",
             "Other"});
-            this.cmbGender.Location = new System.Drawing.Point(113, 67);
+            this.cmbGender.Location = new System.Drawing.Point(151, 82);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(223, 25);
+            this.cmbGender.Size = new System.Drawing.Size(296, 29);
             this.cmbGender.TabIndex = 27;
             // 
             // lblSalary
@@ -344,9 +367,10 @@
             this.lblSalary.AutoSize = true;
             this.lblSalary.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSalary.ForeColor = System.Drawing.Color.White;
-            this.lblSalary.Location = new System.Drawing.Point(395, 121);
+            this.lblSalary.Location = new System.Drawing.Point(519, 149);
+            this.lblSalary.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(58, 21);
+            this.lblSalary.Size = new System.Drawing.Size(71, 28);
             this.lblSalary.TabIndex = 24;
             this.lblSalary.Text = "Salary";
             // 
@@ -355,9 +379,10 @@
             this.lblJoinDate.AutoSize = true;
             this.lblJoinDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJoinDate.ForeColor = System.Drawing.Color.White;
-            this.lblJoinDate.Location = new System.Drawing.Point(395, 70);
+            this.lblJoinDate.Location = new System.Drawing.Point(519, 86);
+            this.lblJoinDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblJoinDate.Name = "lblJoinDate";
-            this.lblJoinDate.Size = new System.Drawing.Size(82, 21);
+            this.lblJoinDate.Size = new System.Drawing.Size(102, 28);
             this.lblJoinDate.TabIndex = 22;
             this.lblJoinDate.Text = "Join Date";
             // 
@@ -366,9 +391,10 @@
             this.lblBirthdate.AutoSize = true;
             this.lblBirthdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBirthdate.ForeColor = System.Drawing.Color.White;
-            this.lblBirthdate.Location = new System.Drawing.Point(395, 20);
+            this.lblBirthdate.Location = new System.Drawing.Point(519, 25);
+            this.lblBirthdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthdate.Name = "lblBirthdate";
-            this.lblBirthdate.Size = new System.Drawing.Size(87, 21);
+            this.lblBirthdate.Size = new System.Drawing.Size(111, 28);
             this.lblBirthdate.TabIndex = 20;
             this.lblBirthdate.Text = "Birth Date";
             // 
@@ -377,9 +403,10 @@
             this.lblPhonenumber.AutoSize = true;
             this.lblPhonenumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhonenumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhonenumber.Location = new System.Drawing.Point(17, 182);
+            this.lblPhonenumber.Location = new System.Drawing.Point(23, 224);
+            this.lblPhonenumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhonenumber.Name = "lblPhonenumber";
-            this.lblPhonenumber.Size = new System.Drawing.Size(86, 21);
+            this.lblPhonenumber.Size = new System.Drawing.Size(105, 28);
             this.lblPhonenumber.TabIndex = 18;
             this.lblPhonenumber.Text = "Phone No";
             // 
@@ -388,18 +415,20 @@
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.ForeColor = System.Drawing.Color.White;
-            this.lblAddress.Location = new System.Drawing.Point(17, 121);
+            this.lblAddress.Location = new System.Drawing.Point(23, 149);
+            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(70, 21);
+            this.lblAddress.Size = new System.Drawing.Size(87, 28);
             this.lblAddress.TabIndex = 16;
             this.lblAddress.Text = "Address";
             // 
             // txtAddress
             // 
             this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(113, 121);
+            this.txtAddress.Location = new System.Drawing.Point(151, 149);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(224, 25);
+            this.txtAddress.Size = new System.Drawing.Size(297, 30);
             this.txtAddress.TabIndex = 15;
             // 
             // lblGender
@@ -407,9 +436,10 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.ForeColor = System.Drawing.Color.White;
-            this.lblGender.Location = new System.Drawing.Point(17, 66);
+            this.lblGender.Location = new System.Drawing.Point(23, 81);
+            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(65, 21);
+            this.lblGender.Size = new System.Drawing.Size(80, 28);
             this.lblGender.TabIndex = 14;
             this.lblGender.Text = "Gender";
             // 
@@ -419,9 +449,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(780, 134);
+            this.btnClear.Location = new System.Drawing.Point(1040, 165);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 39);
+            this.btnClear.Size = new System.Drawing.Size(153, 48);
             this.btnClear.TabIndex = 12;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -434,33 +465,36 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(780, 61);
+            this.btnSave.Location = new System.Drawing.Point(1040, 75);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(115, 39);
+            this.btnSave.Size = new System.Drawing.Size(153, 48);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.MouseEnter += new System.EventHandler(this.btnSave_MouseEnter);
             this.btnSave.MouseLeave += new System.EventHandler(this.btnSave_MouseLeave);
             // 
-            // lblAppId
+            // lblUserId
             // 
-            this.lblAppId.AutoSize = true;
-            this.lblAppId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppId.ForeColor = System.Drawing.Color.White;
-            this.lblAppId.Location = new System.Drawing.Point(17, 18);
-            this.lblAppId.Name = "lblAppId";
-            this.lblAppId.Size = new System.Drawing.Size(65, 21);
-            this.lblAppId.TabIndex = 1;
-            this.lblAppId.Text = "User ID";
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserId.ForeColor = System.Drawing.Color.White;
+            this.lblUserId.Location = new System.Drawing.Point(23, 22);
+            this.lblUserId.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(81, 28);
+            this.lblUserId.TabIndex = 1;
+            this.lblUserId.Text = "User ID";
             // 
             // txtAppId
             // 
             this.txtAppId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAppId.Location = new System.Drawing.Point(113, 18);
+            this.txtAppId.Location = new System.Drawing.Point(151, 22);
+            this.txtAppId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAppId.Name = "txtAppId";
             this.txtAppId.ReadOnly = true;
-            this.txtAppId.Size = new System.Drawing.Size(224, 25);
+            this.txtAppId.Size = new System.Drawing.Size(297, 30);
             this.txtAppId.TabIndex = 0;
             // 
             // pnlGridviewAllusers
@@ -469,18 +503,21 @@
             this.pnlGridviewAllusers.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlGridviewAllusers.Controls.Add(this.dgvSalesmen);
             this.pnlGridviewAllusers.Controls.Add(this.btnDeleteSalesman);
-            this.pnlGridviewAllusers.Controls.Add(this.btnShowUsers);
-            this.pnlGridviewAllusers.Location = new System.Drawing.Point(10, 289);
+            this.pnlGridviewAllusers.Controls.Add(this.btnShowEmployee);
+            this.pnlGridviewAllusers.Location = new System.Drawing.Point(13, 356);
+            this.pnlGridviewAllusers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlGridviewAllusers.Name = "pnlGridviewAllusers";
-            this.pnlGridviewAllusers.Size = new System.Drawing.Size(911, 282);
+            this.pnlGridviewAllusers.Size = new System.Drawing.Size(1214, 347);
             this.pnlGridviewAllusers.TabIndex = 3;
             // 
             // dgvSalesmen
             // 
             this.dgvSalesmen.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSalesmen.Location = new System.Drawing.Point(3, 3);
+            this.dgvSalesmen.Location = new System.Drawing.Point(4, 4);
+            this.dgvSalesmen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvSalesmen.Name = "dgvSalesmen";
-            this.dgvSalesmen.Size = new System.Drawing.Size(903, 208);
+            this.dgvSalesmen.RowHeadersWidth = 51;
+            this.dgvSalesmen.Size = new System.Drawing.Size(1204, 256);
             this.dgvSalesmen.TabIndex = 23;
             // 
             // btnDeleteSalesman
@@ -489,40 +526,43 @@
             this.btnDeleteSalesman.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteSalesman.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteSalesman.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteSalesman.Location = new System.Drawing.Point(543, 241);
+            this.btnDeleteSalesman.Location = new System.Drawing.Point(724, 297);
+            this.btnDeleteSalesman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDeleteSalesman.Name = "btnDeleteSalesman";
-            this.btnDeleteSalesman.Size = new System.Drawing.Size(160, 33);
+            this.btnDeleteSalesman.Size = new System.Drawing.Size(213, 41);
             this.btnDeleteSalesman.TabIndex = 22;
             this.btnDeleteSalesman.Text = "DELETE";
             this.btnDeleteSalesman.UseVisualStyleBackColor = true;
             this.btnDeleteSalesman.MouseEnter += new System.EventHandler(this.btnDeleteSalesman_MouseEnter);
             this.btnDeleteSalesman.MouseLeave += new System.EventHandler(this.btnDeleteSalesman_MouseLeave);
             // 
-            // btnShowUsers
+            // btnShowEmployee
             // 
-            this.btnShowUsers.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnShowUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowUsers.ForeColor = System.Drawing.Color.White;
-            this.btnShowUsers.Location = new System.Drawing.Point(742, 241);
-            this.btnShowUsers.Name = "btnShowUsers";
-            this.btnShowUsers.Size = new System.Drawing.Size(160, 33);
-            this.btnShowUsers.TabIndex = 11;
-            this.btnShowUsers.Text = "Show All Salesman";
-            this.btnShowUsers.UseVisualStyleBackColor = true;
-            this.btnShowUsers.MouseEnter += new System.EventHandler(this.btnShowUsers_MouseEnter);
-            this.btnShowUsers.MouseLeave += new System.EventHandler(this.btnShowUsers_MouseLeave);
+            this.btnShowEmployee.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnShowEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowEmployee.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowEmployee.ForeColor = System.Drawing.Color.White;
+            this.btnShowEmployee.Location = new System.Drawing.Point(989, 297);
+            this.btnShowEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowEmployee.Name = "btnShowEmployee";
+            this.btnShowEmployee.Size = new System.Drawing.Size(213, 41);
+            this.btnShowEmployee.TabIndex = 11;
+            this.btnShowEmployee.Text = "Show All Employee";
+            this.btnShowEmployee.UseVisualStyleBackColor = true;
+            this.btnShowEmployee.MouseEnter += new System.EventHandler(this.btnShowUsers_MouseEnter);
+            this.btnShowEmployee.MouseLeave += new System.EventHandler(this.btnShowUsers_MouseLeave);
             // 
-            // lblManageSalesman
+            // lblManageEmployee
             // 
-            this.lblManageSalesman.AutoSize = true;
-            this.lblManageSalesman.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageSalesman.ForeColor = System.Drawing.Color.White;
-            this.lblManageSalesman.Location = new System.Drawing.Point(63, 16);
-            this.lblManageSalesman.Name = "lblManageSalesman";
-            this.lblManageSalesman.Size = new System.Drawing.Size(241, 30);
-            this.lblManageSalesman.TabIndex = 1;
-            this.lblManageSalesman.Text = "Salesmen Management";
+            this.lblManageEmployee.AutoSize = true;
+            this.lblManageEmployee.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageEmployee.ForeColor = System.Drawing.Color.White;
+            this.lblManageEmployee.Location = new System.Drawing.Point(84, 20);
+            this.lblManageEmployee.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblManageEmployee.Name = "lblManageEmployee";
+            this.lblManageEmployee.Size = new System.Drawing.Size(328, 37);
+            this.lblManageEmployee.TabIndex = 1;
+            this.lblManageEmployee.Text = "Employee  Management";
             // 
             // iconPictureBoxSalesmen
             // 
@@ -530,30 +570,53 @@
             this.iconPictureBoxSalesmen.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             this.iconPictureBoxSalesmen.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxSalesmen.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxSalesmen.IconSize = 37;
-            this.iconPictureBoxSalesmen.Location = new System.Drawing.Point(22, 12);
+            this.iconPictureBoxSalesmen.IconSize = 46;
+            this.iconPictureBoxSalesmen.Location = new System.Drawing.Point(29, 15);
+            this.iconPictureBoxSalesmen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxSalesmen.Name = "iconPictureBoxSalesmen";
-            this.iconPictureBoxSalesmen.Size = new System.Drawing.Size(37, 37);
+            this.iconPictureBoxSalesmen.Size = new System.Drawing.Size(49, 46);
             this.iconPictureBoxSalesmen.TabIndex = 0;
             this.iconPictureBoxSalesmen.TabStop = false;
             // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(519, 207);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(64, 28);
+            this.lblEmail.TabIndex = 34;
+            this.lblEmail.Text = "Email";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(647, 205);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(297, 30);
+            this.textBox1.TabIndex = 33;
+            // 
             // ManagerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(1150, 650);
+            this.ClientSize = new System.Drawing.Size(1533, 800);
             this.Controls.Add(this.pnlManageUsers);
             this.Controls.Add(this.btnManageInventory);
             this.Controls.Add(this.iconPictureBoxInventory);
             this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnMangeSalesmen);
+            this.Controls.Add(this.btnMangeEmployee);
             this.Controls.Add(this.iconPictureBoxManageSalesmen);
             this.Controls.Add(this.btnSaleReport);
             this.Controls.Add(this.iconPictureBoxSalesReport);
             this.Controls.Add(this.pnlToMoveForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagerForm";
@@ -582,7 +645,7 @@
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnSaleReport;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalesReport;
-        private System.Windows.Forms.Button btnMangeSalesmen;
+        private System.Windows.Forms.Button btnMangeEmployee;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxManageSalesmen;
         private FontAwesome.Sharp.IconButton btnSearchInventory;
         private System.Windows.Forms.TextBox txtSearchbar;
@@ -592,12 +655,12 @@
         private System.Windows.Forms.Panel pnlAdduser;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label lblAppId;
+        private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.TextBox txtAppId;
         private System.Windows.Forms.Panel pnlGridviewAllusers;
         private System.Windows.Forms.Button btnDeleteSalesman;
-        private System.Windows.Forms.Button btnShowUsers;
-        private System.Windows.Forms.Label lblManageSalesman;
+        private System.Windows.Forms.Button btnShowEmployee;
+        private System.Windows.Forms.Label lblManageEmployee;
         private FontAwesome.Sharp.IconPictureBox iconPictureBoxSalesmen;
         private System.Windows.Forms.DataGridView dgvSalesmen;
         private System.Windows.Forms.Label lblSalary;
@@ -612,5 +675,7 @@
         private System.Windows.Forms.DateTimePicker dtpJoindate;
         private System.Windows.Forms.TextBox txtPhonenumber;
         private System.Windows.Forms.TextBox txtSalary;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

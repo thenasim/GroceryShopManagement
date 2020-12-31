@@ -73,8 +73,7 @@
             }
             var u = new Users();
             u.AppId = row["appid"].ToString();
-            //u.UpdatedAt = row["updated_at"].ToString();
-            //u.EmployeeId = row["employee_id"].ToString();
+            u.UpdatedAt = row["updated_at"].ToString();
             u.FullName = row["full_name"].ToString();
             u.UserType = row["user_type"].ToString();
             u.Password = row["password"].ToString();
@@ -83,13 +82,13 @@
         }
         public static bool Save(Users u)
         {
-            var sql = $"INSERT INTO users VALUES('{u.AppId}', '{u.FullName}', {u.UpdatedAt}, '{u.UserType}', NULL)";
+            var sql = $"INSERT INTO users VALUES('{u.AppId}', '{u.FullName}', {u.UpdatedAt}, '{u.UserType}')";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
         public static bool Update(Users p)
         {
-            var sql = $"update users set full_name = '{p.FullName}', user_type = '{p.UserType}' where appid = '{p.AppId}';";
+            var sql = $"update users set full_name = '{p.FullName}', user_type = '{p.UserType}', updated_at = {p.UpdatedAt} where appid = '{p.AppId}';";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
