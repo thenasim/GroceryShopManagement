@@ -24,10 +24,16 @@
             }
             return "sa-1";
         }
-        public static List<Sales> ShowAll()
+
+        public static List<Sales> ProductSaleList(string orderByCol = "quantity")
         {
             var salesList = new List<Sales>();
-            var sql = "SELECT * FROM sales;";
+            var sql = $@"SELECT TOP 5 products.title, sales.total_price, sales.quantity, sales.updated_at,
+	            sales.total_price-sales.quantity*products.purchase_price AS benefit
+	                FROM sales
+	            INNER JOIN products ON sales.product_id = products.appid
+					ORDER BY {orderByCol} DESC,
+	                sales.updated_at DESC;";
             var dt = DataAccess.GetDataTable(sql);
             int row = 0;
             while (row < dt.Rows.Count)
@@ -46,12 +52,10 @@
 
             return new Sales
             {
-                AppId = row["appid"].ToString(),
-                Report = row["report"].ToString(),
                 TotalPrice = Convert.ToDouble(row["total_price"].ToString()),
                 Quantity = Convert.ToDouble(row["quantity"].ToString()),
-                UpdatedAt = row["updated_at"].ToString(),
-                ProductId = row["product_id"].ToString()
+                Title = row["title"].ToString(),
+                Benefit = row["benefit"].ToString()
             };
         }
 
