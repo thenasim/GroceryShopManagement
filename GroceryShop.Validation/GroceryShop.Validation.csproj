@@ -44,11 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CategoryValidation.cs" />
+    <Compile Include="EmployeeValidation.cs" />
+    <Compile Include="LoginValidation.cs" />
+    <Compile Include="ProductsValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesValidation.cs" />
+    <Compile Include="UserValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GroceryShop.Entity\GroceryShop.Entity.csproj">
+      <Project>{157c729c-8bd7-4415-b10a-a50dcbc5ef91}</Project>
+      <Name>GroceryShop.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
