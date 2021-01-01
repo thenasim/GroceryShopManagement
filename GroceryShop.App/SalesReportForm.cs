@@ -104,6 +104,12 @@
             {
                 this.chartMostBenefitProduct.Series["Benefit"].Points.AddXY(s.Title, Convert.ToInt32(s.Benefit));
             }
+
+            string todayBenefit = SalesRepo.TodaysBenefit();
+            if (todayBenefit == null)
+                this.lblTodayBenefit.Text = "0 Tk";
+            else
+                this.lblTodayBenefit.Text = todayBenefit + " tk";
         }
     }
 }

@@ -48,11 +48,15 @@
             this.rdoWeeklyreport = new System.Windows.Forms.RadioButton();
             this.pnlFormbar = new System.Windows.Forms.Panel();
             this.chartMostBenefitProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTodayBenefit = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostSoldProduct)).BeginInit();
             this.pnlRadiobutton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostBenefitProduct)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMinimize
@@ -205,12 +209,46 @@
             title1.Text = "Most Benefited Product";
             this.chartMostBenefitProduct.Titles.Add(title1);
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblTodayBenefit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(740, 44);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(393, 49);
+            this.panel1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label1.Location = new System.Drawing.Point(4, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Today\'s Benefit:";
+            // 
+            // lblTodayBenefit
+            // 
+            this.lblTodayBenefit.AutoSize = true;
+            this.lblTodayBenefit.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTodayBenefit.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lblTodayBenefit.Location = new System.Drawing.Point(205, 13);
+            this.lblTodayBenefit.Name = "lblTodayBenefit";
+            this.lblTodayBenefit.Size = new System.Drawing.Size(45, 23);
+            this.lblTodayBenefit.TabIndex = 10;
+            this.lblTodayBenefit.Text = "0 Tk";
+            this.lblTodayBenefit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // SalesReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1150, 602);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlRadiobutton);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -230,6 +268,8 @@
             this.pnlRadiobutton.ResumeLayout(false);
             this.pnlRadiobutton.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostBenefitProduct)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,5 +286,8 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMostSoldProduct;
         private System.Windows.Forms.Panel pnlFormbar;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartMostBenefitProduct;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTodayBenefit;
+        private System.Windows.Forms.Label label1;
     }
 }

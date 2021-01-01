@@ -59,6 +59,21 @@
             };
         }
 
+        public static string TodaysBenefit()
+        {
+            var sql = @"SELECT SUM(sales.total_price-sales.quantity*products.purchase_price) AS todays_benefit
+                FROM sales
+                    INNER JOIN products ON sales.product_id = products.appid
+                WHERE CAST(sales.updated_at AS DATE) = CAST(GETDATE() AS DATE)";
+            
+             var data = DataAccess.GetDataTable(sql);
+            if (data.Rows.Count == 1)
+            {
+                return Convert.ToString(data.Rows[0].Field<double>(0));
+            }
+            return null;
+        }
+
         public static bool Save(Sales u)
         {
             var sql = $"INSERT INTO sales VALUES('{u.AppId}', '{u.Report}', {u.TotalPrice}, {u.Quantity}, {u.UpdatedAt}, '{u.ProductId}')";
