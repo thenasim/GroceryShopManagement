@@ -46,6 +46,7 @@
     <Compile Include="InventoryRepo.cs" />
     <Compile Include="LoginRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesRepo.cs" />
     <Compile Include="UserRepo.cs" />
   </ItemGroup>
   <ItemGroup>

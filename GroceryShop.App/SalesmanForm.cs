@@ -16,6 +16,7 @@
     {
         List<ListViewItem> cartListItems = new List<ListViewItem>();
         Products Product { get; set; } = new Products();
+        Sales Sale { get; set; } = new Sales();
         double TotalPrice { get; set; } = 0;
         private byte move;
         private int moveX;
@@ -306,6 +307,7 @@
             MessageBox.Show("Printed successfully");
             this.UpdateProductsTable();
             InventoryRepo.UpdateProductQuantity(this.Product);
+            SalesRepo.Save(this.Sale);
             this.cartListItems.Clear();
             this.lsvCart.Items.Clear();
             this.TotalPrice = 0;
@@ -318,15 +320,23 @@
             foreach (var row in this.cartListItems)
             {
                 double updatedQuantity = Convert.ToDouble(row.SubItems[4].Text) - Convert.ToDouble(row.SubItems[1].Text);
-                this.FillEntity(updatedQuantity, row.SubItems[5].Text);
+                this.FillEntity(updatedQuantity, row);
             }
         }
 
         // Fill the product entity
-        private void FillEntity(double quantity, string appId)
+        private void FillEntity(double quantity, ListViewItem data)
         {
-            this.Product.AppId = appId;
+            string productAppId = data.SubItems[5].Text;
+
+            this.Product.AppId = productAppId;
             this.Product.Quantity = quantity;
+
+            this.Sale.AppId = SalesRepo.GetAppId();
+            this.Sale.Report = "__";
+            this.Sale.TotalPrice = Convert.ToDouble(data.SubItems[3].Text);
+            this.Sale.Quantity = Convert.ToDouble(data.SubItems[1].Text);
+            this.Sale.ProductId = productAppId;
         }
 
         // Trackbar Quantity updates when text Quantity changes
