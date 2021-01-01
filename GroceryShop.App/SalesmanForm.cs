@@ -265,6 +265,13 @@
             string productQuantity = this.dgbShowProduct.CurrentRow.Cells["quantity"].Value.ToString();
             string price = this.dgbShowProduct.CurrentRow.Cells["price"].Value.ToString();
             string appId = this.dgbShowProduct.CurrentRow.Cells["appid"].Value.ToString();
+
+            if (this.cartListItems.Exists(item => item.SubItems[5].Text == appId)) // check if the product already added in cart list
+            {
+                MessageBox.Show("Already added in cart");
+                return;
+            }
+
             double totalProductPrice = Convert.ToDouble(price) * Convert.ToDouble(quanity);
             this.TotalPrice += totalProductPrice; // total price updated
 
@@ -279,11 +286,6 @@
             lvItem.SubItems.Add(productQuantity); //  4
             lvItem.SubItems.Add(appId); // 5
 
-            if (this.cartListItems.Exists(item => item.SubItems[5].Text == appId)) // check if the product already added in cart list
-            {
-                MessageBox.Show("Already added in cart");
-                return;
-            }
 
             this.cartListItems.Add(lvItem); // add to the property declared in top
             this.lsvCart.Items.Add(lvItem); // add to the listView items
