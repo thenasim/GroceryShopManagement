@@ -19,15 +19,47 @@
         private byte move;
         private int moveX;
         private int moveY;
+        private byte visibility;
+        private AdminForm A1 { get; set; }
+        private ManagerForm M1 { get; set; }
         private string CurrentAppId { get; set; }
+
         public Inventory()
         {
             InitializeComponent();
         }
+
+        public Inventory(AdminForm a1)
+        {
+            InitializeComponent();
+            this.A1 = a1;
+            visibility = 0;
+
+        }
+
+        public Inventory(ManagerForm m1)
+        {
+            InitializeComponent();
+            this.M1 = m1;
+            visibility = 1;
+        }
+
+
         //Inventory form close
         private void btnCloseInventory_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (visibility == 1)
+            {
+                this.Close();
+                this.M1.Visible = true;
+            }
+            else if (visibility == 0)
+            {
+                this.Close();
+                this.A1.Visible = true;
+            }
+            else
+                Application.Exit();
         }
 
         //Hover when mouse enters on close button

@@ -185,6 +185,14 @@
             btnClearInvoice.FlatAppearance.BorderColor = Color.White;
         }
 
+        //Log out button
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm lSalesman = new LoginForm();
+            lSalesman.Show();
+            this.Visible = false;
+        }
+
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
             this.SearchInventory();
@@ -363,5 +371,7 @@
         {
             this.txtSearchbar.Focus();
         }
+
+        
     }
 }

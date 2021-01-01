@@ -17,11 +17,31 @@
         private byte move;
         private int moveX;
         private int moveY;
+        private byte visibilty;
+
+        private AdminForm A1 { get; set; }
+        private ManagerForm M1 { get; set; }
 
         public SalesReportForm()
         {
             InitializeComponent();
         }
+
+        public SalesReportForm(AdminForm a1)
+        {
+            InitializeComponent();
+            this.A1 = a1;
+            visibilty = 0;
+        }
+
+        public SalesReportForm(ManagerForm m1)
+        {
+            InitializeComponent();
+            this.M1 = m1;
+            visibilty = 1;
+        }
+
+
         //Minimize work
         private void btnMinimize_Click(object sender, EventArgs e)
         {
@@ -30,7 +50,18 @@
         // form close
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (visibilty == 1)
+            {
+                this.Close();
+                this.M1.Visible = true;
+            }
+            else if (visibilty == 0)
+            {
+                this.Close();
+                this.A1.Visible = true;
+            }
+            else
+                Application.Exit();
         }
 
         //close button hover
