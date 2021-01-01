@@ -304,10 +304,15 @@
         // Print invoice
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Printed successfully");
-            this.UpdateProductsTable();
-            InventoryRepo.UpdateProductQuantity(this.Product);
-            SalesRepo.Save(this.Sale);
+            try
+            {
+                this.UpdateProductsTable();
+                MessageBox.Show("Printed successfully");
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show($"Error saving in database\n{error.Message}");
+            }
             this.cartListItems.Clear();
             this.lsvCart.Items.Clear();
             this.TotalPrice = 0;
@@ -321,6 +326,8 @@
             {
                 double updatedQuantity = Convert.ToDouble(row.SubItems[4].Text) - Convert.ToDouble(row.SubItems[1].Text);
                 this.FillEntity(updatedQuantity, row);
+                InventoryRepo.UpdateProductQuantity(this.Product);
+                SalesRepo.Save(this.Sale);
             }
         }
 

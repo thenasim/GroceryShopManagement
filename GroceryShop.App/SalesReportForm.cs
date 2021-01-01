@@ -1,5 +1,7 @@
 ﻿namespace GroceryShop.App
 {
+    using GroceryShop.Entity;
+    using GroceryShop.Repository;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -40,20 +42,6 @@
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
             btnClose.ForeColor = Color.Red;
-        }
-
-        //clear button hover color
-        private void btnClear_MouseEnter(object sender, EventArgs e)
-        {
-            btnClear.ForeColor = Color.Red;
-            btnClear.FlatAppearance.BorderColor = Color.Red;
-        }
-
-        //clear button hover color
-        private void btnClear_MouseLeave(object sender, EventArgs e)
-        {
-            btnClear.ForeColor = Color.White;
-            btnClear.FlatAppearance.BorderColor = Color.White;
         }
 
         //clear button hover color
@@ -101,6 +89,27 @@
         private void pnlFormbar_MouseUp(object sender, MouseEventArgs e)
         {
             move = 0;
+        }
+
+        private void SalesReportForm_Load(object sender, EventArgs e)
+        {
+            List<Sales> reports = SalesRepo.ProductSaleList();
+            foreach(Sales s in reports)
+            {
+                this.chartMostSoldProduct.Series["Sales"].Points.AddXY(s.Title, Convert.ToInt32(s.Quantity));
+            }
+
+            reports = SalesRepo.ProductSaleList("benefit");
+            foreach(Sales s in reports)
+            {
+                this.chartMostBenefitProduct.Series["Benefit"].Points.AddXY(s.Title, Convert.ToInt32(s.Benefit));
+            }
+
+            string todayBenefit = SalesRepo.TodaysBenefit();
+            if (todayBenefit == null)
+                this.lblTodayBenefit.Text = "0 Tk";
+            else
+                this.lblTodayBenefit.Text = todayBenefit + " tk";
         }
     }
 }
