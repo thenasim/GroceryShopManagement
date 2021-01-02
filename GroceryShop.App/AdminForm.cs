@@ -296,68 +296,86 @@
 
         private void PopulateGridView()
         {
-            this.dgvUsersGrid.AutoGenerateColumns = false;
-            this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
-            this.dgvUsersGrid.ClearSelection();
+            try
+            {
+                this.dgvUsersGrid.AutoGenerateColumns = false;
+                this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
+                this.dgvUsersGrid.ClearSelection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error!" + e.Message);
+            }
+            
         }
 
         [Obsolete]
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
-            var idExists = UserRepo.SearchUserId(this.CurrentUserId);
-            if (idExists)
+            try
             {
-                this.UpdateFillEntity();
-
-                try
+                var idExists = UserRepo.SearchUserId(this.CurrentUserId);
+                if (idExists)
                 {
-                    if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
+                    this.UpdateFillEntity();
+
+                    try
                     {
-                        MessageBox.Show("Successfully updated  user");
-                        this.PopulateGridView();
-                        this.txtAppId.Text = UserRepo.GetAppId();
+                        if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
+                        {
+                            MessageBox.Show("Successfully updated  user");
+                            this.PopulateGridView();
+                            this.txtAppId.Text = UserRepo.GetAppId();
+                            this.ClearUserInput();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Updating user failed");
+                        }
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Cann't update user\n" + error.Message);
                         this.ClearUserInput();
                     }
-                    else
-                    {
-                        MessageBox.Show("Updating user failed");
-                    }
+                    this.CurrentUserId = null;
                 }
-                catch (Exception error)
+                else
                 {
-                    MessageBox.Show("Cann't update user\n" + error.Message);
-                    this.ClearUserInput();
-                }
-                this.CurrentUserId = null;
-            }
-            else
-            {
-                this.FillEntity();
-                try
-                {
-                    if (UserRepo.Save(this.User))
+                    this.FillEntity();
+                    try
                     {
-                        if (EmployeeRepo.Save(this.Emp))
+                        if (UserRepo.Save(this.User))
                         {
-                            if (LoginRepo.Save(this.Login))
+                            if (EmployeeRepo.Save(this.Emp))
                             {
-                                MessageBox.Show("Successfully created new user");
-                                this.PopulateGridView();
-                                this.txtAppId.Text = UserRepo.GetAppId();
-                                this.ClearUserInput();
+                                if (LoginRepo.Save(this.Login))
+                                {
+                                    MessageBox.Show("Successfully created new user");
+                                    this.PopulateGridView();
+                                    this.txtAppId.Text = UserRepo.GetAppId();
+                                    this.ClearUserInput();
+                                }
                             }
+
                         }
-                        
-                    } else
+                        else
+                        {
+                            MessageBox.Show("Creating user failed");
+                        }
+                    }
+                    catch (Exception error)
                     {
-                        MessageBox.Show("Creating user failed");
+                        MessageBox.Show("Cann't add user\n" + error.Message);
                     }
                 }
-                catch (Exception error)
-                {
-                    MessageBox.Show("Cann't add user\n" + error.Message);
-                }
             }
+            catch(Exception b)
+            {
+                MessageBox.Show("Error!" + b.Message);
+            }
+            
+            
         }
 
         private void btnClearUser_Click(object sender, EventArgs e)
@@ -370,10 +388,18 @@
 
         private void ClearUserInput()
         {
-            this.txtAppId.Text = UserRepo.GetAppId();
-            this.txtPassword.Text = "";
-            this.txtUserName.Text = "";
-            this.cboUserType.Text = "";
+            try
+            {
+                this.txtAppId.Text = UserRepo.GetAppId();
+                this.txtPassword.Text = "";
+                this.txtUserName.Text = "";
+                this.cboUserType.Text = "";
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error!" + e.Message);
+            }
+            
         }
 
         private void btnShowUsers_Click(object sender, EventArgs e)
@@ -384,60 +410,76 @@
 
         private void FillEntity()
         {
-            this.User = new Users();
-            this.User.AppId = UserRepo.GetAppId();
-            this.User.UserType = this.cboUserType.Text;
-            this.User.FullName = this.txtUserName.Text;
-
-            this.Login = new Logins();
-            this.Login.AppId = LoginRepo.GetAppId();
-            this.Login.Password = this.txtPassword.Text;
-            this.Login.UserId = this.User.AppId;
-
-            this.Emp = new Employee();
-            this.Emp.AppId = EmployeeRepo.GetAppId();
-            this.Emp.FullName = this.User.FullName;
-            this.Emp.Email = null;
-            this.Emp.Gender = null;
-            this.Emp.Address = null;
-            this.Emp.BirthDate = null;
-            this.Emp.PhoneNumber = null;
-            this.Emp.JoinDate = null;
-            this.Emp.Salary = 0;
-            this.Emp.UserId = this.User.AppId;
-            if (this.User != null)
+            try
             {
-                UserValidation validator = new UserValidation();
-                ValidationResult results = validator.Validate(this.User);
-                IList<ValidationFailure> failures = results.Errors;
-                if (!(results.IsValid))
-                {
-                    foreach (ValidationFailure failure in failures)
-                    {
-                        MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.User = new Users();
+                this.User.AppId = UserRepo.GetAppId();
+                this.User.UserType = this.cboUserType.Text;
+                this.User.FullName = this.txtUserName.Text;
 
-                        return;
+                this.Login = new Logins();
+                this.Login.AppId = LoginRepo.GetAppId();
+                this.Login.Password = this.txtPassword.Text;
+                this.Login.UserId = this.User.AppId;
+
+                this.Emp = new Employee();
+                this.Emp.AppId = EmployeeRepo.GetAppId();
+                this.Emp.FullName = this.User.FullName;
+                this.Emp.Email = null;
+                this.Emp.Gender = null;
+                this.Emp.Address = null;
+                this.Emp.BirthDate = null;
+                this.Emp.PhoneNumber = null;
+                this.Emp.JoinDate = null;
+                this.Emp.Salary = 0;
+                this.Emp.UserId = this.User.AppId;
+                if (this.User != null)
+                {
+                    UserValidation validator = new UserValidation();
+                    ValidationResult results = validator.Validate(this.User);
+                    IList<ValidationFailure> failures = results.Errors;
+                    if (!(results.IsValid))
+                    {
+                        foreach (ValidationFailure failure in failures)
+                        {
+                            MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            return;
+                        }
                     }
                 }
             }
+            catch(Exception e)
+            {
+                MessageBox.Show("Error!" + e.Message);
+            }
+            
 
         }
 
 
         private void UpdateFillEntity()
         {
-            this.User = new Users();
-            this.User.AppId = this.CurrentUserId;
-            this.User.UserType = this.cboUserType.Text;
-            this.User.FullName = this.txtUserName.Text;
+            try
+            {
+                this.User = new Users();
+                this.User.AppId = this.CurrentUserId;
+                this.User.UserType = this.cboUserType.Text;
+                this.User.FullName = this.txtUserName.Text;
 
-            this.Login = new Logins();
-            this.Login.Password = this.txtPassword.Text;
-            this.Login.UserId = this.User.AppId;
+                this.Login = new Logins();
+                this.Login.Password = this.txtPassword.Text;
+                this.Login.UserId = this.User.AppId;
 
-            this.Emp = new Employee();
-            this.Emp.FullName = this.User.FullName;
-            this.Emp.UserId = this.User.AppId;
+                this.Emp = new Employee();
+                this.Emp.FullName = this.User.FullName;
+                this.Emp.UserId = this.User.AppId;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error!" + e.Message);
+            }
+            
 
         }
 
@@ -452,39 +494,55 @@
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-
-            string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
-            string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
-            if (EmployeeRepo.Delete(appId))
+            try
             {
-                if (LoginRepo.Delete(appId))
+                string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
+                string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
+                if (EmployeeRepo.Delete(appId))
                 {
-                    if (UserRepo.Delete(appId))
+                    if (LoginRepo.Delete(appId))
                     {
-                        MessageBox.Show(name + " has been deleted successfully");
-                        this.PopulateGridView();
-                        this.dgvUsersGrid.ClearSelection();
-                        this.dgvUsersGrid.Refresh();
-                        this.ClearUserInput();
+                        if (UserRepo.Delete(appId))
+                        {
+                            MessageBox.Show(name + " has been deleted successfully");
+                            this.PopulateGridView();
+                            this.dgvUsersGrid.ClearSelection();
+                            this.dgvUsersGrid.Refresh();
+                            this.ClearUserInput();
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("User couldn't be deleted");
+                }
             }
-            else
+            catch (Exception a)
             {
-                MessageBox.Show("User couldn't be deleted");
+                MessageBox.Show("Error!" + a.Message);
             }
+
+            
         }
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
-            this.dgvUsersGrid.AutoGenerateColumns = false;
-            this.dgvUsersGrid.DataSource = UserRepo.SearchUser(this.txtSearchbar.Text);
-            this.dgvUsersGrid.ClearSelection();
-            this.dgvUsersGrid.Refresh();
-            if (this.dgvUsersGrid.RowCount == 0)
+            try
             {
-                MessageBox.Show("No Data Found!");
+                this.dgvUsersGrid.AutoGenerateColumns = false;
+                this.dgvUsersGrid.DataSource = UserRepo.SearchUser(this.txtSearchbar.Text);
+                this.dgvUsersGrid.ClearSelection();
+                this.dgvUsersGrid.Refresh();
+                if (this.dgvUsersGrid.RowCount == 0)
+                {
+                    MessageBox.Show("No Data Found!");
+                }
             }
+            catch (Exception a)
+            {
+                MessageBox.Show("Error!" + a.Message);
+            }
+            
         }
 
        
