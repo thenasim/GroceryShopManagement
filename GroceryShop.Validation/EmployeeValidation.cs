@@ -35,6 +35,14 @@
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Email field is empty")
                 .EmailAddress().WithMessage("Invalid email address");
+
+            RuleFor(e => e.BirthDate)
+                .Cascade(CascadeMode.Stop)
+                .Must(CheckDate).WithMessage("Age is only allowed between 18 to 60");
+
+            RuleFor(e => e.JoinDate)
+                .Cascade(CascadeMode.Stop)
+                .Must(CheckIfDateIsFuture).WithMessage("Future date is not allowed");
         }
 
         protected bool ValidName(string name)
@@ -50,6 +58,31 @@
             if (double.TryParse(num, out d) && d > 0)
                 return true;
             return false;
+        }
+
+        private bool CheckDate(string date)
+        {
+            DateTime currentDate = DateTime.Now;
+
+            DateTime converted;
+            DateTime.TryParse(date, out converted);
+
+            int diff = currentDate.Year - converted.Year;
+
+            if (diff >= 18 && diff <= 60)
+                return true;
+            return false;
+        }
+
+        private bool CheckIfDateIsFuture(string date)
+        {
+            DateTime currentDate = DateTime.Now;
+
+            DateTime converted;
+            DateTime.TryParse(date, out converted);
+
+            int diff = currentDate.Year - converted.Year;
+            return diff > 0;
         }
     }
 }

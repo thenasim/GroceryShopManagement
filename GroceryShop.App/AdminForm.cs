@@ -481,10 +481,20 @@
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
+            if (this.dgvUsersGrid.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No row selected");
+                return;
+            }
+
+            string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
+            string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
+
+            if (MessageBox.Show($"Do you want to delete {name}?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+
             try
             {
-                string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
-                string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
                 if (EmployeeRepo.Delete(appId) && LoginRepo.Delete(appId) && UserRepo.Delete(appId))
                 {
                     MessageBox.Show(name + " has been deleted successfully");

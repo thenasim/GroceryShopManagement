@@ -323,6 +323,9 @@
         // Print invoice
         private void btnPrintInvoice_Click(object sender, EventArgs e)
         {
+            if (this.cartListItems.Count == 0)
+                return;
+
             try
             {
                 if (MessageBox.Show("Are you sure to print?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
@@ -373,7 +376,7 @@
             if (! int.TryParse(this.txtQunatity.Text, out q))
                 return;
 
-            if (q <= this.trkQuantity.Maximum && q > this.trkQuantity.Minimum && q != 0)
+            if (q <= this.trkQuantity.Maximum && q >= this.trkQuantity.Minimum && q != 0)
             {
                 this.trkQuantity.Value = q;
                 this.InvalidQuantity = false;
