@@ -75,30 +75,6 @@
             btnClose.ForeColor = Color.Red;
         }
 
-        //clear button hover color
-        private void rdoWeeklyreport_MouseEnter(object sender, EventArgs e)
-        {
-            rdoWeeklyreport.ForeColor = Color.SkyBlue;
-        }
-
-        //clear button hover color
-        private void rdoWeeklyreport_MouseLeave(object sender, EventArgs e)
-        {
-            rdoWeeklyreport.ForeColor = Color.White;
-        }
-
-        //clear button hover color
-        private void rdoMonthlyreport_MouseEnter(object sender, EventArgs e)
-        {
-            rdoMonthlyreport.ForeColor = Color.SkyBlue;
-        }
-
-        //clear button hover color
-        private void rdoMonthlyreport_MouseLeave(object sender, EventArgs e)
-        {
-            rdoMonthlyreport.ForeColor = Color.White;
-        }
-
         //To move the form
         private void pnlFormbar_MouseDown(object sender, MouseEventArgs e)
         {

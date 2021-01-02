@@ -186,26 +186,6 @@
         }
         private void btnADD_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(this.txtProductTitle.Text))
-            {
-                MessageBox.Show("Title field is empty");
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(this.txtPrice.Text))
-            {
-                MessageBox.Show("Price field is empty");
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(this.txtPurchasePrice.Text))
-            {
-                MessageBox.Show("PurchasePrice field is empty");
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(this.txtQuantity.Text))
-            {
-                MessageBox.Show("Quantity field is empty");
-                return;
-            }
             var idExists = InventoryRepo.SearchAppId(this.CurrentAppId);
             if (idExists)
             {
@@ -329,13 +309,16 @@
         }
         private bool FillEntity()
         {
-            this.Product = new Products();
-            this.Product.AppId = InventoryRepo.GetAppId();
-            this.Product.Title = this.txtProductTitle.Text;
-            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
-            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
-            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
-            this.Product.CategoryId = this.GetCategoryId();
+            this.Product = new Products
+            {
+                AppId = InventoryRepo.GetAppId(),
+                Title = this.txtProductTitle.Text,
+                Price = this.txtPrice.Text,
+                PurchasePrice = this.txtPurchasePrice.Text,
+                Quantity = this.txtQuantity.Text,
+                CategoryName = this.cboCategory.Text,
+                CategoryId = this.GetCategoryId()
+            };
 
             ProductsValidation validator = new ProductsValidation();
             ValidationResult results = validator.Validate(Product);
@@ -344,7 +327,7 @@
             {
                 foreach (ValidationFailure failure in failures)
                 {
-                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(failure.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     return false;
                 }
@@ -353,13 +336,16 @@
         }
         private bool UpdateFillEntity()
         {
-            this.Product = new Products();
-            this.Product.AppId = this.CurrentAppId;
-            this.Product.Title = this.txtProductTitle.Text;
-            this.Product.Price = Convert.ToDouble(this.txtPrice.Text);
-            this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
-            this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
-            this.Product.CategoryId = this.GetCategoryId();
+            this.Product = new Products
+            {
+                AppId = this.CurrentAppId,
+                Title = this.txtProductTitle.Text,
+                Price = this.txtPrice.Text,
+                PurchasePrice = this.txtPurchasePrice.Text,
+                Quantity = this.txtQuantity.Text,
+                CategoryName = this.cboCategory.Text,
+                CategoryId = this.GetCategoryId()
+            };
 
             ProductsValidation validator = new ProductsValidation();
             ValidationResult results = validator.Validate(Product);
