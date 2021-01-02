@@ -46,10 +46,8 @@
   <ItemGroup>
     <Compile Include="CategoryValidation.cs" />
     <Compile Include="EmployeeValidation.cs" />
-    <Compile Include="LoginValidation.cs" />
     <Compile Include="ProductsValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesValidation.cs" />
     <Compile Include="UserValidation.cs" />
   </ItemGroup>
   <ItemGroup>
