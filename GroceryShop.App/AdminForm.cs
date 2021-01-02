@@ -11,12 +11,15 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using GroceryShop.Validation;
+    using FluentValidation.Results;
 
     public partial class AdminForm : Form
     {
         private Users User { get; set; }
         private Logins Login { get; set; }
         private Employee Emp { get; set; }
+        private bool check = true;
         private byte move;
         private int moveX;
         private int moveY;
@@ -284,12 +287,14 @@
             this.dgvUsersGrid.ClearSelection();
         }
 
+        [Obsolete]
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
             var idExists = UserRepo.SearchUserId(this.CurrentUserId);
             if (idExists)
             {
                 this.UpdateFillEntity();
+
                 try
                 {
                     if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
@@ -322,7 +327,7 @@
                         {
                             if (LoginRepo.Save(this.Login))
                             {
-                                MessageBox.Show($"Successfully created new user");
+                                MessageBox.Show("Successfully created new user");
                                 this.PopulateGridView();
                                 this.txtAppId.Text = UserRepo.GetAppId();
                                 this.ClearUserInput();
@@ -362,11 +367,13 @@
             this.PopulateGridView();
         }
 
+
         private void FillEntity()
         {
             this.User = new Users();
             this.User.AppId = UserRepo.GetAppId();
             this.User.UserType = this.cboUserType.Text;
+            this.User.FullName = this.txtUserName.Text;
 
             this.Login = new Logins();
             this.Login.AppId = LoginRepo.GetAppId();
@@ -375,7 +382,7 @@
 
             this.Emp = new Employee();
             this.Emp.AppId = EmployeeRepo.GetAppId();
-            this.Emp.FullName = this.txtUserName.Text;
+            this.Emp.FullName = this.User.FullName;
             this.Emp.Email = null;
             this.Emp.Gender = null;
             this.Emp.Address = null;
@@ -384,20 +391,40 @@
             this.Emp.JoinDate = null;
             this.Emp.Salary = 0;
             this.Emp.UserId = this.User.AppId;
+            if (this.User != null)
+            {
+                UserValidation validator = new UserValidation();
+                ValidationResult results = validator.Validate(this.User);
+                IList<ValidationFailure> failures = results.Errors;
+                if (!(results.IsValid))
+                {
+                    foreach (ValidationFailure failure in failures)
+                    {
+                        MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        return;
+                    }
+                }
+            }
+
         }
+
+
         private void UpdateFillEntity()
         {
             this.User = new Users();
             this.User.AppId = this.CurrentUserId;
             this.User.UserType = this.cboUserType.Text;
+            this.User.FullName = this.txtUserName.Text;
 
             this.Login = new Logins();
             this.Login.Password = this.txtPassword.Text;
             this.Login.UserId = this.User.AppId;
 
             this.Emp = new Employee();
-            this.Emp.FullName = this.txtUserName.Text;
+            this.Emp.FullName = this.User.FullName;
             this.Emp.UserId = this.User.AppId;
+
         }
 
         private void dgvUsersGrid_DoubleClick(object sender, EventArgs e)

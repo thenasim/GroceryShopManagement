@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.9.3.0\lib\net461\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.5.15.3\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
@@ -145,6 +148,10 @@
     <ProjectReference Include="..\GroceryShop.Repository\GroceryShop.Repository.csproj">
       <Project>{50c9c367-1f1c-45df-a564-4d304c404b67}</Project>
       <Name>GroceryShop.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GroceryShop.Validation\GroceryShop.Validation.csproj">
+      <Project>{f3930e38-409e-4489-bc99-0aabf2c00445}</Project>
+      <Name>GroceryShop.Validation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
