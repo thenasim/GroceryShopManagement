@@ -9,7 +9,6 @@
     public class Sales
     {
         public string AppId { get; set; }
-        public string Report { get; set; }
         public double TotalPrice { get; set; }
         public double Quantity { get; set; }
         public string ProductId { get; set; }

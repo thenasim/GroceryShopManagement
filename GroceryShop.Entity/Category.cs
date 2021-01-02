@@ -10,8 +10,6 @@ namespace GroceryShop.Entity
     {
         public string AppId { get; set; }
         public string Name { get; set; }
-        public double Discount { get; set; }
-        public string Description { get; set; }
         public string UpdatedAt = "GETDATE()";
     }
 }

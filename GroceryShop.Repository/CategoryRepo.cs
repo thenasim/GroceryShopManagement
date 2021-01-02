@@ -34,8 +34,6 @@
             var c = new Category();
             c.AppId = row["appid"].ToString();
             c.Name= row["name"].ToString();
-            c.Discount = Convert.ToDouble(row["discount"].ToString());
-            c.Description = row["description"].ToString();
             c.UpdatedAt = row["updated_at"].ToString();
             return c;
         }
@@ -55,7 +53,7 @@
         public static string SaveWithName(string name)
         {
             string appId = GetAppId();
-            var sql = $"INSERT INTO category VALUES('{appId}', '{name}', 0, '', GETDATE())";
+            var sql = $"INSERT INTO category VALUES('{appId}', '{name}', GETDATE())";
             var row = DataAccess.ExecuteDmlQuery(sql);
             if (row == 1)
                 return appId;
@@ -63,7 +61,7 @@
         }
         public static bool Save(Category p)
         {
-            var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.Discount}, '', {p.UpdatedAt})";
+            var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.UpdatedAt})";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

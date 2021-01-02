@@ -76,7 +76,7 @@
 
         public static bool Save(Sales u)
         {
-            var sql = $"INSERT INTO sales VALUES('{u.AppId}', '{u.Report}', {u.TotalPrice}, {u.Quantity}, {u.UpdatedAt}, '{u.ProductId}')";
+            var sql = $"INSERT INTO sales VALUES('{u.AppId}', {u.TotalPrice}, {u.Quantity}, {u.UpdatedAt}, '{u.ProductId}')";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
