@@ -188,6 +188,9 @@
         //Log out button
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure to logout?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+
             LoginForm lSalesman = new LoginForm();
             lSalesman.Show();
             this.Visible = false;
@@ -314,17 +317,20 @@
         {
             try
             {
-                this.UpdateProductsTable();
-                MessageBox.Show("Printed successfully");
+                if (MessageBox.Show("Are you sure to print?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    this.UpdateProductsTable();
+                    this.cartListItems.Clear();
+                    this.lsvCart.Items.Clear();
+                    this.TotalPrice = 0;
+                    this.lblTotalCartPrice.Text = "0";
+                    this.PopulateGridView();
+                }
             }
             catch (Exception error)
             {
                 MessageBox.Show($"Error saving in database\n{error.Message}");
             }
-            this.cartListItems.Clear();
-            this.lsvCart.Items.Clear();
-            this.TotalPrice = 0;
-            this.lblTotalCartPrice.Text = "0";
         }
 
         // Update product quantity in Products table of all the cart product

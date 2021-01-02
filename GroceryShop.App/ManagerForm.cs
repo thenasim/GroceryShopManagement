@@ -235,6 +235,9 @@
         //Log out button
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Are you sure to logout?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+
             this.Visible = false;
             LoginForm lManager = new LoginForm();
             lManager.Show();
