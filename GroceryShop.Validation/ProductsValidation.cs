@@ -10,5 +10,16 @@
 
     public class ProductsValidation : AbstractValidator<Products>
     {
+        public ProductsValidation()
+        {
+            RuleFor(p => p.Title)
+                .Cascade(CascadeMode.Stop)
+                .NotEmpty().WithMessage("Title field is empty")
+                .Length(2, 50).WithMessage("Title Length must be between 2 to 50");
+            RuleFor(p => p.Price).GreaterThan(0).WithMessage("Price must be greater than 0");
+            RuleFor(p => p.PurchasePrice).GreaterThan(0).WithMessage("Purchase price must be greater than 0");
+            RuleFor(p => p.CategoryName).NotEmpty().WithMessage("Please select or create a product category");
+            RuleFor(p => p.Quantity).GreaterThan(0).WithMessage("Quantity must be greater than 0");
+        }
     }
 }

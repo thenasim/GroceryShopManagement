@@ -314,73 +314,64 @@
 
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
-            try
+            var idExists = UserRepo.SearchUserId(this.CurrentUserId);
+            if (idExists)
             {
-                var idExists = UserRepo.SearchUserId(this.CurrentUserId);
-                if (idExists)
+
+                try
                 {
-                    
-                    try
+                    if (!this.UpdateFillEntity())
+                        return;
+                    if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
                     {
-                        if (!this.UpdateFillEntity())
-                            return;
-                        if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
-                        {
-                            MessageBox.Show("Successfully updated  user");
-                            this.PopulateGridView();
-                            this.txtAppId.Text = UserRepo.GetAppId();
-                            this.ClearUserInput();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Updating user failed");
-                        }
-                    }
-                    catch (Exception error)
-                    {
-                        MessageBox.Show("Cann't update user\n" + error.Message);
+                        MessageBox.Show("Successfully updated  user");
+                        this.PopulateGridView();
+                        this.txtAppId.Text = UserRepo.GetAppId();
                         this.ClearUserInput();
                     }
-                    this.CurrentUserId = null;
+                    else
+                    {
+                        MessageBox.Show("Updating user failed");
+                    }
                 }
-                else
+                catch (Exception error)
                 {
-                    
-                    try
-                    {
-                        if (!this.FillEntity())
-                            return;
-                        if (UserRepo.Save(this.User))
-                        {
-                            if (EmployeeRepo.Save(this.Emp))
-                            {
-                                if (LoginRepo.Save(this.Login))
-                                {
-                                    MessageBox.Show("Successfully created new user");
-                                    this.PopulateGridView();
-                                    this.txtAppId.Text = UserRepo.GetAppId();
-                                    this.ClearUserInput();
-                                }
-                            }
+                    MessageBox.Show("Cann't update user\n" + error.Message);
+                    this.ClearUserInput();
+                }
+                this.CurrentUserId = null;
+            }
+            else
+            {
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Creating user failed");
-                        }
-                    }
-                    catch (Exception error)
+                try
+                {
+                    if (!this.FillEntity())
+                        return;
+                    if (UserRepo.Save(this.User))
                     {
-                        MessageBox.Show("Cann't add user\n" + error.Message);
+                        if (EmployeeRepo.Save(this.Emp))
+                        {
+                            if (LoginRepo.Save(this.Login))
+                            {
+                                MessageBox.Show("Successfully created new user");
+                                this.PopulateGridView();
+                                this.txtAppId.Text = UserRepo.GetAppId();
+                                this.ClearUserInput();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Creating user failed");
                     }
                 }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Cann't add user\n" + error.Message);
+                }
             }
-            catch(Exception b)
-            {
-                MessageBox.Show("Error!" + b.Message);
-            }
-            
-            
         }
 
         private void btnClearUser_Click(object sender, EventArgs e)
