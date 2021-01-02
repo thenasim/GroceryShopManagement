@@ -11,6 +11,8 @@
     using System.Windows.Forms;
     using GroceryShop.Entity;
     using GroceryShop.Repository;
+    using FluentValidation.Results;
+    using GroceryShop.Validation;
 
     public partial class CategoryForm : Form
     {
@@ -117,9 +119,17 @@
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Please select a category to edit");
+                return;
+            }
+
             try
             {
-                this.UpdateFillEntity();
+
+                if (!this.UpdateFillEntity())
+                    return;
                 if (CategoryRepo.Update(this.Category))
                 {
                     MessageBox.Show("Successfully updated  category");
@@ -128,7 +138,7 @@
                 }
                 else
                 {
-                    MessageBox.Show("Updating category failed");
+                    MessageBox.Show("Please select a category to edit");
                 }
             }
             catch (Exception a)
@@ -174,18 +184,24 @@
             this.appId = this.dataGridView1.CurrentRow.Cells["appid"].Value.ToString();
             this.textBox1.Text = this.dataGridView1.CurrentRow.Cells["name"].Value.ToString();
         }
-        private void UpdateFillEntity()
+        private bool UpdateFillEntity()
         {
-            try
+            this.Category = new Category();
+            this.Category.AppId = this.appId;
+            this.Category.Name = this.textBox1.Text;
+            CategoryValidation validator = new CategoryValidation();
+            ValidationResult results = validator.Validate(Category);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
             {
-                this.Category = new Category();
-                this.Category.AppId = this.appId;
-                this.Category.Name = this.textBox1.Text;
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error!" + e.Message);
-            }
+            return true;
         }
     }
 }
