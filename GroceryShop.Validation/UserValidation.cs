@@ -15,7 +15,7 @@
             RuleFor(u => u.Password).NotEmpty().Length(6, 20).WithMessage("Password Length must be between 6 to 20");
 
             RuleFor(u => u.FullName)
-                .Cascade(CascadeMode.StopOnFirstFailure)
+                .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Name field is empty")
                 .Length(2, 50).WithMessage("Name Length must be between 2 to 50")
                 .Must(ValidName).WithMessage("Name contains invalid characters");

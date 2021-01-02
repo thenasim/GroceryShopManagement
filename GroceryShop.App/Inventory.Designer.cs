@@ -287,6 +287,7 @@
             this.dgvProductdetails.GridColor = System.Drawing.Color.Black;
             this.dgvProductdetails.Location = new System.Drawing.Point(0, 4);
             this.dgvProductdetails.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvProductdetails.MultiSelect = false;
             this.dgvProductdetails.Name = "dgvProductdetails";
             this.dgvProductdetails.ReadOnly = true;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;

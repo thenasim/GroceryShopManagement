@@ -341,7 +341,8 @@
                 }
                 else
                 {
-                    this.FillEntity();
+                    if (!this.FillEntity())
+                        return;
                     try
                     {
                         if (UserRepo.Save(this.User))
@@ -407,53 +408,44 @@
         }
 
 
-        private void FillEntity()
+        private bool FillEntity()
         {
-            try
+            this.User = new Users();
+            this.User.AppId = UserRepo.GetAppId();
+            this.User.UserType = this.cboUserType.Text;
+            this.User.FullName = this.txtUserName.Text;
+            this.User.Password = this.txtPassword.Text;
+
+            this.Login = new Logins();
+            this.Login.AppId = LoginRepo.GetAppId();
+            this.Login.Password = this.txtPassword.Text;
+            this.Login.UserId = this.User.AppId;
+
+            this.Emp = new Employee();
+            this.Emp.AppId = EmployeeRepo.GetAppId();
+            this.Emp.FullName = this.User.FullName;
+            this.Emp.Email = null;
+            this.Emp.Gender = null;
+            this.Emp.Address = null;
+            this.Emp.BirthDate = null;
+            this.Emp.PhoneNumber = null;
+            this.Emp.JoinDate = null;
+            this.Emp.Salary = 0;
+            this.Emp.UserId = this.User.AppId;
+
+            UserValidation validator = new UserValidation();
+            ValidationResult results = validator.Validate(this.User);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
             {
-                this.User = new Users();
-                this.User.AppId = UserRepo.GetAppId();
-                this.User.UserType = this.cboUserType.Text;
-                this.User.FullName = this.txtUserName.Text;
-
-                this.Login = new Logins();
-                this.Login.AppId = LoginRepo.GetAppId();
-                this.Login.Password = this.txtPassword.Text;
-                this.Login.UserId = this.User.AppId;
-
-                this.Emp = new Employee();
-                this.Emp.AppId = EmployeeRepo.GetAppId();
-                this.Emp.FullName = this.User.FullName;
-                this.Emp.Email = null;
-                this.Emp.Gender = null;
-                this.Emp.Address = null;
-                this.Emp.BirthDate = null;
-                this.Emp.PhoneNumber = null;
-                this.Emp.JoinDate = null;
-                this.Emp.Salary = 0;
-                this.Emp.UserId = this.User.AppId;
-                if (this.User != null)
+                foreach (ValidationFailure failure in failures)
                 {
-                    UserValidation validator = new UserValidation();
-                    ValidationResult results = validator.Validate(this.User);
-                    IList<ValidationFailure> failures = results.Errors;
-                    if (!(results.IsValid))
-                    {
-                        foreach (ValidationFailure failure in failures)
-                        {
-                            MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                            return;
-                        }
-                    }
+                    return false;
                 }
             }
-            catch(Exception e)
-            {
-                MessageBox.Show("Error!" + e.Message);
-            }
-            
-
+            return true;
         }
 
 
