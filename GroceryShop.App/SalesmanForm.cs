@@ -18,6 +18,8 @@
         Products Product { get; set; } = new Products();
         Sales Sale { get; set; } = new Sales();
         double TotalPrice { get; set; } = 0;
+        public bool InvalidQuantity { get; private set; } = false;
+
         private byte move;
         private int moveX;
         private int moveY;
@@ -210,6 +212,7 @@
         {
             this.dgbShowProduct.AutoGenerateColumns = false;
             this.dgbShowProduct.DataSource = InventoryRepo.SearchInventory(this.txtSearchbar.Text);
+            this.dgbShowProduct.ClearSelection();
         }
 
         private void SearchInventory()
@@ -263,11 +266,16 @@
         private void btnADD_Click(object sender, EventArgs e)
         {
             if (this.dgbShowProduct.CurrentRow == null)
-                return;
-
-            if (String.IsNullOrEmpty(this.txtQunatity.Text))
             {
-                MessageBox.Show("Please add quantity");
+                MessageBox.Show("No row selected");
+                return;
+            }
+
+            this.ValidateQuantity();
+
+            if (String.IsNullOrEmpty(this.txtQunatity.Text) || this.InvalidQuantity)
+            {
+                MessageBox.Show("Quantity is not in valid range");
                 return;
             }
 
@@ -360,17 +368,27 @@
             this.Sale.ProductId = productAppId;
         }
 
+        private void ValidateQuantity()
+        {
+            int q; 
+            if (! int.TryParse(this.txtQunatity.Text, out q))
+                return;
+
+            if (q <= this.trkQuantity.Maximum && q > this.trkQuantity.Minimum && q != 0)
+            {
+                this.trkQuantity.Value = q;
+                this.InvalidQuantity = false;
+            }
+            else
+            {
+                this.InvalidQuantity = true;
+            }
+        }
+
         // Trackbar Quantity updates when text Quantity changes
         private void txtQunatity_KeyUp(object sender, KeyEventArgs e)
         {
-            if (String.IsNullOrEmpty(this.txtQunatity.Text))
-                return;
-
-            int q = Convert.ToInt32(Math.Floor(Convert.ToDouble(this.txtQunatity.Text)));
-            if (q < this.trkQuantity.Maximum && q > this.trkQuantity.Minimum)
-            {
-                this.trkQuantity.Value = q;
-            }
+            this.ValidateQuantity();
         }
 
         private void SalesmanForm_Shown(object sender, EventArgs e)
@@ -378,6 +396,11 @@
             this.txtSearchbar.Focus();
         }
 
-        
+        private void SalesmanForm_Load(object sender, EventArgs e)
+        {
+            this.dgbShowProduct.AutoGenerateColumns = false;
+            this.dgbShowProduct.DataSource = InventoryRepo.ShowAll();
+            this.dgbShowProduct.ClearSelection();
+        }
     }
 }

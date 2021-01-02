@@ -80,5 +80,12 @@
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
+
+        public static bool DeleteByProductId(string productId)
+        {
+            var sql = $"DELETE FROM sales WHERE product_id = '{productId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
     }
 }
