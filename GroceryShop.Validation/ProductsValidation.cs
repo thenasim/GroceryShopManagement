@@ -33,7 +33,7 @@
         private bool ValidNumber(string num)
         {
             double d;
-            if (double.TryParse(num, out d) && d > 1)
+            if (double.TryParse(num, out d) && d > 0)
                 return true;
             return false;
         }

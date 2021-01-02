@@ -53,7 +53,7 @@
             emp.BirthDate = row["birthdate"].ToString();
             emp.PhoneNumber = row["phone"].ToString();
             emp.JoinDate = row["join_date"].ToString();
-            emp.Salary = Convert.ToDouble(row["salary"].ToString());
+            emp.Salary = row["salary"].ToString();
             emp.UserId = row["user_id"].ToString();
             emp.UpdatedAt = row["updated_at"].ToString();
             return emp;
