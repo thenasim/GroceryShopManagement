@@ -275,7 +275,7 @@
         //Manage inventory button 
         private void btnManageInventory_Click(object sender, EventArgs e)
         {
-            Inventory iAdmin = new Inventory(this);
+            InventoryForm iAdmin = new InventoryForm(this);
             iAdmin.Show();
             this.Visible = false;
         }

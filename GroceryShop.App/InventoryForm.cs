@@ -14,7 +14,7 @@
     using GroceryShop.Repository;
     using GroceryShop.Validation;
 
-    public partial class Inventory : Form
+    public partial class InventoryForm : Form
     {
         private Products Product { get; set; }
         private List<Category> CatList;
@@ -26,12 +26,12 @@
         private ManagerForm M1 { get; set; }
         private string CurrentAppId { get; set; }
 
-        public Inventory()
+        public InventoryForm()
         {
             InitializeComponent();
         }
 
-        public Inventory(AdminForm a1)
+        public InventoryForm(AdminForm a1)
         {
             InitializeComponent();
             this.A1 = a1;
@@ -39,7 +39,7 @@
 
         }
 
-        public Inventory(ManagerForm m1)
+        public InventoryForm(ManagerForm m1)
         {
             InitializeComponent();
             this.M1 = m1;
