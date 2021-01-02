@@ -298,7 +298,7 @@
             this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvCart.ForeColor = System.Drawing.Color.White;
             this.lsvCart.HideSelection = false;
-            this.lsvCart.Location = new System.Drawing.Point(7, 20);
+            this.lsvCart.Location = new System.Drawing.Point(3, 14);
             this.lsvCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsvCart.MultiSelect = false;
             this.lsvCart.Name = "lsvCart";
@@ -310,22 +310,22 @@
             // ch_title
             // 
             this.ch_title.Text = "Title";
-            this.ch_title.Width = 304;
+            this.ch_title.Width = 199;
             // 
             // ch_quantity
             // 
             this.ch_quantity.Text = "Quantity";
-            this.ch_quantity.Width = 131;
+            this.ch_quantity.Width = 105;
             // 
             // ch_price
             // 
             this.ch_price.Text = "Price";
-            this.ch_price.Width = 120;
+            this.ch_price.Width = 92;
             // 
             // ch_total
             // 
             this.ch_total.Text = "Total";
-            this.ch_total.Width = 146;
+            this.ch_total.Width = 110;
             // 
             // ch_product_quantity
             // 
@@ -537,6 +537,7 @@
             this.Name = "SalesmanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
+            this.Load += new System.EventHandler(this.SalesmanForm_Load);
             this.Shown += new System.EventHandler(this.SalesmanForm_Shown);
             this.pnlToMoveForm.ResumeLayout(false);
             this.pnlToMoveForm.PerformLayout();
