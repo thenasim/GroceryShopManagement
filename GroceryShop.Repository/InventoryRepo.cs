@@ -30,7 +30,7 @@ namespace GroceryShop.Repository
             {
                 var sql = @"SELECT products.id, products.appid, products.title,
 	            products.price, products.purchase_price, products.quantity,
-	            products.updated_at, products.user_id,
+	            products.updated_at,
 	            products.category_id,
 	            category.name as category_name
 		            FROM products
@@ -52,11 +52,11 @@ namespace GroceryShop.Repository
             var productList = new List<Products>();
             var sql = @"SELECT TOP 20 products.id, products.appid, products.title,
 	            products.price, products.purchase_price, products.quantity,
-	            products.updated_at, products.user_id,
+	            products.updated_at,
 	            products.category_id,
 	            category.name as category_name
 		            FROM products
-	            INNER JOIN category ON products.category_id = category.appid;";
+	            INNER JOIN category ON products.category_id = category.appid ORDER BY products.updated_at DESC;";
             var dt = DataAccess.GetDataTable(sql);
             int row = 0;
             while (row < dt.Rows.Count)
@@ -73,16 +73,17 @@ namespace GroceryShop.Repository
             {
                 return null;
             }
-            var p = new Products();
-            p.AppId = row["appid"].ToString();
-            p.Title= row["title"].ToString();
-            p.Price = row["price"].ToString();
-            p.PurchasePrice= row["purchase_price"].ToString();
-            p.Quantity = row["quantity"].ToString();
-            p.UpdatedAt = row["updated_at"].ToString();
-            p.UserId= row["user_id"].ToString();
-            p.CategoryId = row["category_id"].ToString();
-            p.CategoryName = row["category_name"].ToString();
+            var p = new Products
+            {
+                AppId = row["appid"].ToString(),
+                Title = row["title"].ToString(),
+                Price = row["price"].ToString(),
+                PurchasePrice = row["purchase_price"].ToString(),
+                Quantity = row["quantity"].ToString(),
+                UpdatedAt = row["updated_at"].ToString(),
+                CategoryId = row["category_id"].ToString(),
+                CategoryName = row["category_name"].ToString()
+            };
             return p;
         }
         public static string GetAppId()
@@ -100,7 +101,7 @@ namespace GroceryShop.Repository
         }
         public static bool Save(Products p)
         {
-            var sql = $"INSERT INTO products VALUES('{p.AppId}', '{p.Title}', {p.Price}, {p.PurchasePrice}, {p.Quantity}, {p.UpdatedAt}, null, '{p.CategoryId}')";
+            var sql = $"INSERT INTO products VALUES('{p.AppId}', '{p.Title}', {p.Price}, {p.PurchasePrice}, {p.Quantity}, {p.UpdatedAt}, '{p.CategoryId}')";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }

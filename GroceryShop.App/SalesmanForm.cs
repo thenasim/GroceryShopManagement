@@ -362,7 +362,6 @@
             this.Product.Quantity = Convert.ToString(quantity);
 
             this.Sale.AppId = SalesRepo.GetAppId();
-            this.Sale.Report = "__";
             this.Sale.TotalPrice = Convert.ToDouble(data.SubItems[3].Text);
             this.Sale.Quantity = Convert.ToDouble(data.SubItems[1].Text);
             this.Sale.ProductId = productAppId;
