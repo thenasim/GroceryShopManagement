@@ -16,7 +16,7 @@
         public string BirthDate { get; set; }
         public string PhoneNumber { get; set; }
         public string JoinDate { get; set; }
-        public double Salary { get; set; }
+        public string Salary { get; set; }
         public string UserId { get; set; }
         public string UpdatedAt = "GETDATE()";
     }

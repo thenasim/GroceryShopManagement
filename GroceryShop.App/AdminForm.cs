@@ -294,8 +294,6 @@
         /*
          backend code
          */
-
-
         private void PopulateGridView()
         {
             try
@@ -329,10 +327,6 @@
                         this.txtAppId.Text = UserRepo.GetAppId();
                         this.ClearUserInput();
                     }
-                    else
-                    {
-                        MessageBox.Show("Updating user failed");
-                    }
                 }
                 catch (Exception error)
                 {
@@ -348,23 +342,12 @@
                 {
                     if (!this.FillEntity())
                         return;
-                    if (UserRepo.Save(this.User))
+                    if (UserRepo.Save(this.User) && EmployeeRepo.Save(this.Emp) && LoginRepo.Save(this.Login))
                     {
-                        if (EmployeeRepo.Save(this.Emp))
-                        {
-                            if (LoginRepo.Save(this.Login))
-                            {
-                                MessageBox.Show("Successfully created new user");
-                                this.PopulateGridView();
-                                this.txtAppId.Text = UserRepo.GetAppId();
-                                this.ClearUserInput();
-                            }
-                        }
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Creating user failed");
+                        MessageBox.Show("Successfully created new user");
+                        this.PopulateGridView();
+                        this.txtAppId.Text = UserRepo.GetAppId();
+                        this.ClearUserInput();
                     }
                 }
                 catch (Exception error)
@@ -403,31 +386,36 @@
             this.PopulateGridView();
         }
 
-
         private bool FillEntity()
         {
-            this.User = new Users();
-            this.User.AppId = UserRepo.GetAppId();
-            this.User.UserType = this.cboUserType.Text;
-            this.User.FullName = this.txtUserName.Text;
-            this.User.Password = this.txtPassword.Text;
+            this.User = new Users
+            {
+                AppId = UserRepo.GetAppId(),
+                UserType = this.cboUserType.Text,
+                FullName = this.txtUserName.Text,
+                Password = this.txtPassword.Text
+            };
 
-            this.Login = new Logins();
-            this.Login.AppId = LoginRepo.GetAppId();
-            this.Login.Password = this.txtPassword.Text;
-            this.Login.UserId = this.User.AppId;
+            this.Login = new Logins
+            {
+                AppId = LoginRepo.GetAppId(),
+                Password = this.txtPassword.Text,
+                UserId = this.User.AppId
+            };
 
-            this.Emp = new Employee();
-            this.Emp.AppId = EmployeeRepo.GetAppId();
-            this.Emp.FullName = this.User.FullName;
-            this.Emp.Email = null;
-            this.Emp.Gender = null;
-            this.Emp.Address = null;
-            this.Emp.BirthDate = null;
-            this.Emp.PhoneNumber = null;
-            this.Emp.JoinDate = null;
-            this.Emp.Salary = 0;
-            this.Emp.UserId = this.User.AppId;
+            this.Emp = new Employee
+            {
+                AppId = EmployeeRepo.GetAppId(),
+                FullName = this.User.FullName,
+                Email = null,
+                Gender = null,
+                Address = null,
+                BirthDate = null,
+                PhoneNumber = null,
+                JoinDate = null,
+                Salary = "",
+                UserId = this.User.AppId
+            };
 
             UserValidation validator = new UserValidation();
             ValidationResult results = validator.Validate(this.User);
@@ -447,19 +435,26 @@
 
         private bool UpdateFillEntity()
         {
-            this.User = new Users();
-            this.User.AppId = this.CurrentUserId;
-            this.User.Password = this.txtPassword.Text;
-            this.User.UserType = this.cboUserType.Text;
-            this.User.FullName = this.txtUserName.Text;
+            this.User = new Users
+            {
+                AppId = this.CurrentUserId,
+                Password = this.txtPassword.Text,
+                UserType = this.cboUserType.Text,
+                FullName = this.txtUserName.Text
+            };
 
-            this.Login = new Logins();
-            this.Login.Password = this.txtPassword.Text;
-            this.Login.UserId = this.User.AppId;
+            this.Login = new Logins
+            {
+                Password = this.txtPassword.Text,
+                UserId = this.User.AppId
+            };
 
-            this.Emp = new Employee();
-            this.Emp.FullName = this.User.FullName;
-            this.Emp.UserId = this.User.AppId;
+            this.Emp = new Employee
+            {
+                FullName = this.User.FullName,
+                UserId = this.User.AppId
+            };
+
             UserValidation validator = new UserValidation();
             ValidationResult results = validator.Validate(this.User);
             IList<ValidationFailure> failures = results.Errors;
@@ -490,31 +485,19 @@
             {
                 string appId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
                 string name = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
-                if (EmployeeRepo.Delete(appId))
+                if (EmployeeRepo.Delete(appId) && LoginRepo.Delete(appId) && UserRepo.Delete(appId))
                 {
-                    if (LoginRepo.Delete(appId))
-                    {
-                        if (UserRepo.Delete(appId))
-                        {
-                            MessageBox.Show(name + " has been deleted successfully");
-                            this.PopulateGridView();
-                            this.dgvUsersGrid.ClearSelection();
-                            this.dgvUsersGrid.Refresh();
-                            this.ClearUserInput();
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("User couldn't be deleted");
+                    MessageBox.Show(name + " has been deleted successfully");
+                    this.PopulateGridView();
+                    this.dgvUsersGrid.ClearSelection();
+                    this.dgvUsersGrid.Refresh();
+                    this.ClearUserInput();
                 }
             }
             catch (Exception a)
             {
                 MessageBox.Show("Error!" + a.Message);
             }
-
-            
         }
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
@@ -534,9 +517,6 @@
             {
                 MessageBox.Show("Error!" + a.Message);
             }
-            
         }
-
-       
     }
 }

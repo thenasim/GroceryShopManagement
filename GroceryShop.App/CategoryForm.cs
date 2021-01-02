@@ -119,12 +119,6 @@
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(textBox1.Text))
-            {
-                MessageBox.Show("Please select a category to edit");
-                return;
-            }
-
             try
             {
 
@@ -136,16 +130,11 @@
                     this.PopulateGridView();
                     this.textBox1.Text = "";
                 }
-                else
-                {
-                    MessageBox.Show("Please select a category to edit");
-                }
             }
             catch (Exception a)
             {
                 MessageBox.Show("Error!" + a.Message);
             }
-
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -180,9 +169,12 @@
         }
         private bool UpdateFillEntity()
         {
-            this.Category = new Category();
-            this.Category.AppId = this.appId;
-            this.Category.Name = this.textBox1.Text;
+            this.Category = new Category
+            {
+                AppId = this.appId,
+                Name = this.textBox1.Text
+            };
+
             CategoryValidation validator = new CategoryValidation();
             ValidationResult results = validator.Validate(Category);
             IList<ValidationFailure> failures = results.Errors;

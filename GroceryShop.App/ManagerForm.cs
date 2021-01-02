@@ -261,17 +261,6 @@
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(this.txtUserId.Text))
-            {
-                MessageBox.Show("Please select a user to edit");
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(this.txtSalary.Text))
-            {
-                MessageBox.Show("Salary field is empty");
-                return;
-            }
-
             try
             {
                 if (!this.UpdateFillEntity())
@@ -281,7 +270,6 @@
                     MessageBox.Show("Successfully updated  user");
                     this.PopulateGridView();
                     this.ClearInput();
-
                 }
                 else
                 {
@@ -293,20 +281,22 @@
                 MessageBox.Show("Can not update employee\n" + error.Message);
                 this.ClearInput();
             }
-
         }
         private bool UpdateFillEntity()
         {
-            this.Emp = new Employee();
-            this.Emp.Email = this.txtEmail.Text;
-            this.Emp.FullName = this.txtEmpName.Text;
-            this.Emp.Gender = this.cmbGender.Text;
-            this.Emp.Address = this.txtAddress.Text;
-            this.Emp.BirthDate = this.dtpBirthdate.Text;
-            this.Emp.PhoneNumber = this.txtPhonenumber.Text;
-            this.Emp.JoinDate = this.dtpJoindate.Text;
-            this.Emp.Salary = Convert.ToDouble(this.txtSalary.Text);
-            this.Emp.UserId = this.txtUserId.Text;
+            this.Emp = new Employee
+            {
+                Email = this.txtEmail.Text,
+                FullName = this.txtEmpName.Text,
+                Gender = this.cmbGender.Text,
+                Address = this.txtAddress.Text,
+                BirthDate = this.dtpBirthdate.Text,
+                PhoneNumber = this.txtPhonenumber.Text,
+                JoinDate = this.dtpJoindate.Text,
+                Salary = this.txtSalary.Text,
+                UserId = this.txtUserId.Text
+            };
+
             EmployeeValidation validator = new EmployeeValidation();
             ValidationResult results = validator.Validate(Emp);
             IList<ValidationFailure> failures = results.Errors;
@@ -314,7 +304,7 @@
             {
                 foreach (ValidationFailure failure in failures)
                 {
-                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(failure.ErrorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     return false;
                 }
@@ -372,9 +362,22 @@
             }
         }
 
-        
-    }
+        private void txtSearchbar_Enter(object sender, EventArgs e)
+        {
+            if (txtSearchbar.Text == "Search here")
+            {
+                txtSearchbar.Text = "";
+                txtSearchbar.ForeColor = Color.White;
+            }
+        }
 
-        
-    
+        private void txtSearchbar_Leave(object sender, EventArgs e)
+        {
+            if (txtSearchbar.Text == "")
+            {
+                txtSearchbar.Text = "Search here";
+                txtSearchbar.ForeColor = Color.Gray;
+            }
+        }
+    }
 }

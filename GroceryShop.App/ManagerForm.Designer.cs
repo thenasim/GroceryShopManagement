@@ -140,6 +140,8 @@
             this.txtSearchbar.Size = new System.Drawing.Size(551, 27);
             this.txtSearchbar.TabIndex = 6;
             this.txtSearchbar.Text = "Search here";
+            this.txtSearchbar.Enter += new System.EventHandler(this.txtSearchbar_Enter);
+            this.txtSearchbar.Leave += new System.EventHandler(this.txtSearchbar_Leave);
             // 
             // btnMinimizeInventory
             // 
@@ -231,10 +233,10 @@
             this.btnMangeEmployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMangeEmployee.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMangeEmployee.ForeColor = System.Drawing.Color.White;
-            this.btnMangeEmployee.Location = new System.Drawing.Point(33, 281);
+            this.btnMangeEmployee.Location = new System.Drawing.Point(13, 281);
             this.btnMangeEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.btnMangeEmployee.Name = "btnMangeEmployee";
-            this.btnMangeEmployee.Size = new System.Drawing.Size(207, 73);
+            this.btnMangeEmployee.Size = new System.Drawing.Size(235, 87);
             this.btnMangeEmployee.TabIndex = 19;
             this.btnMangeEmployee.Text = "Manage Employee";
             this.btnMangeEmployee.UseVisualStyleBackColor = true;
@@ -263,10 +265,10 @@
             this.btnManageInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInventory.ForeColor = System.Drawing.Color.White;
-            this.btnManageInventory.Location = new System.Drawing.Point(33, 434);
+            this.btnManageInventory.Location = new System.Drawing.Point(13, 434);
             this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageInventory.Name = "btnManageInventory";
-            this.btnManageInventory.Size = new System.Drawing.Size(207, 79);
+            this.btnManageInventory.Size = new System.Drawing.Size(235, 87);
             this.btnManageInventory.TabIndex = 21;
             this.btnManageInventory.Text = "Manage  Inventory";
             this.btnManageInventory.UseVisualStyleBackColor = true;
