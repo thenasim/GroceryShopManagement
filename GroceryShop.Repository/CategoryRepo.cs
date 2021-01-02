@@ -67,5 +67,11 @@
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
+        public static bool Update(Category u)
+        {
+            var sql = $"update category set name = '{u.Name}', updated_at = {u.UpdatedAt} where appid = '{u.AppId}';";
+            var row = DataAccess.ExecuteDmlQuery(sql);
+            return row == 1;
+        }
     }
 }

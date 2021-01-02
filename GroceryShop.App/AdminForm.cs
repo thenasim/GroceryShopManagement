@@ -19,7 +19,6 @@
         private Users User { get; set; }
         private Logins Login { get; set; }
         private Employee Emp { get; set; }
-        private bool check = true;
         private byte move;
         private int moveX;
         private int moveY;
@@ -301,6 +300,7 @@
                 this.dgvUsersGrid.AutoGenerateColumns = false;
                 this.dgvUsersGrid.DataSource = UserRepo.ShowAll();
                 this.dgvUsersGrid.ClearSelection();
+                this.dgvUsersGrid.Refresh();
             }
             catch (Exception e)
             {

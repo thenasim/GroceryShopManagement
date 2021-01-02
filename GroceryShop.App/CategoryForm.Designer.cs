@@ -41,6 +41,8 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlGridviewforcategory = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFormmove.SuspendLayout();
             this.pnlGridviewforcategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -174,6 +176,7 @@
             this.btnShow.TabIndex = 10;
             this.btnShow.Text = "SHOW";
             this.btnShow.UseVisualStyleBackColor = true;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
             this.btnShow.MouseEnter += new System.EventHandler(this.btnShow_MouseEnter);
             this.btnShow.MouseLeave += new System.EventHandler(this.btnShow_MouseLeave);
             // 
@@ -193,13 +196,37 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.appid,
+            this.name});
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(16, 15);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1449, 533);
             this.dataGridView1.TabIndex = 11;
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            // 
+            // appid
+            // 
+            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.appid.DataPropertyName = "AppId";
+            this.appid.HeaderText = "Category ID";
+            this.appid.MinimumWidth = 6;
+            this.appid.Name = "appid";
+            this.appid.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Category Name";
+            this.name.MinimumWidth = 6;
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // CategoryForm
             // 
@@ -219,6 +246,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
             this.pnlFormmove.ResumeLayout(false);
             this.pnlFormmove.PerformLayout();
             this.pnlGridviewforcategory.ResumeLayout(false);
@@ -240,5 +268,7 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Panel pnlGridviewforcategory;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }
