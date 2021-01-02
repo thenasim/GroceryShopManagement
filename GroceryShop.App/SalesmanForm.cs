@@ -359,7 +359,7 @@
             string productAppId = data.SubItems[5].Text;
 
             this.Product.AppId = productAppId;
-            this.Product.Quantity = quantity;
+            this.Product.Quantity = Convert.ToString(quantity);
 
             this.Sale.AppId = SalesRepo.GetAppId();
             this.Sale.Report = "__";

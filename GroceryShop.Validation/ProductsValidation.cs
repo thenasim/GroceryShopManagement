@@ -14,12 +14,28 @@
         {
             RuleFor(p => p.Title)
                 .Cascade(CascadeMode.Stop)
-                .NotEmpty().WithMessage("Title field is empty")
-                .Length(2, 50).WithMessage("Title Length must be between 2 to 50");
-            RuleFor(p => p.Price).GreaterThan(0).WithMessage("Price must be greater than 0");
-            RuleFor(p => p.PurchasePrice).GreaterThan(0).WithMessage("Purchase price must be greater than 0");
-            RuleFor(p => p.CategoryName).NotEmpty().WithMessage("Please select or create a product category");
-            RuleFor(p => p.Quantity).GreaterThan(0).WithMessage("Quantity must be greater than 0");
+                .NotEmpty().WithMessage("{PropertyName} is empty")
+                .Length(2, 50).WithMessage("{PropertyName} length must be between 2 to 50");
+
+            RuleFor(p => p.Price).NotEmpty().WithMessage("{PropertyName} is empty")
+                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
+
+            RuleFor(p => p.PurchasePrice).NotEmpty().WithMessage("{PropertyName} is empty")
+                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
+
+            RuleFor(p => p.CategoryName).NotEmpty().WithMessage("{PropertyName} select or create a product category")
+                .Length(3, 50).WithMessage("{PropertyName} length must be between 3 to 50");
+
+            RuleFor(p => p.Quantity).NotEmpty().WithMessage("{PropertyName} must be greater than 0")
+                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
+        }
+
+        private bool ValidNumber(string num)
+        {
+            double d;
+            if (double.TryParse(num, out d) && d > 1)
+                return true;
+            return false;
         }
     }
 }

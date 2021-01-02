@@ -10,9 +10,9 @@
     {
         public string AppId { get; set; }
         public string Title { get; set; }
-        public double Price { get; set; }
-        public double PurchasePrice { get; set; }
-        public double Quantity { get; set; }
+        public string Price { get; set; }
+        public string PurchasePrice { get; set; }
+        public string Quantity { get; set; }
         public string UserId { get; set; }
         public string CategoryId { get; set; }
         public string CategoryName { get; set; }

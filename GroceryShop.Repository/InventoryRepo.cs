@@ -76,15 +76,14 @@ namespace GroceryShop.Repository
             var p = new Products();
             p.AppId = row["appid"].ToString();
             p.Title= row["title"].ToString();
-            p.Price = Convert.ToDouble(row["price"].ToString());
-            p.PurchasePrice= Convert.ToDouble(row["purchase_price"].ToString());
-            p.Quantity = Convert.ToDouble(row["quantity"].ToString());
+            p.Price = row["price"].ToString();
+            p.PurchasePrice= row["purchase_price"].ToString();
+            p.Quantity = row["quantity"].ToString();
             p.UpdatedAt = row["updated_at"].ToString();
             p.UserId= row["user_id"].ToString();
             p.CategoryId = row["category_id"].ToString();
             p.CategoryName = row["category_name"].ToString();
             return p;
-
         }
         public static string GetAppId()
         {
