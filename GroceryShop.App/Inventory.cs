@@ -9,8 +9,10 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using FluentValidation.Results;
     using GroceryShop.Entity;
     using GroceryShop.Repository;
+    using GroceryShop.Validation;
 
     public partial class Inventory : Form
     {
@@ -184,16 +186,46 @@
         }
         private void btnADD_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(this.txtProductTitle.Text))
+            {
+                MessageBox.Show("Title field is empty");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(this.txtPrice.Text))
+            {
+                MessageBox.Show("Price field is empty");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(this.txtPurchasePrice.Text))
+            {
+                MessageBox.Show("PurchasePrice field is empty");
+                return;
+            }
+            if (String.IsNullOrWhiteSpace(this.txtQuantity.Text))
+            {
+                MessageBox.Show("Quantity field is empty");
+                return;
+            }
             var idExists = InventoryRepo.SearchAppId(this.CurrentAppId);
             if (idExists)
             {
-                this.UpdateFillEntity();
-                if (InventoryRepo.Update(this.Product))
+                try
                 {
-                    MessageBox.Show("Product updated successfully");
-                    this.PopulateGridView();
-                    this.dgvProductdetails.ClearSelection();
-                    this.dgvProductdetails.Refresh();
+                    if(!this.UpdateFillEntity())
+                    return;
+                    if (InventoryRepo.Update(this.Product))
+                    {
+                        MessageBox.Show("Product updated successfully");
+                        this.PopulateGridView();
+                        this.dgvProductdetails.ClearSelection();
+                        this.dgvProductdetails.Refresh();
+                        this.ClearInputs();
+                    }
+
+                }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Product couldn't be added\n" + error.Message);
                     this.ClearInputs();
                 }
                 this.CurrentAppId = null;
@@ -201,22 +233,30 @@
             }
             else
             {
-                this.FillEntity();
-                if (InventoryRepo.Save(this.Product))
+                try
                 {
-                    MessageBox.Show("Product added successfully");
-                    this.PopulateGridView();
-                    this.dgvProductdetails.ClearSelection();
-                    this.dgvProductdetails.Refresh();
-                    this.ClearInputs();
+                    if(!this.FillEntity())
+                    return;
+                    if (InventoryRepo.Save(this.Product))
+                    {
+                        MessageBox.Show("Product added successfully");
+                        this.PopulateGridView();
+                        this.dgvProductdetails.ClearSelection();
+                        this.dgvProductdetails.Refresh();
+                        this.ClearInputs();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Product couldn't be added");
+                    }
                 }
-                else
+                catch (Exception error)
                 {
-                    MessageBox.Show("Product couldn't be added");
+                    MessageBox.Show("Product couldn't be added\n" + error.Message);
                 }
+                
             }
-            
- 
+
         }
 
         //Show details button click 
@@ -287,7 +327,7 @@
             this.txtQuantity.Text = "";
             this.cboCategory.Text = "";
         }
-        private void FillEntity()
+        private bool FillEntity()
         {
             this.Product = new Products();
             this.Product.AppId = InventoryRepo.GetAppId();
@@ -296,8 +336,22 @@
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
             this.Product.CategoryId = this.GetCategoryId();
+
+            ProductsValidation validator = new ProductsValidation();
+            ValidationResult results = validator.Validate(Product);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
+            {
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
+            }
+            return true;
         }
-        private void UpdateFillEntity()
+        private bool UpdateFillEntity()
         {
             this.Product = new Products();
             this.Product.AppId = this.CurrentAppId;
@@ -306,6 +360,20 @@
             this.Product.PurchasePrice = Convert.ToDouble(this.txtPurchasePrice.Text);
             this.Product.Quantity = Convert.ToDouble(this.txtQuantity.Text);
             this.Product.CategoryId = this.GetCategoryId();
+
+            ProductsValidation validator = new ProductsValidation();
+            ValidationResult results = validator.Validate(Product);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
+            {
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
+            }
+            return true;
         }
 
 
