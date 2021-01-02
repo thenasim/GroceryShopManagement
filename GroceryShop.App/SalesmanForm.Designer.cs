@@ -85,8 +85,9 @@
             this.pnlToMoveForm.Controls.Add(this.btnClose);
             this.pnlToMoveForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToMoveForm.Location = new System.Drawing.Point(0, 0);
+            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlToMoveForm.Name = "pnlToMoveForm";
-            this.pnlToMoveForm.Size = new System.Drawing.Size(1150, 41);
+            this.pnlToMoveForm.Size = new System.Drawing.Size(1533, 50);
             this.pnlToMoveForm.TabIndex = 1;
             this.pnlToMoveForm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseDown);
             this.pnlToMoveForm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlToMoveForm_MouseMove);
@@ -101,9 +102,10 @@
             this.btnSearchInventory.IconColor = System.Drawing.Color.White;
             this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearchInventory.IconSize = 27;
-            this.btnSearchInventory.Location = new System.Drawing.Point(770, 7);
+            this.btnSearchInventory.Location = new System.Drawing.Point(1027, 9);
+            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchInventory.Name = "btnSearchInventory";
-            this.btnSearchInventory.Size = new System.Drawing.Size(28, 27);
+            this.btnSearchInventory.Size = new System.Drawing.Size(37, 33);
             this.btnSearchInventory.TabIndex = 7;
             this.btnSearchInventory.UseVisualStyleBackColor = true;
             this.btnSearchInventory.Click += new System.EventHandler(this.btnSearchInventory_Click);
@@ -116,9 +118,10 @@
             this.txtSearchbar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
-            this.txtSearchbar.Location = new System.Drawing.Point(353, 8);
+            this.txtSearchbar.Location = new System.Drawing.Point(471, 10);
+            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSearchbar.Name = "txtSearchbar";
-            this.txtSearchbar.Size = new System.Drawing.Size(413, 22);
+            this.txtSearchbar.Size = new System.Drawing.Size(551, 27);
             this.txtSearchbar.TabIndex = 6;
             this.txtSearchbar.Text = "Search here";
             this.txtSearchbar.Enter += new System.EventHandler(this.txtSearchbar_Enter);
@@ -132,9 +135,10 @@
             this.btnMinimizeInventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizeInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeInventory.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizeInventory.Location = new System.Drawing.Point(1066, 4);
+            this.btnMinimizeInventory.Location = new System.Drawing.Point(1421, 5);
+            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimizeInventory.Name = "btnMinimizeInventory";
-            this.btnMinimizeInventory.Size = new System.Drawing.Size(36, 33);
+            this.btnMinimizeInventory.Size = new System.Drawing.Size(48, 41);
             this.btnMinimizeInventory.TabIndex = 3;
             this.btnMinimizeInventory.Text = "-";
             this.btnMinimizeInventory.UseVisualStyleBackColor = true;
@@ -147,9 +151,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1111, 3);
+            this.btnClose.Location = new System.Drawing.Point(1481, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(34, 33);
+            this.btnClose.Size = new System.Drawing.Size(45, 41);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -163,9 +168,10 @@
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(13, 562);
+            this.btnLogout.Location = new System.Drawing.Point(17, 692);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 31);
+            this.btnLogout.Size = new System.Drawing.Size(168, 38);
             this.btnLogout.TabIndex = 11;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = true;
@@ -178,9 +184,10 @@
             this.lblManageUsers.AutoSize = true;
             this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblManageUsers.ForeColor = System.Drawing.Color.White;
-            this.lblManageUsers.Location = new System.Drawing.Point(49, 6);
+            this.lblManageUsers.Location = new System.Drawing.Point(65, 7);
+            this.lblManageUsers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblManageUsers.Name = "lblManageUsers";
-            this.lblManageUsers.Size = new System.Drawing.Size(54, 30);
+            this.lblManageUsers.Size = new System.Drawing.Size(72, 37);
             this.lblManageUsers.TabIndex = 1;
             this.lblManageUsers.Text = "Cart";
             // 
@@ -190,10 +197,11 @@
             this.iconPictureBoxManageCarts.IconChar = FontAwesome.Sharp.IconChar.CartPlus;
             this.iconPictureBoxManageCarts.IconColor = System.Drawing.Color.White;
             this.iconPictureBoxManageCarts.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBoxManageCarts.IconSize = 35;
-            this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(5, 4);
+            this.iconPictureBoxManageCarts.IconSize = 43;
+            this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(7, 5);
+            this.iconPictureBoxManageCarts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBoxManageCarts.Name = "iconPictureBoxManageCarts";
-            this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(38, 35);
+            this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(51, 43);
             this.iconPictureBoxManageCarts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.iconPictureBoxManageCarts.TabIndex = 0;
             this.iconPictureBoxManageCarts.TabStop = false;
@@ -201,9 +209,10 @@
             // pnlEmployeeform
             // 
             this.pnlEmployeeform.Controls.Add(this.pnlManageCarts);
-            this.pnlEmployeeform.Location = new System.Drawing.Point(3, 41);
+            this.pnlEmployeeform.Location = new System.Drawing.Point(4, 50);
+            this.pnlEmployeeform.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlEmployeeform.Name = "pnlEmployeeform";
-            this.pnlEmployeeform.Size = new System.Drawing.Size(1147, 609);
+            this.pnlEmployeeform.Size = new System.Drawing.Size(1529, 750);
             this.pnlEmployeeform.TabIndex = 3;
             this.pnlEmployeeform.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEmployeeform_Paint);
             // 
@@ -216,9 +225,10 @@
             this.pnlManageCarts.Controls.Add(this.panel1);
             this.pnlManageCarts.Controls.Add(this.lblManageUsers);
             this.pnlManageCarts.Controls.Add(this.iconPictureBoxManageCarts);
-            this.pnlManageCarts.Location = new System.Drawing.Point(-3, 1);
+            this.pnlManageCarts.Location = new System.Drawing.Point(-4, 1);
+            this.pnlManageCarts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlManageCarts.Name = "pnlManageCarts";
-            this.pnlManageCarts.Size = new System.Drawing.Size(1150, 606);
+            this.pnlManageCarts.Size = new System.Drawing.Size(1533, 745);
             this.pnlManageCarts.TabIndex = 18;
             // 
             // panel2
@@ -228,9 +238,10 @@
             this.panel2.Controls.Add(this.btnPrintInvoice);
             this.panel2.Controls.Add(this.pnlInvoice);
             this.panel2.Controls.Add(this.btnClearInvoice);
-            this.panel2.Location = new System.Drawing.Point(580, 3);
+            this.panel2.Location = new System.Drawing.Point(773, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(557, 590);
+            this.panel2.Size = new System.Drawing.Size(742, 726);
             this.panel2.TabIndex = 3;
             // 
             // btnPrintInvoice
@@ -239,9 +250,10 @@
             this.btnPrintInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrintInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnPrintInvoice.Location = new System.Drawing.Point(285, 547);
+            this.btnPrintInvoice.Location = new System.Drawing.Point(380, 673);
+            this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(100, 27);
+            this.btnPrintInvoice.Size = new System.Drawing.Size(133, 33);
             this.btnPrintInvoice.TabIndex = 32;
             this.btnPrintInvoice.Text = "PRINT";
             this.btnPrintInvoice.UseVisualStyleBackColor = true;
@@ -255,9 +267,10 @@
             this.pnlInvoice.Controls.Add(this.lblTotalCartPrice);
             this.pnlInvoice.Controls.Add(this.lsvCart);
             this.pnlInvoice.Controls.Add(this.lblInvoiceTotalPrice);
-            this.pnlInvoice.Location = new System.Drawing.Point(2, 9);
+            this.pnlInvoice.Location = new System.Drawing.Point(3, 11);
+            this.pnlInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlInvoice.Name = "pnlInvoice";
-            this.pnlInvoice.Size = new System.Drawing.Size(553, 510);
+            this.pnlInvoice.Size = new System.Drawing.Size(737, 627);
             this.pnlInvoice.TabIndex = 31;
             // 
             // lblTotalCartPrice
@@ -265,9 +278,10 @@
             this.lblTotalCartPrice.AutoSize = true;
             this.lblTotalCartPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalCartPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalCartPrice.Location = new System.Drawing.Point(380, 474);
+            this.lblTotalCartPrice.Location = new System.Drawing.Point(507, 583);
+            this.lblTotalCartPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalCartPrice.Name = "lblTotalCartPrice";
-            this.lblTotalCartPrice.Size = new System.Drawing.Size(17, 18);
+            this.lblTotalCartPrice.Size = new System.Drawing.Size(21, 24);
             this.lblTotalCartPrice.TabIndex = 3;
             this.lblTotalCartPrice.Text = "0";
             // 
@@ -284,11 +298,11 @@
             this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvCart.ForeColor = System.Drawing.Color.White;
             this.lsvCart.HideSelection = false;
-            this.lsvCart.Location = new System.Drawing.Point(5, 16);
-            this.lsvCart.Margin = new System.Windows.Forms.Padding(2);
+            this.lsvCart.Location = new System.Drawing.Point(7, 20);
+            this.lsvCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsvCart.MultiSelect = false;
             this.lsvCart.Name = "lsvCart";
-            this.lsvCart.Size = new System.Drawing.Size(541, 445);
+            this.lsvCart.Size = new System.Drawing.Size(720, 547);
             this.lsvCart.TabIndex = 2;
             this.lsvCart.UseCompatibleStateImageBehavior = false;
             this.lsvCart.View = System.Windows.Forms.View.Details;
@@ -328,9 +342,10 @@
             this.lblInvoiceTotalPrice.AutoSize = true;
             this.lblInvoiceTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoiceTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblInvoiceTotalPrice.Location = new System.Drawing.Point(289, 476);
+            this.lblInvoiceTotalPrice.Location = new System.Drawing.Point(385, 586);
+            this.lblInvoiceTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblInvoiceTotalPrice.Name = "lblInvoiceTotalPrice";
-            this.lblInvoiceTotalPrice.Size = new System.Drawing.Size(92, 16);
+            this.lblInvoiceTotalPrice.Size = new System.Drawing.Size(113, 20);
             this.lblInvoiceTotalPrice.TabIndex = 0;
             this.lblInvoiceTotalPrice.Text = "Total Price :";
             // 
@@ -340,9 +355,10 @@
             this.btnClearInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearInvoice.ForeColor = System.Drawing.Color.White;
-            this.btnClearInvoice.Location = new System.Drawing.Point(420, 547);
+            this.btnClearInvoice.Location = new System.Drawing.Point(560, 673);
+            this.btnClearInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClearInvoice.Name = "btnClearInvoice";
-            this.btnClearInvoice.Size = new System.Drawing.Size(100, 27);
+            this.btnClearInvoice.Size = new System.Drawing.Size(133, 33);
             this.btnClearInvoice.TabIndex = 30;
             this.btnClearInvoice.Text = "CLEAR";
             this.btnClearInvoice.UseVisualStyleBackColor = true;
@@ -360,9 +376,10 @@
             this.panel1.Controls.Add(this.lblQuantity);
             this.panel1.Controls.Add(this.btnADD);
             this.panel1.Controls.Add(this.btnClear);
-            this.panel1.Location = new System.Drawing.Point(5, 45);
+            this.panel1.Location = new System.Drawing.Point(7, 55);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(561, 478);
+            this.panel1.Size = new System.Drawing.Size(747, 588);
             this.panel1.TabIndex = 2;
             // 
             // dgbShowProduct
@@ -376,14 +393,15 @@
             this.price,
             this.quantity,
             this.category_name});
-            this.dgbShowProduct.Location = new System.Drawing.Point(7, 9);
-            this.dgbShowProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.dgbShowProduct.Location = new System.Drawing.Point(9, 11);
+            this.dgbShowProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgbShowProduct.MultiSelect = false;
             this.dgbShowProduct.Name = "dgbShowProduct";
             this.dgbShowProduct.ReadOnly = true;
             this.dgbShowProduct.RowHeadersWidth = 51;
             this.dgbShowProduct.RowTemplate.Height = 24;
             this.dgbShowProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgbShowProduct.Size = new System.Drawing.Size(545, 313);
+            this.dgbShowProduct.Size = new System.Drawing.Size(727, 385);
             this.dgbShowProduct.TabIndex = 36;
             this.dgbShowProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbShowProduct_CellClick);
             // 
@@ -414,7 +432,7 @@
             this.price.MinimumWidth = 6;
             this.price.Name = "price";
             this.price.ReadOnly = true;
-            this.price.Width = 56;
+            this.price.Width = 69;
             // 
             // quantity
             // 
@@ -424,7 +442,7 @@
             this.quantity.MinimumWidth = 6;
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;
-            this.quantity.Width = 75;
+            this.quantity.Width = 94;
             // 
             // category_name
             // 
@@ -438,11 +456,11 @@
             // trkQuantity
             // 
             this.trkQuantity.Enabled = false;
-            this.trkQuantity.Location = new System.Drawing.Point(180, 349);
-            this.trkQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.trkQuantity.Location = new System.Drawing.Point(240, 430);
+            this.trkQuantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trkQuantity.Minimum = 1;
             this.trkQuantity.Name = "trkQuantity";
-            this.trkQuantity.Size = new System.Drawing.Size(372, 45);
+            this.trkQuantity.Size = new System.Drawing.Size(496, 56);
             this.trkQuantity.TabIndex = 19;
             this.trkQuantity.Value = 1;
             this.trkQuantity.Scroll += new System.EventHandler(this.trkQuantity_Scroll);
@@ -451,9 +469,10 @@
             // 
             this.txtQunatity.Enabled = false;
             this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQunatity.Location = new System.Drawing.Point(9, 363);
+            this.txtQunatity.Location = new System.Drawing.Point(12, 447);
+            this.txtQunatity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQunatity.Name = "txtQunatity";
-            this.txtQunatity.Size = new System.Drawing.Size(96, 29);
+            this.txtQunatity.Size = new System.Drawing.Size(127, 34);
             this.txtQunatity.TabIndex = 35;
             this.txtQunatity.Text = "1";
             this.txtQunatity.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtQunatity_KeyUp);
@@ -463,9 +482,10 @@
             this.lblQuantity.AutoSize = true;
             this.lblQuantity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQuantity.ForeColor = System.Drawing.Color.White;
-            this.lblQuantity.Location = new System.Drawing.Point(5, 335);
+            this.lblQuantity.Location = new System.Drawing.Point(7, 412);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(70, 21);
+            this.lblQuantity.Size = new System.Drawing.Size(88, 28);
             this.lblQuantity.TabIndex = 30;
             this.lblQuantity.Text = "Quantity";
             // 
@@ -475,9 +495,10 @@
             this.btnADD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnADD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnADD.ForeColor = System.Drawing.Color.White;
-            this.btnADD.Location = new System.Drawing.Point(300, 424);
+            this.btnADD.Location = new System.Drawing.Point(400, 522);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnADD.Name = "btnADD";
-            this.btnADD.Size = new System.Drawing.Size(104, 36);
+            this.btnADD.Size = new System.Drawing.Size(139, 44);
             this.btnADD.TabIndex = 29;
             this.btnADD.Text = "ADD";
             this.btnADD.UseVisualStyleBackColor = true;
@@ -491,9 +512,10 @@
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(427, 424);
+            this.btnClear.Location = new System.Drawing.Point(569, 522);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(115, 36);
+            this.btnClear.Size = new System.Drawing.Size(153, 44);
             this.btnClear.TabIndex = 19;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -503,14 +525,15 @@
             // 
             // SalesmanForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
-            this.ClientSize = new System.Drawing.Size(1150, 650);
+            this.ClientSize = new System.Drawing.Size(1533, 800);
             this.Controls.Add(this.pnlEmployeeform);
             this.Controls.Add(this.pnlToMoveForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SalesmanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
