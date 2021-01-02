@@ -1,5 +1,7 @@
 ﻿namespace GroceryShop.App
 {
+    using GroceryShop.Entity;
+    using GroceryShop.Repository;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
@@ -15,11 +17,31 @@
         private byte move;
         private int moveX;
         private int moveY;
+        private byte visibilty;
+
+        private AdminForm A1 { get; set; }
+        private ManagerForm M1 { get; set; }
 
         public SalesReportForm()
         {
             InitializeComponent();
         }
+
+        public SalesReportForm(AdminForm a1)
+        {
+            InitializeComponent();
+            this.A1 = a1;
+            visibilty = 0;
+        }
+
+        public SalesReportForm(ManagerForm m1)
+        {
+            InitializeComponent();
+            this.M1 = m1;
+            visibilty = 1;
+        }
+
+
         //Minimize work
         private void btnMinimize_Click(object sender, EventArgs e)
         {
@@ -28,7 +50,18 @@
         // form close
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (visibilty == 1)
+            {
+                this.Close();
+                this.M1.Visible = true;
+            }
+            else if (visibilty == 0)
+            {
+                this.Close();
+                this.A1.Visible = true;
+            }
+            else
+                Application.Exit();
         }
 
         //close button hover
@@ -40,20 +73,6 @@
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
             btnClose.ForeColor = Color.Red;
-        }
-
-        //clear button hover color
-        private void btnClear_MouseEnter(object sender, EventArgs e)
-        {
-            btnClear.ForeColor = Color.Red;
-            btnClear.FlatAppearance.BorderColor = Color.Red;
-        }
-
-        //clear button hover color
-        private void btnClear_MouseLeave(object sender, EventArgs e)
-        {
-            btnClear.ForeColor = Color.White;
-            btnClear.FlatAppearance.BorderColor = Color.White;
         }
 
         //clear button hover color
@@ -101,6 +120,27 @@
         private void pnlFormbar_MouseUp(object sender, MouseEventArgs e)
         {
             move = 0;
+        }
+
+        private void SalesReportForm_Load(object sender, EventArgs e)
+        {
+            List<Sales> reports = SalesRepo.ProductSaleList();
+            foreach(Sales s in reports)
+            {
+                this.chartMostSoldProduct.Series["Sales"].Points.AddXY(s.Title, Convert.ToInt32(s.Quantity));
+            }
+
+            reports = SalesRepo.ProductSaleList("benefit");
+            foreach(Sales s in reports)
+            {
+                this.chartMostBenefitProduct.Series["Benefit"].Points.AddXY(s.Title, Convert.ToInt32(s.Benefit));
+            }
+
+            string todayBenefit = SalesRepo.TodaysBenefit();
+            if (todayBenefit == null)
+                this.lblTodayBenefit.Text = "0 Tk";
+            else
+                this.lblTodayBenefit.Text = todayBenefit + " tk";
         }
     }
 }

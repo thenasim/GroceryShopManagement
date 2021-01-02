@@ -14,5 +14,7 @@
         public double Quantity { get; set; }
         public string ProductId { get; set; }
         public string UpdatedAt = "GETDATE()";
+        public string Title { get; set; }
+        public string Benefit { get; set; }
     }
 }

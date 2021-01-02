@@ -32,11 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesmanForm));
             this.pnlToMoveForm = new System.Windows.Forms.Panel();
             this.btnSearchInventory = new FontAwesome.Sharp.IconButton();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.txtSearchbar = new System.Windows.Forms.TextBox();
             this.btnMinimizeInventory = new System.Windows.Forms.Button();
-            this.lblManageUsers = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblManageUsers = new System.Windows.Forms.Label();
             this.iconPictureBoxManageCarts = new FontAwesome.Sharp.IconPictureBox();
             this.pnlEmployeeform = new System.Windows.Forms.Panel();
             this.pnlManageCarts = new System.Windows.Forms.Panel();
@@ -110,21 +110,6 @@
             this.btnSearchInventory.MouseEnter += new System.EventHandler(this.btnSearchInventory_MouseEnter);
             this.btnSearchInventory.MouseLeave += new System.EventHandler(this.btnSearchInventory_MouseLeave);
             // 
-            // btnLogout
-            // 
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(13, 562);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(126, 31);
-            this.btnLogout.TabIndex = 11;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
-            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
-            // 
             // txtSearchbar
             // 
             this.txtSearchbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
@@ -155,17 +140,6 @@
             this.btnMinimizeInventory.UseVisualStyleBackColor = true;
             this.btnMinimizeInventory.Click += new System.EventHandler(this.btnMinimizeInventory_Click);
             // 
-            // lblManageUsers
-            // 
-            this.lblManageUsers.AutoSize = true;
-            this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
-            this.lblManageUsers.Location = new System.Drawing.Point(49, 6);
-            this.lblManageUsers.Name = "lblManageUsers";
-            this.lblManageUsers.Size = new System.Drawing.Size(54, 30);
-            this.lblManageUsers.TabIndex = 1;
-            this.lblManageUsers.Text = "Cart";
-            // 
             // btnClose
             // 
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
@@ -182,6 +156,33 @@
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(13, 562);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(126, 31);
+            this.btnLogout.TabIndex = 11;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.btnLogout.MouseEnter += new System.EventHandler(this.btnLogout_MouseEnter);
+            this.btnLogout.MouseLeave += new System.EventHandler(this.btnLogout_MouseLeave);
+            // 
+            // lblManageUsers
+            // 
+            this.lblManageUsers.AutoSize = true;
+            this.lblManageUsers.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManageUsers.ForeColor = System.Drawing.Color.White;
+            this.lblManageUsers.Location = new System.Drawing.Point(49, 6);
+            this.lblManageUsers.Name = "lblManageUsers";
+            this.lblManageUsers.Size = new System.Drawing.Size(54, 30);
+            this.lblManageUsers.TabIndex = 1;
+            this.lblManageUsers.Text = "Cart";
             // 
             // iconPictureBoxManageCarts
             // 
@@ -284,7 +285,7 @@
             this.lsvCart.ForeColor = System.Drawing.Color.White;
             this.lsvCart.HideSelection = false;
             this.lsvCart.Location = new System.Drawing.Point(5, 16);
-            this.lsvCart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lsvCart.Margin = new System.Windows.Forms.Padding(2);
             this.lsvCart.MultiSelect = false;
             this.lsvCart.Name = "lsvCart";
             this.lsvCart.Size = new System.Drawing.Size(541, 445);
@@ -376,7 +377,7 @@
             this.quantity,
             this.category_name});
             this.dgbShowProduct.Location = new System.Drawing.Point(7, 9);
-            this.dgbShowProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgbShowProduct.Margin = new System.Windows.Forms.Padding(2);
             this.dgbShowProduct.Name = "dgbShowProduct";
             this.dgbShowProduct.ReadOnly = true;
             this.dgbShowProduct.RowHeadersWidth = 51;
@@ -438,7 +439,7 @@
             // 
             this.trkQuantity.Enabled = false;
             this.trkQuantity.Location = new System.Drawing.Point(180, 349);
-            this.trkQuantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trkQuantity.Margin = new System.Windows.Forms.Padding(2);
             this.trkQuantity.Minimum = 1;
             this.trkQuantity.Name = "trkQuantity";
             this.trkQuantity.Size = new System.Drawing.Size(372, 45);
