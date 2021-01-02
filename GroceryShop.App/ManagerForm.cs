@@ -261,21 +261,21 @@
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (this.txtUserId.Text == "")
+            if (String.IsNullOrWhiteSpace(this.txtUserId.Text))
             {
                 MessageBox.Show("Please select a user to edit");
                 return;
             }
-            if (this.txtSalary.Text == "")
+            if (String.IsNullOrWhiteSpace(this.txtSalary.Text))
             {
                 MessageBox.Show("Salary field is empty");
                 return;
             }
 
-            if (!this.UpdateFillEntity())
-                return;
             try
             {
+                if (!this.UpdateFillEntity())
+                    return;
                 if (EmployeeRepo.Update(this.Emp))
                 {
                     MessageBox.Show("Successfully updated  user");
@@ -285,7 +285,7 @@
                 }
                 else
                 {
-                    MessageBox.Show("Updating employee failed");
+                    MessageBox.Show("Please select a user to edit");
                 }
             }
             catch (Exception error)

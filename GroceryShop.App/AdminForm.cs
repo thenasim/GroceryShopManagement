@@ -319,10 +319,11 @@
                 var idExists = UserRepo.SearchUserId(this.CurrentUserId);
                 if (idExists)
                 {
-                    if (!this.UpdateFillEntity())
-                        return;
+                    
                     try
                     {
+                        if (!this.UpdateFillEntity())
+                            return;
                         if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
                         {
                             MessageBox.Show("Successfully updated  user");
@@ -344,10 +345,11 @@
                 }
                 else
                 {
-                    if (!this.FillEntity())
-                        return;
+                    
                     try
                     {
+                        if (!this.FillEntity())
+                            return;
                         if (UserRepo.Save(this.User))
                         {
                             if (EmployeeRepo.Save(this.Emp))
