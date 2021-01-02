@@ -100,23 +100,35 @@
 
         private void SalesReportForm_Load(object sender, EventArgs e)
         {
-            List<Sales> reports = SalesRepo.ProductSaleList();
-            foreach(Sales s in reports)
-            {
-                this.chartMostSoldProduct.Series["Sales"].Points.AddXY(s.Title, Convert.ToInt32(s.Quantity));
-            }
 
-            reports = SalesRepo.ProductSaleList("benefit");
-            foreach(Sales s in reports)
+            try
             {
-                this.chartMostBenefitProduct.Series["Benefit"].Points.AddXY(s.Title, Convert.ToInt32(s.Benefit));
-            }
+                string todayBenefit = SalesRepo.TodaysBenefit();
+                if (todayBenefit == null)
+                    this.lblTodayBenefit.Text = "0 Tk";
+                else
+                    this.lblTodayBenefit.Text = todayBenefit + " tk";
 
-            string todayBenefit = SalesRepo.TodaysBenefit();
-            if (todayBenefit == null)
-                this.lblTodayBenefit.Text = "0 Tk";
-            else
-                this.lblTodayBenefit.Text = todayBenefit + " tk";
+                List<Sales> reports = SalesRepo.ProductSaleList();
+
+                if (reports.Count == 0)
+                    return;
+
+                foreach(Sales s in reports)
+                {
+                    this.chartMostSoldProduct.Series["Sales"].Points.AddXY(s.Title, Convert.ToInt32(s.Quantity));
+                }
+
+                reports = SalesRepo.ProductSaleList("benefit");
+                foreach(Sales s in reports)
+                {
+                    this.chartMostBenefitProduct.Series["Benefit"].Points.AddXY(s.Title, Convert.ToInt32(s.Benefit));
+                }
+            }
+            catch 
+            {
+                MessageBox.Show("Please sell some product first 😂");
+            }
         }
     }
 }
