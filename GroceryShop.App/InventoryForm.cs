@@ -377,8 +377,18 @@
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (this.dgvProductdetails.SelectedRows.Count < 1)
+            {
+                MessageBox.Show("No row selected");
+                return;
+            }
+
             string appId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
             string title = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
+
+            if (MessageBox.Show($"Do you want to delete {title}?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.No)
+                return;
+
             SalesRepo.DeleteByProductId(appId);
             if (InventoryRepo.Delete(appId))
             {
