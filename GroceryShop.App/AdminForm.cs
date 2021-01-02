@@ -309,7 +309,6 @@
             
         }
 
-        [Obsolete]
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
             try
