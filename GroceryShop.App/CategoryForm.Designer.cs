@@ -40,12 +40,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlGridviewforcategory = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.appid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.categoryid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlFormmove.SuspendLayout();
             this.pnlGridviewforcategory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFormmove
@@ -183,7 +183,7 @@
             // pnlGridviewforcategory
             // 
             this.pnlGridviewforcategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
-            this.pnlGridviewforcategory.Controls.Add(this.dataGridView1);
+            this.pnlGridviewforcategory.Controls.Add(this.dgvCategory);
             this.pnlGridviewforcategory.Controls.Add(this.btnShow);
             this.pnlGridviewforcategory.Location = new System.Drawing.Point(24, 154);
             this.pnlGridviewforcategory.Margin = new System.Windows.Forms.Padding(4);
@@ -191,34 +191,34 @@
             this.pnlGridviewforcategory.Size = new System.Drawing.Size(1483, 628);
             this.pnlGridviewforcategory.TabIndex = 11;
             // 
-            // dataGridView1
+            // dgvCategory
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.appid,
+            this.dgvCategory.AllowUserToAddRows = false;
+            this.dgvCategory.AllowUserToDeleteRows = false;
+            this.dgvCategory.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.categoryid,
             this.name});
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 15);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1449, 533);
-            this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.dgvCategory.Cursor = System.Windows.Forms.Cursors.Default;
+            this.dgvCategory.Location = new System.Drawing.Point(3, 3);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
+            this.dgvCategory.RowHeadersWidth = 51;
+            this.dgvCategory.RowTemplate.Height = 24;
+            this.dgvCategory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCategory.Size = new System.Drawing.Size(1462, 511);
+            this.dgvCategory.TabIndex = 11;
+            this.dgvCategory.DoubleClick += new System.EventHandler(this.dgvCategory_DoubleClick);
             // 
-            // appid
+            // categoryid
             // 
-            this.appid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.appid.DataPropertyName = "AppId";
-            this.appid.HeaderText = "Category ID";
-            this.appid.MinimumWidth = 6;
-            this.appid.Name = "appid";
-            this.appid.ReadOnly = true;
+            this.categoryid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.categoryid.DataPropertyName = "AppId";
+            this.categoryid.HeaderText = "Category Id";
+            this.categoryid.MinimumWidth = 6;
+            this.categoryid.Name = "categoryid";
+            this.categoryid.ReadOnly = true;
             // 
             // name
             // 
@@ -251,7 +251,7 @@
             this.pnlFormmove.ResumeLayout(false);
             this.pnlFormmove.PerformLayout();
             this.pnlGridviewforcategory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,8 +268,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Panel pnlGridviewforcategory;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn appid;
+        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoryid;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }

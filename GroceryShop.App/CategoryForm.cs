@@ -151,7 +151,7 @@
         private void btnClear_Click(object sender, EventArgs e)
         {
             this.textBox1.Text = "";
-            dataGridView1.DataSource = null;
+            dgvCategory.DataSource = null;
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -162,10 +162,10 @@
         {
             try
             {
-                this.dataGridView1.AutoGenerateColumns = false;
-                this.dataGridView1.DataSource = CategoryRepo.GetAll();
-                this.dataGridView1.ClearSelection();
-                this.dataGridView1.Refresh();
+                this.dgvCategory.AutoGenerateColumns = false;
+                this.dgvCategory.DataSource = CategoryRepo.GetAll();
+                this.dgvCategory.ClearSelection();
+                this.dgvCategory.Refresh();
             }
             catch (Exception e)
             {
@@ -177,12 +177,6 @@
         private void CategoryForm_Load(object sender, EventArgs e)
         {
             this.PopulateGridView();
-        }
-
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            this.appId = this.dataGridView1.CurrentRow.Cells["appid"].Value.ToString();
-            this.textBox1.Text = this.dataGridView1.CurrentRow.Cells["name"].Value.ToString();
         }
         private bool UpdateFillEntity()
         {
@@ -202,6 +196,12 @@
                 }
             }
             return true;
+        }
+
+        private void dgvCategory_DoubleClick(object sender, EventArgs e)
+        {
+            this.appId = this.dgvCategory.CurrentRow.Cells["categoryid"].Value.ToString();
+            this.textBox1.Text = this.dgvCategory.CurrentRow.Cells["name"].Value.ToString();
         }
     }
 }
