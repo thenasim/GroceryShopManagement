@@ -77,15 +77,15 @@
         //Close button hover color
         private void btnSave_MouseEnter(object sender, EventArgs e)
         {
-            btnSave.ForeColor = Color.LightGreen;
-            btnSave.FlatAppearance.BorderColor = Color.LightGreen;
+            btnEdit.ForeColor = Color.LightGreen;
+            btnEdit.FlatAppearance.BorderColor = Color.LightGreen;
         }
 
         //Close button hover color
         private void btnSave_MouseLeave(object sender, EventArgs e)
         {
-            btnSave.ForeColor = Color.White;
-            btnSave.FlatAppearance.BorderColor = Color.White;
+            btnEdit.ForeColor = Color.White;
+            btnEdit.FlatAppearance.BorderColor = Color.White;
         }
 
         //Move the form
@@ -109,6 +109,16 @@
             {
                 this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
