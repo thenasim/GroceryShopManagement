@@ -147,9 +147,9 @@
         //Sales reports button click
         private void btnSaleReport_Click(object sender, EventArgs e)
         {
-            pnlSalesReport.Visible = true;
-            pnlManageUsers.Visible = false;
-            
+            SalesReportForm sAdmin = new SalesReportForm(this);
+            sAdmin.Show();
+            this.Visible = false;          
         }
 
         //Manage cart button click
@@ -270,6 +270,20 @@
             btnClearSalesReport.FlatAppearance.BorderColor = Color.White;
         }
 
+        //Manage inventory button 
+        private void btnManageInventory_Click(object sender, EventArgs e)
+        {
+            Inventory iAdmin = new Inventory(this);
+            iAdmin.Show();
+            this.Visible = false;
+        }
+        //Log out button
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm lAdmin = new LoginForm();
+            lAdmin.Show();
+            this.Visible = false;
+        }
 
 
         /*
@@ -446,6 +460,6 @@
             }
         }
 
-
+       
     }
 }

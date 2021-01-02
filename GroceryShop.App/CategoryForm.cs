@@ -12,9 +12,23 @@
 
     public partial class CategoryForm : Form
     {
+        private byte visibity;
+        private byte move;
+        private int moveX;
+        private int moveY;
+        
+        private ManagerForm M1 { get; set; }
         public CategoryForm()
         {
             InitializeComponent();
+        }
+       
+        //Manager form reference
+        public CategoryForm(ManagerForm m1)
+        {
+            InitializeComponent();
+            this.M1 = m1;
+            visibity = 1;
         }
 
         //Minimizer button
@@ -26,7 +40,13 @@
         //close buttion
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (visibity == 1)
+            {
+                this.Close();
+                this.M1.Visible = true;
+            }
+            else
+                Application.Exit();
         }
         //close button hover color
         private void btnClose_MouseEnter(object sender, EventArgs e)
@@ -66,6 +86,29 @@
         {
             btnSave.ForeColor = Color.White;
             btnSave.FlatAppearance.BorderColor = Color.White;
+        }
+
+        //Move the form
+        private void pnlFormmove_MouseDown(object sender, MouseEventArgs e)
+        {
+            move = 1;
+            moveX = e.X;
+            moveY = e.Y;
+        }
+
+        //Move the form
+        private void pnlFormmove_MouseUp(object sender, MouseEventArgs e)
+        {
+            move = 0;
+        }
+
+        //Move the form
+        private void pnlFormmove_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(move==1)
+            {
+                this.SetDesktopLocation(MousePosition.X - moveX, MousePosition.Y - moveY);
+            }
         }
     }
 }

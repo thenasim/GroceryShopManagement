@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CategoryForm));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlFormmove = new System.Windows.Forms.Panel();
             this.lblCategory = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -41,22 +41,25 @@
             this.btnShow = new System.Windows.Forms.Button();
             this.pnlGridviewforcategory = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.pnlFormmove.SuspendLayout();
             this.pnlGridviewforcategory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlFormmove
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
-            this.panel1.Controls.Add(this.lblCategory);
-            this.panel1.Controls.Add(this.btnMinimize);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1150, 34);
-            this.panel1.TabIndex = 4;
+            this.pnlFormmove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(75)))), ((int)(((byte)(105)))));
+            this.pnlFormmove.Controls.Add(this.lblCategory);
+            this.pnlFormmove.Controls.Add(this.btnMinimize);
+            this.pnlFormmove.Controls.Add(this.btnClose);
+            this.pnlFormmove.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormmove.Location = new System.Drawing.Point(0, 0);
+            this.pnlFormmove.Name = "pnlFormmove";
+            this.pnlFormmove.Size = new System.Drawing.Size(1150, 34);
+            this.pnlFormmove.TabIndex = 4;
+            this.pnlFormmove.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlFormmove_MouseDown);
+            this.pnlFormmove.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlFormmove_MouseMove);
+            this.pnlFormmove.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlFormmove_MouseUp);
             // 
             // lblCategory
             // 
@@ -192,14 +195,14 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlFormmove);
             this.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlFormmove.ResumeLayout(false);
+            this.pnlFormmove.PerformLayout();
             this.pnlGridviewforcategory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -208,7 +211,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlFormmove;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblCategory;

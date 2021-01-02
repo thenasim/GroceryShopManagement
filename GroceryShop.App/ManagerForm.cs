@@ -119,7 +119,7 @@
         //Manage Inventory button click
         private void btnManageInventory_Click(object sender, EventArgs e)
         {
-            Inventory iManager = new Inventory();
+            Inventory iManager = new Inventory(this);
             iManager.Show();
             this.Visible = false;
         }
@@ -170,6 +170,74 @@
         private void ManagerForm_Load(object sender, EventArgs e)
         {
             pnlManageUsers.Visible = false;
+        }
+
+        //Manage invenotry button hover color
+        private void btnManageInventory_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageInventory.ForeColor = Color.DeepSkyBlue;
+            btnManageInventory.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            iconPictureBoxInventory.ForeColor = Color.DeepSkyBlue;
+        }
+
+        //Manage invenotry button hover color
+        private void btnManageInventory_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageInventory.ForeColor = Color.White;
+            btnManageInventory.FlatAppearance.BorderColor = Color.White;
+            iconPictureBoxInventory.ForeColor = Color.White;
+        }
+
+        //Category  button hover color
+        private void btnCategory_MouseEnter(object sender, EventArgs e)
+        {
+            btnCategory.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+            btnCategory.ForeColor = Color.DeepSkyBlue;
+            iconPictureBoxCategory.ForeColor = Color.DeepSkyBlue;
+
+        }
+
+        //Category button hover color
+        private void btnCategory_MouseLeave(object sender, EventArgs e)
+        {
+            btnCategory.FlatAppearance.BorderColor = Color.White;
+            btnCategory.ForeColor = Color.White;
+            iconPictureBoxCategory.ForeColor = Color.White;
+        }
+
+        //Sales Report button click
+        private void btnSaleReport_Click(object sender, EventArgs e)
+        {
+            SalesReportForm sManager = new SalesReportForm(this);
+            sManager.Show();
+            this.Visible = false;
+        }
+
+        //Category button click
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            CategoryForm cManager = new CategoryForm(this);
+            cManager.Show();
+            this.Visible = false;
+        }
+        //Search button hover color
+        private void btnSearchInventory_MouseEnter(object sender, EventArgs e)
+        {
+            btnSearchInventory.IconColor = Color.SkyBlue;
+        }
+
+        //Search button hover color
+        private void btnSearchInventory_MouseLeave(object sender, EventArgs e)
+        {
+            btnSearchInventory.IconColor = Color.White;
+        }
+
+        //Log out button
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            LoginForm lManager = new LoginForm();
+            lManager.Show();
         }
 
         //Ma
@@ -273,6 +341,8 @@
                 MessageBox.Show("No Data Found!");
             }
         }
+
+        
     }
 
         
