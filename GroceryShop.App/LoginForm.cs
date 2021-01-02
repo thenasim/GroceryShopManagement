@@ -135,7 +135,6 @@ namespace GroceryShop.App
                 var userType = UserRepo.GetUserType(this.txtUsername.Text);
                 if (isValid)
                 {
-                    MessageBox.Show("Login Successful");
                     this.Visible = false;
                     if (userType == "Admin")
                     {
