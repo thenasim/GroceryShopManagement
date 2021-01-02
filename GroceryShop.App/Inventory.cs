@@ -325,6 +325,7 @@
         {
             string appId = this.dgvProductdetails.CurrentRow.Cells["appid"].Value.ToString();
             string title = this.dgvProductdetails.CurrentRow.Cells["title"].Value.ToString();
+            SalesRepo.DeleteByProductId(appId);
             if (InventoryRepo.Delete(appId))
             {
                 MessageBox.Show(title + " has been deleted successfully");

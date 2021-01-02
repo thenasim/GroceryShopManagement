@@ -50,7 +50,7 @@ namespace GroceryShop.Repository
         public static List<Products> ShowAll()
         {
             var productList = new List<Products>();
-            var sql = @"SELECT products.id, products.appid, products.title,
+            var sql = @"SELECT TOP 20 products.id, products.appid, products.title,
 	            products.price, products.purchase_price, products.quantity,
 	            products.updated_at, products.user_id,
 	            products.category_id,
