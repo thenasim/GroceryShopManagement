@@ -319,8 +319,8 @@
                 var idExists = UserRepo.SearchUserId(this.CurrentUserId);
                 if (idExists)
                 {
-                    this.UpdateFillEntity();
-
+                    if (!this.UpdateFillEntity())
+                        return;
                     try
                     {
                         if (UserRepo.Update(this.User) && LoginRepo.Update(this.Login) && EmployeeRepo.UpdateWithName(this.Emp))
@@ -396,7 +396,7 @@
                 this.txtAppId.Text = UserRepo.GetAppId();
                 this.txtPassword.Text = "";
                 this.txtUserName.Text = "";
-                this.cboUserType.Text = "";
+                this.cboUserType.SelectedIndex = -1;
             }
             catch(Exception e)
             {
@@ -452,29 +452,34 @@
         }
 
 
-        private void UpdateFillEntity()
+        private bool UpdateFillEntity()
         {
-            try
+            this.User = new Users();
+            this.User.AppId = this.CurrentUserId;
+            this.User.Password = this.txtPassword.Text;
+            this.User.UserType = this.cboUserType.Text;
+            this.User.FullName = this.txtUserName.Text;
+
+            this.Login = new Logins();
+            this.Login.Password = this.txtPassword.Text;
+            this.Login.UserId = this.User.AppId;
+
+            this.Emp = new Employee();
+            this.Emp.FullName = this.User.FullName;
+            this.Emp.UserId = this.User.AppId;
+            UserValidation validator = new UserValidation();
+            ValidationResult results = validator.Validate(this.User);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
             {
-                this.User = new Users();
-                this.User.AppId = this.CurrentUserId;
-                this.User.UserType = this.cboUserType.Text;
-                this.User.FullName = this.txtUserName.Text;
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                this.Login = new Logins();
-                this.Login.Password = this.txtPassword.Text;
-                this.Login.UserId = this.User.AppId;
-
-                this.Emp = new Employee();
-                this.Emp.FullName = this.User.FullName;
-                this.Emp.UserId = this.User.AppId;
+                    return false;
+                }
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("Error!" + e.Message);
-            }
-            
-
+            return true;
         }
 
         private void dgvUsersGrid_DoubleClick(object sender, EventArgs e)

@@ -101,7 +101,7 @@
             this.pnlToMoveForm.Controls.Add(this.btnClose);
             this.pnlToMoveForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToMoveForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4);
             this.pnlToMoveForm.Name = "pnlToMoveForm";
             this.pnlToMoveForm.Size = new System.Drawing.Size(1533, 50);
             this.pnlToMoveForm.TabIndex = 1;
@@ -119,7 +119,7 @@
             this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearchInventory.IconSize = 27;
             this.btnSearchInventory.Location = new System.Drawing.Point(1027, 9);
-            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchInventory.Name = "btnSearchInventory";
             this.btnSearchInventory.Size = new System.Drawing.Size(37, 33);
             this.btnSearchInventory.TabIndex = 7;
@@ -135,7 +135,7 @@
             this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
             this.txtSearchbar.Location = new System.Drawing.Point(471, 10);
-            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchbar.Name = "txtSearchbar";
             this.txtSearchbar.Size = new System.Drawing.Size(551, 27);
             this.txtSearchbar.TabIndex = 6;
@@ -151,7 +151,7 @@
             this.btnMinimizeInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeInventory.ForeColor = System.Drawing.Color.White;
             this.btnMinimizeInventory.Location = new System.Drawing.Point(1421, 5);
-            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizeInventory.Name = "btnMinimizeInventory";
             this.btnMinimizeInventory.Size = new System.Drawing.Size(48, 41);
             this.btnMinimizeInventory.TabIndex = 3;
@@ -167,7 +167,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1481, 6);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(45, 41);
             this.btnClose.TabIndex = 2;
@@ -184,7 +184,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(39, 683);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(193, 49);
             this.btnLogout.TabIndex = 10;
@@ -206,7 +206,7 @@
             this.pnlFeaturesButtons.Controls.Add(this.pnlManageUsers);
             this.pnlFeaturesButtons.Controls.Add(this.pnlSalesReport);
             this.pnlFeaturesButtons.Location = new System.Drawing.Point(0, 50);
-            this.pnlFeaturesButtons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFeaturesButtons.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFeaturesButtons.Name = "pnlFeaturesButtons";
             this.pnlFeaturesButtons.Size = new System.Drawing.Size(1533, 750);
             this.pnlFeaturesButtons.TabIndex = 12;
@@ -220,7 +220,7 @@
             this.btnSaleReport.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaleReport.ForeColor = System.Drawing.Color.White;
             this.btnSaleReport.Location = new System.Drawing.Point(31, 276);
-            this.btnSaleReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaleReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaleReport.Name = "btnSaleReport";
             this.btnSaleReport.Size = new System.Drawing.Size(216, 49);
             this.btnSaleReport.TabIndex = 13;
@@ -238,7 +238,7 @@
             this.btnManageInventory.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInventory.ForeColor = System.Drawing.Color.White;
             this.btnManageInventory.Location = new System.Drawing.Point(31, 458);
-            this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageInventory.Name = "btnManageInventory";
             this.btnManageInventory.Size = new System.Drawing.Size(216, 91);
             this.btnManageInventory.TabIndex = 17;
@@ -256,7 +256,7 @@
             this.iconPictureBoxInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxInventory.IconSize = 61;
             this.iconPictureBoxInventory.Location = new System.Drawing.Point(108, 401);
-            this.iconPictureBoxInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxInventory.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxInventory.Name = "iconPictureBoxInventory";
             this.iconPictureBoxInventory.Size = new System.Drawing.Size(61, 64);
             this.iconPictureBoxInventory.TabIndex = 16;
@@ -270,7 +270,7 @@
             this.btnManageUers.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageUers.ForeColor = System.Drawing.Color.White;
             this.btnManageUers.Location = new System.Drawing.Point(31, 90);
-            this.btnManageUers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnManageUers.Margin = new System.Windows.Forms.Padding(4);
             this.btnManageUers.Name = "btnManageUers";
             this.btnManageUers.Size = new System.Drawing.Size(216, 49);
             this.btnManageUers.TabIndex = 11;
@@ -288,7 +288,7 @@
             this.iconPictureBoxManageUsers.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxManageUsers.IconSize = 55;
             this.iconPictureBoxManageUsers.Location = new System.Drawing.Point(108, 36);
-            this.iconPictureBoxManageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxManageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxManageUsers.Name = "iconPictureBoxManageUsers";
             this.iconPictureBoxManageUsers.Size = new System.Drawing.Size(61, 55);
             this.iconPictureBoxManageUsers.TabIndex = 0;
@@ -302,7 +302,7 @@
             this.iconPictureBoxSalesReport.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxSalesReport.IconSize = 55;
             this.iconPictureBoxSalesReport.Location = new System.Drawing.Point(108, 217);
-            this.iconPictureBoxSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxSalesReport.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxSalesReport.Name = "iconPictureBoxSalesReport";
             this.iconPictureBoxSalesReport.Size = new System.Drawing.Size(61, 55);
             this.iconPictureBoxSalesReport.TabIndex = 12;
@@ -317,7 +317,7 @@
             this.pnlManageUsers.Controls.Add(this.lblManageUsers);
             this.pnlManageUsers.Controls.Add(this.iconPictureBoxUserManagement);
             this.pnlManageUsers.Location = new System.Drawing.Point(277, 15);
-            this.pnlManageUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlManageUsers.Margin = new System.Windows.Forms.Padding(4);
             this.pnlManageUsers.Name = "pnlManageUsers";
             this.pnlManageUsers.Size = new System.Drawing.Size(1239, 720);
             this.pnlManageUsers.TabIndex = 4;
@@ -337,7 +337,7 @@
             this.pnlAdduser.Controls.Add(this.lblAppId);
             this.pnlAdduser.Controls.Add(this.txtAppId);
             this.pnlAdduser.Location = new System.Drawing.Point(13, 69);
-            this.pnlAdduser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAdduser.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdduser.Name = "pnlAdduser";
             this.pnlAdduser.Size = new System.Drawing.Size(1214, 279);
             this.pnlAdduser.TabIndex = 2;
@@ -352,7 +352,7 @@
             "Manager",
             "Employee"});
             this.cboUserType.Location = new System.Drawing.Point(383, 202);
-            this.cboUserType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboUserType.Margin = new System.Windows.Forms.Padding(4);
             this.cboUserType.Name = "cboUserType";
             this.cboUserType.Size = new System.Drawing.Size(416, 31);
             this.cboUserType.TabIndex = 21;
@@ -361,7 +361,7 @@
             // 
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Location = new System.Drawing.Point(383, 143);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(416, 30);
             this.txtUserName.TabIndex = 20;
@@ -370,7 +370,7 @@
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(383, 82);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(416, 30);
             this.txtPassword.TabIndex = 19;
@@ -418,7 +418,7 @@
             this.btnClearUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearUser.ForeColor = System.Drawing.Color.White;
             this.btnClearUser.Location = new System.Drawing.Point(880, 100);
-            this.btnClearUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClearUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearUser.Name = "btnClearUser";
             this.btnClearUser.Size = new System.Drawing.Size(193, 49);
             this.btnClearUser.TabIndex = 12;
@@ -435,7 +435,7 @@
             this.btnUserAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserAdd.ForeColor = System.Drawing.Color.White;
             this.btnUserAdd.Location = new System.Drawing.Point(880, 22);
-            this.btnUserAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUserAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnUserAdd.Name = "btnUserAdd";
             this.btnUserAdd.Size = new System.Drawing.Size(193, 49);
             this.btnUserAdd.TabIndex = 11;
@@ -461,7 +461,7 @@
             // 
             this.txtAppId.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAppId.Location = new System.Drawing.Point(383, 22);
-            this.txtAppId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAppId.Margin = new System.Windows.Forms.Padding(4);
             this.txtAppId.Name = "txtAppId";
             this.txtAppId.ReadOnly = true;
             this.txtAppId.Size = new System.Drawing.Size(416, 30);
@@ -475,7 +475,7 @@
             this.pnlGridviewAllusers.Controls.Add(this.dgvUsersGrid);
             this.pnlGridviewAllusers.Controls.Add(this.btnShowUsers);
             this.pnlGridviewAllusers.Location = new System.Drawing.Point(13, 356);
-            this.pnlGridviewAllusers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGridviewAllusers.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGridviewAllusers.Name = "pnlGridviewAllusers";
             this.pnlGridviewAllusers.Size = new System.Drawing.Size(1219, 339);
             this.pnlGridviewAllusers.TabIndex = 3;
@@ -487,7 +487,7 @@
             this.btnDeleteUser.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
             this.btnDeleteUser.Location = new System.Drawing.Point(908, 292);
-            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(136, 41);
             this.btnDeleteUser.TabIndex = 22;
@@ -508,7 +508,7 @@
             this.user_type,
             this.password});
             this.dgvUsersGrid.Location = new System.Drawing.Point(-1, 4);
-            this.dgvUsersGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUsersGrid.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsersGrid.MultiSelect = false;
             this.dgvUsersGrid.Name = "dgvUsersGrid";
             this.dgvUsersGrid.ReadOnly = true;
@@ -561,7 +561,7 @@
             this.btnShowUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowUsers.ForeColor = System.Drawing.Color.White;
             this.btnShowUsers.Location = new System.Drawing.Point(1077, 292);
-            this.btnShowUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowUsers.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowUsers.Name = "btnShowUsers";
             this.btnShowUsers.Size = new System.Drawing.Size(136, 41);
             this.btnShowUsers.TabIndex = 11;
@@ -591,7 +591,7 @@
             this.iconPictureBoxUserManagement.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxUserManagement.IconSize = 46;
             this.iconPictureBoxUserManagement.Location = new System.Drawing.Point(29, 15);
-            this.iconPictureBoxUserManagement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxUserManagement.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxUserManagement.Name = "iconPictureBoxUserManagement";
             this.iconPictureBoxUserManagement.Size = new System.Drawing.Size(49, 46);
             this.iconPictureBoxUserManagement.TabIndex = 0;
@@ -607,7 +607,7 @@
             this.pnlSalesReport.Controls.Add(this.lblSalesReport);
             this.pnlSalesReport.Controls.Add(this.iconPictureBoxSale);
             this.pnlSalesReport.Location = new System.Drawing.Point(277, 15);
-            this.pnlSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSalesReport.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSalesReport.Name = "pnlSalesReport";
             this.pnlSalesReport.Size = new System.Drawing.Size(1239, 717);
             this.pnlSalesReport.TabIndex = 18;
@@ -617,7 +617,7 @@
             this.pnlSalesgraphs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(53)))));
             this.pnlSalesgraphs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlSalesgraphs.Location = new System.Drawing.Point(13, 132);
-            this.pnlSalesgraphs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSalesgraphs.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSalesgraphs.Name = "pnlSalesgraphs";
             this.pnlSalesgraphs.Size = new System.Drawing.Size(405, 569);
             this.pnlSalesgraphs.TabIndex = 6;
@@ -627,7 +627,7 @@
             this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.rdoWeeklyreport);
             this.panel1.Location = new System.Drawing.Point(13, 69);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(405, 54);
             this.panel1.TabIndex = 5;
@@ -638,7 +638,7 @@
             this.radioButton1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.Location = new System.Drawing.Point(204, 18);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(161, 23);
             this.radioButton1.TabIndex = 1;
@@ -652,7 +652,7 @@
             this.rdoWeeklyreport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoWeeklyreport.ForeColor = System.Drawing.Color.White;
             this.rdoWeeklyreport.Location = new System.Drawing.Point(16, 18);
-            this.rdoWeeklyreport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdoWeeklyreport.Margin = new System.Windows.Forms.Padding(4);
             this.rdoWeeklyreport.Name = "rdoWeeklyreport";
             this.rdoWeeklyreport.Size = new System.Drawing.Size(152, 23);
             this.rdoWeeklyreport.TabIndex = 0;
@@ -667,7 +667,7 @@
             this.pnlGridviewSalesreport.Controls.Add(this.dataGridView1);
             this.pnlGridviewSalesreport.Controls.Add(this.btnClearSalesReport);
             this.pnlGridviewSalesreport.Location = new System.Drawing.Point(437, 69);
-            this.pnlGridviewSalesreport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlGridviewSalesreport.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGridviewSalesreport.Name = "pnlGridviewSalesreport";
             this.pnlGridviewSalesreport.Size = new System.Drawing.Size(785, 632);
             this.pnlGridviewSalesreport.TabIndex = 4;
@@ -676,7 +676,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 10);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(768, 562);
@@ -689,7 +689,7 @@
             this.btnClearSalesReport.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearSalesReport.ForeColor = System.Drawing.Color.White;
             this.btnClearSalesReport.Location = new System.Drawing.Point(628, 580);
-            this.btnClearSalesReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClearSalesReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearSalesReport.Name = "btnClearSalesReport";
             this.btnClearSalesReport.Size = new System.Drawing.Size(144, 39);
             this.btnClearSalesReport.TabIndex = 19;
@@ -718,7 +718,7 @@
             this.iconPictureBoxSale.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxSale.IconSize = 46;
             this.iconPictureBoxSale.Location = new System.Drawing.Point(25, 17);
-            this.iconPictureBoxSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxSale.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxSale.Name = "iconPictureBoxSale";
             this.iconPictureBoxSale.Size = new System.Drawing.Size(49, 46);
             this.iconPictureBoxSale.TabIndex = 2;
@@ -734,7 +734,7 @@
             this.Controls.Add(this.pnlToMoveForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminForm";

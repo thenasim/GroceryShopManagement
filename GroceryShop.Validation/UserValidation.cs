@@ -23,7 +23,7 @@
                 .Length(2, 50).WithMessage("Name Length must be between 2 to 50")
                 .Must(ValidName).WithMessage("Name contains invalid characters");
 
-            RuleFor(u => u.UserType).NotEmpty().WithMessage("Select a user type");
+            RuleFor(u => u.UserType).NotEmpty().WithMessage("Please select a user type");
 
         }
         protected bool ValidName(string name)

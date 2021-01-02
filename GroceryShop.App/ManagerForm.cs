@@ -9,8 +9,10 @@
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows.Forms;
+    using FluentValidation.Results;
     using GroceryShop.Entity;
     using GroceryShop.Repository;
+    using GroceryShop.Validation;
 
     public partial class ManagerForm : Form
     {
@@ -259,7 +261,19 @@
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            this.UpdateFillEntity();
+            if (this.txtUserId.Text == "")
+            {
+                MessageBox.Show("Please select a user to edit");
+                return;
+            }
+            if (this.txtSalary.Text == "")
+            {
+                MessageBox.Show("Salary field is empty");
+                return;
+            }
+
+            if (!this.UpdateFillEntity())
+                return;
             try
             {
                 if (EmployeeRepo.Update(this.Emp))
@@ -281,7 +295,7 @@
             }
 
         }
-        private void UpdateFillEntity()
+        private bool UpdateFillEntity()
         {
             this.Emp = new Employee();
             this.Emp.Email = this.txtEmail.Text;
@@ -293,6 +307,19 @@
             this.Emp.JoinDate = this.dtpJoindate.Text;
             this.Emp.Salary = Convert.ToDouble(this.txtSalary.Text);
             this.Emp.UserId = this.txtUserId.Text;
+            EmployeeValidation validator = new EmployeeValidation();
+            ValidationResult results = validator.Validate(Emp);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
+            {
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
+            }
+            return true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -308,7 +335,7 @@
             this.txtEmpName.Text = "";
             this.txtEmail.Text = "";
             this.txtAddress.Text = "";
-            this.cmbGender.Text = "";
+            this.cmbGender.SelectedIndex = -1;
             this.dtpBirthdate.Text = "";
             this.txtSalary.Text = "";
             this.txtPhonenumber.Text = "";
