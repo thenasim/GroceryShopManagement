@@ -7,6 +7,7 @@
     using System.ComponentModel;
     using System.Data;
     using System.Drawing;
+    using System.IO;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -321,7 +322,7 @@
         }
 
         // Print invoice
-        private void btnPrintInvoice_Click(object sender, EventArgs e)
+        private async void btnPrintInvoice_Click(object sender, EventArgs e)
         {
             if (this.cartListItems.Count == 0)
                 return;
@@ -330,6 +331,24 @@
             {
                 if (MessageBox.Show("Are you sure to print?", "Confirmation", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 {
+                    using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "CSV | *.csv ", ValidateNames = true })
+                    {
+                        if (sfd.ShowDialog() == DialogResult.OK)
+                        {
+                            using (StreamWriter sw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
+                            {
+                                StringBuilder sb = new StringBuilder();
+                                sb.AppendLine("Product Title,Price,Quantity,Total Price");
+
+                                foreach (ListViewItem item in lsvCart.Items)
+                                {
+                                    sb.AppendLine(string.Format("{0},{1},{2},{3}",item.SubItems[0].Text, item.SubItems[1].Text, item.SubItems[2].Text, item.SubItems[3].Text));
+                                }
+                                await sw.WriteLineAsync(sb.ToString());
+                                MessageBox.Show("Successfully save as text file", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
                     this.UpdateProductsTable();
                     this.cartListItems.Clear();
                     this.lsvCart.Items.Clear();
