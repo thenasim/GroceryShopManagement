@@ -85,7 +85,7 @@
             this.pnlToMoveForm.Controls.Add(this.btnClose);
             this.pnlToMoveForm.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlToMoveForm.Location = new System.Drawing.Point(0, 0);
-            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlToMoveForm.Margin = new System.Windows.Forms.Padding(4);
             this.pnlToMoveForm.Name = "pnlToMoveForm";
             this.pnlToMoveForm.Size = new System.Drawing.Size(1533, 50);
             this.pnlToMoveForm.TabIndex = 1;
@@ -103,7 +103,7 @@
             this.btnSearchInventory.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearchInventory.IconSize = 27;
             this.btnSearchInventory.Location = new System.Drawing.Point(1027, 9);
-            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchInventory.Name = "btnSearchInventory";
             this.btnSearchInventory.Size = new System.Drawing.Size(37, 33);
             this.btnSearchInventory.TabIndex = 7;
@@ -119,7 +119,7 @@
             this.txtSearchbar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchbar.ForeColor = System.Drawing.Color.DimGray;
             this.txtSearchbar.Location = new System.Drawing.Point(471, 10);
-            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSearchbar.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchbar.Name = "txtSearchbar";
             this.txtSearchbar.Size = new System.Drawing.Size(551, 27);
             this.txtSearchbar.TabIndex = 6;
@@ -136,7 +136,7 @@
             this.btnMinimizeInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizeInventory.ForeColor = System.Drawing.Color.White;
             this.btnMinimizeInventory.Location = new System.Drawing.Point(1421, 5);
-            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizeInventory.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizeInventory.Name = "btnMinimizeInventory";
             this.btnMinimizeInventory.Size = new System.Drawing.Size(48, 41);
             this.btnMinimizeInventory.TabIndex = 3;
@@ -152,7 +152,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Location = new System.Drawing.Point(1481, 4);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(45, 41);
             this.btnClose.TabIndex = 2;
@@ -169,7 +169,7 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
             this.btnLogout.Location = new System.Drawing.Point(17, 692);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(168, 38);
             this.btnLogout.TabIndex = 11;
@@ -199,7 +199,7 @@
             this.iconPictureBoxManageCarts.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBoxManageCarts.IconSize = 43;
             this.iconPictureBoxManageCarts.Location = new System.Drawing.Point(7, 5);
-            this.iconPictureBoxManageCarts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBoxManageCarts.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBoxManageCarts.Name = "iconPictureBoxManageCarts";
             this.iconPictureBoxManageCarts.Size = new System.Drawing.Size(51, 43);
             this.iconPictureBoxManageCarts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -210,7 +210,7 @@
             // 
             this.pnlEmployeeform.Controls.Add(this.pnlManageCarts);
             this.pnlEmployeeform.Location = new System.Drawing.Point(4, 50);
-            this.pnlEmployeeform.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlEmployeeform.Margin = new System.Windows.Forms.Padding(4);
             this.pnlEmployeeform.Name = "pnlEmployeeform";
             this.pnlEmployeeform.Size = new System.Drawing.Size(1529, 750);
             this.pnlEmployeeform.TabIndex = 3;
@@ -226,7 +226,7 @@
             this.pnlManageCarts.Controls.Add(this.lblManageUsers);
             this.pnlManageCarts.Controls.Add(this.iconPictureBoxManageCarts);
             this.pnlManageCarts.Location = new System.Drawing.Point(-4, 1);
-            this.pnlManageCarts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlManageCarts.Margin = new System.Windows.Forms.Padding(4);
             this.pnlManageCarts.Name = "pnlManageCarts";
             this.pnlManageCarts.Size = new System.Drawing.Size(1533, 745);
             this.pnlManageCarts.TabIndex = 18;
@@ -239,7 +239,7 @@
             this.panel2.Controls.Add(this.pnlInvoice);
             this.panel2.Controls.Add(this.btnClearInvoice);
             this.panel2.Location = new System.Drawing.Point(773, 4);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(742, 726);
             this.panel2.TabIndex = 3;
@@ -251,7 +251,7 @@
             this.btnPrintInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.White;
             this.btnPrintInvoice.Location = new System.Drawing.Point(380, 673);
-            this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
             this.btnPrintInvoice.Size = new System.Drawing.Size(133, 33);
             this.btnPrintInvoice.TabIndex = 32;
@@ -268,7 +268,7 @@
             this.pnlInvoice.Controls.Add(this.lsvCart);
             this.pnlInvoice.Controls.Add(this.lblInvoiceTotalPrice);
             this.pnlInvoice.Location = new System.Drawing.Point(3, 11);
-            this.pnlInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.pnlInvoice.Name = "pnlInvoice";
             this.pnlInvoice.Size = new System.Drawing.Size(737, 627);
             this.pnlInvoice.TabIndex = 31;
@@ -298,7 +298,7 @@
             this.lsvCart.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsvCart.ForeColor = System.Drawing.Color.White;
             this.lsvCart.HideSelection = false;
-            this.lsvCart.Location = new System.Drawing.Point(3, 14);
+            this.lsvCart.Location = new System.Drawing.Point(3, 2);
             this.lsvCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lsvCart.MultiSelect = false;
             this.lsvCart.Name = "lsvCart";
@@ -315,27 +315,27 @@
             // ch_quantity
             // 
             this.ch_quantity.Text = "Quantity";
-            this.ch_quantity.Width = 105;
+            this.ch_quantity.Width = 170;
             // 
             // ch_price
             // 
             this.ch_price.Text = "Price";
-            this.ch_price.Width = 92;
+            this.ch_price.Width = 156;
             // 
             // ch_total
             // 
             this.ch_total.Text = "Total";
-            this.ch_total.Width = 110;
+            this.ch_total.Width = 318;
             // 
             // ch_product_quantity
             // 
             this.ch_product_quantity.Text = "Product Quantity";
-            this.ch_product_quantity.Width = 0;
+            this.ch_product_quantity.Width = 204;
             // 
             // ch_appid
             // 
             this.ch_appid.Text = "AppId";
-            this.ch_appid.Width = 0;
+            this.ch_appid.Width = 210;
             // 
             // lblInvoiceTotalPrice
             // 
@@ -356,7 +356,7 @@
             this.btnClearInvoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClearInvoice.ForeColor = System.Drawing.Color.White;
             this.btnClearInvoice.Location = new System.Drawing.Point(560, 673);
-            this.btnClearInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClearInvoice.Margin = new System.Windows.Forms.Padding(4);
             this.btnClearInvoice.Name = "btnClearInvoice";
             this.btnClearInvoice.Size = new System.Drawing.Size(133, 33);
             this.btnClearInvoice.TabIndex = 30;
@@ -377,7 +377,7 @@
             this.panel1.Controls.Add(this.btnADD);
             this.panel1.Controls.Add(this.btnClear);
             this.panel1.Location = new System.Drawing.Point(7, 55);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(747, 588);
             this.panel1.TabIndex = 2;
@@ -470,7 +470,7 @@
             this.txtQunatity.Enabled = false;
             this.txtQunatity.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQunatity.Location = new System.Drawing.Point(12, 447);
-            this.txtQunatity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtQunatity.Margin = new System.Windows.Forms.Padding(4);
             this.txtQunatity.Name = "txtQunatity";
             this.txtQunatity.Size = new System.Drawing.Size(127, 34);
             this.txtQunatity.TabIndex = 35;
@@ -496,7 +496,7 @@
             this.btnADD.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnADD.ForeColor = System.Drawing.Color.White;
             this.btnADD.Location = new System.Drawing.Point(400, 522);
-            this.btnADD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnADD.Margin = new System.Windows.Forms.Padding(4);
             this.btnADD.Name = "btnADD";
             this.btnADD.Size = new System.Drawing.Size(139, 44);
             this.btnADD.TabIndex = 29;
@@ -513,7 +513,7 @@
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(569, 522);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(153, 44);
             this.btnClear.TabIndex = 19;
@@ -533,7 +533,7 @@
             this.Controls.Add(this.pnlToMoveForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SalesmanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EmployeeForm";
