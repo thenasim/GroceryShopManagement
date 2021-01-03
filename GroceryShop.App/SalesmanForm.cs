@@ -345,7 +345,7 @@
                             using (StreamWriter sw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
                             {
                                 StringBuilder sb = new StringBuilder();
-                                sb.AppendLine("Product Title,Price,Quantity,Total");
+                                sb.AppendLine("Product Title,Quantity,Price,Total");
 
                                 foreach (ListViewItem item in lsvCart.Items)
                                 {
@@ -354,7 +354,7 @@
                                 sb.AppendLine("Total Price");
                                 sb.AppendLine(string.Format("{0}",this.TotalPrice));
                                 await sw.WriteLineAsync(sb.ToString());
-                                MessageBox.Show("Successfully save the file", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Successfully save the file");
                             }
                         }
                     }
