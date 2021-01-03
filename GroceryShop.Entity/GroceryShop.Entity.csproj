@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="CommonEntity.cs" />
     <Compile Include="Logins.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Products.cs" />

@@ -6,10 +6,9 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public sealed class Users : CommonEntity
+    public abstract class CommonEntity
     {
-        public string FullName { get; set; }
-        public string UserType { get; set; }
-        public string Password { get; set; }
+        public string AppId { get; set; }
+        public string UpdatedAt = "GETDATE()";
     }
 }

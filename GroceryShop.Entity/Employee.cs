@@ -6,9 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Employee
+    public sealed class Employee : CommonEntity
     {
-        public string AppId { get; set; }
         public string Email { get; set; }
         public string FullName { get; set; }
         public string Gender { get; set; }
@@ -18,6 +17,5 @@
         public string JoinDate { get; set; }
         public string Salary { get; set; }
         public string UserId { get; set; }
-        public string UpdatedAt = "GETDATE()";
     }
 }

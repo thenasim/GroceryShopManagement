@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace GroceryShop.Entity
 {
-    public class Category
+    public sealed class Category : CommonEntity
     {
-        public string AppId { get; set; }
         public string Name { get; set; }
-        public string UpdatedAt = "GETDATE()";
     }
 }
