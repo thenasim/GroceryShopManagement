@@ -17,6 +17,7 @@
     public partial class InventoryForm : Form
     {
         private Products Product { get; set; }
+        private Category CategoryItem { get; set; } = new Category();
         private List<Category> CatList;
         private byte move;
         private int moveX;
@@ -295,7 +296,7 @@
             }
 
             if (appId == "")
-                appId = CategoryRepo.SaveWithName(this.cboCategory.Text);
+                appId = CategoryRepo.SaveWithName(this.CategoryItem);
 
             return appId;
         }
@@ -315,13 +316,18 @@
                 Title = this.txtProductTitle.Text,
                 Price = this.txtPrice.Text,
                 PurchasePrice = this.txtPurchasePrice.Text,
-                Quantity = this.txtQuantity.Text,
-                CategoryName = this.cboCategory.Text,
-                CategoryId = this.GetCategoryId()
+                Quantity = this.txtQuantity.Text
             };
 
+            if (!this.CategoryFillEntity())
+                return false;
+
+            this.Product.CategoryName = this.cboCategory.Text;
+            this.Product.CategoryId = this.GetCategoryId();
+            
+
             ProductsValidation validator = new ProductsValidation();
-            ValidationResult results = validator.Validate(Product);
+            ValidationResult results = validator.Validate(this.Product);
             IList<ValidationFailure> failures = results.Errors;
             if (!(results.IsValid))
             {
@@ -334,6 +340,26 @@
             }
             return true;
         }
+
+        private bool CategoryFillEntity()
+        {
+            this.CategoryItem.Name = this.cboCategory.Text;
+
+            CategoryValidation validator = new CategoryValidation();
+            ValidationResult results = validator.Validate(this.CategoryItem);
+            IList<ValidationFailure> failures = results.Errors;
+            if (!(results.IsValid))
+            {
+                foreach (ValidationFailure failure in failures)
+                {
+                    MessageBox.Show(failure.ErrorMessage, "Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    return false;
+                }
+            }
+            return true;
+        }
+
         private bool UpdateFillEntity()
         {
             this.Product = new Products

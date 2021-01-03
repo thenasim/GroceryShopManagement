@@ -1,4 +1,4 @@
-﻿namespace GroceryShop.Validation
+namespace GroceryShop.Validation
 {
     using FluentValidation;
     using GroceryShop.Entity;

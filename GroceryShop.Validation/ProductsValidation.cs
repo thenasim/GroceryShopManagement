@@ -23,9 +23,6 @@
             RuleFor(p => p.PurchasePrice).NotEmpty().WithMessage("{PropertyName} is empty")
                 .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
 
-            RuleFor(p => p.CategoryName).NotEmpty().WithMessage("{PropertyName} select or create a product category")
-                .Length(3, 50).WithMessage("{PropertyName} length must be between 3 to 50");
-
             RuleFor(p => p.Quantity).NotEmpty().WithMessage("{PropertyName} must be greater than 0")
                 .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
         }
