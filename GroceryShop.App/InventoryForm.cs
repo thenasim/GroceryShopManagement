@@ -277,13 +277,20 @@
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
-            this.dgvProductdetails.AutoGenerateColumns = false;
-            this.dgvProductdetails.DataSource = InventoryRepo.SearchInventory(this.txtSearchbar.Text);
-            this.dgvProductdetails.ClearSelection();
-            this.dgvProductdetails.Refresh();
-            if (this.dgvProductdetails.RowCount == 0)
+            try
             {
-                MessageBox.Show("No Data Found!");
+                this.dgvProductdetails.AutoGenerateColumns = false;
+                this.dgvProductdetails.DataSource = InventoryRepo.SearchInventory(this.txtSearchbar.Text);
+                this.dgvProductdetails.ClearSelection();
+                this.dgvProductdetails.Refresh();
+                if (this.dgvProductdetails.RowCount == 0)
+                {
+                    MessageBox.Show("No Data Found!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please insert a valid keyword");
             }
         }
         private string GetCategoryId()
