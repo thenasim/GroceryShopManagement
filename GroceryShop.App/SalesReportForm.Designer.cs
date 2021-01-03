@@ -48,11 +48,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTodayBenefit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblThisMonthBenefit = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostBenefitProduct)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartMostSoldProduct)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMinimize
@@ -198,12 +202,46 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Today\'s Benefit:";
             // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblThisMonthBenefit);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(18, 47);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(291, 46);
+            this.panel4.TabIndex = 10;
+            // 
+            // lblThisMonthBenefit
+            // 
+            this.lblThisMonthBenefit.AutoSize = true;
+            this.lblThisMonthBenefit.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThisMonthBenefit.ForeColor = System.Drawing.Color.GhostWhite;
+            this.lblThisMonthBenefit.Location = new System.Drawing.Point(203, 10);
+            this.lblThisMonthBenefit.Name = "lblThisMonthBenefit";
+            this.lblThisMonthBenefit.Size = new System.Drawing.Size(53, 28);
+            this.lblThisMonthBenefit.TabIndex = 10;
+            this.lblThisMonthBenefit.Text = "0 Tk";
+            this.lblThisMonthBenefit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.GhostWhite;
+            this.label3.Location = new System.Drawing.Point(4, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 23);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "This Month Benefit:";
+            // 
             // SalesReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(43)))), ((int)(((byte)(60)))));
             this.ClientSize = new System.Drawing.Size(1150, 602);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -223,6 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartMostSoldProduct)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -239,5 +279,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTodayBenefit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblThisMonthBenefit;
+        private System.Windows.Forms.Label label3;
     }
 }
