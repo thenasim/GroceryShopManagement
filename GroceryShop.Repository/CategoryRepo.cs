@@ -50,20 +50,14 @@
             }
             return "ca-1";
         }
-        public static string SaveWithName(string name)
+        public static string SaveWithName(Category p)
         {
             string appId = GetAppId();
-            var sql = $"INSERT INTO category VALUES('{appId}', '{name}', GETDATE())";
+            var sql = $"INSERT INTO category VALUES('{appId}', '{p.Name}', GETDATE())";
             var row = DataAccess.ExecuteDmlQuery(sql);
             if (row == 1)
                 return appId;
             return "";
-        }
-        public static bool Save(Category p)
-        {
-            var sql = $"INSERT INTO category VALUES('{p.AppId}', '{p.Name}', {p.UpdatedAt})";
-            var row = DataAccess.ExecuteDmlQuery(sql);
-            return row == 1;
         }
         public static bool Update(Category u)
         {
