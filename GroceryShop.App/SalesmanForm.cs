@@ -218,15 +218,22 @@
 
         private void SearchInventory()
         {
-            if (String.IsNullOrEmpty(this.txtSearchbar.Text) || this.txtSearchbar.Text == "Search here")
+            try
             {
-                this.dgbShowProduct.DataSource = null;
-                this.dgbShowProduct.Rows.Clear();
-                this.DisableAndClearQuantity();
-                return;
+                if (String.IsNullOrEmpty(this.txtSearchbar.Text) || this.txtSearchbar.Text == "Search here")
+                {
+                    this.dgbShowProduct.DataSource = null;
+                    this.dgbShowProduct.Rows.Clear();
+                    this.DisableAndClearQuantity();
+                    return;
+                }
+                this.PopulateGridView();
+                this.dgbShowProduct.ClearSelection();
             }
-            this.PopulateGridView();
-            this.dgbShowProduct.ClearSelection();
+            catch
+            {
+                MessageBox.Show("Please insert a valid keyword");
+            }
         }
 
         // disable the trackbar and textbox quantity

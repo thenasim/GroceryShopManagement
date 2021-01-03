@@ -523,9 +523,9 @@
                     MessageBox.Show("No Data Found!");
                 }
             }
-            catch (Exception a)
+            catch
             {
-                MessageBox.Show("Error!" + a.Message);
+                MessageBox.Show("Please insert a valid keyword");
             }
         }
     }

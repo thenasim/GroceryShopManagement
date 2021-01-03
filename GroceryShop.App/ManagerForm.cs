@@ -352,13 +352,21 @@
 
         private void btnSearchInventory_Click(object sender, EventArgs e)
         {
-            this.dgvSalesmen.AutoGenerateColumns = false;
-            this.dgvSalesmen.DataSource = EmployeeRepo.SearchEmployee(this.txtSearchbar.Text);
-            this.dgvSalesmen.ClearSelection();
-            this.dgvSalesmen.Refresh();
-            if (this.dgvSalesmen.RowCount == 0)
+            try
             {
-                MessageBox.Show("No Data Found!");
+
+                this.dgvSalesmen.AutoGenerateColumns = false;
+                this.dgvSalesmen.DataSource = EmployeeRepo.SearchEmployee(this.txtSearchbar.Text);
+                this.dgvSalesmen.ClearSelection();
+                this.dgvSalesmen.Refresh();
+                if (this.dgvSalesmen.RowCount == 0)
+                {
+                    MessageBox.Show("No Data Found!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Please insert a valid keyword");
             }
         }
 
