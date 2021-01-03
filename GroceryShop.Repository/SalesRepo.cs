@@ -74,6 +74,22 @@
             return null;
         }
 
+        public static string CurrentMonthBenefit()
+        {
+            var currentMonthNo = DateTime.Now.Month;
+            var sql = $@"SELECT SUM(sales.total_price-sales.quantity*products.purchase_price) AS todays_benefit
+                FROM sales
+                    INNER JOIN products ON sales.product_id = products.appid
+                WHERE MONTH(CAST(sales.updated_at AS DATE)) = '{currentMonthNo}';";
+            
+             var data = DataAccess.GetDataTable(sql);
+            if (data.Rows.Count == 1)
+            {
+                return Convert.ToString(data.Rows[0].Field<double>(0));
+            }
+            return null;
+        }
+
         public static bool Save(Sales u)
         {
             var sql = $"INSERT INTO sales VALUES('{u.AppId}', {u.TotalPrice}, {u.Quantity}, {u.UpdatedAt}, '{u.ProductId}')";
