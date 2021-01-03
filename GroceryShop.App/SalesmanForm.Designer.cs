@@ -320,22 +320,22 @@
             // ch_price
             // 
             this.ch_price.Text = "Price";
-            this.ch_price.Width = 156;
+            this.ch_price.Width = 115;
             // 
             // ch_total
             // 
             this.ch_total.Text = "Total";
-            this.ch_total.Width = 318;
+            this.ch_total.Width = 110;
             // 
             // ch_product_quantity
             // 
             this.ch_product_quantity.Text = "Product Quantity";
-            this.ch_product_quantity.Width = 204;
+            this.ch_product_quantity.Width = 0;
             // 
             // ch_appid
             // 
             this.ch_appid.Text = "AppId";
-            this.ch_appid.Width = 210;
+            this.ch_appid.Width = 0;
             // 
             // lblInvoiceTotalPrice
             // 
