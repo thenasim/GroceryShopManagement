@@ -312,6 +312,7 @@
 
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
+
             var idExists = UserRepo.SearchUserId(this.CurrentUserId);
             if (idExists)
             {
@@ -337,7 +338,11 @@
             }
             else
             {
-
+                if (this.cboUserType.Text == "Admin")
+                {
+                    MessageBox.Show("Can not create a new admin");
+                    return;
+                }
                 try
                 {
                     if (!this.FillEntity())
@@ -481,6 +486,13 @@
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
+            string userType = this.dgvUsersGrid.CurrentRow.Cells["user_type"].Value.ToString();
+            if (userType == "Admin")
+            {
+                MessageBox.Show("Can not delete admin");
+                return;
+            }
+
             if (this.dgvUsersGrid.SelectedRows.Count < 1)
             {
                 MessageBox.Show("No row selected");
