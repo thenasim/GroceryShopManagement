@@ -345,14 +345,16 @@
                             using (StreamWriter sw = new StreamWriter(new FileStream(sfd.FileName, FileMode.Create), Encoding.UTF8))
                             {
                                 StringBuilder sb = new StringBuilder();
-                                sb.AppendLine("Product Title,Price,Quantity,Total,Total Price");
+                                sb.AppendLine("Product Title,Price,Quantity,Total");
 
                                 foreach (ListViewItem item in lsvCart.Items)
                                 {
-                                    sb.AppendLine(string.Format("{0},{1},{2},{3},{4}",item.SubItems[0].Text, item.SubItems[1].Text, item.SubItems[2].Text, item.SubItems[3].Text, this.TotalPrice));
+                                    sb.AppendLine(string.Format("{0},{1},{2},{3}",item.SubItems[0].Text, item.SubItems[1].Text, item.SubItems[2].Text, item.SubItems[3].Text));
                                 }
+                                sb.AppendLine("Total Price");
+                                sb.AppendLine(string.Format("{0}",this.TotalPrice));
                                 await sw.WriteLineAsync(sb.ToString());
-                                MessageBox.Show("Successfully save as text file", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Successfully save the file", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
