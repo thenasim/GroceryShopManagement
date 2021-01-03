@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryValidation.cs" />
+    <Compile Include="CustomValidations.cs" />
     <Compile Include="EmployeeValidation.cs" />
     <Compile Include="ProductsValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
