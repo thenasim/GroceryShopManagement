@@ -21,16 +21,9 @@
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Name field is empty")
                 .Length(2, 50).WithMessage("Name Length must be between 2 to 50")
-                .Must(ValidName).WithMessage("Name contains invalid characters");
+                .Must(CustomValidations.ValidName).WithMessage("Name contains invalid characters");
 
             RuleFor(u => u.UserType).NotEmpty().WithMessage("Please select a user type");
-
-        }
-        protected bool ValidName(string name)
-        {
-            name = name.Replace(" ", "");
-            name = name.Replace("-", "");
-            return name.All(char.IsLetter);
         }
     }
 }

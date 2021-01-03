@@ -16,13 +16,7 @@
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("Category is empty")
                 .Length(3, 50).WithMessage("Category length must be between 3 to 50")
-                .Must(ValidName).WithMessage("Category contains invalid characters");
-        }
-        protected bool ValidName(string name)
-        {
-            name = name.Replace(" ", "");
-            name = name.Replace("_", "");
-            return name.All(char.IsLetter);
+                .Must(CustomValidations.ValidName).WithMessage("Category contains invalid characters");
         }
     }
 }

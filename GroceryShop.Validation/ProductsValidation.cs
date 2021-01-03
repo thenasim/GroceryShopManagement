@@ -18,21 +18,13 @@
                 .Length(2, 50).WithMessage("{PropertyName} length must be between 2 to 50");
 
             RuleFor(p => p.Price).NotEmpty().WithMessage("{PropertyName} is empty")
-                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
+                .Must(CustomValidations.ValidNumber).WithMessage("{PropertyName} is not a valid number");
 
             RuleFor(p => p.PurchasePrice).NotEmpty().WithMessage("{PropertyName} is empty")
-                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
+                .Must(CustomValidations.ValidNumber).WithMessage("{PropertyName} is not a valid number");
 
             RuleFor(p => p.Quantity).NotEmpty().WithMessage("{PropertyName} must be greater than 0")
-                .Must(ValidNumber).WithMessage("{PropertyName} is not a valid number");
-        }
-
-        private bool ValidNumber(string num)
-        {
-            double d;
-            if (double.TryParse(num, out d) && d > 0)
-                return true;
-            return false;
+                .Must(CustomValidations.ValidNumber).WithMessage("{PropertyName} is not a valid number");
         }
     }
 }
