@@ -22,7 +22,6 @@
         private byte move;
         private int moveX;
         private int moveY;
-        private string CurrentUserId { get; set; }
         public AdminForm()
         {
             InitializeComponent();
@@ -313,7 +312,7 @@
         private void btnUserAdd_Click(object sender, EventArgs e)
         {
 
-            var idExists = UserRepo.SearchUserId(this.CurrentUserId);
+            var idExists = UserRepo.SearchUserId(this.txtAppId.Text);
             if (idExists)
             {
 
@@ -334,7 +333,6 @@
                     MessageBox.Show("Cann't update user\n" + error.Message);
                     this.ClearUserInput();
                 }
-                this.CurrentUserId = null;
             }
             else
             {
@@ -442,7 +440,7 @@
         {
             this.User = new Users
             {
-                AppId = this.CurrentUserId,
+                AppId = this.txtAppId.Text,
                 Password = this.txtPassword.Text,
                 UserType = this.cboUserType.Text,
                 FullName = this.txtUserName.Text
@@ -477,8 +475,7 @@
 
         private void dgvUsersGrid_DoubleClick(object sender, EventArgs e)
         {
-            this.CurrentUserId = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
-            this.txtAppId.Text = this.CurrentUserId;
+            this.txtAppId.Text = this.dgvUsersGrid.CurrentRow.Cells["appid"].Value.ToString();
             this.txtPassword.Text = this.dgvUsersGrid.CurrentRow.Cells["password"].Value.ToString();
             this.txtUserName.Text = this.dgvUsersGrid.CurrentRow.Cells["full_name"].Value.ToString();
             this.cboUserType.Text = this.dgvUsersGrid.CurrentRow.Cells["user_type"].Value.ToString();
