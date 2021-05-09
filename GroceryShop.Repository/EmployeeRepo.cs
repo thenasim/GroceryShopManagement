@@ -60,7 +60,7 @@
         }
         public static bool Save(Employee e)
         {
-            var sql = $"INSERT INTO employee VALUES('{e.AppId}', '{e.FullName}', '{e.Email}', '{e.Gender}', '{e.Address}', '{e.BirthDate}', '{e.PhoneNumber}', '{e.JoinDate}', {e.Salary}, '{e.UserId}', {e.UpdatedAt})";
+            var sql = $"INSERT INTO employee VALUES('{e.AppId}', '{e.FullName}', '{e.Email}', '{e.Gender}', '{e.Address}', '{e.BirthDate}', '{e.PhoneNumber}', '{e.JoinDate}', '{e.Salary}', '{e.UserId}', {e.UpdatedAt})";
             var row = DataAccess.ExecuteDmlQuery(sql);
             return row == 1;
         }
